@@ -13,7 +13,7 @@ const WelcomeBanner = () => {
         </p>
         <p>
           Join FlyDriveGo and share your thoughts with the world through our
-          platform, where your voice makes an impact!
+          platform, where your voice makes an impact!done.
         </p>
       </div>
     </div>
