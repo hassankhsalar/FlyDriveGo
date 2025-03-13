@@ -1,5 +1,13 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
+<<<<<<< HEAD
+
+const MainLayout = () => {
+  return (
+    <div>
+      <Outlet></Outlet>
+    </div>
+=======
 import Navbar from "../Components/Shared/Navbar";
 import Footer from "../Components/Shared/Footer";
 
@@ -16,6 +24,7 @@ const MainLayout = () => {
         <Footer></Footer>
       </footer>
     </section>
+>>>>>>> 87f1360dd5b6d9d4c65a5ac6b7c67f779813e5a7
   );
 };
 
