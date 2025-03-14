@@ -1,0 +1,90 @@
+{
+    "road": [
+      {
+        "id": 1,
+        "title": "Bus: NYC to Boston",
+        "type": "bus",
+        "price": 50,
+        "available": true,
+        "departureTime": "2025-03-14T08:00:00Z",
+        "duration": 4,
+        "provider": "Greyhound",
+        "class": "economy",
+        "amenities": ["Wi-Fi", "Restroom"]
+      },
+      {
+        "id": 2,
+        "title": "Car Rental: Economy Sedan",
+        "type": "car",
+        "price": 80,
+        "available": false,
+        "departureTime": "2025-03-14T09:00:00Z",
+        "duration": 0,
+        "provider": "Hertz",
+        "class": "economy",
+        "amenities": ["GPS"]
+      },
+      {
+        "id": 3,
+        "title": "Shuttle: NYC to Philly",
+        "type": "intercity",
+        "price": 30,
+        "available": true,
+        "departureTime": "2025-03-14T10:00:00Z",
+        "duration": 2,
+        "provider": "MegaBus",
+        "class": "economy",
+        "amenities": ["AC"]
+      },
+      {
+        "id": 4,
+        "title": "Motorcycle Rental: Harley",
+        "type": "motorcycle",
+        "price": 120,
+        "available": true,
+        "departureTime": "2025-03-14T11:00:00Z",
+        "duration": 0,
+        "provider": "EagleRider",
+        "class": "luxury",
+        "amenities": ["Helmet"]
+      }
+    ],
+    "air": [
+      {
+        "id": 5,
+        "title": "Flight: NYC to LA (Economy)",
+        "type": "domestic",
+        "price": 150,
+        "available": true,
+        "departureTime": "2025-03-14T07:00:00Z",
+        "duration": 6,
+        "provider": "Delta",
+        "class": "economy",
+        "amenities": ["Meal", "Entertainment"]
+      },
+      {
+        "id": 6,
+        "title": "Flight: NYC to London (Business)",
+        "type": "international",
+        "price": 800,
+        "available": true,
+        "departureTime": "2025-03-14T20:00:00Z",
+        "duration": 8,
+        "provider": "British Airways",
+        "class": "business",
+        "amenities": ["Lie-flat Seat", "Lounge Access"]
+      },
+      {
+        "id": 7,
+        "title": "Charter: NYC to Miami",
+        "type": "charter",
+        "price": 2000,
+        "available": true,
+        "departureTime": "2025-03-14T12:00:00Z",
+        "duration": 3,
+        "provider": "PrivateJet Co.",
+        "class": "first",
+        "amenities": ["Private Cabin", "Catering"]
+      }
+    ]
+  }
