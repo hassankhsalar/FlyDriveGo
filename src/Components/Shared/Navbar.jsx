@@ -1,5 +1,6 @@
 
 import React, {useState} from "react";
+import logo from '/FlyDriveGo.png';
 
 // react icons
 import {IoIosArrowDown, IoIosArrowUp} from "react-icons/io";
@@ -12,6 +13,7 @@ import {AiOutlineFire} from "react-icons/ai";
 import {BiShoppingBag, BiSupport} from "react-icons/bi";
 import {FiUser} from "react-icons/fi";
 import {IoSettingsOutline} from "react-icons/io5";
+import useAuth from "../../Hooks/useAuth";
 
 const Navbar = () => {
     const [accountMenuOpen, setAccountMenuOpen] = useState(false)
@@ -19,13 +21,15 @@ const Navbar = () => {
     const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false)
     const [isMegaMenuCollapse, setIsMegaMenuCollapse] = useState(false)
     const [megaMenuSubItemsOpen, setMegaMenuSubItemsOpen] = useState("")
+    const {user} = useAuth();
+    console.log(user);
 
     return (
         <nav
             className="flex items-center justify-between w-full relative">
 
             {/* logo */}
-            <img src="https://i.ibb.co/0BZfPq6/darklogo.png" alt="logo" className="w-[55px] "/>
+            <img src={logo} alt="logo" className="w-32 "/>
 
             {/* nav links */}
             <ul className="items-center gap-[20px] text-[1rem] text-[#424242] md:flex hidden">
@@ -215,15 +219,12 @@ const Navbar = () => {
                 <div className="flex items-center gap-[10px] cursor-pointer relative"
                      onClick={() => setAccountMenuOpen(!accountMenuOpen)}>
                     <div className="relative">
-                        <img
-                            src="https://img.freepik.com/free-photo/portrait-man-laughing_23-2148859448.jpg?t=st=1724605498~exp=1724609098~hmac=7f6fc106bae2c17b0c93af1b2e5483d9d8368f3e51284aaec7c7d50590d2bae5&w=740"
-                            alt="avatar" className="w-[35px] h-[35px] rounded-full object-cover"/>
+                            <img src={`${user?.photoURL}?t=${new Date().getTime()}`} alt="Profile" className="w-10 h-10 rounded-full object-cover" />
                         <div
                             className="w-[10px] h-[10px] rounded-full bg-green-500 absolute bottom-[0px] right-0 border-2 border-white"></div>
                     </div>
 
-                    <h1 className="text-[1rem] dark:text-[#abc2d3] font-[400] text-gray-600 sm:block hidden">Dhon
-                        Deo</h1>
+                    <h1 className="text-[1rem] dark:text-[#abc2d3] font-[400] text-gray-600 sm:block hidden">{user?.displayName}</h1>
 
                     <div
                         className={`${accountMenuOpen ? "translate-y-0 opacity-100 z-[1]" : "translate-y-[10px] opacity-0 z-[-1]"} bg-white w-max rounded-md absolute dark:bg-slate-800 top-[45px] right-0 p-[10px] flex flex-col transition-all duration-300 gap-[5px]`}>
