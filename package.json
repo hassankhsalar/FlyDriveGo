@@ -16,10 +16,7 @@
     "match-sorter": "^8.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-<<<<<<< HEAD
     "react-hot-toast": "^2.5.2",
-=======
->>>>>>> 87f1360dd5b6d9d4c65a5ac6b7c67f779813e5a7
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.3.0",
     "sort-by": "^1.2.0"
