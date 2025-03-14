@@ -1,0 +1,99 @@
+{
+    
+      "id": "tp001",
+      "title": "Discover Bali: 5-Day Luxury Escape",
+      "overview": "Explore Bali’s stunning beaches, cultural landmarks, and hidden waterfalls in this 5-day luxury package.",
+      "destination": {
+        "country": "Indonesia",
+        "city": "Bali",
+        "map": "https://maps.google.com/?q=Bali"
+      },
+      "duration": "5 Days, 4 Nights",
+      "available_dates": [
+        "2025-04-10",
+        "2025-05-15",
+        "2025-06-20"
+      ],
+      "price": {
+        "currency": "USD",
+        "per_person": 899,
+        "group_discount": {
+          "min_people": 4,
+          "discount_percent": 10
+        }
+      },
+      "photos": [
+        "https://example.com/tour1.jpg",
+        "https://example.com/tour2.jpg",
+        "https://example.com/tour3.jpg"
+      ],
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Arrival & Welcome Dinner",
+          "description": "Airport pickup, hotel check-in, and a cultural welcome dinner at a beachside restaurant.",
+          "photo": "https://example.com/arrival.jpg"
+        },
+        {
+          "day": 2,
+          "title": "Temple Tour & Waterfalls",
+          "description": "Visit Uluwatu Temple, explore Tegenungan Waterfall, and enjoy traditional Balinese dance.",
+          "photo": "https://example.com/temple.jpg"
+        },
+        {
+          "day": 3,
+          "title": "Adventure & Snorkeling",
+          "description": "Go snorkeling in Nusa Penida and relax at Kelingking Beach.",
+          "photo": "https://example.com/snorkeling.jpg"
+        },
+        {
+          "day": 4,
+          "title": "Local Markets & Free Exploration",
+          "description": "Explore Ubud's art market, try local food, or relax at a spa.",
+          "photo": "https://example.com/market.jpg"
+        },
+        {
+          "day": 5,
+          "title": "Departure & Farewell",
+          "description": "Breakfast at the hotel, free time, and airport transfer.",
+          "photo": "https://example.com/departure.jpg"
+        }
+      ],
+      "inclusions": [
+        "4-star hotel accommodation",
+        "Daily breakfast & 3 dinners",
+        "Airport transfers",
+        "Guided sightseeing tours",
+        "Entrance fees to attractions"
+      ],
+      "exclusions": [
+        "Flights to/from Bali",
+        "Personal expenses",
+        "Visa fees",
+        "Travel insurance"
+      ],
+      "accommodation": {
+        "hotel_name": "Bali Sunset Resort",
+        "rating": 4.5,
+        "room_type": "Deluxe Sea View",
+        "photos": [
+          "https://example.com/hotel1.jpg",
+          "https://example.com/hotel2.jpg"
+        ]
+      },
+      "activities": [
+        {
+          "name": "Snorkeling at Nusa Penida",
+          "photo": "https://example.com/snorkeling.jpg"
+        },
+        {
+          "name": "Balinese Dance Performance",
+          "photo": "https://example.com/dance.jpg"
+        }
+      ]
+      
+      
+      }
+    
+  
+  
