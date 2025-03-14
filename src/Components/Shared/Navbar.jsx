@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import logo from '/FlyDriveGo.png'
 
 // react icons
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
@@ -15,6 +16,7 @@ import { AiOutlineFire } from "react-icons/ai";
 import { BiShoppingBag, BiSupport } from "react-icons/bi";
 import { FiUser } from "react-icons/fi";
 import { IoSettingsOutline } from "react-icons/io5";
+import useAuth from "../../Hooks/useAuth";
 
 const Navbar = () => {
   const [accountMenuOpen, setAccountMenuOpen] = useState(false);
@@ -22,14 +24,16 @@ const Navbar = () => {
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
   const [isMegaMenuCollapse, setIsMegaMenuCollapse] = useState(false);
   const [megaMenuSubItemsOpen, setMegaMenuSubItemsOpen] = useState("");
+  const {user} = useAuth();
+  console.log(user);
 
   return (
-    <nav className="flex items-center justify-between w-full relative font-red-rose">
+    <nav className="flex items-center justify-between relative font-red-rose pt-2 w-11/12 mx-auto">
       {/* logo */}
       <img
-        src="https://i.ibb.co/0BZfPq6/darklogo.png"
+        src={logo}
         alt="logo"
-        className="w-[55px] "
+        className="w-40 "
       />
 
       {/* nav links */}
@@ -45,7 +49,7 @@ const Navbar = () => {
           onMouseLeave={() => setIsProductHover(false)}
         >
           <MdLaptopMac className="text-[1.1rem]" />
-          Tour Packages
+          Transportation
           <IoIosArrowUp
             className={`${
               isProductHover ? "rotate-0" : "rotate-[-180deg]"
@@ -258,16 +262,17 @@ const Navbar = () => {
           onClick={() => setAccountMenuOpen(!accountMenuOpen)}
         >
           <div className="relative">
-            <img
-              src="https://img.freepik.com/free-photo/portrait-man-laughing_23-2148859448.jpg?t=st=1724605498~exp=1724609098~hmac=7f6fc106bae2c17b0c93af1b2e5483d9d8368f3e51284aaec7c7d50590d2bae5&w=740"
+            {/* <img
+              src={user?.photoURL}
               alt="avatar"
               className="w-[35px] h-[35px] rounded-full object-cover"
-            />
+            /> */}
+            <img src={`${user?.photoURL}?t=${new Date().getTime()}`} alt="Profile" className="w-[35px] h-[35px] rounded-full object-cover" />
             <div className="w-[10px] h-[10px] rounded-full bg-green-500 absolute bottom-[0px] right-0 border-2 border-white"></div>
           </div>
 
           <h1 className="text-[1rem] dark:text-[#abc2d3] font-[400] text-gray-600 sm:block hidden">
-            Dhon Deo
+            {user?.displayName}
           </h1>
 
           <div
