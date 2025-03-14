@@ -1,11 +1,15 @@
 import React from "react";
+import HeroLayout from "../Home/hero/Layout/HeroLayout";
+import SectionHeader from "./components/SectionHeader";
+import ServiceCard from "./components/ServiceCard";
+import ImageCard from "./components/ImageCard";
+import FlightCard from "./components/FlightCard";
 import heroLeftImage from "../../assets/home/heroSection/hero_left.png";
 import heroRightImage from "../../assets/home/heroSection/hero_right.png";
 import carOneImg from "../../assets/transportation/carOneImg.jpg";
 import carTwoImg from "../../assets/transportation/carTwoImg.jpg";
 import carThreeImg from "../../assets/transportation/carThreeImg.jpg";
 import busTwoImg from "../../assets/transportation/busTwoImg.jpg";
-import HeroLayout from "../Home/hero/Layout/HeroLayout";
 
 const Transportation = () => {
   return (
@@ -13,162 +17,80 @@ const Transportation = () => {
       <HeroLayout
         leftImage={heroLeftImage}
         rightImage={heroRightImage}
-        title="Seamless Travel, Effortless Booking"
-        subtitle="Your Journey Starts Here!"
-        description="Book flights, tours, and transport in one place. Find the best deals, secure tickets fast, and travel hassle-free with FlyDriveGo!"
-      ></HeroLayout>
+        title="Travel Refined, Perfected"
+        subtitle="Where Comfort Meets the Open Road and Sky"
+        description="From first-class flights to chauffeured rides, craft your ideal itinerary effortlessly. Our curated transport portfolio turns ‘getting there’ into the first chapter of your luxury escape."
+      />
+
       <div className="bg-SmokeWhite py-12 px-4">
         {/* By Road Section */}
         <section className="container mx-auto mb-16">
-          <h2 className="text-3xl md:text-4xl font-red-rose text-primary font-bold text-center mb-6">
-            By Road
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
-            {/* Features (Left Side) */}
+          <SectionHeader title="By Road" />
+          
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             <div className="space-y-6">
-              <div>
-                <div className="flex items-center mb-2">
-                  <h3 className="text-lg md:text-xl font-red-rose text-CharcoleDark font-semibold">
-                    Bus Rentals
-                  </h3>
-                </div>
-                <p className="text-sm md:text-base text-CharcoleDark/60 font-poppins mb-2">
-                  Comfortable and reliable bus services for group travel, city
-                  tours, and intercity trips. Choose from luxury coaches or
-                  standard buses for groups of 10 to 50 passengers.
-                </p>
-                <ul className="list-disc list-inside text-sm md:text-base text-CharcoleDark/60 font-poppins mb-2">
-                  <li>Spacious seating and onboard amenities</li>
-                  <li>Professional drivers with local expertise</li>
-                  <li>Customizable options for any group size</li>
-                </ul>
-                <button className="bg-blue-500 text-white px-4 py-2 rounded-md font-poppins hover:bg-blue-600">
-                  Book Now
-                </button>
-              </div>
+              <ServiceCard
+                title="Bus Rentals"
+                subtitle="Group Travel Solutions"
+                description="Comfortable and reliable bus services for group travel, city tours, and intercity trips. Choose from luxury coaches or standard buses for groups of 10 to 50 passengers."
+                features={['Spacious Seating', 'Professional Drivers', 'Custom Routes', '24/7 Support']}
+                buttonText="Explore Buses"
+              />
 
-              <div>
-                <div className="flex items-center mb-2">
-                  <h3 className="text-lg md:text-xl font-red-rose text-CharcoleDark font-semibold">
-                    Car Rentals
-                  </h3>
-                </div>
-                <p className="text-sm md:text-base text-CharcoleDark/60 font-poppins mb-2">
-                  Flexible car rental options for solo travelers or small
-                  groups, available at affordable rates. Select from economy,
-                  SUV, or luxury cars with daily or weekly rates.
-                </p>
-                <ul className="list-disc list-inside text-sm md:text-base text-CharcoleDark/60 font-poppins mb-2">
-                  <li>Wide range of vehicles to match your style</li>
-                  <li>Competitive pricing with no hidden fees</li>
-                  <li>Optional insurance for worry-free driving</li>
-                </ul>
-                <button className="bg-blue-500 text-white px-4 py-2 rounded-md font-poppins hover:bg-blue-600">
-                  View Options
-                </button>
-              </div>
-
-              <div>
-                <div className="flex items-center mb-2">
-                  <h3 className="text-lg md:text-xl font-red-rose text-CharcoleDark font-semibold">
-                    Intercity Transport
-                  </h3>
-                </div>
-                <p className="text-sm md:text-base text-CharcoleDark/60 font-poppins mb-2">
-                  Seamless intercity transport solutions with multiple vehicle
-                  options to suit your needs. Travel between major cities with
-                  private or shared ride options.
-                </p>
-                <ul className="list-disc list-inside text-sm md:text-base text-CharcoleDark/60 font-poppins mb-2">
-                  <li>Direct routes with frequent departures</li>
-                  <li>Comfortable vehicles with modern features</li>
-                  <li>Easy booking and flexible cancellations</li>
-                </ul>
-                <button className="bg-blue-500 text-white px-4 py-2 rounded-md font-poppins hover:bg-blue-600">
-                  Learn More
-                </button>
-              </div>
+              <ServiceCard
+                title="Car Rentals"
+                subtitle="Personal Mobility"
+                features={['Economy', 'SUV', 'Luxury', 'Convertible']}
+                priceLabel="Daily Rates From"
+                price="$29"
+                buttonText="View Cars"
+              />
             </div>
 
-            {/* Image Layout (Right Side) */}
-            <div className="space-y-4">
-              {/* Main Image (Top) */}
-              <div className="h-48 md:h-64 overflow-hidden rounded-lg">
-                <img
-                  src={carOneImg}
-                  alt="Car on Scenic Route"
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              {/* Two Smaller Images */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="h-24 md:h-32 overflow-hidden rounded-lg">
-                  <img
-                    src={carTwoImg}
-                    alt="Car at Beach"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="h-24 md:h-32 overflow-hidden rounded-lg">
-                  <img
-                    src={carThreeImg}
-                    alt="Car on Snowy Road"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-              </div>
-              {/* Bottom Image (Bus) */}
-              <div className="h-32 md:h-40 overflow-hidden rounded-lg">
-                <img
-                  src={busTwoImg}
-                  alt="Bus in City"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+            {/* Image Grid */}
+            <div className="grid grid-cols-2 gap-4 md:gap-6 h-full">
+              <ImageCard
+                image={carOneImg}
+                alt="Premium car rental"
+                overlayText="Premium Selection"
+                subText="Luxury vehicles for special occasions"
+                imageHeight="h-64"
+                className="col-span-2"
+              />
+              <ImageCard image={carTwoImg} alt="City drive" />
+              <ImageCard image={carThreeImg} alt="Mountain drive" />
+              <ImageCard
+                image={busTwoImg}
+                alt="Bus service"
+                badge="Up to 50 seats"
+                imageHeight="h-32 md:h-40"
+                className="col-span-2"
+              />
             </div>
           </div>
         </section>
 
         {/* By Air Section */}
         <section className="container mx-auto">
-          <h2 className="text-3xl md:text-4xl font-red-rose text-primary font-bold text-center mb-6">
-            By Air
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="space-y-4">
-              <h3 className="text-lg md:text-xl font-red-rose text-CharcoleDark font-semibold">
-                Domestic Flights
-              </h3>
-              <p className="text-sm md:text-base text-CharcoleDark/60 font-poppins">
-                Fast and affordable flights connecting major cities within the
-                country with top airlines.
-              </p>
-              <ul className="list-disc list-inside text-sm md:text-base text-CharcoleDark/60 font-poppins mb-2">
-                <li>Convenient flight schedules</li>
-                <li>Competitive pricing</li>
-                <li>Comfortable seating and in-flight services</li>
-              </ul>
-              <button className="bg-blue-500 text-white px-4 py-2 rounded-md font-poppins hover:bg-blue-600">
-                Book Domestic Flights
-              </button>
-            </div>
-            <div className="space-y-4">
-              <h3 className="text-lg md:text-xl font-red-rose text-CharcoleDark font-semibold">
-                International Flights
-              </h3>
-              <p className="text-sm md:text-base text-CharcoleDark/60 font-poppins">
-                Explore the world with our extensive range of international
-                flight options and exclusive deals.
-              </p>
-              <ul className="list-disc list-inside text-sm md:text-base text-CharcoleDark/60 font-poppins mb-2">
-                <li>Wide range of destinations</li>
-                <li>Exclusive deals and discounts</li>
-                <li>Premium in-flight amenities</li>
-              </ul>
-              <button className="bg-blue-500 text-white px-4 py-2 rounded-md font-poppins hover:bg-blue-600">
-                Book International Flights
-              </button>
-            </div>
+          <SectionHeader title="By Air" />
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <FlightCard
+              title="Domestic Flights"
+              subtitle="Connect Nationwide"
+              times={['Morning Flights', 'Afternoon', 'Evening', 'Red-Eye']}
+              priceLabel="Starting from"
+              price="$49/ticket"
+              buttonText="Search Domestic Flights"
+            />
+
+            <FlightCard
+              title="International Flights"
+              subtitle="Explore the World"
+              regions={['Europe', 'Asia', 'Americas']}
+              description="Special offers available for long-haul flights and premium cabins."
+              buttonText="Explore International"
+            />
           </div>
         </section>
       </div>
