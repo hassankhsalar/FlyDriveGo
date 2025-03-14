@@ -124,7 +124,7 @@ const Transportation = () => {
           By Air
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div>
+          <div className="space-y-4">
             <h3 className="text-lg md:text-xl font-red-rose text-CharcoleDark font-semibold">
               Domestic Flights
             </h3>
@@ -132,8 +132,16 @@ const Transportation = () => {
               Fast and affordable flights connecting major cities within the
               country with top airlines.
             </p>
+            <ul className="list-disc list-inside text-sm md:text-base text-CharcoleDark/60 font-poppins mb-2">
+              <li>Convenient flight schedules</li>
+              <li>Competitive pricing</li>
+              <li>Comfortable seating and in-flight services</li>
+            </ul>
+            <button className="bg-blue-500 text-white px-4 py-2 rounded-md font-poppins hover:bg-blue-600">
+              Book Domestic Flights
+            </button>
           </div>
-          <div>
+          <div className="space-y-4">
             <h3 className="text-lg md:text-xl font-red-rose text-CharcoleDark font-semibold">
               International Flights
             </h3>
@@ -141,6 +149,14 @@ const Transportation = () => {
               Explore the world with our extensive range of international flight
               options and exclusive deals.
             </p>
+            <ul className="list-disc list-inside text-sm md:text-base text-CharcoleDark/60 font-poppins mb-2">
+              <li>Wide range of destinations</li>
+              <li>Exclusive deals and discounts</li>
+              <li>Premium in-flight amenities</li>
+            </ul>
+            <button className="bg-blue-500 text-white px-4 py-2 rounded-md font-poppins hover:bg-blue-600">
+              Book International Flights
+            </button>
           </div>
         </div>
       </section>
