@@ -13,7 +13,7 @@ export default {
         background: "#ffffff",
         primary: "#05CDDB",
         secondary: "#DDF2D1",
-        SmokeWhite: "#F5F5F5", // Fixed extra `#` in color code
+        SmokeWhite: "#F5F5F5",
         CharcoleDark: "#333333",
       },
     },
