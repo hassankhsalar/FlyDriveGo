@@ -19,7 +19,7 @@ const GoggleSignIn = () => {
       <div className="flex items-center justify-center pb-1">
         <button
           onClick={handleGoogleSignIn}
-          className="flex text-center items-center btn text-xl  rounded-lg w-full bg-white border-2 border-[#023E8A] text-[#023E8A]"
+          className="flex text-center items-center btn text-xl  rounded-lg w-full bg-white border-2  text-[#023E8A]"
         >
           <FcGoogle></FcGoogle>
           Continue With Google

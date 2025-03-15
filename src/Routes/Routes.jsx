@@ -22,20 +22,18 @@ export const router = createBrowserRouter([
         path: "/transportation",
         element: <Transportation></Transportation>,
       },
-
-      {
-        path: "/login",
-        element: <Login></Login>,
-      },
-      {
-        path: "/register",
-        element: <Register></Register>,
-      },
-
       {
         path: "tour-pack",
         element: <TourPackages />,
       },
     ],
+  },
+  {
+    path: "/login",
+    element: <Login></Login>,
+  },
+  {
+    path: "/register",
+    element: <Register></Register>,
   },
 ]);

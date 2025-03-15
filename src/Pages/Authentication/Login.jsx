@@ -1,15 +1,15 @@
 import React, { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { FaArrowLeft, FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import toast from "react-hot-toast";
 import { AuthContext } from "../../Provider/AuthProvider";
 import GoggleSignIn from "../../Shared/GoggleSignIn";
-import WelcomeBanner from "../../Shared/WelcomeBanner";
+import loginImage from "../../assets/Login/login-bg.jpg";
 
 const Login = () => {
   const { userLogin } = useContext(AuthContext);
-  const [error, setError] = useState({});
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState(null);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -20,98 +20,83 @@ const Login = () => {
     const password = form.get("password");
 
     userLogin(email, password)
-      .then((result) => {
+      .then(() => {
         e.target.reset();
-        toast.success("Successfully Log In");
+        toast.success("Successfully Logged In");
         navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {
-        setError({ ...error, login: err.code });
-        toast.error("Give Correct Password & Email");
+        setError(err.message);
+        toast.error("Incorrect Email or Password");
       });
   };
 
   return (
-    <div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 overflow-hidden">
-        <div className="w-full flex justify-center items-center">
-          <div className="card w-full md:max-w-[380px] lg:max-w-[440px] p-10 mt-6">
-            <div className=" font-semibold mb-4">
-              <Link to="/" className="flex gap-2 text-center items-center">
-                <FaArrowLeft />
-                Home
-              </Link>
-            </div>
-            <h2 className="text-2xl font-bold text-left">Log In</h2>
-            <p className="text-left font-semibold mb-2">
-              Do not have a Account ?
-              <Link to="/register" className="text-[#023E8A] pl-1">
-                Register
-              </Link>
-            </p>
-            <form onSubmit={handleLogin} className="pb-3">
-              <div className="from-control">
-                <label className="label">
-                  <span className="label-text text-gray-700 font-semibold">
-                    Email
-                  </span>
-                </label>
-                <input
-                  name="email"
-                  type="email"
-                  placeholder="email"
-                  className="input input-bordered w-full"
-                  required
-                />
-              </div>
-              <div className="form-control relative">
-                <label className="label">
-                  <span className="label-text text-gray-700 font-semibold">
-                    Password
-                  </span>
-                </label>
-                <input
-                  type={showPassword ? "text" : "password"}
-                  name="password"
-                  placeholder="password"
-                  className="input input-bordered w-full"
-                  required
-                />
-                <button
-                  type="button"
-                  onClick={() => setShowPassword(!showPassword)}
-                  className="btn btn-xs absolute right-5 bottom-[34px]"
-                >
-                  {showPassword ? <FaEyeSlash></FaEyeSlash> : <FaEye></FaEye>}
-                </button>
-
-                <label className="label text-gray-700 font-semibold">
-                  <Link
-                    to="/auth/forgetPassword"
-                    className="label-text-alt link link-hover"
-                  >
-                    Forgot password?
-                  </Link>
-                </label>
-              </div>
-              {error.login && (
-                <label className="label text-red-600">{error.login}</label>
-              )}
-              <div className="form-control mt-6">
-                <button className="btn bg-[#023E8A] text-white w-full">
-                  Login
-                </button>
-              </div>
-            </form>
-            {/* Goggle */}
-            <div>
-              <GoggleSignIn />
-            </div>
+    <div
+      className="flex items-center justify-center min-h-screen bg-cover bg-center relative"
+      style={{
+        backgroundImage: `url(${loginImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <div className="bg-white/10 backdrop-blur-lg border border-white/30 rounded-lg p-8 w-96 text-white text-center shadow-lg">
+        <h2 className="text-2xl font-bold mb-4">Login</h2>
+        <form onSubmit={handleLogin} className="flex flex-col gap-4">
+          <div className="relative border-b border-gray-300">
+            <input
+              type="email"
+              name="email"
+              required
+              className="w-full bg-transparent outline-none placeholder:text-white text-white p-2"
+              placeholder="Enter your email"
+            />
+            <label className="absolute left-0 top-2 text-gray-200 transition-all"></label>
           </div>
-        </div>
-        <div className="col-span-2">
-          <WelcomeBanner></WelcomeBanner>
-        </div>
+          <div className="relative border-b border-gray-300 ">
+            <input
+              type={showPassword ? "text" : "password"}
+              name="password"
+              required
+              className="w-full bg-transparent outline-none placeholder:text-white text-white p-2"
+              placeholder="Enter your password"
+              autoComplete="new-password"
+            />
+
+            <button
+              type="button"
+              className="absolute right-0 top-2 text-white"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? <FaEyeSlash /> : <FaEye />}
+            </button>
+          </div>
+          {error && <p className="text-red-400 text-sm">{error}</p>}
+          <div className="flex justify-between text-sm">
+            <label className="flex items-center gap-1">
+              <input type="checkbox" className="accent-white" /> Remember me
+            </label>
+            <Link
+              to="/forgot-password"
+              className="text-blue-300 hover:underline"
+            >
+              Forgot password?
+            </Link>
+          </div>
+          <button
+            type="submit"
+            className="bg-gray-100 backdrop-blur-lg text-black font-bold py-2 px-4 rounded hover:bg-gray-200 transition"
+          >
+            Log In
+          </button>
+        </form>
+        <p className="mt-4">
+          Don't have an account?
+          <Link to="/register" className="text-blue-300 hover:underline">
+            Register
+          </Link>
+        </p>
+        <GoggleSignIn />
       </div>
     </div>
   );
