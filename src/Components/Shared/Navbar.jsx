@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from '/FlyDriveGo.png'
+import logo from "/FlyDriveGo.png";
 
 // react icons
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
@@ -17,6 +17,7 @@ import { BiShoppingBag, BiSupport } from "react-icons/bi";
 import { FiUser } from "react-icons/fi";
 import { IoSettingsOutline } from "react-icons/io5";
 import useAuth from "../../Hooks/useAuth";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
   const [accountMenuOpen, setAccountMenuOpen] = useState(false);
@@ -24,17 +25,13 @@ const Navbar = () => {
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
   const [isMegaMenuCollapse, setIsMegaMenuCollapse] = useState(false);
   const [megaMenuSubItemsOpen, setMegaMenuSubItemsOpen] = useState("");
-  const {user} = useAuth();
+  const { user, logOut } = useAuth();
   console.log(user);
 
   return (
     <nav className="flex items-center justify-between relative font-red-rose pt-2 w-11/12 mx-auto">
       {/* logo */}
-      <img
-        src={logo}
-        alt="logo"
-        className="w-40 "
-      />
+      <img src={logo} alt="logo" className="w-40 " />
 
       {/* nav links */}
       <ul className="items-center gap-[20px] text-[1rem] text-[#424242] md:flex hidden">
@@ -267,7 +264,11 @@ const Navbar = () => {
               alt="avatar"
               className="w-[35px] h-[35px] rounded-full object-cover"
             /> */}
-            <img src={`${user?.photoURL}?t=${new Date().getTime()}`} alt="Profile" className="w-[35px] h-[35px] rounded-full object-cover" />
+            <img
+              src={`${user?.photoURL}?t=${new Date().getTime()}`}
+              alt="Profile"
+              className="w-[35px] h-[35px] rounded-full object-cover"
+            />
             <div className="w-[10px] h-[10px] rounded-full bg-green-500 absolute bottom-[0px] right-0 border-2 border-white"></div>
           </div>
 
@@ -296,7 +297,18 @@ const Navbar = () => {
             </p>
 
             <div className="mt-3 border-t dark:border-slate-700 border-gray-200 pt-[5px]">
-              <p className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] dark:text-red-500 dark:hover:bg-red-500/20 text-red-500 hover:bg-red-50">
+              <p
+                onClick={() => {
+                  logOut()
+                    .then(() => {
+                      toast.success("Log Out Successfully");
+                    })
+                    .catch(() => {
+                      toast.error("An Error occurred While Log Out");
+                    });
+                }}
+                className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] dark:text-red-500 dark:hover:bg-red-500/20 text-red-500 hover:bg-red-50"
+              >
                 <TbLogout2 />
                 Logout
               </p>

@@ -1,179 +1,115 @@
 import React, { useContext, useState } from "react";
-import { FaArrowLeft, FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 import toast from "react-hot-toast";
-import { useForm } from "react-hook-form";
-import WelcomeBanner from "../../Shared/WelcomeBanner";
 import { AuthContext } from "../../Provider/AuthProvider";
 import GoggleSignIn from "../../Shared/GoggleSignIn";
+import loginImage from "../../assets/Login/login-bg.jpg";
 
 const Register = () => {
   const { createUser, updateUserProfile } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
-  // React Hook Form setup
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-  } = useForm();
+  const handleRegister = (e) => {
+    e.preventDefault();
+    const form = new FormData(e.target);
+    const name = form.get("name");
+    const email = form.get("email");
+    const password = form.get("password");
+    const photoURL = form.get("photo");
 
-  // Form submission handler
-  const onSubmit = async (data) => {
-    const { name, email, photo, password } = data;
-    createUser(email, password).then((res) => {
-      updateUserProfile({ displayName: name, photoURL: photo });
-      reset();
-      toast.success("User created successfully!");
-    });
+    if (password.length < 6) {
+      setError("Password must be at least 6 characters long.");
+      toast.error("Password must be at least 6 characters long.");
+      return;
+    }
+
+    createUser(email, password)
+      .then(() => {
+        updateUserProfile({ displayName: name, photoURL });
+        e.target.reset();
+        toast.success("Successfully Registered!");
+        navigate("/");
+      })
+      .catch((err) => {
+        setError(err.message);
+        toast.error("Registration Failed");
+      });
   };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-      <div className="w-full flex justify-center items-center">
-        <div className="card w-full md:max-w-[380px] lg:max-w-[440px] p-10 mt-6">
-          <div className="font-semibold mb-4">
-            <Link to="/" className="flex gap-2 text-center items-center">
-              <FaArrowLeft />
-              Home
-            </Link>
+    <div
+      className="flex items-center justify-center min-h-screen bg-cover bg-center relative"
+      style={{
+        backgroundImage: `url(${loginImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <div className="bg-white/10 backdrop-blur-lg border border-white/30 rounded-lg p-8 w-96 text-white text-center shadow-lg">
+        <h2 className="text-2xl font-bold mb-4">Register</h2>
+        <form onSubmit={handleRegister} className="flex flex-col gap-4">
+          <div className="relative border-b border-gray-300">
+            <input
+              type="text"
+              name="name"
+              required
+              className="w-full bg-transparent outline-none placeholder:text-white text-white p-2"
+              placeholder="Enter your name"
+            />
           </div>
-          <h2 className="text-2xl font-bold text-left">Register</h2>
-          <p className="text-left font-semibold mb-2">
-            Already have an account?{" "}
-            <Link to="/login" className="text-[#023E8A] pl-1">
-              Login
-            </Link>
-          </p>
-
-          <form onSubmit={handleSubmit(onSubmit)} className="pb-3">
-            {/* Name */}
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text text-gray-700 font-semibold">
-                  Name
-                </span>
-              </label>
-              <input
-                {...register("name", { required: "Name is required" })}
-                type="text"
-                placeholder="Enter your name"
-                className="input input-bordered"
-              />
-              {errors.name && (
-                <span className="text-red-600 text-sm">
-                  {errors.name.message}
-                </span>
-              )}
-            </div>
-
-            {/* Image URL */}
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text text-gray-700 font-semibold">
-                  Image URL
-                </span>
-              </label>
-              <input
-                {...register("photo", {
-                  required: "Image URL is required",
-                  pattern: {
-                    value: /^(https?:\/\/.*\.(?:png|jpg|jpeg|gif|svg))$/i,
-                    message: "Enter a valid image URL",
-                  },
-                })}
-                type="text"
-                placeholder="Enter image URL"
-                className="input input-bordered"
-              />
-              {errors.photo && (
-                <span className="text-red-600 text-sm">
-                  {errors.photo.message}
-                </span>
-              )}
-            </div>
-
-            {/* Email */}
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text text-gray-700 font-semibold">
-                  Email
-                </span>
-              </label>
-              <input
-                {...register("email", {
-                  required: "Email is required",
-                  pattern: {
-                    value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
-                    message: "Enter a valid email",
-                  },
-                })}
-                type="email"
-                placeholder="Enter your email"
-                className="input input-bordered"
-              />
-              {errors.email && (
-                <span className="text-red-600 text-sm">
-                  {errors.email.message}
-                </span>
-              )}
-            </div>
-
-            {/* Password */}
-            <div className="form-control relative">
-              <label className="label">
-                <span className="label-text text-gray-700 font-semibold">
-                  Password
-                </span>
-              </label>
-              <input
-                {...register("password", {
-                  required: "Password is required",
-                  minLength: {
-                    value: 6,
-                    message: "Password must be at least 6 characters",
-                  },
-                  pattern: {
-                    value:
-                      /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&#])[A-Za-z\d@$!%*?&#]{6,}$/,
-                    message:
-                      "Must include uppercase, lowercase, number & special character",
-                  },
-                })}
-                type={showPassword ? "text" : "password"}
-                placeholder="Enter password"
-                className="input input-bordered"
-              />
-              <button
-                type="button"
-                onClick={() => setShowPassword(!showPassword)}
-                className="btn btn-xs absolute right-4 bottom-[13px]"
-              >
-                {showPassword ? <FaEyeSlash /> : <FaEye />}
-              </button>
-              {errors.password && (
-                <span className="text-red-600 text-sm">
-                  {errors.password.message}
-                </span>
-              )}
-            </div>
-
-            {/* Register */}
-            <div className="form-control mt-6">
-              <button type="submit" className="btn bg-[#023E8A] text-white">
-                Register
-              </button>
-            </div>
-          </form>
-
-          <div>
-            <GoggleSignIn />
+          <div className="relative border-b border-gray-300">
+            <input
+              type="text"
+              name="photo"
+              required
+              className="w-full bg-transparent outline-none placeholder:text-white text-white p-2"
+              placeholder="Enter image URL"
+            />
           </div>
-        </div>
-      </div>
-      <div className="col-span-2">
-        <WelcomeBanner />
+          <div className="relative border-b border-gray-300">
+            <input
+              type="email"
+              name="email"
+              required
+              className="w-full bg-transparent outline-none placeholder:text-white text-white p-2"
+              placeholder="Enter your email"
+            />
+          </div>
+          <div className="relative border-b border-gray-300">
+            <input
+              type={showPassword ? "text" : "password"}
+              name="password"
+              required
+              className="w-full bg-transparent outline-none placeholder:text-white text-white p-2"
+              placeholder="Enter your password"
+              autoComplete="new-password"
+            />
+            <button
+              type="button"
+              className="absolute right-0 top-2 text-white"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? <FaEyeSlash /> : <FaEye />}
+            </button>
+          </div>
+          {error && <p className="text-red-400 text-sm">{error}</p>}
+          <button
+            type="submit"
+            className="bg-gray-100 backdrop-blur-lg text-black font-bold py-2 px-4 rounded hover:bg-gray-200 transition"
+          >
+            Register
+          </button>
+        </form>
+        <p className="mt-4">
+          Already have an account?
+          <Link to="/login" className="text-blue-300 hover:underline">
+            Login
+          </Link>
+        </p>
+        <GoggleSignIn />
       </div>
     </div>
   );
