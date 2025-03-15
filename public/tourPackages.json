@@ -1,99 +1,352 @@
-{
-    
-      "id": "tp001",
-      "title": "Discover Bali: 5-Day Luxury Escape",
-      "overview": "Explore Bali’s stunning beaches, cultural landmarks, and hidden waterfalls in this 5-day luxury package.",
-      "destination": {
-        "country": "Indonesia",
-        "city": "Bali",
-        "map": "https://maps.google.com/?q=Bali"
+[
+  {
+    "title": "Discover Bali: 5-Day Luxury Escape",
+    "overview": "Explore Bali’s stunning beaches, cultural landmarks, and hidden waterfalls in this 5-day luxury package.",
+    "destination": {
+      "country": "Indonesia",
+      "city": "Bali",
+      "map": "https://maps.google.com/?q=Bali"
+    },
+    "duration": "5 Days, 4 Nights",
+    "available_dates": ["2025-04-10", "2025-05-15", "2025-06-20"],
+    "price": {
+      "currency": "USD",
+      "per_person": 899,
+      "group_discount": { "min_people": 4, "discount_percent": 10 }
+    },
+    "image": "https://i.ibb.co/mCcVFWGJ/bali.jpg",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Arrival & Welcome Dinner",
+        "description": "Airport pickup, hotel check-in, and a cultural welcome dinner at a beachside restaurant.",
+        "photo": "https://example.com/arrival.jpg"
       },
-      "duration": "5 Days, 4 Nights",
-      "available_dates": [
-        "2025-04-10",
-        "2025-05-15",
-        "2025-06-20"
-      ],
-      "price": {
-        "currency": "USD",
-        "per_person": 899,
-        "group_discount": {
-          "min_people": 4,
-          "discount_percent": 10
-        }
-      },
-      "photos": [
-        "https://example.com/tour1.jpg",
-        "https://example.com/tour2.jpg",
-        "https://example.com/tour3.jpg"
-      ],
-      "itinerary": [
-        {
-          "day": 1,
-          "title": "Arrival & Welcome Dinner",
-          "description": "Airport pickup, hotel check-in, and a cultural welcome dinner at a beachside restaurant.",
-          "photo": "https://example.com/arrival.jpg"
-        },
-        {
-          "day": 2,
-          "title": "Temple Tour & Waterfalls",
-          "description": "Visit Uluwatu Temple, explore Tegenungan Waterfall, and enjoy traditional Balinese dance.",
-          "photo": "https://example.com/temple.jpg"
-        },
-        {
-          "day": 3,
-          "title": "Adventure & Snorkeling",
-          "description": "Go snorkeling in Nusa Penida and relax at Kelingking Beach.",
-          "photo": "https://example.com/snorkeling.jpg"
-        },
-        {
-          "day": 4,
-          "title": "Local Markets & Free Exploration",
-          "description": "Explore Ubud's art market, try local food, or relax at a spa.",
-          "photo": "https://example.com/market.jpg"
-        },
-        {
-          "day": 5,
-          "title": "Departure & Farewell",
-          "description": "Breakfast at the hotel, free time, and airport transfer.",
-          "photo": "https://example.com/departure.jpg"
-        }
-      ],
-      "inclusions": [
-        "4-star hotel accommodation",
-        "Daily breakfast & 3 dinners",
-        "Airport transfers",
-        "Guided sightseeing tours",
-        "Entrance fees to attractions"
-      ],
-      "exclusions": [
-        "Flights to/from Bali",
-        "Personal expenses",
-        "Visa fees",
-        "Travel insurance"
-      ],
-      "accommodation": {
-        "hotel_name": "Bali Sunset Resort",
-        "rating": 4.5,
-        "room_type": "Deluxe Sea View",
-        "photos": [
-          "https://example.com/hotel1.jpg",
-          "https://example.com/hotel2.jpg"
-        ]
-      },
-      "activities": [
-        {
-          "name": "Snorkeling at Nusa Penida",
-          "photo": "https://example.com/snorkeling.jpg"
-        },
-        {
-          "name": "Balinese Dance Performance",
-          "photo": "https://example.com/dance.jpg"
-        }
-      ]
-      
-      
+      {
+        "day": 2,
+        "title": "Temple Tour & Waterfalls",
+        "description": "Visit Uluwatu Temple, explore Tegenungan Waterfall, and enjoy traditional Balinese dance.",
+        "photo": "https://example.com/temple.jpg"
       }
-    
-  
-  
+    ],
+    "inclusions": [
+      "4-star hotel accommodation",
+      "Daily breakfast & 3 dinners",
+      "Airport transfers",
+      "Guided sightseeing tours",
+      "Entrance fees to attractions"
+    ],
+    "exclusions": ["Flights to/from Bali", "Personal expenses", "Visa fees"],
+    "accommodation": {
+      "hotel_name": "Bali Sunset Resort",
+      "rating": 4.5,
+      "room_type": "Deluxe Sea View",
+      "photos": ["https://example.com/hotel1.jpg"]
+    },
+    "activities": [
+      {
+        "name": "Snorkeling at Nusa Penida",
+        "photo": "https://example.com/snorkeling.jpg"
+      }
+    ]
+  },
+  {
+    "title": "Swiss Alps Adventure: 7-Day Expedition",
+    "overview": "Experience the breathtaking landscapes of the Swiss Alps with hiking, skiing, and luxury stays.",
+    "destination": {
+      "country": "Switzerland",
+      "city": "Zermatt",
+      "map": "https://maps.google.com/?q=Zermatt"
+    },
+    "duration": "7 Days, 6 Nights",
+    "available_dates": ["2025-02-15", "2025-03-10", "2025-04-05"],
+    "price": {
+      "currency": "USD",
+      "per_person": 1899,
+      "group_discount": { "min_people": 5, "discount_percent": 12 }
+    },
+    "image": "https://i.ibb.co.com/ZpGrRDVg/istockphoto-584784714-612x612-1.jpg",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Arrival & Mountain Retreat",
+        "description": "Arrival in Zurich, transfer to Zermatt, and check-in at a mountain lodge.",
+        "photo": "https://example.com/swiss-arrival.jpg"
+      },
+      {
+        "day": 2,
+        "title": "Hiking & Glacier Exploration",
+        "description": "Guided hike through the Matterhorn trails and a visit to the Gorner Glacier.",
+        "photo": "https://example.com/glacier.jpg"
+      }
+    ],
+    "inclusions": ["Luxury hotel stays", "Breakfast & dinner", "Ski pass"],
+    "exclusions": ["Flights to/from Switzerland", "Ski equipment rental"],
+    "accommodation": {
+      "hotel_name": "Matterhorn View Lodge",
+      "rating": 5,
+      "room_type": "Panoramic Suite",
+      "photos": ["https://example.com/swiss-hotel.jpg"]
+    },
+    "activities": [
+      {
+        "name": "Skiing at Matterhorn",
+        "photo": "https://example.com/skiing.jpg"
+      }
+    ]
+  },
+  {
+    "title": "Dubai Desert Safari: 4-Day Luxury Experience",
+    "overview": "Enjoy thrilling desert adventures and luxury city life in Dubai.",
+    "destination": {
+      "country": "UAE",
+      "city": "Dubai",
+      "map": "https://maps.google.com/?q=Dubai"
+    },
+    "duration": "4 Days, 3 Nights",
+    "available_dates": ["2025-06-05", "2025-07-10", "2025-08-15"],
+    "price": {
+      "currency": "USD",
+      "per_person": 999,
+      "group_discount": { "min_people": 3, "discount_percent": 8 }
+    },
+    "image": "https://i.ibb.co.com/5hXwqZh8/Premium-desert-safari-Dubai.jpg",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "City Tour & Burj Khalifa",
+        "description": "Visit Dubai Marina, Burj Khalifa, and the Dubai Mall.",
+        "photo": "https://example.com/dubai-tour.jpg"
+      }
+    ],
+    "inclusions": ["5-star hotel", "Breakfast & dinner", "Desert safari tour"],
+    "exclusions": ["Flights to/from Dubai", "Personal expenses"]
+  },
+  {
+    "title": "Tokyo Cherry Blossom Tour: 5 Days of Cultural Beauty",
+    "overview": "Immerse yourself in Japan’s cherry blossom season, temples, and gourmet experiences.",
+    "destination": {
+      "country": "Japan",
+      "city": "Tokyo",
+      "map": "https://maps.google.com/?q=Tokyo"
+    },
+    "duration": "5 Days, 4 Nights",
+    "available_dates": ["2025-03-25", "2025-04-05", "2025-04-15"],
+    "price": {
+      "currency": "JPY",
+      "per_person": 120000,
+      "group_discount": { "min_people": 4, "discount_percent": 10 }
+    },
+    "image": "https://i.ibb.co.com/0p36JwGJ/the-sakura-of-japan-are-well-known-around-the-world-for-their-radiant-delicate-and-transient-beauty.jpg",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Cherry Blossom Viewing",
+        "description": "Visit Ueno Park and Shinjuku Gyoen for stunning cherry blossom views.",
+        "photo": "https://example.com/tokyo-cherry.jpg"
+      }
+    ],
+    "inclusions": ["4-star hotel", "Breakfast & dinner", "Temple tours"],
+    "exclusions": ["Flights to/from Japan", "Rail pass"]
+  },
+  {
+    "title": "Santorini Romance: 5-Day Luxury Escape",
+    "overview": "Experience the romantic beauty of Santorini, with stunning sunsets, whitewashed villages, and crystal-clear waters.",
+    "destination": {
+      "country": "Greece",
+      "city": "Santorini",
+      "map": "https://maps.google.com/?q=Santorini"
+    },
+    "duration": "5 Days, 4 Nights",
+    "available_dates": ["2025-07-01", "2025-08-10", "2025-09-05"],
+    "price": {
+      "currency": "EUR",
+      "per_person": 1499,
+      "group_discount": { "min_people": 3, "discount_percent": 15 }
+    },
+    "image": "https://i.ibb.co.com/yFG1HJps/Santorini-2024-Street-View-Shutterstock-1040803156-Hybris.jpg",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Arrival & Sunset Cruise",
+        "description": "Arrive in Santorini, check-in at a luxury hotel, followed by a sunset cruise.",
+        "photo": "https://example.com/santorini-arrival.jpg"
+      },
+      {
+        "day": 2,
+        "title": "Oia Village & Akrotiri",
+        "description": "Visit the charming Oia village and the ancient ruins of Akrotiri.",
+        "photo": "https://example.com/oia-village.jpg"
+      }
+    ],
+    "inclusions": [
+      "Luxury hotel accommodation",
+      "Daily breakfast & 2 dinners",
+      "Sunset cruise",
+      "Guided village tour"
+    ],
+    "exclusions": ["Flights to/from Santorini", "Personal expenses"],
+    "accommodation": {
+      "hotel_name": "Caldera View Suites",
+      "rating": 5,
+      "room_type": "Sea View Suite",
+      "photos": ["https://example.com/santorini-hotel.jpg"]
+    },
+    "activities": [
+      {
+        "name": "Snorkeling in the Aegean Sea",
+        "photo": "https://example.com/snorkeling-santorini.jpg"
+      }
+    ]
+  },
+  {
+    "title": "New York City Adventure: 6-Day Urban Exploration",
+    "overview": "Explore the iconic landmarks of New York City, from Central Park to Times Square, and Broadway.",
+    "destination": {
+      "country": "USA",
+      "city": "New York",
+      "map": "https://maps.google.com/?q=New+York"
+    },
+    "duration": "6 Days, 5 Nights",
+    "available_dates": ["2025-06-01", "2025-07-01", "2025-08-01"],
+    "price": {
+      "currency": "USD",
+      "per_person": 2299,
+      "group_discount": { "min_people": 5, "discount_percent": 10 }
+    },
+    "image": "https://i.ibb.co.com/HpRhVdd1/cfimages.jpg",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Arrival & Times Square",
+        "description": "Arrive in New York, transfer to your hotel, and explore the bustling Times Square.",
+        "photo": "https://example.com/nyc-arrival.jpg"
+      },
+      {
+        "day": 2,
+        "title": "Central Park & Broadway Show",
+        "description": "Stroll through Central Park and enjoy a Broadway show in the evening.",
+        "photo": "https://example.com/broadway-show.jpg"
+      }
+    ],
+    "inclusions": [
+      "5-star hotel accommodation",
+      "Daily breakfast & 1 dinner",
+      "Broadway tickets",
+      "Central Park guided tour"
+    ],
+    "exclusions": ["Flights to/from New York", "Personal expenses"],
+    "accommodation": {
+      "hotel_name": "Times Square Grand Hotel",
+      "rating": 4.5,
+      "room_type": "Luxury Suite",
+      "photos": ["https://example.com/nyc-hotel.jpg"]
+    },
+    "activities": [
+      {
+        "name": "Helicopter Ride over NYC",
+        "photo": "https://example.com/helicopter-nyc.jpg"
+      }
+    ]
+  },
+  {
+    "title": "Machu Picchu Expedition: 7-Day Trekking Tour",
+    "overview": "Embark on an unforgettable journey to the ancient Inca city of Machu Picchu with breathtaking views and rich culture.",
+    "destination": {
+      "country": "Peru",
+      "city": "Cusco",
+      "map": "https://maps.google.com/?q=Cusco"
+    },
+    "duration": "7 Days, 6 Nights",
+    "available_dates": ["2025-04-05", "2025-05-15", "2025-06-20"],
+    "price": {
+      "currency": "USD",
+      "per_person": 1599,
+      "group_discount": { "min_people": 6, "discount_percent": 12 }
+    },
+    "image": "https://i.ibb.co.com/LzDL278Q/2700-2048.webp",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Arrival in Cusco",
+        "description": "Arrive in Cusco, acclimate to the altitude, and enjoy a city tour.",
+        "photo": "https://example.com/cusco-arrival.jpg"
+      },
+      {
+        "day": 2,
+        "title": "Sacred Valley & Ollantaytambo",
+        "description": "Explore the Sacred Valley and visit Ollantaytambo, a stunning Inca archaeological site.",
+        "photo": "https://example.com/ollantaytambo.jpg"
+      }
+    ],
+    "inclusions": [
+      "Guided trekking tour",
+      "Luxury hotel stays",
+      "Meals during the trek",
+      "Train tickets to Aguas Calientes"
+    ],
+    "exclusions": ["Flights to/from Peru", "Personal expenses", "Machu Picchu entrance fee"],
+    "accommodation": {
+      "hotel_name": "Sacred Valley Lodge",
+      "rating": 4.8,
+      "room_type": "Mountain View Suite",
+      "photos": ["https://example.com/sacred-valley-lodge.jpg"]
+    },
+    "activities": [
+      {
+        "name": "Inca Trail Trekking",
+        "photo": "https://example.com/inca-trail.jpg"
+      }
+    ]
+  },
+  {
+    "title": "Sydney & Great Barrier Reef Adventure: 7-Day Oceanic Expedition",
+    "overview": "Discover the wonders of Sydney and the Great Barrier Reef with unforgettable wildlife encounters and ocean adventures.",
+    "destination": {
+      "country": "Australia",
+      "city": "Sydney",
+      "map": "https://maps.google.com/?q=Sydney"
+    },
+    "duration": "7 Days, 6 Nights",
+    "available_dates": ["2025-09-01", "2025-10-10", "2025-11-15"],
+    "price": {
+      "currency": "AUD",
+      "per_person": 2399,
+      "group_discount": { "min_people": 4, "discount_percent": 10 }
+    },
+    "image": "https://i.ibb.co.com/NzTYhjx/istockphoto-1472330375-612x612.jpg",
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Arrival & Sydney Opera House",
+        "description": "Arrive in Sydney, enjoy a guided tour of the Opera House, and relax at Circular Quay.",
+        "photo": "https://example.com/sydney-opera-house.jpg"
+      },
+      {
+        "day": 2,
+        "title": "Bondi Beach & Coastal Walk",
+        "description": "Relax on Bondi Beach, followed by a scenic coastal walk to Coogee Beach.",
+        "photo": "https://example.com/bondi-beach.jpg"
+      }
+    ],
+    "inclusions": [
+      "Luxury hotel accommodation",
+      "Daily breakfast & 2 dinners",
+      "Great Barrier Reef tour",
+      "Sydney sightseeing tour"
+    ],
+    "exclusions": ["Flights to/from Australia", "Personal expenses"],
+    "accommodation": {
+      "hotel_name": "Sydney Harbour Hotel",
+      "rating": 5,
+      "room_type": "Harbour View Suite",
+      "photos": ["https://example.com/sydney-hotel.jpg"]
+    },
+    "activities": [
+      {
+        "name": "Snorkeling at the Great Barrier Reef",
+        "photo": "https://example.com/snorkeling-reef.jpg"
+      }
+    ]
+  }
+]
