@@ -5,6 +5,8 @@ import TrustedPartners from "./TrustedPartners";
 import PopularEvents from "./PopularEvents";
 import PopularEvents2 from "./PopularEvents2";
 import Features from "./Features";
+import Ecommerce from "./Ecommerce";
+import Transport from "./Transport";
 
 
 const Home = () => {
@@ -28,6 +30,14 @@ const Home = () => {
 
       <div>
         <Features></Features>
+      </div>
+
+      <div>
+        <Ecommerce></Ecommerce>
+      </div>
+
+      <div>
+        <Transport></Transport>
       </div>
       
     </section>

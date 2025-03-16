@@ -3,8 +3,8 @@ import feature from '../../assets/features.jpg'
 
 const Features = () => {
     return (
-        <div className='flex justify-center items-center w-11/12 mx-auto border-2'>
-            <div className='w-1/2'>
+        <div className='flex flex-col md:flex-row justify-center gap-3 items-center w-11/12 mx-auto rounded-r-2xl'>
+            <div className='w-full md:w-1/2 '>
                 <div className='border-l-4'>
                     <h1 className='font-red-rose text-3xl font-bold text-primary'>Handpicked Tour Packages for Every Explorer!</h1>
                     <p className='font-poppins text-lg font-normal'>
@@ -25,8 +25,8 @@ const Features = () => {
                 </div>
 
             </div>
-            <div className='w-1/2'>
-                <img src={feature} alt="" className='w-full object-cover'/>
+            <div className='w-full md:w-1/2 max-h-[500px] rounded-r-2xl'>
+                <img src={feature} alt="" className='w-full max-h-[500px] object-cover md:rounded-r-2xl'/>
             </div>
         </div>
     );
