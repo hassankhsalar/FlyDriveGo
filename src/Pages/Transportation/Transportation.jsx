@@ -6,10 +6,11 @@ import ImageCard from "./components/ImageCard";
 import FlightCard from "./components/FlightCard";
 import heroLeftImage from "../../assets/home/heroSection/hero_left.png";
 import heroRightImage from "../../assets/home/heroSection/hero_right.png";
-import carOneImg from "../../assets/transportation/carOneImg.jpg";
-import carTwoImg from "../../assets/transportation/carTwoImg.jpg";
-import carThreeImg from "../../assets/transportation/carThreeImg.jpg";
-import busTwoImg from "../../assets/transportation/busTwoImg.jpg";
+import carOneImg from "../../assets/transportation/carOneImg.webp";
+import carTwoImg from "../../assets/transportation/carTwoImg.webp";
+import carThreeImg from "../../assets/transportation/carThreeImg.webp";
+import busTwoImg from "../../assets/transportation/busTwoImg.webp";
+import FlightGallery from "./components/FlightGallery";
 
 const Transportation = () => {
   return (
@@ -26,21 +27,26 @@ const Transportation = () => {
         {/* By Road Section */}
         <section className="container mx-auto mb-16">
           <SectionHeader title="By Road" />
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             <div className="space-y-6">
               <ServiceCard
                 title="Bus Rentals"
                 subtitle="Group Travel Solutions"
                 description="Comfortable and reliable bus services for group travel, city tours, and intercity trips. Choose from luxury coaches or standard buses for groups of 10 to 50 passengers."
-                features={['Spacious Seating', 'Professional Drivers', 'Custom Routes', '24/7 Support']}
+                features={[
+                  "Spacious Seating",
+                  "Professional Drivers",
+                  "Custom Routes",
+                  "24/7 Support",
+                ]}
                 buttonText="Explore Buses"
               />
 
               <ServiceCard
                 title="Car Rentals"
                 subtitle="Personal Mobility"
-                features={['Economy', 'SUV', 'Luxury', 'Convertible']}
+                features={["Economy", "SUV", "Luxury", "Convertible"]}
                 priceLabel="Daily Rates From"
                 price="$29"
                 buttonText="View Cars"
@@ -73,12 +79,12 @@ const Transportation = () => {
         {/* By Air Section */}
         <section className="container mx-auto">
           <SectionHeader title="By Air" />
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <FlightCard
               title="Domestic Flights"
               subtitle="Connect Nationwide"
-              times={['Morning Flights', 'Afternoon', 'Evening', 'Red-Eye']}
+              times={["Morning Flights", "Afternoon", "Evening", "Red-Eye"]}
               priceLabel="Starting from"
               price="$49/ticket"
               buttonText="Search Domestic Flights"
@@ -87,11 +93,12 @@ const Transportation = () => {
             <FlightCard
               title="International Flights"
               subtitle="Explore the World"
-              regions={['Europe', 'Asia', 'Americas']}
+              regions={["Europe", "Asia", "Americas"]}
               description="Special offers available for long-haul flights and premium cabins."
               buttonText="Explore International"
             />
           </div>
+          <FlightGallery />
         </section>
       </div>
     </>
