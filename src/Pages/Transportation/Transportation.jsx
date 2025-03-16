@@ -6,10 +6,10 @@ import ImageCard from "./components/ImageCard";
 import FlightCard from "./components/FlightCard";
 import heroLeftImage from "../../assets/home/heroSection/hero_left.png";
 import heroRightImage from "../../assets/home/heroSection/hero_right.png";
-import carOneImg from "../../assets/transportation/carOneImg.jpg";
-import carTwoImg from "../../assets/transportation/carTwoImg.jpg";
-import carThreeImg from "../../assets/transportation/carThreeImg.jpg";
-import busTwoImg from "../../assets/transportation/busTwoImg.jpg";
+import carOneImg from "../../assets/transportation/carOneImg.webp";
+import carTwoImg from "../../assets/transportation/carTwoImg.webp";
+import carThreeImg from "../../assets/transportation/carThreeImg.webp";
+import busTwoImg from "../../assets/transportation/busTwoImg.webp";
 import FlightGallery from "./components/FlightGallery";
 
 const Transportation = () => {
