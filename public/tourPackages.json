@@ -1,6 +1,7 @@
 [
   {
     "title": "Discover Bali: 5-Day Luxury Escape",
+    "title2": "Discover Bali",
     "overview": "Explore Bali’s stunning beaches, cultural landmarks, and hidden waterfalls in this 5-day luxury package.",
     "destination": {
       "country": "Indonesia",
@@ -52,6 +53,7 @@
   },
   {
     "title": "Swiss Alps Adventure: 7-Day Expedition",
+    "title2": "Swiss Alps Adventure",
     "overview": "Experience the breathtaking landscapes of the Swiss Alps with hiking, skiing, and luxury stays.",
     "destination": {
       "country": "Switzerland",
@@ -97,6 +99,7 @@
   },
   {
     "title": "Dubai Desert Safari: 4-Day Luxury Experience",
+    "title2": "Dubai Desert Safari",
     "overview": "Enjoy thrilling desert adventures and luxury city life in Dubai.",
     "destination": {
       "country": "UAE",
@@ -124,6 +127,7 @@
   },
   {
     "title": "Tokyo Cherry Blossom Tour: 5 Days of Cultural Beauty",
+    "title2": "Tokyo Cherry Blossom ",
     "overview": "Immerse yourself in Japan’s cherry blossom season, temples, and gourmet experiences.",
     "destination": {
       "country": "Japan",
@@ -151,6 +155,7 @@
   },
   {
     "title": "Santorini Romance: 5-Day Luxury Escape",
+    "title2": "Santorini",
     "overview": "Experience the romantic beauty of Santorini, with stunning sunsets, whitewashed villages, and crystal-clear waters.",
     "destination": {
       "country": "Greece",
@@ -201,6 +206,7 @@
   },
   {
     "title": "New York City Adventure: 6-Day Urban Exploration",
+    "title2": "New York City",
     "overview": "Explore the iconic landmarks of New York City, from Central Park to Times Square, and Broadway.",
     "destination": {
       "country": "USA",
@@ -251,6 +257,7 @@
   },
   {
     "title": "Machu Picchu Expedition: 7-Day Trekking Tour",
+    "title2": "Machu Picchu",
     "overview": "Embark on an unforgettable journey to the ancient Inca city of Machu Picchu with breathtaking views and rich culture.",
     "destination": {
       "country": "Peru",
@@ -301,6 +308,7 @@
   },
   {
     "title": "Sydney & Great Barrier Reef Adventure: 7-Day Oceanic Expedition",
+    "title2": "Sydney & Great Barrier Reef",
     "overview": "Discover the wonders of Sydney and the Great Barrier Reef with unforgettable wildlife encounters and ocean adventures.",
     "destination": {
       "country": "Australia",
@@ -315,6 +323,7 @@
       "group_discount": { "min_people": 4, "discount_percent": 10 }
     },
     "image": "https://i.ibb.co.com/NzTYhjx/istockphoto-1472330375-612x612.jpg",
+  
     "itinerary": [
       {
         "day": 1,
