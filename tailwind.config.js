@@ -24,4 +24,6 @@ export default {
   daisyui: {
     themes: ["light", "dark"],
   },
+    require("tailwindcss-animate"),
+  ],
 };

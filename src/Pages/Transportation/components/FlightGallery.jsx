@@ -1,11 +1,11 @@
 import React from "react";
 import SectionHeader from "./SectionHeader";
 import ImageCard from "./ImageCard";
-import flight1Img from "../../../assets/transportation/flightOne.jpg";
-import flight2Img from "../../../assets/transportation/flightTwo.jpg";
-import flight3Img from "../../../assets/transportation/flightThree.jpg";
-import flight4Img from "../../../assets/transportation/flightFour.jpg";
-import flight5Img from "../../../assets/transportation/flightFive.jpg";
+import flight1Img from "../../../assets/transportation/flightOne.webp";
+import flight2Img from "../../../assets/transportation/flightTwo.webp";
+import flight3Img from "../../../assets/transportation/flightThree.webp";
+import flight4Img from "../../../assets/transportation/flightFour.webp";
+import flight5Img from "../../../assets/transportation/flightFive.webp";
 
 const FlightGallery = () => {
   return (

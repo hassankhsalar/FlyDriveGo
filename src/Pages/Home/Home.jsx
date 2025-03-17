@@ -1,6 +1,6 @@
 import React from "react";
 import HeroSection from "./hero/components/HeroSection";
-
+import Chatbot from "../../components/Chatbot/Chatbot";
 import TrustedPartners from "./TrustedPartners";
 import PopularEvents from "./PopularEvents";
 import PopularEvents2 from "./PopularEvents2";
@@ -41,6 +41,7 @@ const Home = () => {
       </div>
       
     </section>
+
   );
 };
 
