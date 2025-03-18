@@ -6,7 +6,7 @@ import TourPackages from "../Pages/TourPackages/TourPackages";
 import Transportation from "../Pages/Transportation/Transportation";
 import ErrorPage from "../components/ErrorElements/ErrorPage";
 import Login from "../Pages/Authentication/Login";
-import Register from "../Pages/Authentication/Register";
+import TourDetails from "../Pages/TourDetails/TourDetails";
 
 export const router = createBrowserRouter([
   {
@@ -26,6 +26,12 @@ export const router = createBrowserRouter([
         path: "tour-pack",
         element: <TourPackages />,
       },
+      {
+        path:"/tour-details/:title",
+        element:<TourDetails/>,
+        
+
+      }
     ],
   },
   {

@@ -25,5 +25,6 @@ export default {
     themes: ["light", "dark"],
   },
   plugins: [require("tailwindcss-animate"),
+    require("tailwindcss-animate"),
   ],
 };
