@@ -7,7 +7,7 @@ const Transport = () => {
 const [activeTab, setActiveTab] = useState(1);
 
   return (
-    <div className="mt-20">
+    <div className="mt-20 w-11/12 mx-auto">
       <div className="flex flex-col gap-8 pb-20 max-w-[768px] mx-auto text-center">
         <p className="font-poppins text-base font-medium text-center">
           Transport
@@ -21,7 +21,7 @@ const [activeTab, setActiveTab] = useState(1);
           hassle-free transport options tailored to your needs.
         </p>
       </div>
-      <div className="p-8 mb-4 flex flex-col items-center gap-5 justify-center">
+      <div className="p-8 mb-4 flex flex-col items-center gap-5 justify-center border-2 border-CharcoleDark">
             {/* Tab Navigation */}
             <ul className="flex items-center">
                 <li
