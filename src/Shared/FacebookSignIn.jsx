@@ -1,13 +1,13 @@
 import React from "react";
 
 import toast from "react-hot-toast";
-import { FcGoogle } from "react-icons/fc";
+import { FaFacebookF } from "react-icons/fa";
 import useAuth from "../Hooks/useAuth";
 
-const GoggleSignIn = () => {
-  const { signInWithGoggle } = useAuth();
-  const handleGoogleSignIn = () => {
-    signInWithGoggle()
+const FacebookSignIn = () => {
+  const {} = useAuth();
+  const handleFacebookSignIn = () => {
+    signInWithFacebook()
       .then((res) => {
         toast.success("Sign In Successfully");
       })
@@ -18,13 +18,13 @@ const GoggleSignIn = () => {
   return (
     <div className="flex items-center justify-center pb-1">
       <button
-        onClick={handleGoogleSignIn}
-        className="bg-black rounded-full p-2 text-xl"
+        onClick={handleFacebookSignIn}
+        className="bg-[#1877F2] rounded-full p-2 text-xl"
       >
-        <FcGoogle color="white"></FcGoogle>
+        <FaFacebookF color="white" />
       </button>
     </div>
   );
 };
 
-export default GoggleSignIn;
+export default FacebookSignIn;
