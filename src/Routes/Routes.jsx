@@ -9,12 +9,13 @@ import Login from "../Pages/Authentication/Login";
 import TourDetails from "../Pages/TourDetails/TourDetails";
 import Register from "../Pages/Authentication/Register";
 import TourBooking from "../Pages/TourBooking/TourBooking";
+import AddProducts from "../Pages/SellerActivities/AddProducts";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
-    errorElement: <ErrorPage />,
+   // errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -37,8 +38,13 @@ export const router = createBrowserRouter([
       {
         path:"tour-booking",
         element:<TourBooking/>
-      }
-     
+      },
+       //======-----SELLER ROUTES ----================
+      {
+        path:"/add-products",
+        element:<AddProducts />
+      },
+
     ],
   },
   {
