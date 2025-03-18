@@ -6,6 +6,7 @@ import TourPackages from "../Pages/TourPackages/TourPackages";
 import Transportation from "../Pages/Transportation/Transportation";
 import ErrorPage from "../components/ErrorElements/ErrorPage";
 import Login from "../Pages/Authentication/Login";
+import Register from "../Pages/Authentication/Register";
 
 export const router = createBrowserRouter([
   {
