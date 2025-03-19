@@ -31,8 +31,6 @@ export const router = createBrowserRouter([
       {
         path:"/tour-details/:title",
         element:<TourDetails/>,
-        
-
       },
       {
         path:"tour-booking",
