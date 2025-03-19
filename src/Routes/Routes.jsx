@@ -1,7 +1,6 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import MainLayout from "../Layout/MainLayout";
 import Home from "../Pages/Home/Home";
-
 import TourPackages from "../Pages/TourPackages/TourPackages";
 import Transportation from "../Pages/Transportation/Transportation";
 import ErrorPage from "../components/ErrorElements/ErrorPage";
@@ -29,23 +28,21 @@ export const router = createBrowserRouter([
         element: <TourPackages />,
       },
       {
-        path:"/tour-details/:title",
-        element:<TourDetails/>,
-        
-
+        path: "/tour-details/:title",
+        element: <TourDetails />,
       },
       {
-        path:"tour-booking",
-        element:<TourBooking/>
-      }
+        path: "tour-booking",
+        element: <TourBooking />,
+      },
     ],
   },
   {
     path: "/login",
-    element: <Login/>,
+    element: <Login />,
   },
   {
     path: "/register",
-    element: <Register/>,
+    element: <Register />,
   },
 ]);
