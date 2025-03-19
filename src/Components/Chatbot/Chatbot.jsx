@@ -69,7 +69,7 @@ const Chatbot = () => {
   };
 
   return (
-    <div className="relative font-red-rose">
+    <div className="relative font-red-rose z-30">
       <motion.button
         variants={buttonVariants}
         animate="float"

@@ -8,6 +8,7 @@ import Login from "../Pages/Authentication/Login";
 import Register from "../Pages/Authentication/Register";
 import TourDetails from "../Pages/TourDetails/TourDetails";
 import TourBooking from "../Pages/TourBooking/TourBooking";
+import About from "../Pages/About/About";
 
 export const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
+      },
+      {
+        path: "/about",
+        element: <About></About>,
       },
       {
         path: "/transportation",

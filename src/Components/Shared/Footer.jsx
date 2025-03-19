@@ -35,16 +35,15 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="font-semibold text-gray-800">Location:</h3>
-            <p className="text-gray-600 mt-2">Dhaka, Bangladesh</p>
-          </div>
-
-          <div className="flex space-x-4 text-primary text-xl mt-4">
-            <FaFacebookF />
-            <FaTwitter />
-            <FaInstagram />
-            <FaLinkedinIn />
-            <FaGoogle />
+            <h3 className="font-semibold text-gray-800">Location</h3>
+            <p className="text-gray-600  mt-2 space-y-1">Dhaka, Bangladesh</p>
+            <div className="flex space-x-4 text-primary mt-2">
+              <FaFacebookF />
+              <FaTwitter />
+              <FaInstagram />
+              <FaLinkedinIn />
+              <FaGoogle />
+            </div>
           </div>
         </div>
       </div>
