@@ -8,7 +8,6 @@ import Features from "./Features";
 import Ecommerce from "./Ecommerce";
 import Transport from "./Transport";
 
-
 const Home = () => {
   return (
     <section>
@@ -39,9 +38,7 @@ const Home = () => {
       <div>
         <Transport></Transport>
       </div>
-      
     </section>
-
   );
 };
 
