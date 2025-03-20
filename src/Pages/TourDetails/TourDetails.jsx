@@ -26,7 +26,7 @@ const TourDetails = () => {
     if (!tour) return <p className="text-center text-lg font-semibold mt-10">Loading tour details...</p>;
 
     return (
-        <div className="w-full mx-auto bg-SmokeWhite font-red-rose">
+        <div className="w-11/12 mx-auto bg-SmokeWhite font-red-rose">
             {/* Hero Section */}
             <div className="relative">
                 <img
