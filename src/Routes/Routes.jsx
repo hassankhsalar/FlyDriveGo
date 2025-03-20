@@ -17,7 +17,7 @@ export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
-   // errorElement: <ErrorPage />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -42,6 +42,15 @@ export const router = createBrowserRouter([
       {
         path: "tour-booking",
         element: <TourBooking />,
+      },
+      //===============----------- SELLER ROutes ----============
+      {
+        path: "/add-products",
+        element: <AddProducts />,
+      },
+      {
+        path: "/seller-productlist/:email",
+        element: <SellerProductList />,
       },
     ],
   },
