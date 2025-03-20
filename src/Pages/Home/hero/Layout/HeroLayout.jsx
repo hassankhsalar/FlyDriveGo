@@ -47,7 +47,11 @@ const HeroLayout = ({
                   {avatars.map((src, index) => (
                     <div className="avatar" key={index}>
                       <div className="w-8 h-8 md:w-12 md:h-12">
-                        <img src={src} alt={`User Avatar ${index + 1}`}  className="rounded-full"/>
+                        <img
+                          src={src}
+                          alt={`User Avatar ${index + 1}`}
+                          className="rounded-full"
+                        />
                       </div>
                     </div>
                   ))}

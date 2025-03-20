@@ -9,6 +9,10 @@ import Register from "../Pages/Authentication/Register";
 import TourDetails from "../Pages/TourDetails/TourDetails";
 import TourBooking from "../Pages/TourBooking/TourBooking";
 import About from "../Pages/About/About";
+import Careers from "../Pages/Careers/Careers";
+import JobDetails from "../Pages/Careers/JobDetails";
+import JobForm from "../Pages/Careers/JobForm";
+import Confirmation from "../Pages/Careers/Confirmation";
 
 export const router = createBrowserRouter([
   {
@@ -39,6 +43,22 @@ export const router = createBrowserRouter([
       {
         path: "tour-booking",
         element: <TourBooking />,
+      },
+      {
+        path: "careers",
+        element: <Careers />,
+      },
+      {
+        path: "careers/job/:jobId",
+        element: <JobDetails />,
+      },
+      {
+        path: "careers/apply/:jobId",
+        element: <JobForm />,
+      },
+      {
+        path: "careers/confirmation",
+        element: <Confirmation />,
       },
     ],
   },
