@@ -11,6 +11,7 @@ import TourBooking from "../Pages/TourBooking/TourBooking";
 import AddProducts from "../Pages/SellerActivities/AddProducts";
 import SellerProductList from "../Pages/SellerActivities/SellerProductList";
 
+import About from "../Pages/About/About";
 
 export const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ export const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/about",
+        element: <About></About>,
       },
       {
         path: "/transportation",
@@ -35,17 +40,8 @@ export const router = createBrowserRouter([
         element: <TourDetails />,
       },
       {
-        path: "/tour-booking",
+        path: "tour-booking",
         element: <TourBooking />,
-      },
-      //======-----SELLER ROUTES ----================
-      {
-        path: "/add-products",
-        element: <AddProducts />,
-      },
-      {
-        path: "/seller-productlist/:email",
-        element: <SellerProductList />,
       },
     ],
   },
