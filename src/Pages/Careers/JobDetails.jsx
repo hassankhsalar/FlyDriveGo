@@ -11,6 +11,7 @@ import {
   Send,
   ArrowRight,
 } from "lucide-react";
+import Loader from "../../components/ui/Loader";
 
 const JobDetails = () => {
   const { jobId } = useParams();
@@ -54,7 +55,7 @@ const JobDetails = () => {
   if (loading) {
     return (
       <div className="min-h-screen bg-gradient-to-b from-SmokeWhite to-background flex items-center justify-center">
-        <p className="text-xl font-poppins">Loading job details...</p>
+        <Loader />
       </div>
     );
   }

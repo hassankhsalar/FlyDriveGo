@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, Briefcase } from "lucide-react";
+import Loader from "../../../components/ui/Loader";
 
 const JobList = () => {
   const [jobs, setJobs] = useState([]);
@@ -38,7 +39,7 @@ const JobList = () => {
   };
 
   if (loading) {
-    return <div className="text-center py-10">Loading job listings...</div>;
+    return <Loader />;
   }
 
   return (

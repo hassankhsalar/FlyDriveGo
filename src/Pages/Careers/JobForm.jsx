@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { User, Mail, Phone, FileText, CheckCircle, ArrowLeft } from 'lucide-react';
+import Loader from '../../components/ui/Loader';
 
 const JobForm = () => {
     const { jobId } = useParams();
@@ -83,7 +84,7 @@ const JobForm = () => {
         >
             <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 {loading ? (
-                    <p className="text-center font-poppins text-xl">Loading job details...</p>
+                    <Loader />
                 ) : (
                     <>
                         <motion.button
