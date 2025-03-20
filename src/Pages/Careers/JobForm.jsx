@@ -155,6 +155,7 @@ const JobForm = () => {
                                                 type="tel"
                                                 name="phone"
                                                 onChange={handleChange}
+                                                placeholder='Phone Number'
                                                 className="font-poppins w-full pl-12 pr-4 py-3 bg-SmokeWhite rounded-lg border border-SmokeWhite focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
                                             />
                                         </div>
