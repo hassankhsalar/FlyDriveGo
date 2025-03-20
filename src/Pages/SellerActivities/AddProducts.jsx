@@ -3,13 +3,13 @@ import { useState } from "react";
 import { FaImage } from 'react-icons/fa';
 import { AuthContext } from '../../Provider/AuthProvider';
 import Swal from 'sweetalert2';
-import axios from 'axios';
+import useAxiosPublic from '../../Hooks/useAxiosPublic';
 const AddProducts = () => {
     const [image, setImage] = useState(null);
     const [imageUrl, setImageUrl] = useState("");
     const { user } = useContext(AuthContext);
-
-
+    const axiosPublic = useAxiosPublic();
+    console.log(user)
     const uploadImage = async (file) => {
         const apiKey = import.meta.env.VITE_IMGBB_API_KEY;
         const formData = new FormData();
@@ -37,16 +37,19 @@ const AddProducts = () => {
             productName: e.target.productName.value,
             productImage: imageUrl,
             productDetails: e.target.productDetails.value,
-            productPrice: Number(e.target.productPrice.value),
+            productPrice: e.target.productPrice.value,
             sellerName: user?.displayName,
             sellerEmail: user?.email,
 
         }
 
-        axios
-            .post("http://localhost:5000/addProducts", productsData)
+        axiosPublic
+            .post("/addProducts", productsData)
             .then((response) => {
                 Swal.fire("Success", "Product Added successfully!", "success");
+                e.target.reset();
+                setImage(null);
+                setImageUrl("");
             })
             .catch((error) => {
                 Swal.fire("Error", error.response?.data?.message || "Failed to add product", "error");

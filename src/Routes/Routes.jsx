@@ -9,12 +9,14 @@ import Register from "../Pages/Authentication/Register";
 import TourDetails from "../Pages/TourDetails/TourDetails";
 import TourBooking from "../Pages/TourBooking/TourBooking";
 import AddProducts from "../Pages/SellerActivities/AddProducts";
+import SellerProductList from "../Pages/SellerActivities/SellerProductList";
+
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
-    errorElement: <ErrorPage />,
+   // errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
@@ -40,6 +42,10 @@ export const router = createBrowserRouter([
       {
         path: "/add-products",
         element: <AddProducts />,
+      },
+      {
+        path: "/seller-productlist/:email",
+        element: <SellerProductList />,
       },
     ],
   },
