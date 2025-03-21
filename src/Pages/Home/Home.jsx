@@ -7,6 +7,8 @@ import PopularEvents2 from "./PopularEvents2";
 import Features from "./Features";
 import Ecommerce from "./Ecommerce";
 import Transport from "./Transport";
+import Testimonials from "./Testimonials";
+import CTA from "./CTA";
 
 const Home = () => {
   return (
@@ -38,6 +40,16 @@ const Home = () => {
       <div>
         <Transport></Transport>
       </div>
+
+      <div>
+        <Testimonials></Testimonials>
+      </div>
+
+      <div>
+        <CTA></CTA>
+      </div>
+       
+
     </section>
   );
 };
