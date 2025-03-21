@@ -10,7 +10,6 @@ import Transport from "./Transport";
 import Testimonials from "./Testimonials";
 import CTA from "./CTA";
 
-
 const Home = () => {
   return (
     <section>
@@ -49,11 +48,9 @@ const Home = () => {
       <div>
         <CTA></CTA>
       </div>
-      
+       
 
-      
     </section>
-
   );
 };
 

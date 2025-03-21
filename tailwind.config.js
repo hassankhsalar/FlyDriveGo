@@ -18,13 +18,8 @@ export default {
       },
     },
   },
-  plugins: [
-    require("daisyui"),
-  ],
+  plugins: [require("daisyui"), require("tailwindcss-animate")],
   daisyui: {
     themes: ["light", "dark"],
   },
-  plugins: [require("tailwindcss-animate"),
-    require("tailwindcss-animate"),
-  ],
 };

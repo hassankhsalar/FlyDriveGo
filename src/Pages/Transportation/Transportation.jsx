@@ -11,6 +11,7 @@ import carTwoImg from "../../assets/transportation/carTwoImg.webp";
 import carThreeImg from "../../assets/transportation/carThreeImg.webp";
 import busTwoImg from "../../assets/transportation/busTwoImg.webp";
 import FlightGallery from "./components/FlightGallery";
+import MapComponent from "../../components/Transportation/components/MapComponent";
 
 const Transportation = () => {
   return (
@@ -99,6 +100,11 @@ const Transportation = () => {
             />
           </div>
           <FlightGallery />
+          {/* Map Section */}
+          <section className="container mx-auto mt-16">
+            <SectionHeader title="Live Map" />
+            <MapComponent />
+          </section>
         </section>
       </div>
     </>
