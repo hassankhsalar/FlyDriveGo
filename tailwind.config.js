@@ -22,9 +22,4 @@ export default {
   daisyui: {
     themes: ["light", "dark"],
   },
-<<<<<<< HEAD
-=======
-  ],
-
->>>>>>> 3c95c01501eb5077dc0d8cdefdd05ae99c811175
 };
