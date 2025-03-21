@@ -5,6 +5,7 @@ import { RouterProvider } from "react-router-dom";
 import { router } from "./Routes/Routes.jsx";
 import { Toaster } from "react-hot-toast";
 import AuthProvider from "./Provider/AuthProvider.jsx";
+import { LoadingProvider } from "./contexts/LoadingContext";
 
 import {
   QueryClient,
@@ -15,10 +16,12 @@ const queryClient = new QueryClient()
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <AuthProvider>
-    <QueryClientProvider client={queryClient}>
-    <RouterProvider router={router} />
-    <Toaster />
-    </QueryClientProvider>
+      <LoadingProvider>
+        <QueryClientProvider client={queryClient}>
+          <RouterProvider router={router} />
+          <Toaster />
+        </QueryClientProvider>
+      </LoadingProvider>
     </AuthProvider>
   </StrictMode>
 );
