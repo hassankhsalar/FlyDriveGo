@@ -163,7 +163,7 @@ const Confirmation = () => {
           </p>
           <a
             href="mailto:careers@flydrivego.com"
-            className="text-primary font-semibold hover:underline"
+            className="text-primary font-semibold hover:underline font-red-rose"
           >
             careers@flydrivego.com
           </a>

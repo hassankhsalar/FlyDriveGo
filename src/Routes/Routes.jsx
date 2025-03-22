@@ -16,6 +16,7 @@ import Careers from "../Pages/Careers/Careers";
 import JobDetails from "../Pages/Careers/JobDetails";
 import JobForm from "../Pages/Careers/JobForm";
 import Confirmation from "../Pages/Careers/Confirmation";
+import AddJobs from "../Pages/Careers/PrivetRoutes/AddJobs";
 
 export const router = createBrowserRouter([
   {
@@ -73,6 +74,11 @@ export const router = createBrowserRouter([
         path: "careers/confirmation",
         element: <Confirmation />,
       },
+      // private routes related to career
+      {
+        path: "careers/add-job",
+        element: <AddJobs />,
+      }
     ],
   },
   {
