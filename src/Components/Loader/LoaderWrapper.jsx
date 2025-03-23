@@ -8,10 +8,10 @@ const LoaderWrapper = ({ children }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    });
+    }, 1000);
 
     return () => clearTimeout(timer);
-  }, [setIsLoading]);
+  }, []);
 
   if (isLoading) {
     return <Loader />;
