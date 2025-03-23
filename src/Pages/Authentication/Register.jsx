@@ -5,6 +5,9 @@ import toast from "react-hot-toast";
 import { AuthContext } from "../../Provider/AuthProvider";
 import GoggleSignIn from "../../Shared/GoggleSignIn";
 import loginImage from "../../assets/Login/login-bg.jpg";
+import GitHubSignIn from "../../Shared/GitHubSignIn";
+import FacebookSignIn from "../../Shared/FacebookSignIn";
+import { ImArrowUpLeft2 } from "react-icons/im";
 
 const Register = () => {
   const { createUser, updateUserProfile } = useContext(AuthContext);
@@ -41,7 +44,7 @@ const Register = () => {
 
   return (
     <div
-      className="flex items-center justify-center min-h-screen bg-cover bg-center relative"
+      className="flex items-center justify-center min-h-screen bg-cover bg-center relative font-poppins"
       style={{
         backgroundImage: `url(${loginImage})`,
         backgroundSize: "cover",
@@ -49,6 +52,11 @@ const Register = () => {
       }}
     >
       <div className="bg-white/10 backdrop-blur-lg border border-white/30 rounded-lg p-8 w-96 text-white text-center shadow-lg">
+        <Link to={"/"}>
+          <h3 className="text-white text-2xl font-bold">
+            <ImArrowUpLeft2 />
+          </h3>
+        </Link>
         <h2 className="text-2xl font-bold mb-4">Register</h2>
         <form onSubmit={handleRegister} className="flex flex-col gap-4">
           <div className="relative border-b border-gray-300">
@@ -98,18 +106,26 @@ const Register = () => {
           {error && <p className="text-red-400 text-sm">{error}</p>}
           <button
             type="submit"
-            className="bg-gray-100 backdrop-blur-lg text-black font-bold py-2 px-4 rounded hover:bg-gray-200 transition"
+            className="bg-white text-black font-bold py-2 px-4 rounded-full 
+             hover:bg-gray-300 transition duration-300 ease-in-out"
           >
             Register
           </button>
         </form>
+
+        <p className="my-3">Or, Sign Up Using</p>
+        <div className="flex gap-2 mx-auto items-center justify-center">
+          <GoggleSignIn />
+          <GitHubSignIn />
+          <FacebookSignIn />
+        </div>
+
         <p className="mt-4">
-          Already have an account?
-          <Link to="/login" className="text-blue-300 hover:underline">
+          Already have an account ?
+          <Link to="/login" className="text-blue-300 hover:underline pl-1">
             Login
           </Link>
         </p>
-        <GoggleSignIn />
       </div>
     </div>
   );

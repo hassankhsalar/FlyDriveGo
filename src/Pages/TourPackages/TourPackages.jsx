@@ -7,6 +7,7 @@ import Ecommerce from './Ecommerce';
 const TourPackages = () => {
     const [tourData, setTourData] = useState([]);
     const [loading, setLoading] = useState(true);
+
     useEffect(() => {
         fetch("/tourPackages.json")
             .then((res) => res.json())
@@ -15,32 +16,41 @@ const TourPackages = () => {
                 setLoading(false);
             })
             .catch((error) => console.log("Error fetching data:", error));
-    }, [])
-    console.log(tourData);
-    if (loading) return <p>Loading tour packages...</p>;
+    }, []);
+
+    if (loading) {
+        return (
+            <div className="flex justify-center items-center h-screen">
+                <p className="text-lg font-semibold text-gray-600">Loading tour packages...</p>
+            </div>
+        );
+    }
 
     return (
-        <div  className='w-11/12 mx-auto bg-SmokeWhite font-red-rose'>
-            {/* hero section */}
+        <div className="w-11/12 mx-auto bg-SmokeWhite font-red-rose">
+            {/* Hero Section */}
             <div>
                 <HeroSection />
             </div>
-            {/* card section */}
-           <div>
-             <h2 style={{ color: '#4EDAE4' }} className='font-extrabold text-3xl text-center my-10'>
-                Upcoming Tour Events
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 mt-5 p-4">
-                {tourData.map((tour, index) => (
-                    
-                    <Link key={index} to={`/tour-details/${tour.title}`}>
-                    <Cards  tour={tour} />
-                    </Link>
-                ))}
+
+            {/* Card Section */}
+            <div className="my-10">
+                <h2 className="font-extrabold text-3xl text-center mb-10" style={{ color: '#4EDAE4' }}>
+                    Upcoming Tour Events
+                </h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-4">
+                    {tourData.map((tour, index) => (
+                        <Link key={index} to={`/tour-details/${tour.title}`}>
+                            <Cards tour={tour} />
+                        </Link>
+                    ))}
+                </div>
             </div>
-           </div>
-           {/* Ecommerce section */}
-           <Ecommerce/>
+
+            {/* Ecommerce Section */}
+            <div className="my-10 p-2">
+                <Ecommerce />
+            </div>
         </div>
     );
 };

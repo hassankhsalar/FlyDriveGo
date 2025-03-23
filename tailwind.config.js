@@ -6,7 +6,7 @@ export default {
       fontFamily: {
         "red-rose": ['"Red Rose"', "serif"],
         poppins: ["Poppins", "sans-serif"],
-        sans: ["Catamaran", "serif"], // Merged both font settings
+        sans: ["Catamaran", "serif"],
       },
       colors: {
         text: "#03191c",
@@ -18,8 +18,9 @@ export default {
       },
     },
   },
-  plugins: [
-    require("daisyui"),
-    require("tailwindcss-animate"),
-  ],
+
+  plugins: [require("daisyui"), require("tailwindcss-animate")],
+  daisyui: {
+    themes: ["light", "dark"],
+  },
 };

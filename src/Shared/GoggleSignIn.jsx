@@ -1,10 +1,11 @@
-import React, { useContext } from "react";
-import { AuthContext } from "../Provider/AuthProvider";
+import React from "react";
+
 import toast from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
+import useAuth from "../Hooks/useAuth";
 
 const GoggleSignIn = () => {
-  const { signInWithGoggle } = useContext(AuthContext);
+  const { signInWithGoggle } = useAuth();
   const handleGoogleSignIn = () => {
     signInWithGoggle()
       .then((res) => {
@@ -15,16 +16,13 @@ const GoggleSignIn = () => {
       });
   };
   return (
-    <div>
-      <div className="flex items-center justify-center pb-1">
-        <button
-          onClick={handleGoogleSignIn}
-          className="flex text-center items-center btn text-xl  rounded-lg w-full bg-white border-2  text-[#023E8A]"
-        >
-          <FcGoogle></FcGoogle>
-          Continue With Google
-        </button>
-      </div>
+    <div className="flex items-center justify-center pb-1">
+      <button
+        onClick={handleGoogleSignIn}
+        className="bg-black rounded-full p-2 text-xl"
+      >
+        <FcGoogle color="white"></FcGoogle>
+      </button>
     </div>
   );
 };
