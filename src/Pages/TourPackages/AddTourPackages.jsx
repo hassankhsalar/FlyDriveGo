@@ -18,6 +18,7 @@ export default function AddTourPackage() {
     overview: "",
     country: "",
     city: "",
+    country_history: "",
     map: "",
     duration: "",
     available_dates: "",
@@ -36,7 +37,7 @@ export default function AddTourPackage() {
   });
 
   const [itinerary, setItinerary] = useState([
-    { day: 1, title: "", description: "", photo: "" },
+    { day: 1, title: "", description: "" },
   ]);
 
   const handleChange = (e) => {
@@ -79,18 +80,30 @@ export default function AddTourPackage() {
       if (data.success) {
         const uploadedUrl = data.data.url;
 
-        if (type === "main") {
+        if (type === "bannerImg") {
           setImageUrl(uploadedUrl);
-          setFormData((prev) => ({ ...prev, image: uploadedUrl }));
+          setFormData((prev) => ({ ...prev, banner_img: uploadedUrl }));
         } else if (type === "hotelPhotos") {
           setHotelImageUrl(uploadedUrl);
           setFormData((prev) => ({ ...prev, photos: uploadedUrl }));
-        } else if (type === "itineraryPhoto") {
+        } else if (type === "IMG1") {
           setActivityImageUrl(uploadedUrl);
-          setFormData((prev) => ({ ...prev, photo: uploadedUrl }));
-        } else if (type === "activity") {
+          setFormData((prev) => ({ ...prev, IMG1: uploadedUrl }));
+        } else if (type === "IMG2") {
           setActivityImageUrl(uploadedUrl);
-          setFormData((prev) => ({ ...prev, activity_photo: uploadedUrl }));
+          setFormData((prev) => ({ ...prev, IMG2: uploadedUrl }));
+        } else if (type === "IMG3") {
+          setActivityImageUrl(uploadedUrl);
+          setFormData((prev) => ({ ...prev, IMG3: uploadedUrl }));
+        } else if (type === "IMG4") {
+          setActivityImageUrl(uploadedUrl);
+          setFormData((prev) => ({ ...prev, IMG4: uploadedUrl }));
+        } else if (type === "IMG5") {
+          setActivityImageUrl(uploadedUrl);
+          setFormData((prev) => ({ ...prev, IMG5: uploadedUrl }));
+        } else if (type === "IMG6") {
+          setActivityImageUrl(uploadedUrl);
+          setFormData((prev) => ({ ...prev, IMG6: uploadedUrl }));
         }
 
         console.log("Image uploaded:", uploadedUrl);
@@ -113,7 +126,8 @@ export default function AddTourPackage() {
         city: formData.city,
         map: formData.map,
       },
-      duration: `${durationDays} Days / ${durationNights} Nights`,
+      country_history: formData.country_history,
+      duration: `${durationDays} Days , ${durationNights} Nights`,
       available_dates: selectedDates.map((date) => date.format("YYYY-MM-DD")),
       price: {
         currency: "USD",
@@ -123,7 +137,13 @@ export default function AddTourPackage() {
           discount_percent: Number(formData.discount_percent),
         },
       },
-      image: formData.image,
+      banner_img: formData.banner_img,
+      IMG1: formData.IMG1,
+      IMG2: formData.IMG2,
+      IMG3: formData.IMG3,
+      IMG4: formData.IMG4,
+      IMG5: formData.IMG5,
+      IMG6: formData.IMG6,
       itinerary: itinerary,
       inclusions: formData.inclusions.split(",").map((item) => item.trim()),
       exclusions: formData.exclusions.split(",").map((item) => item.trim()),
@@ -133,12 +153,6 @@ export default function AddTourPackage() {
         room_type: formData.room_type,
         photos: [formData.photos],
       },
-      activities: [
-        {
-          name: formData.activity_name,
-          photo: formData.activity_photo,
-        },
-      ],
     };
 
     console.log("Submitted Data:", finalData);
@@ -155,12 +169,12 @@ export default function AddTourPackage() {
   };
 
   return (
-    <div className="p-6 rounded-2xl mt-6 w-10/12 mx-auto my-20">
+    <div className="p-6 rounded-2xl mt-6 w-10/12 mx-auto my-20 font-poppins">
       <h1 className="text-primary text-3xl text-center font-semibold my-10">
         Add Tour Package
       </h1>
       <form onSubmit={handleSubmit} className="grid gap-4 shadow-md p-10">
-        <p className="text-xl">Tour Image</p>
+        <p className="text-xl">Banner Image</p>
         <div className="flex items-center">
           <p className="text-2xl rounded-full bg-gray-200 p-2 text-gray-600  mr-2 items-center ">
             <FaImage />
@@ -168,10 +182,110 @@ export default function AddTourPackage() {
           <input
             type="file"
             accept="image/*"
-            onChange={(e) => handleImageUpload(e, "main")}
+            onChange={(e) => handleImageUpload(e, "bannerImg")}
             className="file-input file-input-ghost border-gray-100"
             required
           />
+        </div>
+        {/* Gallery Image */}
+        <span className="text-xl">Gallery Image</span>
+        <div className="grid grid-cols-3 gap-5">
+          {/* image1 */}
+          <div>
+            <p className="text-sm mb-1">Image 1</p>
+            <div className="flex items-center">
+              <p className="text-2xl rounded-full bg-gray-200 p-2 text-gray-600  mr-2 items-center ">
+                <FaImage />
+              </p>
+              <input
+                type="file"
+                accept="image/*"
+                onChange={(e) => handleImageUpload(e, "IMG1")}
+                className="file-input file-input-ghost border-gray-100"
+                required
+              />
+            </div>
+          </div>
+          {/* image2 */}
+          <div>
+            <p className="text-sm mb-1">Image 2</p>
+            <div className="flex items-center">
+              <p className="text-2xl rounded-full bg-gray-200 p-2 text-gray-600  mr-2 items-center ">
+                <FaImage />
+              </p>
+              <input
+                type="file"
+                accept="image/*"
+                onChange={(e) => handleImageUpload(e, "IMG2")}
+                className="file-input file-input-ghost border-gray-100"
+                required
+              />
+            </div>
+          </div>
+          {/* image3 */}
+          <div>
+            <p className="text-sm mb-1">Image 3</p>
+            <div className="flex items-center">
+              <p className="text-2xl rounded-full bg-gray-200 p-2 text-gray-600  mr-2 items-center ">
+                <FaImage />
+              </p>
+              <input
+                type="file"
+                accept="image/*"
+                onChange={(e) => handleImageUpload(e, "IMG3")}
+                className="file-input file-input-ghost border-gray-100"
+                required
+              />
+            </div>
+          </div>
+          {/* image4 */}
+          <div>
+            <p className="text-sm mb-1">Image 4</p>
+            <div className="flex items-center">
+              <p className="text-2xl rounded-full bg-gray-200 p-2 text-gray-600  mr-2 items-center ">
+                <FaImage />
+              </p>
+              <input
+                type="file"
+                accept="image/*"
+                onChange={(e) => handleImageUpload(e, "IMG4")}
+                className="file-input file-input-ghost border-gray-100"
+                required
+              />
+            </div>
+          </div>
+          {/* image5 */}
+          <div>
+            <p className="text-sm mb-1">Image 5</p>
+            <div className="flex items-center">
+              <p className="text-2xl rounded-full bg-gray-200 p-2 text-gray-600  mr-2 items-center ">
+                <FaImage />
+              </p>
+              <input
+                type="file"
+                accept="image/*"
+                onChange={(e) => handleImageUpload(e, "IMG5")}
+                className="file-input file-input-ghost border-gray-100"
+                required
+              />
+            </div>
+          </div>
+          {/* image6 */}
+          <div>
+            <p className="text-sm mb-1">Image 6</p>
+            <div className="flex items-center">
+              <p className="text-2xl rounded-full bg-gray-200 p-2 text-gray-600  mr-2 items-center ">
+                <FaImage />
+              </p>
+              <input
+                type="file"
+                accept="image/*"
+                onChange={(e) => handleImageUpload(e, "IMG6")}
+                className="file-input file-input-ghost border-gray-100"
+                required
+              />
+            </div>
+          </div>
         </div>
         <input
           name="title"
@@ -187,6 +301,7 @@ export default function AddTourPackage() {
           required
           className="border p-2 rounded"
         />
+        <span className="text-xl">Destination</span>
         <div className="flex gap-5 justify-between">
           <input
             name="country"
@@ -209,6 +324,14 @@ export default function AddTourPackage() {
             className="border p-2 rounded w-full"
           />
         </div>
+        <textarea
+          name="country_history"
+          placeholder="Country History"
+          onChange={handleChange}
+          required
+          className="border p-2 rounded"
+        />
+        <span className="text-xl">Duration</span>
         <div className="flex gap-5 justify-between">
           <div className="w-full">
             <select
@@ -225,6 +348,7 @@ export default function AddTourPackage() {
               ))}
             </select>
           </div>
+
           <div className="w-full">
             <select
               value={durationNights}
@@ -240,6 +364,7 @@ export default function AddTourPackage() {
               ))}
             </select>
           </div>
+
           <div className=" w-full">
             <DatePicker
               multiple
@@ -251,7 +376,7 @@ export default function AddTourPackage() {
             />
           </div>
         </div>
-
+        <span className="text-xl">Price</span>
         <div className="flex justify-between gap-5">
           <input
             name="per_person"
@@ -349,13 +474,6 @@ export default function AddTourPackage() {
               onChange={(e) => handleItineraryChange(index, e)}
               className="border p-2 rounded w-full mb-2"
             />
-            <input
-              type="file"
-              accept="image/*"
-              onChange={(e) => handleImageUpload(e, "itineraryPhoto")}
-              className="file-input file-input-ghost border-gray-200"
-              required
-            />
           </div>
         ))}
         <button
@@ -365,21 +483,6 @@ export default function AddTourPackage() {
         >
           Add Day
         </button>
-
-        <h2 className="text-xl font-semibold mt-4 mb-2">Activities</h2>
-        <input
-          name="activity_name"
-          placeholder="Activity Name"
-          onChange={handleChange}
-          className="border p-2 rounded"
-        />
-        <input
-          type="file"
-          accept="image/*"
-          onChange={(e) => handleImageUpload(e, "activity")}
-          className="file-input file-input-ghost border-gray-100"
-          required
-        />
 
         <div className="flex space-x-3 mt-8 justify-end">
           <button
