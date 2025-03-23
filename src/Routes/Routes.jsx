@@ -10,7 +10,6 @@ import TourDetails from "../Pages/TourDetails/TourDetails";
 import TourBooking from "../Pages/TourBooking/TourBooking";
 import AddProducts from "../Pages/SellerActivities/AddProducts";
 import SellerProductList from "../Pages/SellerActivities/SellerProductList";
-
 import About from "../Pages/About/About";
 import Careers from "../Pages/Careers/Careers";
 import JobDetails from "../Pages/Careers/JobDetails";
@@ -20,6 +19,7 @@ import AddJobs from "../Pages/Careers/PrivetRoutes/AddJobs";
 import EditJobsOptions from "../Pages/Careers/PrivetRoutes/EditJobsOptions";
 import EditJobForm from "../Pages/Careers/PrivetRoutes/EditJobForm";
 import ManageJobApplications from "../Pages/Careers/PrivetRoutes/ManageJobApplications";
+import AddTourPackage from "../Pages/TourPackages/AddTourPackages";
 
 export const router = createBrowserRouter([
   {
@@ -93,7 +93,12 @@ export const router = createBrowserRouter([
       {
         path: "careers/applications",
         element: <ManageJobApplications />,
-      }
+      },
+      // Tour Package Add
+      {
+        path: "addTourPackage",
+        element: <AddTourPackage />,
+      },
     ],
   },
   {
