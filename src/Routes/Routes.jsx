@@ -17,6 +17,9 @@ import JobDetails from "../Pages/Careers/JobDetails";
 import JobForm from "../Pages/Careers/JobForm";
 import Confirmation from "../Pages/Careers/Confirmation";
 import AddJobs from "../Pages/Careers/PrivetRoutes/AddJobs";
+import EditJobsOptions from "../Pages/Careers/PrivetRoutes/EditJobsOptions";
+import EditJobForm from "../Pages/Careers/PrivetRoutes/EditJobForm";
+import ManageJobApplications from "../Pages/Careers/PrivetRoutes/ManageJobApplications";
 
 export const router = createBrowserRouter([
   {
@@ -78,6 +81,18 @@ export const router = createBrowserRouter([
       {
         path: "careers/add-job",
         element: <AddJobs />,
+      },
+      {
+        path: "careers/edit-job",
+        element: <EditJobsOptions />,
+      },
+      {
+        path: "careers/edit-job/:jobId",
+        element: <EditJobForm />,
+      },
+      {
+        path: "careers/applications",
+        element: <ManageJobApplications />,
       }
     ],
   },

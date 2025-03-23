@@ -1,17 +1,20 @@
-import { useState, useMemo } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { motion } from 'framer-motion';
-import { Briefcase, MapPin, DollarSign, FileText, Plus, X } from 'lucide-react';
+import { Briefcase, MapPin, DollarSign, FileText, Plus, X, ArrowLeft } from 'lucide-react';
 import { TextField, Select, MenuItem, InputLabel, FormControl, FormHelperText } from '@mui/material';
-import { useNavigate } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import { toast } from 'react-hot-toast';
 import useAxiosPublic from '../../../Hooks/useAxiosPublic';
+import Loader from '../../../components/ui/Loader';
 
-const AddJobs = () => {
-    const { control, register, handleSubmit, formState: { errors }, reset } = useForm();
+const EditJobForm = () => {
+    const { jobId } = useParams();
+    const { control, register, handleSubmit, formState: { errors }, reset, setValue } = useForm();
     const [requirements, setRequirements] = useState(['']);
     const [benefits, setBenefits] = useState(['']);
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const [loading, setLoading] = useState(true);
     const axiosPublic = useAxiosPublic();
     const navigate = useNavigate();
 
@@ -29,6 +32,46 @@ const AddJobs = () => {
         'Contract',
         'Internship'
     ], []);
+
+    // Fetch job data
+    useEffect(() => {
+        const fetchJobData = async () => {
+            try {
+                setLoading(true);
+                const response = await axiosPublic.get(`/jobs/${jobId}`);
+                const job = response.data;
+                
+                if (job) {
+                    // Set form values
+                    setValue('title', job.title);
+                    setValue('department', job.department);
+                    setValue('location', job.location);
+                    setValue('type', job.type);
+                    setValue('salary', job.salary);
+                    setValue('description', job.description);
+                    
+                    // Set requirements and benefits
+                    if (Array.isArray(job.requirements)) {
+                        setRequirements(job.requirements);
+                    }
+                    
+                    if (Array.isArray(job.benefits)) {
+                        setBenefits(job.benefits);
+                    }
+                } else {
+                    toast.error('Job not found');
+                    navigate('/careers/edit-job');
+                }
+            } catch (error) {
+                console.error('Error fetching job:', error);
+                toast.error('Failed to load job data');
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchJobData();
+    }, [jobId, axiosPublic, setValue, navigate]);
 
     const onSubmit = async (data) => {
         // Filter out empty entries
@@ -48,16 +91,12 @@ const AddJobs = () => {
     
         try {
             setIsSubmitting(true);
-            const response = await axiosPublic.post('/jobs', jobData);
-            console.log('Job posted successfully:', response.data);
-            toast.success('Job posted successfully!');
-            reset();
-            setRequirements(['']);
-            setBenefits(['']);
-            navigate('/careers');
+            await axiosPublic.patch(`/jobs/${jobId}`, jobData);
+            toast.success('Job updated successfully!');
+            navigate('/careers/edit-job');
         } catch (error) {
-            console.error('Error posting job:', error);
-            toast.error('Failed to post job. Please try again.');
+            console.error('Error updating job:', error);
+            toast.error('Failed to update job. Please try again.');
         } finally {
             setIsSubmitting(false);
         }
@@ -95,6 +134,14 @@ const AddJobs = () => {
         setBenefits(prev => prev.filter((_, i) => i !== index));
     };
 
+    if (loading) {
+        return (
+            <div className="min-h-screen flex items-center justify-center">
+                <Loader />
+            </div>
+        );
+    }
+
     return (
         <motion.div
             initial={{ opacity: 0 }}
@@ -102,9 +149,20 @@ const AddJobs = () => {
             className="min-h-screen bg-SmokeWhite p-8"
         >
             <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-8">
-                <h1 className="text-3xl font-red-rose font-bold text-CharcoleDark mb-8">
-                    Post New Job
-                </h1>
+                <div className="flex items-center justify-between mb-8">
+                    <h1 className="text-3xl font-red-rose font-bold text-CharcoleDark">
+                        Edit Job
+                    </h1>
+                    <motion.button
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
+                        onClick={() => navigate('/careers/edit-job')}
+                        className="flex items-center gap-2 text-CharcoleDark/70 hover:text-CharcoleDark font-red-rose"
+                    >
+                        <ArrowLeft className="w-5 h-5" />
+                        Back to Jobs
+                    </motion.button>
+                </div>
 
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                     {/* Job Title */}
@@ -133,7 +191,6 @@ const AddJobs = () => {
                                 <Controller
                                     name="department"
                                     control={control}
-                                    defaultValue=""
                                     rules={{ required: "Department is required" }}
                                     render={({ field }) => (
                                         <Select
@@ -176,7 +233,6 @@ const AddJobs = () => {
                                 <Controller
                                     name="type"
                                     control={control}
-                                    defaultValue=""
                                     rules={{ required: "Job type is required" }}
                                     render={({ field }) => (
                                         <Select
@@ -267,7 +323,7 @@ const AddJobs = () => {
                                 <div className="w-6 h-6 border-4 border-white/30 border-t-white rounded-full" />
                             </motion.div>
                         ) : (
-                            'Post Job'
+                            'Update Job'
                         )}
                     </motion.button>
                 </form>
@@ -324,4 +380,4 @@ const DynamicFieldList = ({ label, icon, items, onAdd, onChange, onRemove }) => 
     </div>
 );
 
-export default AddJobs;
+export default EditJobForm;
