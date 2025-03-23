@@ -21,9 +21,9 @@ const Home = () => {
         <TrustedPartners></TrustedPartners>
       </div>
 
-      <div className="w-11/12 mx-auto">
+      {/* <div className="w-11/12 mx-auto">
         <PopularEvents></PopularEvents>
-      </div>
+      </div> */}
 
       <div className="w-11/12 mx-auto">
         <PopularEvents2></PopularEvents2>
