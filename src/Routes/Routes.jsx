@@ -8,28 +8,36 @@ import Login from "../Pages/Authentication/Login";
 import Register from "../Pages/Authentication/Register";
 import TourDetails from "../Pages/TourDetails/TourDetails";
 import TourBooking from "../Pages/TourBooking/TourBooking";
+import AddProducts from "../Pages/SellerActivities/AddProducts";
+import SellerProductList from "../Pages/SellerActivities/SellerProductList";
+
 import About from "../Pages/About/About";
+import Careers from "../Pages/Careers/Careers";
+import JobDetails from "../Pages/Careers/JobDetails";
+import JobForm from "../Pages/Careers/JobForm";
+import Confirmation from "../Pages/Careers/Confirmation";
+import AddTourPackage from "../Pages/TourPackages/AddTourPackages";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <MainLayout></MainLayout>,
+    element: <MainLayout />,
     errorElement: <ErrorPage />,
     children: [
       {
         path: "/",
-        element: <Home></Home>,
+        element: <Home />,
       },
       {
         path: "/about",
-        element: <About></About>,
+        element: <About />,
       },
       {
         path: "/transportation",
-        element: <Transportation></Transportation>,
+        element: <Transportation />,
       },
       {
-        path: "tour-pack",
+        path: "/tour-pack",
         element: <TourPackages />,
       },
       {
@@ -39,6 +47,37 @@ export const router = createBrowserRouter([
       {
         path: "tour-booking",
         element: <TourBooking />,
+      },
+      //===============----------- SELLER Routes ----============
+      {
+        path: "/add-products",
+        element: <AddProducts />,
+      },
+      {
+        path: "/seller-productlist/:email",
+        element: <SellerProductList />,
+      },
+      //===============----------- CAREER Routes ----============
+      {
+        path: "careers",
+        element: <Careers />,
+      },
+      {
+        path: "careers/job/:jobId",
+        element: <JobDetails />,
+      },
+      {
+        path: "careers/apply/:jobId",
+        element: <JobForm />,
+      },
+      {
+        path: "careers/confirmation",
+        element: <Confirmation />,
+      },
+      // Tour Package Add
+      {
+        path: "addTourPackage",
+        element: <AddTourPackage />,
       },
     ],
   },

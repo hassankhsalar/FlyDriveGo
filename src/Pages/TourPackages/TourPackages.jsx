@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from 'react';
-import HeroSection from '../Home/hero/components/HeroSection';
-import Cards from './components/Cards';
-import { Link } from 'react-router-dom';
-import Ecommerce from './Ecommerce';
+import React, { useEffect, useState } from "react";
+import HeroSection from "../Home/hero/components/HeroSection";
+import Cards from "./components/Cards";
+import { Link } from "react-router-dom";
+import Ecommerce from "./Ecommerce";
 
 const TourPackages = () => {
     const [tourData, setTourData] = useState([]);
