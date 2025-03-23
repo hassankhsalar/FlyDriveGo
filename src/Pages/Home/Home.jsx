@@ -7,7 +7,8 @@ import PopularEvents2 from "./PopularEvents2";
 import Features from "./Features";
 import Ecommerce from "./Ecommerce";
 import Transport from "./Transport";
-
+import Testimonials from "./Testimonials";
+import CTA from "./CTA";
 
 const Home = () => {
   return (
@@ -20,9 +21,9 @@ const Home = () => {
         <TrustedPartners></TrustedPartners>
       </div>
 
-      <div className="w-11/12 mx-auto">
+      {/* <div className="w-11/12 mx-auto">
         <PopularEvents></PopularEvents>
-      </div>
+      </div> */}
 
       <div className="w-11/12 mx-auto">
         <PopularEvents2></PopularEvents2>
@@ -39,9 +40,17 @@ const Home = () => {
       <div>
         <Transport></Transport>
       </div>
-      
-    </section>
 
+      <div>
+        <Testimonials></Testimonials>
+      </div>
+
+      <div>
+        <CTA></CTA>
+      </div>
+       
+
+    </section>
   );
 };
 
