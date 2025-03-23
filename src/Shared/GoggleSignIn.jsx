@@ -3,12 +3,36 @@ import React from "react";
 import toast from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
 import useAuth from "../Hooks/useAuth";
+<<<<<<< HEAD
 
 const GoggleSignIn = () => {
   const { signInWithGoggle } = useAuth();
   const handleGoogleSignIn = () => {
     signInWithGoggle()
       .then((res) => {
+=======
+import useAxiosPublic from "../Hooks/useAxiosPublic";
+import { useLocation, useNavigate } from "react-router-dom";
+
+const GoggleSignIn = () => {
+  const { signInWithGoggle } = useAuth();
+  const axiosPublic = useAxiosPublic();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleGoogleSignIn = () => {
+    signInWithGoggle()
+      .then((res) => {
+        const userInfo = {
+          email: res.user.email,
+          name: res.user.displayName,
+          userType: "user",
+        };
+        axiosPublic.post("/users", userInfo).then((res) => {
+          console.log("user added successfully");
+          navigate(location?.state ? location.state : "/");
+        });
+>>>>>>> development
         toast.success("Sign In Successfully");
       })
       .catch((err) => {

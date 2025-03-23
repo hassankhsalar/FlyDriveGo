@@ -18,7 +18,10 @@ export default {
       },
     },
   },
+<<<<<<< HEAD
 
+=======
+>>>>>>> development
   plugins: [require("daisyui"), require("tailwindcss-animate")],
   daisyui: {
     themes: ["light", "dark"],

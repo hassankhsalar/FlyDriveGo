@@ -1,5 +1,9 @@
 import React, { useContext, useState } from "react";
+<<<<<<< HEAD
 import { Link, useNavigate } from "react-router-dom";
+=======
+import { Link, useLocation, useNavigate } from "react-router-dom";
+>>>>>>> development
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import toast from "react-hot-toast";
 import { AuthContext } from "../../Provider/AuthProvider";
@@ -8,14 +12,25 @@ import loginImage from "../../assets/Login/login-bg.jpg";
 import GitHubSignIn from "../../Shared/GitHubSignIn";
 import FacebookSignIn from "../../Shared/FacebookSignIn";
 import { ImArrowUpLeft2 } from "react-icons/im";
+<<<<<<< HEAD
+=======
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
+>>>>>>> development
 
 const Register = () => {
   const { createUser, updateUserProfile } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(null);
   const navigate = useNavigate();
+<<<<<<< HEAD
 
   const handleRegister = (e) => {
+=======
+  const location = useLocation();
+
+  const handleRegister = (e) => {
+    const axiosPublic = useAxiosPublic();
+>>>>>>> development
     e.preventDefault();
     const form = new FormData(e.target);
     const name = form.get("name");
@@ -33,8 +48,22 @@ const Register = () => {
       .then(() => {
         updateUserProfile({ displayName: name, photoURL });
         e.target.reset();
+<<<<<<< HEAD
         toast.success("Successfully Registered!");
         navigate("/");
+=======
+
+        const userInfo = {
+          name,
+          email,
+          userType: "user",
+        };
+        axiosPublic.post("/users", userInfo).then((res) => {
+          console.log("user added successfully");
+          navigate(location?.state ? location.state : "/");
+        });
+        toast.success("Successfully Registered!");
+>>>>>>> development
       })
       .catch((err) => {
         setError(err.message);
