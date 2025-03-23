@@ -10,7 +10,7 @@ const useProducts = (filters={})=>{
             const res = await axiosPublic.get("/products",  {params:filters});
             return res.data;
         },
-        keepPreviousData:ture,
+        keepPreviousData: true,
     });
     return[products, refetch, isLoading, isError];
 };

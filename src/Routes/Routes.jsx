@@ -8,31 +8,21 @@ import Login from "../Pages/Authentication/Login";
 import Register from "../Pages/Authentication/Register";
 import TourDetails from "../Pages/TourDetails/TourDetails";
 import TourBooking from "../Pages/TourBooking/TourBooking";
-<<<<<<< HEAD
-=======
 import AddProducts from "../Pages/SellerActivities/AddProducts";
 import SellerProductList from "../Pages/SellerActivities/SellerProductList";
 
->>>>>>> development
 import About from "../Pages/About/About";
 import Careers from "../Pages/Careers/Careers";
 import JobDetails from "../Pages/Careers/JobDetails";
 import JobForm from "../Pages/Careers/JobForm";
 import Confirmation from "../Pages/Careers/Confirmation";
-<<<<<<< HEAD
-import EshopHome from "../Pages/Eshop/EshopHome/EshopHome";
-=======
 import AddTourPackage from "../Pages/TourPackages/AddTourPackages";
->>>>>>> development
+import EshopHome from "../Pages/Eshop/EshopHome/EshopHome";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-<<<<<<< HEAD
-    element: <MainLayout></MainLayout>,
-=======
     element: <MainLayout />,
->>>>>>> development
     errorElement: <ErrorPage />,
     children: [
       {
