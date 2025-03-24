@@ -1,5 +1,5 @@
 import React from "react";
-import cta from "/cta.jpg";
+
 
 const CTA = () => {
   return (
