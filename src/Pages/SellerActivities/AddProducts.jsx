@@ -17,19 +17,33 @@ const AddProducts = () => {
         const formData = new FormData();
         formData.append("image", file);
 
-        try {
-            const response = await fetch(`https://api.imgbb.com/1/upload?key=${apiKey}`, {
-                method: "POST",
-                body: formData,
-            });
-
-            const data = await response.json();
-            if (data.success) {
-                setImageUrl(data.data.url);
-            }
-        } catch (error) {
-            console.error("Upload failed:", error);
+    try {
+      const response = await fetch(
+        `https://api.imgbb.com/1/upload?key=${apiKey}`,
+        {
+          method: "POST",
+          body: formData,
         }
+      );
+
+      const data = await response.json();
+      if (data.success) {
+        setImageUrl(data.data.url);
+      }
+    } catch (error) {
+      console.error("Upload failed:", error);
+    }
+  };
+
+  const handleAddProduct = (e) => {
+    e.preventDefault();
+    const productsData = {
+      productName: e.target.productName.value,
+      productImage: imageUrl,
+      productDetails: e.target.productDetails.value,
+      productPrice: e.target.productPrice.value,
+      sellerName: user?.displayName,
+      sellerEmail: user?.email,
     };
 
   
@@ -177,7 +191,9 @@ const AddProducts = () => {
                 </div>
             </form>
         </div>
-    );
+      </form>
+    </div>
+  );
 };
 
 export default AddProducts;

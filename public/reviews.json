@@ -1,0 +1,46 @@
+[
+    {
+      "tourId": 1,
+      "average_rating": 4.7,
+      "total_reviews": 142,
+      "review_categories": {
+        "excellent": 87,
+        "good": 42,
+        "average": 10,
+        "poor": 2,
+        "terrible": 1
+      },
+      "reviews_list": [
+        {
+          "id": 1,
+          "user": {
+            "name": "Sarah Johnson",
+            "location": "London, UK",
+            "avatar": "/avatars/user-1.jpg",
+            "traveler_type": "Couple"
+          },
+          "rating": 5,
+          "title": "Absolutely unforgettable experience!",
+          "review_text": "The 5-day Bali tour exceeded all our expectations...",
+          "date": "2024-03-15",
+          "verified_booking": true,
+          "photos": [
+            "/reviews/bal-1.jpg",
+            "/reviews/bal-2.jpg"
+          ],
+          "helpful_count": 28,
+          "response": {
+            "text": "Thank you Sarah!...",
+            "date": "2024-03-17"
+          }
+        }
+      ],
+      "rating_breakdown": {
+        "staff": 4.8,
+        "cleanliness": 4.5,
+        "facilities": 4.6,
+        "value": 4.3,
+        "location": 4.9
+      }
+    }
+  ]
