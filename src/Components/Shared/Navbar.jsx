@@ -298,7 +298,7 @@ const Navbar = () => {
             </p>
             <p className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] dark:text-[#abc2d3] dark:hover:bg-slate-900/50 text-gray-600 hover:bg-gray-50">
               <FiUser />
-              View Profile
+              <Link to='/dashboard/adminDashboard'>Dashboard</Link>
             </p>
 
             <div className="mt-3 border-t dark:border-slate-700 border-gray-200 pt-[5px]">
