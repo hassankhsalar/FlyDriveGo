@@ -17,36 +17,25 @@ const AddProducts = () => {
         const formData = new FormData();
         formData.append("image", file);
 
-    try {
-      const response = await fetch(
-        `https://api.imgbb.com/1/upload?key=${apiKey}`,
-        {
-          method: "POST",
-          body: formData,
+        try {
+            const response = await fetch(
+                `https://api.imgbb.com/1/upload?key=${apiKey}`,
+                {
+                    method: "POST",
+                    body: formData,
+                }
+            );
+
+            const data = await response.json();
+            if (data.success) {
+                setImageUrl(data.data.url);
+            }
+        } catch (error) {
+            console.error("Upload failed:", error);
+            Swal.fire("Error", "Image upload failed. Please try again.", "error");
         }
-      );
-
-      const data = await response.json();
-      if (data.success) {
-        setImageUrl(data.data.url);
-      }
-    } catch (error) {
-      console.error("Upload failed:", error);
-    }
-  };
-
-  const handleAddProduct = (e) => {
-    e.preventDefault();
-    const productsData = {
-      productName: e.target.productName.value,
-      productImage: imageUrl,
-      productDetails: e.target.productDetails.value,
-      productPrice: e.target.productPrice.value,
-      sellerName: user?.displayName,
-      sellerEmail: user?.email,
     };
 
-  
     const handleAddTag = () => {
         if (tagInput.trim() && !tags.includes(tagInput.trim())) {
             setTags([...tags, tagInput.trim()]);
@@ -54,7 +43,6 @@ const AddProducts = () => {
         }
     };
 
-  
     const handleRemoveTag = (tagToRemove) => {
         setTags(tags.filter((tag) => tag !== tagToRemove));
     };
@@ -92,7 +80,6 @@ const AddProducts = () => {
                 <div className="p-10 shadow-md">
                     <h2 className="text-xl font-bold">Upload Your Product Data</h2>
 
-                  
                     <div className="my-4">
                         <p className="mb-2">Product Photo</p>
                         <div className="flex items-center">
@@ -122,25 +109,21 @@ const AddProducts = () => {
                         )}
                     </div>
 
-                  
                     <div className="my-3">
                         <p className="mb-2">Product Name:</p>
                         <input name="productName" type="text" className="w-full h-10 rounded-sm border-2 p-2" required />
                     </div>
 
-                    
                     <div className="my-3">
                         <p className="mb-2">Product Details:</p>
                         <textarea name="productDetails" className="textarea w-full" placeholder="Add Your Product Details"></textarea>
                     </div>
 
-                    
                     <div className="my-3">
                         <p>Product Price:</p>
                         <input name="productPrice" type="number" className="w-full h-10 rounded-sm border-2 p-2" required />
                     </div>
 
-                   
                     <div className="my-3">
                         <p className="mb-2">Tags:</p>
                         <div className="flex space-x-2">
@@ -156,7 +139,6 @@ const AddProducts = () => {
                             </button>
                         </div>
                         
-                        
                         <div className="mt-2 flex flex-wrap">
                             {tags.map((tag, index) => (
                                 <span key={index} className="m-1 px-3 py-1 bg-gray-200 rounded-lg text-sm">
@@ -169,7 +151,6 @@ const AddProducts = () => {
                         </div>
                     </div>
 
-                    
                     <div className="my-3">
                         <p className="mb-2">Seller Name:</p>
                         <input value={user?.displayName} type="text" className="w-full h-10 rounded-sm border-2 p-2" readOnly />
@@ -179,7 +160,6 @@ const AddProducts = () => {
                         <input value={user?.email} type="text" className="w-full h-10 rounded-sm border-2 p-2" readOnly />
                     </div>
 
-                  
                     <div className="flex space-x-3 mt-8 justify-end">
                         <button type="button" onClick={() => window.history.back()} className="btn btn-outline">
                             Cancel
@@ -191,9 +171,7 @@ const AddProducts = () => {
                 </div>
             </form>
         </div>
-      </form>
-    </div>
-  );
+    );
 };
 
 export default AddProducts;
