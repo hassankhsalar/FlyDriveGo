@@ -125,7 +125,7 @@ const Navbar = () => {
                     </p>
 
                     <button className="text-[#8B5CF6] mt-2 flex items-center gap-[4px] text-[0.9rem]">
-                      <Link to='careers'>Check here</Link>>
+                      <Link to='careers'>Check here</Link>
                       <MdOutlineArrowRightAlt className="text-[1.4rem] group-hover:ml-[5px] transition-all duration-300" />
                     </button>
                   </div>
@@ -245,7 +245,7 @@ const Navbar = () => {
         </li>
         <li className="flex items-center dark:text-[#abc2d3] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer">
           <BiShoppingBag className="text-[1.1rem] group-hover:text-[#3B9DF8] dark:text-[#abc2d3] text-gray-600" />
-          Shop
+          <Link to='eshop'>Shop</Link>
         </li>
         <li className="flex items-center dark:text-[#abc2d3] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer">
           <BiSupport className="text-[1.1rem] group-hover:text-[#3B9DF8] dark:text-[#abc2d3] text-gray-600" />

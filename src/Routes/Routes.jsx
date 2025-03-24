@@ -18,6 +18,8 @@ import JobForm from "../Pages/Careers/JobForm";
 import Confirmation from "../Pages/Careers/Confirmation";
 import AddTourPackage from "../Pages/TourPackages/AddTourPackages";
 import EshopHome from "../Pages/Eshop/EshopHome/EshopHome";
+import DashboardLayout from "../Layout/DashboardLayout";
+import DashboardCharts from "../Pages/Dashboard/AdminDashboard/DashboardCharts";
 
 export const router = createBrowserRouter([
   {
@@ -50,10 +52,7 @@ export const router = createBrowserRouter([
         element: <TourBooking />,
       },
       //===============----------- SELLER Routes ----============
-      {
-        path: "/add-products",
-        element: <AddProducts />,
-      },
+      
       {
         path: "/seller-productlist/:email",
         element: <SellerProductList />,
@@ -76,10 +75,7 @@ export const router = createBrowserRouter([
         element: <Confirmation />,
       },
       // Tour Package Add
-      {
-        path: "addTourPackage",
-        element: <AddTourPackage />,
-      },
+      
       {
         path: "/about",
         element: <About></About>,
@@ -121,6 +117,24 @@ export const router = createBrowserRouter([
         element: <Confirmation />,
       },
     ],
+  },
+  {
+    path: "/dashboard",
+    element: <DashboardLayout/>,
+    children: [
+      {
+        path: "add-products",
+        element: <AddProducts />,
+      },
+      {
+        path: "addTourPackage",
+        element: <AddTourPackage />,
+      },
+      {
+        path: "adminDashboard",
+        element: <DashboardCharts/>,
+      },
+    ]
   },
   {
     path: "/login",
