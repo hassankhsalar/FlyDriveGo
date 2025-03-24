@@ -17,6 +17,7 @@ import JobDetails from "../Pages/Careers/JobDetails";
 import JobForm from "../Pages/Careers/JobForm";
 import Confirmation from "../Pages/Careers/Confirmation";
 import AddTourPackage from "../Pages/TourPackages/AddTourPackages";
+import EshopHome from "../Pages/Eshop/EshopHome/EshopHome";
 
 export const router = createBrowserRouter([
   {
@@ -78,6 +79,46 @@ export const router = createBrowserRouter([
       {
         path: "addTourPackage",
         element: <AddTourPackage />,
+      },
+      {
+        path: "/about",
+        element: <About></About>,
+      },
+      {
+        path: "/transportation",
+        element: <Transportation></Transportation>,
+      },
+      {
+        path: "tour-pack",
+        element: <TourPackages />,
+      },
+      {
+        path: "/tour-details/:title",
+        element: <TourDetails />,
+      },
+      {
+        path: "tour-booking",
+        element: <TourBooking />,
+      },
+      {
+        path: "careers",
+        element: <Careers />,
+      },
+      {
+        path: "eshop",
+        element: <EshopHome></EshopHome>,
+      },
+      {
+        path: "careers/job/:jobId",
+        element: <JobDetails />,
+      },
+      {
+        path: "careers/apply/:jobId",
+        element: <JobForm />,
+      },
+      {
+        path: "careers/confirmation",
+        element: <Confirmation />,
       },
     ],
   },
