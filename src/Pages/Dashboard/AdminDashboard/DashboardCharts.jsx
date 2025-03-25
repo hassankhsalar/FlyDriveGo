@@ -6,9 +6,9 @@ import LineChartComponent from "./LineChart";
 const DashboardCharts = () => {
   return (
     <div>
-      <section className="p-4 my-6 md:p-8 bg-gray-800 dark:bg-gray-100 text-gray-100 dark:text-gray-800">
+      <section className="p-4 my-6 md:p-8 dark:bg-gray-800 bg-gray-100 text-gray-100 dark:text-gray-800">
         <div className="container grid grid-cols-1 gap-6 m-4 mx-auto md:m-0 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
-          <div className="flex overflow-hidden rounded-lg bg-gray-900 dark:bg-gray-50 text-gray-100 dark:text-gray-800">
+          <div className="flex overflow-hidden rounded-lg dark:bg-gray-900 bg-gray-300 dark:text-gray-100 text-gray-800">
             <div className="flex items-center justify-center px-4 bg-violet-400 dark:bg-violet-600 text-gray-800 dark:text-gray-100">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -26,7 +26,7 @@ const DashboardCharts = () => {
               <p>Users</p>
             </div>
           </div>
-          <div className="flex overflow-hidden rounded-lg bg-gray-900 dark:bg-gray-50 text-gray-100 dark:text-gray-800">
+          <div className="flex overflow-hidden rounded-lg dark:bg-gray-900  bg-gray-300 dark:text-gray-100 text-gray-800">
             <div className="flex items-center justify-center px-4 bg-violet-400 dark:bg-violet-600 text-gray-800 dark:text-gray-100">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -43,7 +43,7 @@ const DashboardCharts = () => {
               <p>Customers</p>
             </div>
           </div>
-          <div className="flex overflow-hidden rounded-lg bg-gray-900 dark:bg-gray-50 text-gray-100 dark:text-gray-800">
+          <div className="flex overflow-hidden rounded-lg dark:bg-gray-900 bg-gray-300 dark:text-gray-100 text-gray-800">
             <div className="flex items-center justify-center px-4 bg-violet-400 dark:bg-violet-600 text-gray-800 dark:text-gray-100">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -60,7 +60,7 @@ const DashboardCharts = () => {
               <p>Programs</p>
             </div>
           </div>
-          <div className="flex overflow-hidden rounded-lg bg-gray-900 dark:bg-gray-50 text-gray-100 dark:text-gray-800">
+          <div className="flex overflow-hidden rounded-lg dark:bg-gray-900 bg-gray-300 dark:text-gray-100 text-gray-800">
             <div className="flex items-center justify-center px-4 bg-violet-400 dark:bg-violet-600 text-gray-800 dark:text-gray-100">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -77,7 +77,7 @@ const DashboardCharts = () => {
               <p>Sales/week</p>
             </div>
           </div>
-          <div className="flex overflow-hidden rounded-lg bg-gray-900 dark:bg-gray-50 text-gray-100 dark:text-gray-800">
+          <div className="flex overflow-hidden rounded-lg dark:bg-gray-900 bg-gray-300 dark:text-gray-100 text-gray-800">
             <div className="flex items-center justify-center px-4 bg-violet-400 dark:bg-violet-600 text-gray-800 dark:text-gray-100">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -94,7 +94,7 @@ const DashboardCharts = () => {
               <p>Uptime</p>
             </div>
           </div>
-          <div className="flex overflow-hidden rounded-lg bg-gray-900 dark:bg-gray-50 text-gray-100 dark:text-gray-800">
+          <div className="flex overflow-hidden rounded-lg dark:bg-gray-900 bg-gray-300 dark:text-gray-100 text-gray-800">
             <div className="flex items-center justify-center px-4 bg-violet-400 dark:bg-violet-600 text-gray-800 dark:text-gray-100">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -114,14 +114,14 @@ const DashboardCharts = () => {
         </div>
       </section>
 
-      <section className="grid grid-cols-1 xl:grid-cols-2">
+      <section className="grid grid-cols-1 xl:grid-cols-2 gap-2">
         <div className="w-auto h-52 md:h-96">
           <AreaChart1></AreaChart1>
         </div>
-        <div className="w-auto h-52 md:h-96">
+        <div className="w-auto mt-12 xl:mt-0 h-52 md:h-96">
           <BarChartComponent></BarChartComponent>
         </div>
-        <div className="w-auto h-52 md:h-96 xl:col-span-2">
+        <div className="w-auto h-52 mt-12 xl:mt-10 md:h-96 xl:col-span-2">
           <LineChartComponent></LineChartComponent>
         </div>
       </section>

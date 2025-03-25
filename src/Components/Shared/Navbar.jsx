@@ -263,19 +263,14 @@ const Navbar = () => {
           onClick={() => setAccountMenuOpen(!accountMenuOpen)}
         >
           <div className="relative">
-            {/* <img
-              src={user?.photoURL}
-              alt="avatar"
-              className="w-[35px] h-[35px] rounded-full object-cover"
-            /> */}
-            
-            <img
-              src={`${user?.photoURL}?t=${new Date().getTime()}`}
-              alt="Profile"
-              className="w-[35px] h-[35px] rounded-full object-cover"
-            />
-            <div className="w-[10px] h-[10px] rounded-full bg-green-500 absolute bottom-[0px] right-0 border-2 border-white"></div>
-          </div>
+                <img
+                    src={user?.photoURL}
+                    alt="avatar" className="w-[50px] h-[50px] rounded-full object-cover"/>
+
+                <div className="p-[2px] bg-white absolute top-[0px] right-0 rounded-full">
+                    <div className="w-[12px] h-[12px] rounded-full bg-green-400 "></div>
+                </div>
+            </div>
 
           <h1 className="text-[1rem] dark:text-[#abc2d3] font-[400] text-gray-600 sm:block hidden">
             {user?.displayName}
