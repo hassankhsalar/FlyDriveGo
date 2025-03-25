@@ -18,33 +18,33 @@ import {
 const productSales = [
   {
     name: "Jan",
-    Yoga: 40,
-    strength: 24,
+    International: 40,
+    Domestic: 24,
   },
   {
     name: "Feb",
-    Yoga: 30,
-    strength: 22,
+    International: 30,
+    Domestic: 22,
   },
   {
     name: "Mar",
-    Yoga: 20,
-    strength: 22,
+    International: 20,
+    Domestic: 22,
   },
   {
     name: "Apr",
-    Yoga: 27,
-    strength: 20,
+    International: 27,
+    Domestic: 20,
   },
   {
     name: "May",
-    Yoga: 18,
-    strength: 21,
+    International: 18,
+    Domestic: 21,
   },
   {
     name: "Jun",
-    Yoga: 23,
-    strength: 25,
+    International: 23,
+    Domestic: 25,
   },
 ];
 
@@ -83,7 +83,7 @@ const AreaChart1 = () => {
 
               <Area
                 type="monotone"
-                dataKey="Yoga"
+                dataKey="International"
                 stroke="#2563eb"
                 fill="#3b82f6"
                 stackId="1"
@@ -91,7 +91,7 @@ const AreaChart1 = () => {
 
               <Area
                 type="monotone"
-                dataKey="strength"
+                dataKey="Domestic"
                 stroke="#7c3aed"
                 fill="#8b5cf6"
                 stackId="1"
