@@ -50,6 +50,12 @@ const VisaAssistance = () => {
   const [documentUrls, setDocumentUrls] = useState([]);
   const fileInputRef = useRef(null);
 
+  if (!user) {
+    toast.error("Please login to submit a visa application");
+    // redirect to login page
+    window.location.href = '/login';
+  }
+
   const { control, register, handleSubmit, watch, reset, formState: { errors, isValid } } = useForm({
     mode: 'onChange',
     defaultValues: {

@@ -58,7 +58,6 @@ export const router = createBrowserRouter([
         element: <TourBooking />,
       },
       //===============----------- SELLER Routes ----============
-      
       {
         path: "/seller-productlist/:email",
         element: <SellerProductList />,
@@ -97,47 +96,10 @@ export const router = createBrowserRouter([
         path: "careers/applications",
         element: <ManageJobApplications />,
       },
-      // Tour Package Add
-      
-      {
-        path: "/about",
-        element: <About></About>,
-      },
-      {
-        path: "/transportation",
-        element: <Transportation></Transportation>,
-      },
-      {
-        path: "tour-pack",
-        element: <TourPackages />,
-      },
-      {
-        path: "/tour-details/:title",
-        element: <TourDetails />,
-      },
-      {
-        path: "tour-booking",
-        element: <TourBooking />,
-      },
-      {
-        path: "careers",
-        element: <Careers />,
-      },
+      // Eshop Route
       {
         path: "eshop",
-        element: <EshopHome></EshopHome>,
-      },
-      {
-        path: "careers/job/:jobId",
-        element: <JobDetails />,
-      },
-      {
-        path: "careers/apply/:jobId",
-        element: <JobForm />,
-      },
-      {
-        path: "careers/confirmation",
-        element: <Confirmation />,
+        element: <EshopHome />,
       },
       // VISA Routes
       {
@@ -152,7 +114,7 @@ export const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <DashboardLayout/>,
+    element: <DashboardLayout />,
     children: [
       {
         path: "add-products",
@@ -162,14 +124,11 @@ export const router = createBrowserRouter([
         path: "addTourPackage",
         element: <AddTourPackage />,
       },
-    ],
-
       {
         path: "adminDashboard",
-        element: <DashboardCharts/>,
+        element: <DashboardCharts />,
       },
-    ]
-
+    ],
   },
   {
     path: "/login",
