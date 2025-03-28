@@ -3,83 +3,123 @@ import ecom1 from "../../assest-tourPack/ecom1.jpg";
 import { FaShoppingCart } from "react-icons/fa";
 import ecom2 from "../../assest-tourPack/ecom2.jpg";
 import ecom3 from "../../assest-tourPack/ecom3.jpg";
+import { motion } from "framer-motion";
 
 const Ecommerce = () => {
     return (
-        <div>
-        
-            <div className="mt-20 w-11/12 mx-auto">
-             {/* heading section */}
-            <div className='px-20'>
-                <p className='text-xs text-text text-center mt-10'>Ecommerce</p>
-                <h1 style={{ color: '#4EDAE4' }} className='font-extrabold text-3xl text-center '>Travel Smart – Shop Essential <br /> Tour Gear!</h1>
-                <p className='text-sm text-text text-center mb-10 lg:px-20'>Find top-quality travel essentials, from backpacks to camping gear, all in one place. Gear up for your next adventure with the best equipment for a smooth and hassle-free journey!</p>
+        <div className="mt-20 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            {/* Heading Section */}
+            <div className="text-center mb-16">
+                <motion.div 
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="inline-block mb-4"
+                >
+                    <span className="bg-[#4EDAE4]/10 text-[#4EDAE4] px-4 py-2 rounded-full text-sm font-semibold">
+                        Travel Essentials
+                    </span>
+                </motion.div>
+                <h1 className="text-4xl font-bold text-gray-900 mb-6">
+                    Travel Smart – Shop Essential <br className="hidden lg:block" /> Tour Gear!
+                </h1>
+                <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Premium travel essentials curated for adventurers. From lightweight tents to durable footwear, equip yourself for unforgettable journeys.
+                </p>
             </div>
-                <div className="flex flex-col lg:flex-row gap-3">
-                    <div className="w-full lg:w-1/2 border-2 border-slate-300">
-                        <div className="h-1/2">
-                            <img src={ecom1} alt="" className="w-full h-full object-cover" />
+
+            {/* Product Grid */}
+            <div className="grid lg:grid-cols-2 gap-8">
+                {/* Large Product Card */}
+                <motion.div 
+                    whileHover={{ scale: 1.02 }}
+                    className="group relative border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-xl transition-all"
+                >
+                    <div className="aspect-square bg-gray-100">
+                        <img 
+                            src={ecom1} 
+                            alt="Portable Lightweight Tent" 
+                            className="w-full h-full object-cover object-center" 
+                        />
+                    </div>
+                    <div className="p-6 lg:p-8">
+                        <h2 className="text-2xl font-bold text-gray-900 mb-4">
+                            Portable Lightweight Tent
+                        </h2>
+                        <p className="text-gray-600 mb-6">
+                            Weather-resistant 10x10 tent with quick-setup frame. Includes waterproof flooring and ventilation system.
+                        </p>
+                        <div className="flex flex-col sm:flex-row gap-4">
+                            <button className="flex-1 py-3 px-6 bg-[#4EDAE4] text-white rounded-lg font-medium hover:bg-[#3cb8c6] transition-colors">
+                                View Details
+                            </button>
+                            <button className="flex items-center justify-center gap-2 py-3 px-6 border-2 border-[#4EDAE4] text-[#4EDAE4] rounded-lg font-medium hover:bg-[#4EDAE4]/10 transition-colors">
+                                <FaShoppingCart className="text-lg" /> Add to Cart
+                            </button>
                         </div>
-                        <div className="w-10/12 mx-auto h-1/2 flex flex-col justify-between py-4">
-                            <h1 className="font-red-rose font-bold text-4xl py-3">
-                                Portable Lightweight Tent
-                            </h1>
-                            <p className="font-poppins font-normal text-base pb-4">
-                                Its a 10x10 size portable tent. Its waterproof and it has cusion
-                                underneath for extra comfort.comes with 19 skeleton sticks, Really
-                                Easy to setup.
+                    </div>
+                </motion.div>
+
+                {/* Small Product Cards */}
+                <div className="grid gap-8">
+                    {/* Sturdy Travel Bag */}
+                    <motion.div 
+                        whileHover={{ scale: 1.02 }}
+                        className="group relative flex flex-col md:flex-row border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-xl transition-all"
+                    >
+                        <div className="md:w-1/2 aspect-square bg-gray-100">
+                            <img 
+                                src={ecom2} 
+                                alt="Sturdy Travel Bag" 
+                                className="w-full h-full object-cover object-center"
+                            />
+                        </div>
+                        <div className="p-6 lg:p-8 md:w-1/2">
+                            <h2 className="text-xl font-bold text-gray-900 mb-4">
+                                Adventure Backpack
+                            </h2>
+                            <p className="text-gray-600 mb-6">
+                                45L capacity with ergonomic design. Water-resistant material with multiple compartments.
                             </p>
-                            <div className="flex items-center gap-4 pb-4">
-                                <button className="px-2 py-1 border-2 rounded-xl text-slate-700 outline-slate-700 hover:scale-105 hover:bg-slate-300 hover:text-white">
+                            <div className="flex flex-col gap-4">
+                                <button className="w-full py-3 px-6 bg-[#4EDAE4] text-white rounded-lg font-medium hover:bg-[#3cb8c6] transition-colors">
                                     View Details
                                 </button>
-                                <button className="flex items-center gap-1 px-2 py-1 border-2 rounded-xl text-slate-700 outline-slate-700">
-                                    Add to Cart <FaShoppingCart />
+                                <button className="w-full flex items-center justify-center gap-2 py-3 px-6 border-2 border-[#4EDAE4] text-[#4EDAE4] rounded-lg font-medium hover:bg-[#4EDAE4]/10 transition-colors">
+                                    <FaShoppingCart className="text-lg" /> Add to Cart
                                 </button>
                             </div>
                         </div>
-                    </div>
-                    <div className="w-full lg:w-1/2 h-full">
-                        <div className="h-1/2 flex flex-col md:flex-row gap-4 mb-2 border-2 border-slate-300">
-                            <img src={ecom2} alt="" className="w-full md:w-[320px] h-full" />
-                            <div className="w-10/12 mx-auto flex flex-col justify-between">
-                                <h1 className="font-red-rose font-bold text-4xl py-2">
-                                    Sturdy Travel Bag
-                                </h1>
-                                <p className="font-poppins font-normal text-base py-2">
-                                    Lucrative strong travel bag with capacity large enough for
-                                    essentials!
-                                </p>
-                                <div className="flex items-center gap-4 pb-4">
-                                    <button className="px-2 py-1 border-2 rounded-xl text-slate-700 outline-slate-700">
-                                        View Details
-                                    </button>
-                                    <button className="flex items-center gap-1 px-2 py-1 border-2 rounded-xl text-slate-700 outline-slate-700">
-                                        Add to Cart <FaShoppingCart />
-                                    </button>
-                                </div>
+                    </motion.div>
+
+                    {/* Leather Boots */}
+                    <motion.div 
+                        whileHover={{ scale: 1.02 }}
+                        className="group relative flex flex-col md:flex-row border border-gray-200 rounded-2xl overflow-hidden bg-white shadow-sm hover:shadow-xl transition-all"
+                    >
+                        <div className="md:w-1/2 aspect-square bg-gray-100">
+                            <img 
+                                src={ecom3} 
+                                alt="Leather Boots" 
+                                className="w-full h-full object-cover object-center"
+                            />
+                        </div>
+                        <div className="p-6 lg:p-8 md:w-1/2">
+                            <h2 className="text-xl font-bold text-gray-900 mb-4">
+                                Trekking Boots
+                            </h2>
+                            <p className="text-gray-600 mb-6">
+                                Waterproof leather boots with reinforced toe caps and anti-slip soles.
+                            </p>
+                            <div className="flex flex-col gap-4">
+                                <button className="w-full py-3 px-6 bg-[#4EDAE4] text-white rounded-lg font-medium hover:bg-[#3cb8c6] transition-colors">
+                                    View Details
+                                </button>
+                                <button className="w-full flex items-center justify-center gap-2 py-3 px-6 border-2 border-[#4EDAE4] text-[#4EDAE4] rounded-lg font-medium hover:bg-[#4EDAE4]/10 transition-colors">
+                                    <FaShoppingCart className="text-lg" /> Add to Cart
+                                </button>
                             </div>
                         </div>
-                        <div className="h-1/2 flex flex-col md:flex-row gap-4 mb-2 border-2 border-slate-300">
-                            <img src={ecom3} alt="" className="w-full md:w-[320px] h-full" />
-                            <div className="w-10/12 mx-auto flex flex-col justify-between">
-                                <h1 className="font-red-rose font-bold text-4xl py-2">
-                                    Leather Boots
-                                </h1>
-                                <p className="font-poppins font-normal text-base py-2">
-                                    Strong boots that will protect your feet from all the dangerous path ahead!
-                                </p>
-                                <div className="flex items-center gap-4 pb-4">
-                                    <button className="px-2 py-1 border-2 rounded-xl text-slate-700 outline-slate-700">
-                                        View Details
-                                    </button>
-                                    <button className="flex items-center gap-1 px-2 py-1 border-2 rounded-xl text-slate-700 outline-slate-700">
-                                        Add to Cart <FaShoppingCart />
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </motion.div>
                 </div>
             </div>
         </div>

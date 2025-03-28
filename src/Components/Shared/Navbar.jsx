@@ -245,7 +245,7 @@ const Navbar = () => {
         </li>
         <li className="flex items-center dark:text-[#abc2d3] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer">
           <BiShoppingBag className="text-[1.1rem] group-hover:text-[#3B9DF8] dark:text-[#abc2d3] text-gray-600" />
-          Shop
+          <Link to='eshop'>Shop</Link>
         </li>
         <li className="flex items-center dark:text-[#abc2d3] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer">
           <BiSupport className="text-[1.1rem] group-hover:text-[#3B9DF8] dark:text-[#abc2d3] text-gray-600" />
@@ -263,19 +263,14 @@ const Navbar = () => {
           onClick={() => setAccountMenuOpen(!accountMenuOpen)}
         >
           <div className="relative">
-            {/* <img
-              src={user?.photoURL}
-              alt="avatar"
-              className="w-[35px] h-[35px] rounded-full object-cover"
-            /> */}
-            
-            <img
-              src={`${user?.photoURL}?t=${new Date().getTime()}`}
-              alt="Profile"
-              className="w-[35px] h-[35px] rounded-full object-cover"
-            />
-            <div className="w-[10px] h-[10px] rounded-full bg-green-500 absolute bottom-[0px] right-0 border-2 border-white"></div>
-          </div>
+                <img
+                    src={user?.photoURL}
+                    alt="avatar" className="w-[50px] h-[50px] rounded-full object-cover"/>
+
+                <div className="p-[2px] bg-white absolute top-[0px] right-0 rounded-full">
+                    <div className="w-[12px] h-[12px] rounded-full bg-green-400 "></div>
+                </div>
+            </div>
 
           <h1 className="text-[1rem] dark:text-[#abc2d3] font-[400] text-gray-600 sm:block hidden">
             {user?.displayName}
@@ -298,7 +293,7 @@ const Navbar = () => {
             </p>
             <p className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] dark:text-[#abc2d3] dark:hover:bg-slate-900/50 text-gray-600 hover:bg-gray-50">
               <FiUser />
-              View Profile
+              <Link to='/dashboard/adminDashboard'>Dashboard</Link>
             </p>
 
             <div className="mt-3 border-t dark:border-slate-700 border-gray-200 pt-[5px]">

@@ -22,6 +22,10 @@ import ManageJobApplications from "../Pages/Careers/PrivetRoutes/ManageJobApplic
 import AddTourPackage from "../Pages/TourPackages/AddTourPackages";
 import VisaAssistance from "../Pages/VisaAssistance/VisaAssistance";
 import VisaStatus from "../Pages/VisaAssistance/VisaStatus";
+import EshopHome from "../Pages/Eshop/EshopHome/EshopHome";
+import DashboardLayout from "../Layout/DashboardLayout";
+import DashboardCharts from "../Pages/Dashboard/AdminDashboard/DashboardCharts";
+
 
 export const router = createBrowserRouter([
   {
@@ -54,10 +58,7 @@ export const router = createBrowserRouter([
         element: <TourBooking />,
       },
       //===============----------- SELLER Routes ----============
-      {
-        path: "/add-products",
-        element: <AddProducts />,
-      },
+      
       {
         path: "/seller-productlist/:email",
         element: <SellerProductList />,
@@ -97,9 +98,46 @@ export const router = createBrowserRouter([
         element: <ManageJobApplications />,
       },
       // Tour Package Add
+      
       {
-        path: "addTourPackage",
-        element: <AddTourPackage />,
+        path: "/about",
+        element: <About></About>,
+      },
+      {
+        path: "/transportation",
+        element: <Transportation></Transportation>,
+      },
+      {
+        path: "tour-pack",
+        element: <TourPackages />,
+      },
+      {
+        path: "/tour-details/:title",
+        element: <TourDetails />,
+      },
+      {
+        path: "tour-booking",
+        element: <TourBooking />,
+      },
+      {
+        path: "careers",
+        element: <Careers />,
+      },
+      {
+        path: "eshop",
+        element: <EshopHome></EshopHome>,
+      },
+      {
+        path: "careers/job/:jobId",
+        element: <JobDetails />,
+      },
+      {
+        path: "careers/apply/:jobId",
+        element: <JobForm />,
+      },
+      {
+        path: "careers/confirmation",
+        element: <Confirmation />,
       },
       // VISA Routes
       {
@@ -111,6 +149,27 @@ export const router = createBrowserRouter([
         element: <VisaStatus />,
       },
     ],
+  },
+  {
+    path: "/dashboard",
+    element: <DashboardLayout/>,
+    children: [
+      {
+        path: "add-products",
+        element: <AddProducts />,
+      },
+      {
+        path: "addTourPackage",
+        element: <AddTourPackage />,
+      },
+    ],
+
+      {
+        path: "adminDashboard",
+        element: <DashboardCharts/>,
+      },
+    ]
+
   },
   {
     path: "/login",

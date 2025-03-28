@@ -1,13 +1,11 @@
 import React, { useContext, useState, useMemo } from "react";
 import { HiOutlineArrowsUpDown } from "react-icons/hi2";
-import { BsThreeDotsVertical } from "react-icons/bs";
 import { MdDeleteOutline, MdOutlineEdit } from "react-icons/md";
 import { useQuery } from "@tanstack/react-query";
 import { AuthContext } from "../../Provider/AuthProvider";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import Swal from "sweetalert2";
 import ProductUpdateModal from "./Components/ProductUpdateModal";
-import { IoEyeOutline } from "react-icons/io5";
 
 const SellerProductList = () => {
     const axiosPublic = useAxiosPublic();
@@ -16,7 +14,6 @@ const SellerProductList = () => {
     const [search, setSearch] = useState("");
     const [sortKey, setSortKey] = useState("");
     const [sortOrder, setSortOrder] = useState("asc");
-    const [openActionMenuId, setOpenActionMenuId] = useState(null);
     const [selectedProduct, setSelectedProduct] = useState(null);
 
     // Fetch Products
@@ -34,8 +31,8 @@ const SellerProductList = () => {
             text: "This action cannot be undone!",
             icon: "warning",
             showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
+            confirmButtonColor: "#d33",
+            cancelButtonColor: "#3085d6",
             confirmButtonText: "Yes, delete it!",
         }).then((result) => {
             if (result.isConfirmed) {
@@ -55,9 +52,8 @@ const SellerProductList = () => {
             document.getElementById("productUpdateModal").showModal();
         }, 0);
     };
-    
 
-    const excludedFields = ["_id", "sellerEmail", "productImage", "sellerName", "productPhoto"];
+    const excludedFields = ["_id", "sellerEmail", "tags", "productImage", "sellerName"];
 
     const filteredData = useMemo(() => {
         return products.filter((item) =>
@@ -80,22 +76,22 @@ const SellerProductList = () => {
     };
 
     return (
-        <div className="customTable overflow-y-auto p-8 mb-4 w-full flex items-center flex-col gap-5 justify-center">
+        <div className="p-8 mb-4 w-full flex items-center flex-col gap-5 justify-center">
             <div className="w-full mx-auto p-4">
                 {/* Search Input */}
-                <div className="mb-4">
+                <div className="mb-4 flex">
                     <input
-                        placeholder="Search..."
+                        placeholder="Search product..."
                         value={search}
                         onChange={(e) => setSearch(e.target.value)}
-                        className="max-w-sm py-2.5 px-4 border border-gray-200 rounded-md outline-none focus:border-blue-300"
+                        className="max-w-md py-2 px-4 border border-gray-300 rounded-md outline-none focus:ring-2 focus:ring-blue-500"
                     />
                 </div>
 
                 {/* Table */}
-                <div className="customTable w-full rounded-md border overflow-hidden border-gray-200">
+                <div className="w-full rounded-md border border-gray-200 shadow-md overflow-hidden">
                     <table className="w-full text-sm">
-                        <thead className="bg-gray-100">
+                        <thead className="bg-blue-100 text-center">
                             <tr>
                                 {products.length > 0 &&
                                     Object.keys(products[0])
@@ -103,60 +99,51 @@ const SellerProductList = () => {
                                         .map((key) => (
                                             <th
                                                 key={key}
-                                                className="p-3 text-left font-medium text-gray-700 cursor-pointer"
+                                                className="p-3 text-left font-semibold text-gray-700 cursor-pointer"
                                             >
-                                                <div className="flex items-center gap-[5px]">
+                                                <div className="flex items-center gap-2">
                                                     {key.charAt(0).toUpperCase() + key.slice(1)}
                                                     <HiOutlineArrowsUpDown
                                                         onClick={() => handleSort(key)}
-                                                        className="hover:bg-gray-200 p-[5px] rounded-md text-[1.6rem]"
+                                                        className="hover:text-blue-500 transition cursor-pointer"
                                                     />
                                                 </div>
                                             </th>
                                         ))}
-                                <th className="p-3 text-left font-medium text-gray-700">Actions</th>
+                                <th className="p-3 text-left font-semibold text-gray-700">Actions</th>
                             </tr>
                         </thead>
                         <tbody>
-
                             {sortedData.map((item, index) => (
-                                <tr key={item._id || index} className="border-t border-gray-200 hover:bg-gray-50">
+                                <tr key={item._id || index} className="border-t border-gray-200 odd:bg-white even:bg-gray-50 hover:bg-gray-100 transition">
                                     {Object.entries(item)
                                         .filter(([key]) => !excludedFields.includes(key))
                                         .map(([key, value]) => (
                                             <td key={key} className="p-3">{value}</td>
                                         ))}
-                                    <td className="relative">
-                                        <BsThreeDotsVertical
-                                            onClick={() => setOpenActionMenuId(openActionMenuId === item._id ? null : item._id)}
-                                            className="cursor-pointer"
-                                        />
-                                        {openActionMenuId === item._id && (
-                                            <div className={`absolute right-0 p-1.5 z-[99] rounded-md bg-white shadow-md min-w-[160px] transition-all duration-100 ${index === 1 ? "bottom-[30%]" : index > 1 ? "bottom-[80%]" : "top-[80%]"}`}>
-                                                <button onClick={() => handleEdit(item)} className="flex items-center gap-[8px] text-[0.9rem] py-1.5 px-2 w-full rounded-md text-gray-700 cursor-pointer hover:bg-gray-50 transition-all duration-200">
-                                                    <MdOutlineEdit />
-                                                    Update
-                                                </button>
-                                                <button onClick={() => handleDelete(item)} className="flex items-center gap-[8px] text-[0.9rem] py-1.5 px-2 w-full rounded-md text-gray-700 cursor-pointer hover:bg-gray-50 transition-all duration-200">
-                                                    <MdDeleteOutline />
-                                                    Delete
-                                                </button>
-
-                                                <button className="flex items-center gap-[8px] text-[0.9rem] py-1.5 px-2 w-full rounded-md text-gray-700 cursor-pointer hover:bg-gray-50 transition-all duration-200">
-                                                    <IoEyeOutline />
-                                                    View Details
-                                                </button>
-                                            </div>
-                                        )}
+                                    <td className="p-3 flex gap-2">
+                                        <button
+                                            onClick={() => handleEdit(item)}
+                                            className="flex items-center gap-2 px-3 py-1 text-blue-600 hover:text-blue-800 transition"
+                                        >
+                                            <MdOutlineEdit />
+                                            Edit
+                                        </button>
+                                        <button
+                                            onClick={() => handleDelete(item)}
+                                            className="flex items-center gap-2 px-3 py-1 text-red-600 hover:text-red-800 transition"
+                                        >
+                                            <MdDeleteOutline />
+                                            Delete
+                                        </button>
                                     </td>
-
                                 </tr>
                             ))}
                         </tbody>
                     </table>
                     {!sortedData.length && (
-                        <p className="text-[0.9rem] text-gray-500 py-6 text-center w-full">
-                            No data found!
+                        <p className="text-gray-500 py-6 text-center">
+                            No products found!
                         </p>
                     )}
                 </div>
@@ -164,7 +151,6 @@ const SellerProductList = () => {
 
             {/* Product Update Modal */}
             <ProductUpdateModal selectedProduct={selectedProduct} refetch={refetch} />
-
         </div>
     );
 };
