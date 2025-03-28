@@ -130,21 +130,21 @@ const Confirmation = () => {
               {/* Social Share Dropdown */}
               <div className="font-red-rose absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:flex gap-2 bg-white p-2 rounded-lg shadow-lg border border-SmokeWhite">
                 <FacebookShareButton url={currentUrl}>
-                  <button className="p-2 hover:bg-SmokeWhite rounded">
+                  <div className="p-2 hover:bg-SmokeWhite rounded">
                     <span className="text-[#1877F2]">Facebook</span>
-                  </button>
+                  </div>
                 </FacebookShareButton>
 
                 <TwitterShareButton url={currentUrl}>
-                  <button className="p-2 hover:bg-SmokeWhite rounded">
+                  <div className="p-2 hover:bg-SmokeWhite rounded">
                     <span className="text-[#1DA1F2]">Twitter</span>
-                  </button>
+                  </div>
                 </TwitterShareButton>
 
                 <LinkedinShareButton url={currentUrl}>
-                  <button className="p-2 hover:bg-SmokeWhite rounded">
+                  <div className="p-2 hover:bg-SmokeWhite rounded">
                     <span className="text-[#0A66C2]">LinkedIn</span>
-                  </button>
+                  </div>
                 </LinkedinShareButton>
               </div>
             </div>
@@ -163,7 +163,7 @@ const Confirmation = () => {
           </p>
           <a
             href="mailto:careers@flydrivego.com"
-            className="text-primary font-semibold hover:underline"
+            className="text-primary font-semibold hover:underline font-red-rose"
           >
             careers@flydrivego.com
           </a>

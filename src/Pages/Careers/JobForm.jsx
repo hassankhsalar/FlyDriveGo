@@ -3,6 +3,8 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { User, Mail, Phone, FileText, CheckCircle, ArrowLeft } from 'lucide-react';
 import Loader from '../../components/ui/Loader';
+import useAxiosPublic from '../../Hooks/useAxiosPublic';
+import { toast } from 'react-hot-toast';
 
 const JobForm = () => {
     const { jobId } = useParams();
@@ -12,14 +14,13 @@ const JobForm = () => {
     const [formData, setFormData] = useState({});
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [errors, setErrors] = useState({});
+    const axiosPublic = useAxiosPublic();
 
     useEffect(() => {
-        fetch("/jobs.json")
-            .then((res) => res.json())
-            .then((data) => {
-                const foundJob = data.find((j) => j.id === parseInt(jobId));
-                if (foundJob) {
-                    setJob(foundJob);
+        axiosPublic.get(`/jobs/${jobId}`)
+            .then((res) => {
+                if (res.data) {
+                    setJob(res.data);
                 }
                 setLoading(false);
             })
@@ -27,7 +28,7 @@ const JobForm = () => {
                 console.error("Error fetching job data:", error);
                 setLoading(false);
             });
-    }, [jobId]);
+    }, [jobId, axiosPublic]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -38,7 +39,7 @@ const JobForm = () => {
     const handleFileChange = (e) => {
         const file = e.target.files[0];
         if (file && file.type === 'application/pdf') {
-            setFormData({ ...formData, resume: file });
+            setFormData({ ...formData, resume: file.name }); // Store filename for now
             setErrors({ ...errors, resume: '' });
         } else {
             setErrors({ ...errors, resume: 'Please upload a PDF file' });
@@ -59,13 +60,28 @@ const JobForm = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (!validateForm()) return;
-        
+
         setIsSubmitting(true);
-        // Simulate API call
-        setTimeout(() => {
+
+        // Prepare application data
+        const applicationData = {
+            ...formData,
+            jobId: parseInt(jobId),
+            jobTitle: job?.title,
+            applicationDate: new Date(),
+            status: 'Pending Review'
+        };
+
+        try {
+            await axiosPublic.post('/job-applications', applicationData);
+            toast.success('Application submitted successfully!');
+            navigate('/careers/confirmation');
+        } catch (error) {
+            console.error("Error submitting application:", error);
+            toast.error('Failed to submit application. Please try again.');
+        } finally {
             setIsSubmitting(false);
-            navigate(`/careers/confirmation`);
-        }, 2000);
+        }
     };
 
     const inputVariants = {
@@ -76,7 +92,7 @@ const JobForm = () => {
     };
 
     return (
-        <motion.div 
+        <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5 }}
@@ -110,7 +126,7 @@ const JobForm = () => {
                                     className="grid md:grid-cols-2 gap-6"
                                     initial="hidden"
                                     animate="visible"
-                                    variants={{ visible: { transition: { staggerChildren: 0.1 } }}}
+                                    variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
                                 >
                                     <motion.div variants={inputVariants}>
                                         <label className="block font-poppins text-CharcoleDark/80 mb-2 font-bold">
