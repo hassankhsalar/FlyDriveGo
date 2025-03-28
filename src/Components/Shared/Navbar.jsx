@@ -125,7 +125,7 @@ const Navbar = () => {
                     </p>
 
                     <button className="text-[#8B5CF6] mt-2 flex items-center gap-[4px] text-[0.9rem]">
-                      <Link to='careers'>Check here</Link>>
+                      <Link to='careers'>Check here</Link>
                       <MdOutlineArrowRightAlt className="text-[1.4rem] group-hover:ml-[5px] transition-all duration-300" />
                     </button>
                   </div>

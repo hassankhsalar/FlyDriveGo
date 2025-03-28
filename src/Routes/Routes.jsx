@@ -20,6 +20,8 @@ import EditJobsOptions from "../Pages/Careers/PrivetRoutes/EditJobsOptions";
 import EditJobForm from "../Pages/Careers/PrivetRoutes/EditJobForm";
 import ManageJobApplications from "../Pages/Careers/PrivetRoutes/ManageJobApplications";
 import AddTourPackage from "../Pages/TourPackages/AddTourPackages";
+import VisaAssistance from "../Pages/VisaAssistance/VisaAssistance";
+import VisaStatus from "../Pages/VisaAssistance/VisaStatus";
 
 export const router = createBrowserRouter([
   {
@@ -98,6 +100,15 @@ export const router = createBrowserRouter([
       {
         path: "addTourPackage",
         element: <AddTourPackage />,
+      },
+      // VISA Routes
+      {
+        path: "/visa-assistance",
+        element: <VisaAssistance />,
+      },
+      {
+        path: "/visa-status",
+        element: <VisaStatus />,
       },
     ],
   },
