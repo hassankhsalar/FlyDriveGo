@@ -7,21 +7,18 @@ import { Toaster } from "react-hot-toast";
 import AuthProvider from "./Provider/AuthProvider.jsx";
 import { LoadingProvider } from "./contexts/LoadingContext";
 
-import {
-  QueryClient,
-  QueryClientProvider
-} from '@tanstack/react-query'
-const queryClient = new QueryClient()
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+const queryClient = new QueryClient();
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <AuthProvider>
-      <LoadingProvider>
+    <LoadingProvider>
+      <AuthProvider>
         <QueryClientProvider client={queryClient}>
           <RouterProvider router={router} />
           <Toaster />
         </QueryClientProvider>
-      </LoadingProvider>
-    </AuthProvider>
+      </AuthProvider>
+    </LoadingProvider>
   </StrictMode>
 );

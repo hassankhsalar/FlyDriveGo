@@ -114,8 +114,6 @@ const ProductUpdateModal = ({ selectedProduct, refetch }) => {
                         <form className='w-full'>
                             <div className='p-6 shadow-md'>
                                 <h2 className='text-xl font-bold'>Upload Your Product Data</h2>
-
-                                {/* Image Upload */}
                                 <div className="my-4">
                                     <p className='mb-2'>Product Photo</p>
                                     <div className="flex items-center">
@@ -173,7 +171,7 @@ const ProductUpdateModal = ({ selectedProduct, refetch }) => {
                             </div>
                         </form>
 
-                        {/* Modal Actions */}
+                     
                         <div className="modal-action">
                             <form method="dialog">
                                 <button className="btn btn-outline mr-4" onClick={() => setIsModalOpen(false)}>Cancel</button>

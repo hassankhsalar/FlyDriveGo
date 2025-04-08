@@ -5,6 +5,7 @@ import {
   FaLinkedinIn,
   FaGoogle,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -20,17 +21,19 @@ const Footer = () => {
 
         <div className="flex flex-wrap gap-8">
           <div>
-            <h3 className="font-semibold text-gray-800">Home</h3>
+            <h3 className="font-semibold text-gray-800"><Link to='/'>Home</Link></h3>
             <ul className="text-gray-600 mt-2 space-y-1">
-              <li>Packages</li>
+              <li><Link to='tour-pack'>Packages</Link></li>
               <li>Visa</li>
+              <li><Link to='/about'>About</Link></li>
             </ul>
           </div>
 
           <div>
             <h3 className="font-semibold text-gray-800">Shop</h3>
             <ul className="text-gray-600 mt-2 space-y-1">
-              <li>Transport</li>
+              <li><Link to='/transportation'>Transport</Link></li>
+              <li><Link to='careers'>Careers</Link></li>
             </ul>
           </div>
 
