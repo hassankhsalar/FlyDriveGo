@@ -108,7 +108,7 @@ export const router = createBrowserRouter([
         element: <Transportation></Transportation>,
       },
       {
-        path: "tour-pack",
+        path: "/tour-pack",
         element: <TourPackages />,
       },
       {
