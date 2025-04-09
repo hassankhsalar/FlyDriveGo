@@ -18,7 +18,7 @@ const DashBoard = () => {
           </div>
         </div>
         <div className="divide-y flex flex-col justify-center ga dark:divide-gray-300">
-          <ul className="p-4 space-y-3 text-sm font-poppins">
+          <ul className="p-4 space-y-3 text-sm  font-poppins">
             <li><Link to='/dashboard/adminDashboard'>Admin Dashboard</Link></li>
             <li><Link to='/dashboard/add-products'>Add Products</Link></li>
             <li><Link to='/dashboard/addTourPackage'>Add Tour Packages</Link></li>
