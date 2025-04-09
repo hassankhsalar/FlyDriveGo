@@ -25,6 +25,7 @@ import VisaStatus from "../Pages/VisaAssistance/VisaStatus";
 import EshopHome from "../Pages/Eshop/EshopHome/EshopHome";
 import DashboardLayout from "../Layout/DashboardLayout";
 import DashboardCharts from "../Pages/Dashboard/AdminDashboard/DashboardCharts";
+import BecomeASeller from "../Pages/SellerActivities/BecomeAseller/BecomeASeller";
 
 
 export const router = createBrowserRouter([
@@ -62,6 +63,10 @@ export const router = createBrowserRouter([
       {
         path: "/seller-productlist/:email",
         element: <SellerProductList />,
+      },
+      {
+        path: "/becomeseller",
+        element: <BecomeASeller></BecomeASeller>,
       },
       //===============----------- CAREER Routes ----============
       {
