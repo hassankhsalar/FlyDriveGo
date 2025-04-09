@@ -162,8 +162,6 @@ export const router = createBrowserRouter([
         path: "addTourPackage",
         element: <AddTourPackage />,
       },
-    ],
-
       {
         path: "adminDashboard",
         element: <DashboardCharts/>,
