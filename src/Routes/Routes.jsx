@@ -26,7 +26,6 @@ import EshopHome from "../Pages/Eshop/EshopHome/EshopHome";
 import DashboardLayout from "../Layout/DashboardLayout";
 import DashboardCharts from "../Pages/Dashboard/AdminDashboard/DashboardCharts";
 
-
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -58,7 +57,7 @@ export const router = createBrowserRouter([
         element: <TourBooking />,
       },
       //===============----------- SELLER Routes ----============
-      
+
       {
         path: "/seller-productlist/:email",
         element: <SellerProductList />,
@@ -98,7 +97,7 @@ export const router = createBrowserRouter([
         element: <ManageJobApplications />,
       },
       // Tour Package Add
-      
+
       {
         path: "/about",
         element: <About></About>,
@@ -152,7 +151,7 @@ export const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <DashboardLayout/>,
+    element: <DashboardLayout />,
     children: [
       {
         path: "add-products",
@@ -162,14 +161,11 @@ export const router = createBrowserRouter([
         path: "addTourPackage",
         element: <AddTourPackage />,
       },
-    ],
-
       {
         path: "adminDashboard",
-        element: <DashboardCharts/>,
+        element: <DashboardCharts />,
       },
-    ]
-
+    ],
   },
   {
     path: "/login",
