@@ -53,7 +53,7 @@ const Eproduct = () => {
     <div className="my-[60px] md:my-[120px]">
       <div className="mb-20">
         <h2 className="text-xxl md:text-4xl xl:text-4xl font-red-rose  text-primary font-bold text-center">
-          Gear Up for Your Next Adventure! {products.length}
+          Gear Up for Your Next Adventure!
         </h2>
       </div>
       {/* filter */}
