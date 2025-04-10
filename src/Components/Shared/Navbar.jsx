@@ -41,12 +41,12 @@ const Navbar = () => {
           className={`${
             isProductHover
               ? "text-[#3B9DF8]"
-              : "dark:text-[#abc2d3] text-gray-600"
+              : "dark:text-[#4e585f] text-gray-600"
           } flex items-center gap-[5px] cursor-pointer`}
           onMouseEnter={() => setIsProductHover(true)}
           onMouseLeave={() => setIsProductHover(false)}
         >
-          <MdLaptopMac className="text-[1.1rem]" />
+          <MdLaptopMac className="text-[1.1rem] " />
           Transportation
           <IoIosArrowUp
             className={`${
@@ -239,16 +239,16 @@ const Navbar = () => {
           </div>
         </li>
 
-        <li className="flex items-center dark:text-[#abc2d3] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer">
-          <AiOutlineFire className="text-[1.1rem] group-hover:text-[#3B9DF8] dark:text-[#abc2d3] text-gray-600" />
+        <li className="flex items-center dark:text-[#4e585f] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer">
+          <AiOutlineFire className="text-[1.1rem] group-hover:text-[#3B9DF8] dark:text-[#4e585f] text-gray-600" />
           Visa
         </li>
-        <li className="flex items-center dark:text-[#abc2d3] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer">
-          <BiShoppingBag className="text-[1.1rem] group-hover:text-[#3B9DF8] dark:text-[#abc2d3] text-gray-600" />
+        <li className="flex items-center dark:text-[#4e585f] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer">
+          <BiShoppingBag className="text-[1.1rem] group-hover:text-[#3B9DF8] dark:text-[#4e585f] text-gray-600" />
           <Link to='eshop'>Shop</Link>
         </li>
-        <li className="flex items-center dark:text-[#abc2d3] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer">
-          <BiSupport className="text-[1.1rem] group-hover:text-[#3B9DF8] dark:text-[#abc2d3] text-gray-600" />
+        <li className="flex items-center dark:text-[#4e585f] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer">
+          <BiSupport className="text-[1.1rem] group-hover:text-[#3B9DF8] dark:text-[#4e585f] text-gray-600" />
           <Link to='/about'>About</Link>
         </li>
       </ul>
@@ -272,7 +272,7 @@ const Navbar = () => {
                 </div>
             </div>
 
-          <h1 className="text-[1rem] dark:text-[#abc2d3] font-[400] text-gray-600 sm:block hidden">
+          <h1 className="text-[1rem] dark:text-[#4e585f] font-[400] text-gray-600 sm:block hidden">
             {user?.displayName}
           </h1>
 
