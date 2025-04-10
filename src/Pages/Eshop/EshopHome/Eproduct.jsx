@@ -99,7 +99,7 @@ const Eproduct = () => {
       </div>
       {/* Products */}
       <div className="my-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(340px,1fr))] gap-6 items-stretch">
           {products.map((product) => (
             <ProductCard
               key={product._id}
