@@ -73,7 +73,12 @@
     "rating": 4.5,
     "room_type": "Deluxe Sea View",
     "photos": [
-      "https://example.com/hotel1.jpg"
+      "https://i.ibb.co.com/s9PWMnHM/Bali-Hotels-Beach-Pool-View-To-Kuta-Beach.jpg",
+      "https://i.ibb.co.com/HD4jNC9Y/493750151.jpg",
+      "https://i.ibb.co.com/KpT4DVfd/image-asset.jpg",
+      "https://i.ibb.co.com/9kCphQH0/images-3.jpg",
+      "https://i.ibb.co.com/W4WG2t6y/images-16.jpg",
+      "https://i.ibb.co.com/0jFVhw7J/467489869.jpg"
     ]
   },
   "reviews": [
@@ -202,7 +207,12 @@
     "rating": 5,
     "room_type": "Panoramic Suite",
     "photos": [
-      "https://example.com/swiss-hotel.jpg"
+      "https://i.ibb.co.com/RGvm3zXH/spa-winter-jpg.jpg",
+      "https://i.ibb.co.com/RTGYgFgT/mp1-8323-720-2x.jpg",
+      "https://i.ibb.co.com/svFC9Zqd/421669322.jpg",
+      "https://i.ibb.co.com/1fCLxF1s/images-4-4.jpg",
+      "https://i.ibb.co.com/JRJ47qfN/images-5-4.jpg",
+      "https://i.ibb.co.com/G45FGxm1/116778112.jpg"
     ]
   },
   "reviews": [
@@ -274,7 +284,7 @@
     }
   },
   "banner_img": "https://i.ibb.co.com/5hXwqZh8/Premium-desert-safari-Dubai.jpg",
-  "IMG1":"https://i.ibb.co.com/XrqpjMzC/Luxury-desert-safari-Dubai-VIP-desert-safari-optionsexclusive-desert-experience.jpg",
+  "IMG1": "https://i.ibb.co.com/XrqpjMzC/Luxury-desert-safari-Dubai-VIP-desert-safari-optionsexclusive-desert-experience.jpg",
   "IMG2": "https://i.ibb.co.com/LDH1F3W5/images-1-1.jpg",
   "IMG3": "https://i.ibb.co.com/0R58vDLW/SC2.jpg",
   "IMG4": "https://i.ibb.co.com/pBJRTnQr/images-4.jpg",
@@ -311,235 +321,17 @@
     "Flights to/from Dubai",
     "Personal expenses"
   ],
-  "reviews": [
-    {
-      "id": 1,
-      "user": {
-        "name": "Emma Wilson",
-        "location": "Vancouver, Canada",
-        "avatar": "https://i.ibb.co.com/Y75TTn5p/man-working-laptop-from-office-1108340-892.jpg",
-        "traveler_type": "Couple"
-      },
-      "rating": 5,
-      "title": "Magical cherry blossom experience!",
-      "review_text": "The cherry blossoms were breathtaking, and the cultural activities were so immersive. The tea ceremony was a highlight!",
-      "date": "2024-04-01",
-      "verified_booking": true,
-      "photos": [
-        "/reviews/tokyo-1.jpg"
-      ],
-      "helpful_count": 18,
-      "response": {
-        "text": "Thank you, Emma! We're so glad you enjoyed the cherry blossoms.",
-        "date": "2024-04-03"
-      }
-    },
-    {
-      "id": 2,
-      "user": {
-        "name": "James Taylor",
-        "location": "Auckland, New Zealand",
-        "avatar": "https://i.ibb.co.com/Y75TTn5p/man-working-laptop-from-office-1108340-892.jpg",
-        "traveler_type": "Solo Traveler"
-      },
-      "rating": 4,
-      "title": "Great tour, but busy",
-      "review_text": "The tour was fantastic, but Tokyo was very crowded during cherry blossom season. Still, an amazing experience!",
-      "date": "2024-04-10",
-      "verified_booking": true,
-      "photos": [],
-      "helpful_count": 9,
-      "response": {
-        "text": "Thank you for your feedback, James! We'll work on managing the crowds better.",
-        "date": "2024-04-12"
-      }
-    }
-  ]
-},
-{
-  "title": "Tokyo Cherry Blossom Tour: 5 Days of Cultural Beauty",
-  "overview": "Stroll beneath pink sakura canopies in Ueno Park and Shinjuku Gyoen, savor kaiseki dinners, and master sushi-making with a Michelin chef. Day-trip to Mount Fuji’s 5th Station for blossom-framed vistas, explore Asakusa’s Senso-ji Temple, and dance through Harajuku’s neon-lit streets. Stay in a 4-star Ginza hotel, cruise the Sumida River at dusk, and witness ancient tea ceremonies. A springtime immersion into Japan’s harmony of tradition and pop culture.",
-  "destination": {
-    "country": "Japan",
-    "city": "Tokyo",
-    "map": "https://maps.google.com/?q=Tokyo"
-  },
-  "country_history": "Japan, an island nation in East Asia, has a history spanning thousands of years, from its ancient Jomon period to the rise of samurai culture and the modernization of the Meiji Restoration. Known for its unique blend of tradition and innovation, Japan has preserved its cultural heritage, including tea ceremonies, kimono, and cherry blossom festivals, while becoming a global leader in technology and industry. Tokyo, its capital, is a bustling metropolis that reflects Japan’s dynamic past and future, offering a mix of historic temples and futuristic skyscrapers.",
-  "duration": "5 Days, 4 Nights",
-  "available_dates": [
-    "2025-03-25",
-    "2025-04-05",
-    "2025-04-15"
-  ],
-  "price": {
-    "currency": "JPY",
-    "per_person": 120000,
-    "group_discount": {
-      "min_people": 4,
-      "discount_percent": 10
-    }
-  },
-  "banner_img": "https://i.ibb.co.com/0p36JwGJ/the-sakura-of-japan-are-well-known-around-the-world-for-their-radiant-delicate-and-transient-beauty.jpg",
-  "IMG1":"https://i.ibb.co.com/nMMjyKGN/a0001033-parts-5fd03fc9e4ff4.jpg",
-  "IMG2": "https://i.ibb.co.com/2YMSK8Tw/images-5.jpg",
-  "IMG3": "https://i.ibb.co.com/wZvpgJZk/1-shutterstock-1471614707-480x480.jpg",
-  "IMG4": "https://i.ibb.co.com/s9fBLmcw/Tokyo-Cherry-Blossoms1-SH.jpg",
-  "IMG5": "https://i.ibb.co.com/qMybv1Kv/images-2-1.jpg",
-  "IMG6": "https://i.ibb.co.com/ym3jkB23/images-4-1.jpg",
-  "itinerary": [
-    {
-      "day": 1,
-      "title": "Cherry Blossom Viewing",
-      "description": "Arrive at Narita International Airport, where our team will greet you with a warm welcome. Transfer to your 4-star hotel in central Tokyo, perfectly located for your cherry blossom adventure. After checking in, head to Ueno Park, one of Tokyo’s most famous *sakura* spots, where thousands of cherry trees bloom in a pink spectacle. Stroll along the pathways, enjoy a picnic lunch under the blossoms, and visit Shinjuku Gyoen for more serene gardens. End your day with a traditional *kaiseki* dinner."
-    },
-    {
-      "day": 2,
-      "title": "Asakusa & Senso-ji Temple",
-      "description": "After breakfast, dive into Tokyo’s rich history with a visit to Asakusa. Explore Senso-ji, Tokyo’s oldest temple, where you’ll pass through the iconic Kaminarimon Gate and wander Nakamise Street, lined with shops selling traditional crafts and snacks like *ningyo-yaki*. Learn about Buddhist rituals from your guide and enjoy a sushi lunch at a local eatery. In the afternoon, take a scenic Sumida River cruise to see cherry blossoms from the water, ending with a view of Tokyo Skytree at dusk."
-    },
-    {
-      "day": 3,
-      "title": "Mount Fuji Day Trip",
-      "description": "Embark on a full-day excursion to Mount Fuji, Japan’s sacred peak. After an early breakfast, travel by coach to the 5th Station (weather permitting), offering stunning views of the snow-capped mountain framed by cherry blossoms in spring. Visit Lake Kawaguchi, where you’ll enjoy a boat ride with Fuji as your backdrop, followed by lunch featuring *hoto* noodles, a local specialty. Stop at Chureito Pagoda for an iconic photo before returning to Tokyo for a relaxing evening."
-    },
-    {
-      "day": 4,
-      "title": "Harajuku & Shibuya",
-      "description": "Today, explore Tokyo’s vibrant modern culture. Start in Harajuku with a walk down Takeshita Street, famous for its quirky fashion boutiques and colorful street food like *crepes* and *cotton candy*. Visit Meiji Shrine, a tranquil oasis amid the city, and enjoy a traditional tea ceremony. After lunch, head to Shibuya to cross the world-famous Scramble Crossing and see the Hachiko statue. Spend your evening shopping or dining in this bustling district, soaking in Tokyo’s electric energy."
-    },
-    {
-      "day": 5,
-      "title": "Departure",
-      "description": "Enjoy a final breakfast at your hotel, perhaps sampling Japanese staples like miso soup and grilled fish. Take some time to explore nearby Ginza for luxury shopping or simply relax with a view of the city skyline. Our team will arrange your transfer back to Narita Airport, ensuring a smooth departure as you leave with memories of Japan’s cherry blossoms and cultural wonders."
-    }
-  ],
-  "inclusions": [
-    "4-star hotel",
-    "Breakfast & dinner",
-    "Temple tours"
-  ],
-  "exclusions": [
-    "Flights to/from Japan",
-    "Rail pass"
-  ],
- "reviews": [
-    {
-      "id": 1,
-      "user": {
-        "name": "Emma Wilson",
-        "location": "Vancouver, Canada",
-        "avatar": "https://i.ibb.co.com/Y75TTn5p/man-working-laptop-from-office-1108340-892.jpg",
-        "traveler_type": "Couple"
-      },
-      "rating": 5,
-      "title": "Magical cherry blossom experience!",
-      "review_text": "The cherry blossoms were breathtaking, and the cultural activities were so immersive. The tea ceremony was a highlight!",
-      "date": "2024-04-01",
-      "verified_booking": true,
-      "photos": [
-        "/reviews/tokyo-1.jpg"
-      ],
-      "helpful_count": 18,
-      "response": {
-        "text": "Thank you, Emma! We're so glad you enjoyed the cherry blossoms.",
-        "date": "2024-04-03"
-      }
-    },
-    {
-      "id": 2,
-      "user": {
-        "name": "James Taylor",
-        "location": "Auckland, New Zealand",
-        "avatar": "https://i.ibb.co.com/Y75TTn5p/man-working-laptop-from-office-1108340-892.jpg",
-        "traveler_type": "Solo Traveler"
-      },
-      "rating": 4,
-      "title": "Great tour, but busy",
-      "review_text": "The tour was fantastic, but Tokyo was very crowded during cherry blossom season. Still, an amazing experience!",
-      "date": "2024-04-10",
-      "verified_booking": true,
-      "photos": [],
-      "helpful_count": 9,
-      "response": {
-        "text": "Thank you for your feedback, James! We'll work on managing the crowds better.",
-        "date": "2024-04-12"
-      }
-    }
-  ]
-},
-{
-  "title": "Santorini Romance: 5-Day Luxury Escape",
-  "overview": "Revel in Caldera View Suites’ infinity pools, private yacht cruises at sunset, and candlelit dinners in Oia’s cliffside caves. Explore Akrotiri’s volcanic ruins, snorkel the Aegean’s crystal coves, and taste Assyrtiko wines at Santorini’s oldest vineyard. Includes a guided walk through Fira’s blue-domed alleys, therapeutic hot spring dips, and a photoshoot at Red Beach’s crimson cliffs. Tailored for honeymooners and romantics chasing whitewashed perfection.",
-  "destination": {
-    "country": "Greece",
-    "city": "Santorini",
-    "map": "https://maps.google.com/?q=Santorini"
-  },
-  "country_history": "Greece, the cradle of Western civilization, has a history spanning over 3,000 years, from the ancient Minoan and Mycenaean civilizations to the Golden Age of Athens and the Hellenistic period. Known for its contributions to philosophy, democracy, and the arts, Greece is also famous for its mythology and archaeological sites like the Acropolis and Delphi. Santorini, part of the Cyclades islands, is renowned for its stunning sunsets, whitewashed buildings, and volcanic landscapes, offering a glimpse into Greece’s ancient and modern allure.",
-  "duration": "5 Days, 4 Nights",
-  "available_dates": [
-    "2025-07-01",
-    "2025-08-10",
-    "2025-09-05"
-  ],
-  "price": {
-    "currency": "EUR",
-    "per_person": 1499,
-    "group_discount": {
-      "min_people": 3,
-      "discount_percent": 15
-    }
-  },
-  "banner_img": "https://i.ibb.co.com/yFG1HJps/Santorini-2024-Street-View-Shutterstock-1040803156-Hybris.jpg",
-  "IMG1":"https://i.ibb.co.com/RpD2H5bJ/oia-santorini-greece.jpg",
-  "IMG2": "https://i.ibb.co.com/1tBtGk34/caption.jpg",
-  "IMG3": "https://i.ibb.co.com/4nCRw3W7/a3.jpg",
-  "IMG4": "https://i.ibb.co.com/BpgZ11F/images-6.jpg",
-  "IMG5": "https://i.ibb.co.com/kscf97jx/images-1-2.jpg",
-  "IMG6": "https://i.ibb.co.com/S4hRCMJX/Santorini-2024-Street-View-Shutterstock-1040803156-Hybris.jpg",
-  "itinerary": [
-    {
-      "day": 1,
-      "title": "Arrival & Sunset Cruise",
-      "description": "Your romantic getaway begins as you arrive at Santorini Airport, greeted by our team with a warm smile and a chilled glass of local Assyrtiko wine. Transfer to your luxury hotel perched on the caldera cliffs, offering uninterrupted sea views from your Sea View Suite. After settling in, embark on a sunset cruise aboard a traditional wooden boat. Sail past volcanic islands, sip champagne, and watch the sky blaze with color as the sun dips below the horizon—a perfect start to your Santorini escape."
-    },
-    {
-      "day": 2,
-      "title": "Oia Village & Akrotiri",
-      "description": "After a breakfast of Greek yogurt and honey on your private terrace, set out to explore Oia, Santorini’s most picturesque village. Wander through narrow cobblestone streets lined with whitewashed houses and blue-domed churches, stopping for photos at every turn. Enjoy a leisurely lunch at a cliffside taverna, tasting *fava* and fresh seafood. In the afternoon, visit the ancient ruins of Akrotiri, a Minoan city preserved by volcanic ash, and learn about its fascinating history from your guide."
-    },
-    {
-      "day": 3,
-      "title": "Red Beach & Wine Tasting",
-      "description": "Today, discover Santorini’s unique beaches and flavors. After breakfast, head to Red Beach, famous for its striking red volcanic sand and turquoise waters. Swim, sunbathe, or simply relax under an umbrella with a good book. In the afternoon, visit a local winery for a tasting session, sampling crisp whites and robust reds paired with cheeses and olives. Learn about Santorini’s volcanic soil and its impact on viticulture, then return to your hotel for a quiet evening."
-    },
-    {
-      "day": 4,
-      "title": "Fira & Hot Springs",
-      "description": "Explore Fira, Santorini’s lively capital, after a leisurely breakfast. Stroll through its bustling streets, browsing boutiques and art galleries, and visit the Museum of Prehistoric Thera to see artifacts from Akrotiri. Then, take a boat to the volcanic Nea Kameni island, where you’ll swim in therapeutic hot springs warmed by the caldera. Enjoy a seafood lunch on the boat before returning to Fira for a romantic dinner with caldera views, featuring *moussaka* and baklava."
-    },
-    {
-      "day": 5,
-      "title": "Departure",
-      "description": "Spend your final morning in Santorini with breakfast overlooking the Aegean Sea. Take a last walk along the caldera or relax by the pool with a cocktail in hand. Our team will handle your checkout and provide a private transfer to the airport, ensuring a smooth farewell. Leave with memories of Santorini’s romance and beauty etched in your heart."
-    }
-  ],
-  "inclusions": [
-    "Luxury hotel accommodation",
-    "Daily breakfast & 2 dinners",
-    "Sunset cruise",
-    "Guided village tour"
-  ],
-  "exclusions": [
-    "Flights to/from Santorini",
-    "Personal expenses"
-  ],
   "accommodation": {
-    "hotel_name": "Caldera View Suites",
+    "hotel_name": "Burj Al Arab Jumeirah",
     "rating": 5,
-    "room_type": "Sea View Suite",
+    "room_type": "Ocean Suite",
     "photos": [
-      "https://example.com/santorini-hotel.jpg"
+      "https://i.ibb.co.com/wrC1tkjr/caption-1.jpg",
+      "https://i.ibb.co.com/z1BDsBf/burj-al-arab-jacuzzi.jpg",
+      "https://i.ibb.co.com/ymrCVZ8x/images-2-4.jpg",
+      "https://i.ibb.co.com/4RzYYmSc/beautiful-lower-lobby.jpg",
+      "https://i.ibb.co.com/gFHb6cMW/images-1-6.jpg",
+      "https://i.ibb.co.com/p66tJ9Ys/5de8de09.jpg"
     ]
   },
   "reviews": [
@@ -587,6 +379,258 @@
     }
   ]
 },
+
+{
+  "title": "Tokyo Cherry Blossom Tour: 5 Days of Cultural Beauty",
+  "overview": "Stroll beneath pink sakura canopies in Ueno Park and Shinjuku Gyoen, savor kaiseki dinners, and master sushi-making with a Michelin chef. Day-trip to Mount Fuji’s 5th Station for blossom-framed vistas, explore Asakusa’s Senso-ji Temple, and dance through Harajuku’s neon-lit streets. Stay in a 4-star Ginza hotel, cruise the Sumida River at dusk, and witness ancient tea ceremonies. A springtime immersion into Japan’s harmony of tradition and pop culture.",
+  "destination": {
+    "country": "Japan",
+    "city": "Tokyo",
+    "map": "https://maps.google.com/?q=Tokyo"
+  },
+  "country_history": "Japan, an island nation in East Asia, has a history spanning thousands of years, from its ancient Jomon period to the rise of samurai culture and the modernization of the Meiji Restoration. Known for its unique blend of tradition and innovation, Japan has preserved its cultural heritage, including tea ceremonies, kimono, and cherry blossom festivals, while becoming a global leader in technology and industry. Tokyo, its capital, is a bustling metropolis that reflects Japan’s dynamic past and future, offering a mix of historic temples and futuristic skyscrapers.",
+  "duration": "5 Days, 4 Nights",
+  "available_dates": [
+    "2025-03-25",
+    "2025-04-05",
+    "2025-04-15"
+  ],
+  "price": {
+    "currency": "JPY",
+    "per_person": 120000,
+    "group_discount": {
+      "min_people": 4,
+      "discount_percent": 10
+    }
+  },
+  "banner_img": "https://i.ibb.co.com/0p36JwGJ/the-sakura-of-japan-are-well-known-around-the-world-for-their-radiant-delicate-and-transient-beauty.jpg",
+  "IMG1": "https://i.ibb.co.com/nMMjyKGN/a0001033-parts-5fd03fc9e4ff4.jpg",
+  "IMG2": "https://i.ibb.co.com/2YMSK8Tw/images-5.jpg",
+  "IMG3": "https://i.ibb.co.com/wZvpgJZk/1-shutterstock-1471614707-480x480.jpg",
+  "IMG4": "https://i.ibb.co.com/s9fBLmcw/Tokyo-Cherry-Blossoms1-SH.jpg",
+  "IMG5": "https://i.ibb.co.com/qMybv1Kv/images-2-1.jpg",
+  "IMG6": "https://i.ibb.co.com/ym3jkB23/images-4-1.jpg",
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "Cherry Blossom Viewing",
+      "description": "Arrive at Narita International Airport, where our team will greet you with a warm welcome. Transfer to your 4-star hotel in central Tokyo, perfectly located for your cherry blossom adventure. After checking in, head to Ueno Park, one of Tokyo’s most famous *sakura* spots, where thousands of cherry trees bloom in a pink spectacle. Stroll along the pathways, enjoy a picnic lunch under the blossoms, and visit Shinjuku Gyoen for more serene gardens. End your day with a traditional *kaiseki* dinner."
+    },
+    {
+      "day": 2,
+      "title": "Asakusa & Senso-ji Temple",
+      "description": "After breakfast, dive into Tokyo’s rich history with a visit to Asakusa. Explore Senso-ji, Tokyo’s oldest temple, where you’ll pass through the iconic Kaminarimon Gate and wander Nakamise Street, lined with shops selling traditional crafts and snacks like *ningyo-yaki*. Learn about Buddhist rituals from your guide and enjoy a sushi lunch at a local eatery. In the afternoon, take a scenic Sumida River cruise to see cherry blossoms from the water, ending with a view of Tokyo Skytree at dusk."
+    },
+    {
+      "day": 3,
+      "title": "Mount Fuji Day Trip",
+      "description": "Embark on a full-day excursion to Mount Fuji, Japan’s sacred peak. After an early breakfast, travel by coach to the 5th Station (weather permitting), offering stunning views of the snow-capped mountain framed by cherry blossoms in spring. Visit Lake Kawaguchi, where you’ll enjoy a boat ride with Fuji as your backdrop, followed by lunch featuring *hoto* noodles, a local specialty. Stop at Chureito Pagoda for an iconic photo before returning to Tokyo for a relaxing evening."
+    },
+    {
+      "day": 4,
+      "title": "Harajuku & Shibuya",
+      "description": "Today, explore Tokyo’s vibrant modern culture. Start in Harajuku with a walk down Takeshita Street, famous for its quirky fashion boutiques and colorful street food like *crepes* and *cotton candy*. Visit Meiji Shrine, a tranquil oasis amid the city, and enjoy a traditional tea ceremony. After lunch, head to Shibuya to cross the world-famous Scramble Crossing and see the Hachiko statue. Spend your evening shopping or dining in this bustling district, soaking in Tokyo’s electric energy."
+    },
+    {
+      "day": 5,
+      "title": "Departure",
+      "description": "Enjoy a final breakfast at your hotel, perhaps sampling Japanese staples like miso soup and grilled fish. Take some time to explore nearby Ginza for luxury shopping or simply relax with a view of the city skyline. Our team will arrange your transfer back to Narita Airport, ensuring a smooth departure as you leave with memories of Japan’s cherry blossoms and cultural wonders."
+    }
+  ],
+  "inclusions": [
+    "4-star hotel",
+    "Breakfast & dinner",
+    "Temple tours"
+  ],
+  "exclusions": [
+    "Flights to/from Japan",
+    "Rail pass"
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "user": {
+        "name": "Emma Wilson",
+        "location": "Vancouver, Canada",
+        "avatar": "https://i.ibb.co.com/Y75TTn5p/man-working-laptop-from-office-1108340-892.jpg",
+        "traveler_type": "Couple"
+      },
+      "rating": 5,
+      "title": "Magical cherry blossom experience!",
+      "review_text": "The cherry blossoms were breathtaking, and the cultural activities were so immersive. The tea ceremony was a highlight!",
+      "date": "2024-04-01",
+      "verified_booking": true,
+      "photos": [
+        "/reviews/tokyo-1.jpg"
+      ],
+      "helpful_count": 18,
+      "response": {
+        "text": "Thank you, Emma! We're so glad you enjoyed the cherry blossoms.",
+        "date": "2024-04-03"
+      }
+    },
+    {
+      "id": 2,
+      "user": {
+        "name": "James Taylor",
+        "location": "Auckland, New Zealand",
+        "avatar": "https://i.ibb.co.com/Y75TTn5p/man-working-laptop-from-office-1108340-892.jpg",
+        "traveler_type": "Solo Traveler"
+      },
+      "rating": 4,
+      "title": "Great tour, but busy",
+      "review_text": "The tour was fantastic, but Tokyo was very crowded during cherry blossom season. Still, an amazing experience!",
+      "date": "2024-04-10",
+      "verified_booking": true,
+      "photos": [],
+      "helpful_count": 9,
+      "response": {
+        "text": "Thank you for your feedback, James! We'll work on managing the crowds better.",
+        "date": "2024-04-12"
+      }
+    }
+  ],
+  "accommodation": {
+    "hotel_name": "4-Star Ginza Hotel",
+    "rating": 4,
+    "room_type": "Standard Room",
+    "photos": [
+      "https://i.ibb.co.com/tw5ykfhJ/images-6.jpg",
+      "https://i.ibb.co.com/spRP4QMS/images-3-3.jpg",
+      "https://i.ibb.co.com/QjxtFysg/649498515.jpg",
+      "https://i.ibb.co.com/kgKYw4Vj/images-7.jpg",
+      "https://i.ibb.co.com/zhbGS0bt/xxl-153163577.jpg",
+      "https://i.ibb.co.com/Z6rPxZ4f/509703320.jpg"
+    ]
+  }
+}
+,
+{
+  "title": "Santorini Romance: 5-Day Luxury Escape",
+  "overview": "Revel in Caldera View Suites’ infinity pools, private yacht cruises at sunset, and candlelit dinners in Oia’s cliffside caves. Explore Akrotiri’s volcanic ruins, snorkel the Aegean’s crystal coves, and taste Assyrtiko wines at Santorini’s oldest vineyard. Includes a guided walk through Fira’s blue-domed alleys, therapeutic hot spring dips, and a photoshoot at Red Beach’s crimson cliffs. Tailored for honeymooners and romantics chasing whitewashed perfection.",
+  "destination": {
+    "country": "Greece",
+    "city": "Santorini",
+    "map": "https://maps.google.com/?q=Santorini"
+  },
+  "country_history": "Greece, the cradle of Western civilization, has a history spanning over 3,000 years, from the ancient Minoan and Mycenaean civilizations to the Golden Age of Athens and the Hellenistic period. Known for its contributions to philosophy, democracy, and the arts, Greece is also famous for its mythology and archaeological sites like the Acropolis and Delphi. Santorini, part of the Cyclades islands, is renowned for its stunning sunsets, whitewashed buildings, and volcanic landscapes, offering a glimpse into Greece’s ancient and modern allure.",
+  "duration": "5 Days, 4 Nights",
+  "available_dates": [
+    "2025-07-01",
+    "2025-08-10",
+    "2025-09-05"
+  ],
+  "price": {
+    "currency": "EUR",
+    "per_person": 1499,
+    "group_discount": {
+      "min_people": 3,
+      "discount_percent": 15
+    }
+  },
+  "banner_img": "https://i.ibb.co.com/yFG1HJps/Santorini-2024-Street-View-Shutterstock-1040803156-Hybris.jpg",
+  "IMG1": "https://i.ibb.co.com/RpD2H5bJ/oia-santorini-greece.jpg",
+  "IMG2": "https://i.ibb.co.com/1tBtGk34/caption.jpg",
+  "IMG3": "https://i.ibb.co.com/4nCRw3W7/a3.jpg",
+  "IMG4": "https://i.ibb.co.com/BpgZ11F/images-6.jpg",
+  "IMG5": "https://i.ibb.co.com/kscf97jx/images-1-2.jpg",
+  "IMG6": "https://i.ibb.co.com/S4hRCMJX/Santorini-2024-Street-View-Shutterstock-1040803156-Hybris.jpg",
+  "itinerary": [
+    {
+      "day": 1,
+      "title": "Arrival & Sunset Cruise",
+      "description": "Your romantic getaway begins as you arrive at Santorini Airport, greeted by our team with a warm smile and a chilled glass of local Assyrtiko wine. Transfer to your luxury hotel perched on the caldera cliffs, offering uninterrupted sea views from your Sea View Suite. After settling in, embark on a sunset cruise aboard a traditional wooden boat. Sail past volcanic islands, sip champagne, and watch the sky blaze with color as the sun dips below the horizon—a perfect start to your Santorini escape."
+    },
+    {
+      "day": 2,
+      "title": "Oia Village & Akrotiri",
+      "description": "After a breakfast of Greek yogurt and honey on your private terrace, set out to explore Oia, Santorini’s most picturesque village. Wander through narrow cobblestone streets lined with whitewashed houses and blue-domed churches, stopping for photos at every turn. Enjoy a leisurely lunch at a cliffside taverna, tasting *fava* and fresh seafood. In the afternoon, visit the ancient ruins of Akrotiri, a Minoan city preserved by volcanic ash, and learn about its fascinating history from your guide."
+    },
+    {
+      "day": 3,
+      "title": "Red Beach & Wine Tasting",
+      "description": "Today, discover Santorini’s unique beaches and flavors. After breakfast, head to Red Beach, famous for its striking red volcanic sand and turquoise waters. Swim, sunbathe, or simply relax under an umbrella with a good book. In the afternoon, visit a local winery for a tasting session, sampling crisp whites and robust reds paired with cheeses and olives. Learn about Santorini’s volcanic soil and its impact on viticulture, then return to your hotel for a quiet evening."
+    },
+    {
+      "day": 4,
+      "title": "Fira & Hot Springs",
+      "description": "Explore Fira, Santorini’s lively capital, after a leisurely breakfast. Stroll through its bustling streets, browsing boutiques and art galleries, and visit the Museum of Prehistoric Thera to see artifacts from Akrotiri. Then, take a boat to the volcanic Nea Kameni island, where you’ll swim in therapeutic hot springs warmed by the caldera. Enjoy a seafood lunch on the boat before returning to Fira for a romantic dinner with caldera views, featuring *moussaka* and baklava."
+    },
+    {
+      "day": 5,
+      "title": "Departure",
+      "description": "Spend your final morning in Santorini with breakfast overlooking the Aegean Sea. Take a last walk along the caldera or relax by the pool with a cocktail in hand. Our team will handle your checkout and provide a private transfer to the airport, ensuring a smooth farewell. Leave with memories of Santorini’s romance and beauty etched in your heart."
+    }
+  ],
+  "inclusions": [
+    "Luxury hotel accommodation",
+    "Daily breakfast & 2 dinners",
+    "Sunset cruise",
+    "Guided village tour"
+  ],
+  "exclusions": [
+    "Flights to/from Santorini",
+    "Personal expenses"
+  ],
+  "accommodation": {
+    "hotel_name": "Caldera View Suites",
+    "rating": 5,
+    "room_type": "Sea View Suite",
+    "photos": [
+      "https://i.ibb.co.com/4gwnz1d7/69fd9d48.jpg",
+      "https://i.ibb.co.com/wFJDhvg6/images-9.jpg",
+      "https://i.ibb.co.com/0vbvG01/images-10.jpg",
+      "https://i.ibb.co.com/DHvfgQwv/images-11.jpg",
+      "https://i.ibb.co.com/VWwPJ6LP/images-13.jpg",
+      "https://i.ibb.co.com/m5b6v2W8/images-14.jpg"
+    ]
+  },
+  "reviews": [
+    {
+      "id": 1,
+      "user": {
+        "name": "Emma Wilson",
+        "location": "Vancouver, Canada",
+        "avatar": "https://i.ibb.co.com/Y75TTn5p/man-working-laptop-from-office-1108340-892.jpg",
+        "traveler_type": "Couple"
+      },
+      "rating": 5,
+      "title": "Magical cherry blossom experience!",
+      "review_text": "The cherry blossoms were breathtaking, and the cultural activities were so immersive. The tea ceremony was a highlight!",
+      "date": "2024-04-01",
+      "verified_booking": true,
+      "photos": [
+        "/reviews/tokyo-1.jpg"
+      ],
+      "helpful_count": 18,
+      "response": {
+        "text": "Thank you, Emma! We're so glad you enjoyed the cherry blossoms.",
+        "date": "2024-04-03"
+      }
+    },
+    {
+      "id": 2,
+      "user": {
+        "name": "James Taylor",
+        "location": "Auckland, New Zealand",
+        "avatar": "https://i.ibb.co.com/Y75TTn5p/man-working-laptop-from-office-1108340-892.jpg",
+        "traveler_type": "Solo Traveler"
+      },
+      "rating": 4,
+      "title": "Great tour, but busy",
+      "review_text": "The tour was fantastic, but Tokyo was very crowded during cherry blossom season. Still, an amazing experience!",
+      "date": "2024-04-10",
+      "verified_booking": true,
+      "photos": [],
+      "helpful_count": 9,
+      "response": {
+        "text": "Thank you for your feedback, James! We'll work on managing the crowds better.",
+        "date": "2024-04-12"
+      }
+    }
+  ]
+}
+,
   {
     "title": "New York City Adventure: 6-Day Urban Exploration",
     "overview": "Live like Manhattan royalty: front-row Broadway tickets, helicopter flights over the Statue of Liberty, and 5-star suites near Times Square. Kayak Central Park’s lakes, explore the Met’s art vaults, and dine at Michelin-starred eateries. Walk the Brooklyn Bridge at golden hour, shop Fifth Avenue’s flagship boutiques, and toast with rooftop cocktails overlooking the Empire State Building. The ultimate blend of iconic landmarks, hidden gems, and cosmopolitan luxury.",
@@ -664,8 +708,15 @@
       "rating": 4.5,
       "room_type": "Luxury Suite",
       "photos": [
-        "https://example.com/nyc-hotel.jpg"
+        "https://i.ibb.co.com/4nkY90GY/images-3.jpg",
+        "https://i.ibb.co.com/6RbVMTnb/images-1.jpg",
+        "https://i.ibb.co.com/RTTywW81/b380c4a9.jpg",
+        "https://i.ibb.co.com/1twwtbCh/images.jpg",
+        "https://i.ibb.co.com/jkn8pykq/expedia-group-87347-86817e-523913.jpg",
+        "https://i.ibb.co.com/Kxm2WZBy/images-4.jpg"
+       
       ]
+        
     },
     "reviews": [
       {
@@ -795,7 +846,12 @@
       "rating": 4.8,
       "room_type": "Mountain View Suite",
       "photos": [
-        "https://example.com/sacred-valley-lodge.jpg"
+        "https://i.ibb.co.com/YTTrLz4s/614311495.jpg",
+        "https://i.ibb.co.com/fGdb9SkD/614308793.jpg",
+        "https://i.ibb.co.com/LFPgZyh/images-5-3.jpg",
+        "https://i.ibb.co.com/VcSwSmXn/skylodge-adventure-suites.jpg",
+        "https://i.ibb.co.com/YTKLRGVh/images-7-1.jpg",
+        "https://i.ibb.co.com/tMXkd2YL/images-6-1.jpg"
       ]
     },
     "reviews": [
@@ -925,7 +981,12 @@
       "rating": 5,
       "room_type": "Harbour View Suite",
       "photos": [
-        "https://example.com/sydney-hotel.jpg"
+        "https://i.ibb.co.com/sJPnJ7KR/images-1-8.jpg",
+        "https://i.ibb.co.com/BHyVSk3S/492477770.jpg",
+        "https://i.ibb.co.com/1fN9VPfQ/a7811611-y.jpg",
+        "https://i.ibb.co.com/JW1dfpzF/images-3-5.jpg",
+        "https://i.ibb.co.com/svWXStDq/images-2-6.jpg",
+        "https://i.ibb.co.com/xKgMwTJH/images-4.jpg"
       ]
     },
     "reviews": [
