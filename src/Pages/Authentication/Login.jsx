@@ -1,21 +1,21 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import toast from "react-hot-toast";
-import { AuthContext } from "../../Provider/AuthProvider";
+
 import GoggleSignIn from "../../Shared/GoggleSignIn";
 import loginImage from "../../assets/Login/login-bg.jpg";
-import GitHubSignIn from "../../Shared/GitHubSignIn";
 import FacebookSignIn from "../../Shared/FacebookSignIn";
 import { ImArrowUpLeft2 } from "react-icons/im";
+import useAuth from "../../Hooks/useAuth";
 
 const Login = () => {
-  const { user, userLogin } = useContext(AuthContext);
+  const { user, userLogin, resetPassword } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(null);
   const location = useLocation();
   const navigate = useNavigate();
-  console.log(user);
+
   const handleLogin = (e) => {
     e.preventDefault();
     const form = new FormData(e.target);
@@ -31,6 +31,23 @@ const Login = () => {
       .catch((err) => {
         setError(err.message);
         toast.error("Incorrect Email or Password");
+      });
+  };
+
+  const handleResetPassword = () => {
+    const email = document.querySelector("input[name='email']").value;
+
+    if (!email) {
+      toast.error("Please enter your email to reset the password.");
+      return;
+    }
+    console.log(email);
+    resetPassword(email)
+      .then(() => {
+        toast.success("Password reset link sent! Check your email.");
+      })
+      .catch((err) => {
+        console.log(err.message);
       });
   };
 
@@ -84,12 +101,13 @@ const Login = () => {
             <label className="flex items-center gap-1">
               <input type="checkbox" className="accent-white" /> Remember me
             </label>
-            <Link
-              to="/forgot-password"
+            <button
+              type="button"
+              onClick={handleResetPassword}
               className="text-blue-300 hover:underline"
             >
               Forgot password?
-            </Link>
+            </button>
           </div>
           <button
             type="submit"
@@ -103,7 +121,7 @@ const Login = () => {
         <p className="my-3">Or, Sign Up Using</p>
         <div className="flex gap-2 mx-auto items-center justify-center">
           <GoggleSignIn />
-          <GitHubSignIn />
+
           <FacebookSignIn />
         </div>
 

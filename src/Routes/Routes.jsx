@@ -34,7 +34,7 @@ import ByCar from "../Pages/Transportation/ByCar/ByCar";
 import CarDetails from "../Pages/Transportation/ByCar/CarDetails";
 import Privacy from "../Pages/Privacy/Privacy";
 import Contact from "../Pages/Contact/Contact";
-
+import BecomeASeller from "../Pages/SellerActivities/BecomeAseller/BecomeASeller";
 
 export const router = createBrowserRouter([
   {
@@ -109,6 +109,10 @@ export const router = createBrowserRouter([
         path: "/seller-productlist/:email",
         element: <SellerProductList />,
       },
+      {
+        path: "/becomeseller",
+        element: <BecomeASeller></BecomeASeller>,
+      },
       //===============----------- CAREER Routes ----============
       {
         path: "careers",
@@ -143,7 +147,30 @@ export const router = createBrowserRouter([
         path: "careers/applications",
         element: <ManageJobApplications />,
       },
-      // Eshop Route
+      {
+        path: "/about",
+        element: <About></About>,
+      },
+      {
+        path: "/transportation",
+        element: <Transportation></Transportation>,
+      },
+      {
+        path: "/tour-pack",
+        element: <TourPackages />,
+      },
+      {
+        path: "/tour-details/:title",
+        element: <TourDetails />,
+      },
+      {
+        path: "tour-booking",
+        element: <TourBooking />,
+      },
+      {
+        path: "careers",
+        element: <Careers />,
+      },
       {
         path: "eshop",
         element: <EshopHome />,

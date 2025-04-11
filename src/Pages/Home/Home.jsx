@@ -36,7 +36,7 @@ const Home = () => {
         <Notification
           message="🎉 Become a Seller!"
           onClose={handleCloseNotification}
-          redirectTo="/tour-pack" // Change this to your desired path
+          redirectTo="/becomeseller" // Change this to your desired path
         />
       )}
       </div>
