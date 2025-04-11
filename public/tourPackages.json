@@ -484,8 +484,8 @@
     "2025-04-15"
   ],
   "price": {
-    "currency": "JPY",
-    "per_person": 120000,
+    "currency": "USD",
+    "per_person": 1200,
     "group_discount": {
       "min_people": 4,
       "discount_percent": 10
@@ -631,7 +631,7 @@
     "2025-09-05"
   ],
   "price": {
-    "currency": "EUR",
+    "currency": "USD",
     "per_person": 1499,
     "group_discount": {
       "min_people": 3,
@@ -1069,7 +1069,7 @@
       "2025-11-15"
     ],
     "price": {
-      "currency": "AUD",
+      "currency": "USD",
       "per_person": 2399,
       "group_discount": {
         "min_people": 4,
