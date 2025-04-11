@@ -26,6 +26,7 @@ import EshopHome from "../Pages/Eshop/EshopHome/EshopHome";
 import DashboardLayout from "../Layout/DashboardLayout";
 import DashboardCharts from "../Pages/Dashboard/AdminDashboard/DashboardCharts";
 import BecomeASeller from "../Pages/SellerActivities/BecomeAseller/BecomeASeller";
+import MyCart from "../Pages/Eshop/MyCart/MyCart";
 
 export const router = createBrowserRouter([
   {
@@ -130,6 +131,10 @@ export const router = createBrowserRouter([
       {
         path: "eshop",
         element: <EshopHome></EshopHome>,
+      },
+      {
+        path: "myCart",
+        element: <MyCart></MyCart>,
       },
       {
         path: "careers/job/:jobId",

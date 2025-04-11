@@ -7,7 +7,7 @@ import CTA from "../../Home/CTA";
 
 const EshopHome = () => {
   return (
-    <section className="mx-20">
+    <section className="mx-0 md:mx-20">
       <div>
         <EshopHeroSection></EshopHeroSection>
       </div>

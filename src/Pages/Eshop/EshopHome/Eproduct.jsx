@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import useProducts from "../../../Hooks/useProducts";
 import Select from "react-select";
 import ProductCard from "./ProductCard";
+import useAuth from "../../../Hooks/useAuth";
 
 const Eproduct = () => {
+  const {user}= useAuth();
   const [filters, setFilters] = useState({
     tags: [],
     search: "",
@@ -104,6 +106,7 @@ const Eproduct = () => {
             <ProductCard
               key={product._id}
               product={product}
+              user={user}
             ></ProductCard>
           ))}
         </div>

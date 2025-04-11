@@ -3,6 +3,7 @@ import logo from "/FlyDriveGo.png";
 
 // react icons
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import { FaShoppingCart } from "react-icons/fa";
 import { FaTasks } from "react-icons/fa";
 import { TbLogout2, TbUsersGroup } from "react-icons/tb";
 import { CiMenuFries } from "react-icons/ci";
@@ -19,6 +20,7 @@ import { IoSettingsOutline } from "react-icons/io5";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
+import useCart from "../../Hooks/useCart";
 
 const Navbar = () => {
   const [accountMenuOpen, setAccountMenuOpen] = useState(false);
@@ -28,11 +30,14 @@ const Navbar = () => {
   const [megaMenuSubItemsOpen, setMegaMenuSubItemsOpen] = useState("");
   const { user, logOut } = useAuth();
   console.log(user);
+  const  [cart]= useCart();
 
   return (
     <nav className="flex items-center justify-between relative font-red-rose pt-2 w-11/12 mx-auto">
       {/* logo */}
-      <Link to='/'><img src={logo} alt="logo" className="w-40 " /></Link>
+      <Link to="/">
+        <img src={logo} alt="logo" className="w-40 " />
+      </Link>
 
       {/* nav links */}
       <ul className="items-center gap-[20px] text-[1rem] text-[#424242] md:flex hidden">
@@ -83,7 +88,7 @@ const Navbar = () => {
                     </p>
 
                     <button className="text-[#FF5E5E] mt-2 flex items-center gap-[4px] text-[0.9rem]">
-                      <Link to='/tour-pack'>Go</Link>
+                      <Link to="/tour-pack">Go</Link>
                       <MdOutlineArrowRightAlt className="text-[1.4rem] group-hover:ml-[5px] transition-all duration-300" />
                     </button>
                   </div>
@@ -97,14 +102,14 @@ const Navbar = () => {
 
                   <div>
                     <h1 className="text-[1rem] dark:text-[#abc2d3] text-gray-600 font-[500]">
-                    Transportation
+                      Transportation
                     </h1>
                     <p className="text-[0.9rem] dark:text-slate-400 text-gray-400 font-[300]">
                       Pick the transport of your choice here!
                     </p>
 
                     <button className="text-[#FE9239] mt-2 flex items-center gap-[4px] text-[0.9rem]">
-                      <Link to='/transportation'>Go</Link>
+                      <Link to="/transportation">Go</Link>
                       <MdOutlineArrowRightAlt className="text-[1.4rem] group-hover:ml-[5px] transition-all duration-300" />
                     </button>
                   </div>
@@ -125,7 +130,7 @@ const Navbar = () => {
                     </p>
 
                     <button className="text-[#8B5CF6] mt-2 flex items-center gap-[4px] text-[0.9rem]">
-                      <Link to='careers'>Check here</Link>
+                      <Link to="careers">Check here</Link>
                       <MdOutlineArrowRightAlt className="text-[1.4rem] group-hover:ml-[5px] transition-all duration-300" />
                     </button>
                   </div>
@@ -245,32 +250,56 @@ const Navbar = () => {
         </li>
         <li className="flex items-center dark:text-[#4e585f] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer">
           <BiShoppingBag className="text-[1.1rem] group-hover:text-[#3B9DF8] dark:text-[#4e585f] text-gray-600" />
-          <Link to='eshop'>Shop</Link>
+          <Link to="eshop">Shop</Link>
         </li>
         <li className="flex items-center dark:text-[#4e585f] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer">
           <BiSupport className="text-[1.1rem] group-hover:text-[#3B9DF8] dark:text-[#4e585f] text-gray-600" />
-          <Link to='/about'>About</Link>
+          <Link to="/about">About</Link>
+        </li>
+        <li>
+          <Link to="/mycart">
+            <button className="btn">
+              <FaShoppingCart></FaShoppingCart> <div className="badge badge-sm badge-secondary">+{cart.length}</div>
+            </button>
+          </Link>
         </li>
       </ul>
 
       {/* user account */}
       <div className="flex items-center gap-[15px]">
-      {
-            user ? <></> : <><Link className="flex items-center dark:text-[#abc2d3] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer" to='/login'>Login</Link> <Link className="flex items-center dark:text-[#abc2d3] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer bg-primary text-white p-2 rounded-xl" to='/register'>Register</Link></>
-          }
+        {user ? (
+          <></>
+        ) : (
+          <>
+            <Link
+              className="flex items-center dark:text-[#abc2d3] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer"
+              to="/login"
+            >
+              Login
+            </Link>{" "}
+            <Link
+              className="flex items-center dark:text-[#abc2d3] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer bg-primary text-white p-2 rounded-xl"
+              to="/register"
+            >
+              Register
+            </Link>
+          </>
+        )}
         <div
           className="flex items-center gap-[10px] cursor-pointer relative"
           onClick={() => setAccountMenuOpen(!accountMenuOpen)}
         >
           <div className="relative">
-                <img
-                    src={user?.photoURL}
-                    alt="avatar" className="w-[50px] h-[50px] rounded-full object-cover"/>
+            <img
+              src={user?.photoURL}
+              alt="avatar"
+              className="w-[50px] h-[50px] rounded-full object-cover"
+            />
 
-                <div className="p-[2px] bg-white absolute top-[0px] right-0 rounded-full">
-                    <div className="w-[12px] h-[12px] rounded-full bg-green-400 "></div>
-                </div>
+            <div className="p-[2px] bg-white absolute top-[0px] right-0 rounded-full">
+              <div className="w-[12px] h-[12px] rounded-full bg-green-400 "></div>
             </div>
+          </div>
 
           <h1 className="text-[1rem] dark:text-[#4e585f] font-[400] text-gray-600 sm:block hidden">
             {user?.displayName}
@@ -293,7 +322,7 @@ const Navbar = () => {
             </p>
             <p className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] dark:text-[#abc2d3] dark:hover:bg-slate-900/50 text-gray-600 hover:bg-gray-50">
               <FiUser />
-              <Link to='/dashboard/adminDashboard'>Dashboard</Link>
+              <Link to="/dashboard/adminDashboard">Dashboard</Link>
             </p>
 
             <div className="mt-3 border-t dark:border-slate-700 border-gray-200 pt-[5px]">
