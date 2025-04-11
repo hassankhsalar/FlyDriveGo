@@ -39,7 +39,7 @@ import BecomeASeller from "../Pages/SellerActivities/BecomeAseller/BecomeASeller
 import DashboardWelcome from "../Pages/Dashboard/DashboardWelcome";
 
 import MyCart from "../Pages/Eshop/MyCart/MyCart";
-
+import MakeSeller from "../Pages/Dashboard/ModeratorDashboard/makeSeller";
 
 export const router = createBrowserRouter([
   {
@@ -65,7 +65,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/privacy",
-        element: <Privacy />
+        element: <Privacy />,
       },
       {
         path: "/transportation",
@@ -94,8 +94,8 @@ export const router = createBrowserRouter([
           {
             path: "passenger-details",
             element: <PassengerDetails />,
-          }
-        ]
+          },
+        ],
       },
       {
         path: "/tour-pack",
@@ -196,7 +196,6 @@ export const router = createBrowserRouter([
       {
         path: "careers/confirmation",
         element: <Confirmation />,
-
       },
       // VISA Routes
       {
@@ -228,6 +227,10 @@ export const router = createBrowserRouter([
       {
         path: "adminDashboard",
         element: <DashboardCharts />,
+      },
+      {
+        path: "makeSeller",
+        element: <MakeSeller />,
       },
     ],
   },

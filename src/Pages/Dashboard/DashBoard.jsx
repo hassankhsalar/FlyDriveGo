@@ -47,6 +47,9 @@ const DashBoard = () => {
                 <li>
                   <Link to="/dashboard/add-products">Add Products</Link>
                 </li>
+                <li>
+                  <Link to="/dashboard/makeSeller">Make Seller</Link>
+                </li>
               </>
             )}
           </ul>
@@ -83,7 +86,7 @@ const DashBoard = () => {
       </div>
       {/* Sidebar */}
       {isSidebarOpen && (
-        <div className="fixed bottom-0 z-10 left-64 w-64 h-34 bg-slate-200 shadow-lg p-4">
+        <div className="fixed bottom-0 z-20 left-64 w-64 h-34 bg-slate-200 shadow-lg p-4">
           <div className="flex justify-between">
             <h2 className="text-lg font-bold">{user?.displayName || "Name"}</h2>
             <button
