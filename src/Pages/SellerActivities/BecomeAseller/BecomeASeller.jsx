@@ -1,17 +1,19 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import useAuth from "../../../Hooks/useAuth";
 
 const BecomeASeller = () => {
+  const { user } = useAuth();
   const [formData, setFormData] = useState({
-    email: '',
-    storeName: '',
-    tradeLicense: '',
-    category: '',
-    bannerUrl: '',
+    email: "",
+    storeName: "",
+    tradeLicense: "",
+    category: "",
+    bannerUrl: "",
   });
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
@@ -21,15 +23,15 @@ const BecomeASeller = () => {
     e.preventDefault();
 
     // You can send formData to your backend here
-    console.log('Seller Form Submitted:', formData);
+    console.log("Seller Form Submitted:", formData);
 
     // Reset form
     setFormData({
-      email: '',
-      storeName: '',
-      tradeLicense: '',
-      category: '',
-      bannerUrl: '',
+      email: "",
+      storeName: "",
+      tradeLicense: "",
+      category: "",
+      bannerUrl: "",
     });
   };
 
@@ -43,9 +45,10 @@ const BecomeASeller = () => {
           <input
             type="email"
             name="email"
-            value={formData.email}
+            value={user?.email}
             onChange={handleChange}
             required
+            readOnly
             className="w-full p-2 border rounded-md"
             placeholder="example@email.com"
           />

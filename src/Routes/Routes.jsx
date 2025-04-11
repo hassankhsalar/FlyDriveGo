@@ -26,6 +26,7 @@ import EshopHome from "../Pages/Eshop/EshopHome/EshopHome";
 import DashboardLayout from "../Layout/DashboardLayout";
 import DashboardCharts from "../Pages/Dashboard/AdminDashboard/DashboardCharts";
 import BecomeASeller from "../Pages/SellerActivities/BecomeAseller/BecomeASeller";
+import DashboardWelcome from "../Pages/Dashboard/DashboardWelcome";
 
 export const router = createBrowserRouter([
   {
@@ -158,6 +159,10 @@ export const router = createBrowserRouter([
     path: "/dashboard",
     element: <DashboardLayout />,
     children: [
+      {
+        path: "/dashboard",
+        element: <DashboardWelcome />,
+      },
       {
         path: "add-products",
         element: <AddProducts />,
