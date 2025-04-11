@@ -25,6 +25,15 @@ import VisaStatus from "../Pages/VisaAssistance/VisaStatus";
 import EshopHome from "../Pages/Eshop/EshopHome/EshopHome";
 import DashboardLayout from "../Layout/DashboardLayout";
 import DashboardCharts from "../Pages/Dashboard/AdminDashboard/DashboardCharts";
+import ByBus from "../Pages/Transportation/ByBus/ByBus";
+import ByAir from "../Pages/Transportation/ByAir/ByAir";
+import SeatPlan from "../Pages/Transportation/ByBus/SeatPlan";
+import PassengerDetails from "../Pages/Transportation/ByBus/PassengerDetails";
+import Terms from "../Pages/Terms/Terms";
+import ByCar from "../Pages/Transportation/ByCar/ByCar";
+import CarDetails from "../Pages/Transportation/ByCar/CarDetails";
+import Privacy from "../Pages/Privacy/Privacy";
+import Contact from "../Pages/Contact/Contact";
 import BecomeASeller from "../Pages/SellerActivities/BecomeAseller/BecomeASeller";
 
 export const router = createBrowserRouter([
@@ -42,8 +51,46 @@ export const router = createBrowserRouter([
         element: <About />,
       },
       {
+        path: "/contact",
+        element: <Contact />,
+      },
+      {
+        path: "/terms",
+        element: <Terms />,
+      },
+      {
+        path: "/privacy",
+        element: <Privacy />
+      },
+      {
         path: "/transportation",
         element: <Transportation />,
+        children: [
+          {
+            path: "by-road",
+            element: <ByBus />,
+          },
+          {
+            path: "seat-plan/:busId",
+            element: <SeatPlan />,
+          },
+          {
+            path: "by-car",
+            element: <ByCar />,
+          },
+          {
+            path: "car-details/:carId",
+            element: <CarDetails />,
+          },
+          {
+            path: "by-air",
+            element: <ByAir />,
+          },
+          {
+            path: "passenger-details",
+            element: <PassengerDetails />,
+          }
+        ]
       },
       {
         path: "/tour-pack",
@@ -58,7 +105,6 @@ export const router = createBrowserRouter([
         element: <TourBooking />,
       },
       //===============----------- SELLER Routes ----============
-
       {
         path: "/seller-productlist/:email",
         element: <SellerProductList />,
@@ -101,8 +147,6 @@ export const router = createBrowserRouter([
         path: "careers/applications",
         element: <ManageJobApplications />,
       },
-      // Tour Package Add
-
       {
         path: "/about",
         element: <About></About>,
@@ -129,19 +173,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "eshop",
-        element: <EshopHome></EshopHome>,
-      },
-      {
-        path: "careers/job/:jobId",
-        element: <JobDetails />,
-      },
-      {
-        path: "careers/apply/:jobId",
-        element: <JobForm />,
-      },
-      {
-        path: "careers/confirmation",
-        element: <Confirmation />,
+        element: <EshopHome />,
       },
       // VISA Routes
       {
