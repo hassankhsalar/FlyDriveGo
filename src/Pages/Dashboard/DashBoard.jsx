@@ -14,7 +14,7 @@ const DashBoard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   return (
-    <div className="flex flex-col justify-between p-3 space-y-2 dark:text-gray-800 h-screen -mt-10">
+    <div className="flex flex-col justify-between p-3 space-y-2 dark:text-gray-800 h-screen -mt-10 fixed">
       {/* <Link to="/">
         <img src={logo} alt="logo" className="w-36 p-4" />
       </Link> */}
@@ -83,7 +83,7 @@ const DashBoard = () => {
       </div>
       {/* Sidebar */}
       {isSidebarOpen && (
-        <div className="fixed bottom-0 z-10 left-64 w-64 h-32 bg-slate-200 shadow-lg p-4">
+        <div className="fixed bottom-0 z-10 left-64 w-64 h-34 bg-slate-200 shadow-lg p-4">
           <div className="flex justify-between">
             <h2 className="text-lg font-bold">{user?.displayName || "Name"}</h2>
             <button
