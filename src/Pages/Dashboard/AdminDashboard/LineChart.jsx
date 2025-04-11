@@ -1,8 +1,6 @@
 "use client";
 import { FaCalendar } from "react-icons/fa";
 import { RiBarChart2Fill } from "react-icons/ri";
-import { MdArrowDropUp } from "react-icons/md";
-import { TiTick } from "react-icons/ti";
 
 import {
   LineChart,
