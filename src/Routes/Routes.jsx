@@ -35,6 +35,7 @@ import CarDetails from "../Pages/Transportation/ByCar/CarDetails";
 import Privacy from "../Pages/Privacy/Privacy";
 import Contact from "../Pages/Contact/Contact";
 import BecomeASeller from "../Pages/SellerActivities/BecomeAseller/BecomeASeller";
+import MyCart from "../Pages/Eshop/MyCart/MyCart";
 
 export const router = createBrowserRouter([
   {
@@ -173,7 +174,25 @@ export const router = createBrowserRouter([
       },
       {
         path: "eshop",
-        element: <EshopHome />,
+
+        element: <EshopHome></EshopHome>,
+      },
+      {
+        path: "myCart",
+        element: <MyCart></MyCart>,
+      },
+      {
+        path: "careers/job/:jobId",
+        element: <JobDetails />,
+      },
+      {
+        path: "careers/apply/:jobId",
+        element: <JobForm />,
+      },
+      {
+        path: "careers/confirmation",
+        element: <Confirmation />,
+
       },
       // VISA Routes
       {
