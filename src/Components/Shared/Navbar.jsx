@@ -265,7 +265,7 @@ const Navbar = () => {
           <div className="relative">
                 <img
                     src={user?.photoURL}
-                    alt="avatar" className="w-[50px] h-[50px] rounded-full object-cover"/>
+                    alt="avatar" className="w-[38px] h-[38px] rounded-full object-cover"/>
 
                 <div className="p-[2px] bg-white absolute top-[0px] right-0 rounded-full">
                     <div className="w-[12px] h-[12px] rounded-full bg-green-400 "></div>
