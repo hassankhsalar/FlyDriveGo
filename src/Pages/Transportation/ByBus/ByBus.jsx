@@ -291,7 +291,7 @@ const ByBus = () => {
             filteredBuses.map((bus, index) => (
               <div
                 key={bus.id}
-                className={`bg-white rounded-xl shadow-md overflow-hidden hover:shadow-lg transition-all duration-500 group transform translate-y-8 opacity-0 hover:-translate-y-2 hover:shadow-xl animate-fadeSlideUp`}
+                className={`bg-white rounded-xl shadow-md overflow-hidden transition-all duration-500 group transform translate-y-8 opacity-0 hover:-translate-y-2 hover:shadow-xl animate-fadeSlideUp`}
                 style={{ animationDelay: `${300 + index * 100}ms` }}
               >
                 <div className="relative h-52 overflow-hidden">
