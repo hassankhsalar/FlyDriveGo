@@ -1,14 +1,15 @@
-import React, { useState } from "react";
-import useAuth from "../../../Hooks/useAuth";
+
+import React, { useState } from 'react';
+import useAxiosPublic from '../../../Hooks/useAxiosPublic';
 
 const BecomeASeller = () => {
-  const { user } = useAuth();
-  const [formData, setFormData] = useState({
-    email: "",
-    storeName: "",
-    tradeLicense: "",
-    category: "",
-    bannerUrl: "",
+  const axiosPublic = useAxiosPublic()
+;  const [formData, setFormData] = useState({
+    email: '',
+    storeName: '',
+    tradeLicense: '',
+    category: '',
+    bannerUrl: '',
   });
 
   const handleChange = (e) => {
@@ -19,8 +20,9 @@ const BecomeASeller = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
 
     // You can send formData to your backend here
     console.log("Seller Form Submitted:", formData);
@@ -33,11 +35,29 @@ const BecomeASeller = () => {
       category: "",
       bannerUrl: "",
     });
+
+    try {
+      const res = await axiosPublic.post('/becomeseller', formData);
+      if (res.data?.insertedId || res.status === 201) {
+        alert('Seller registered successfully!');
+        setFormData({
+          email: '',
+          storeName: '',
+          tradeLicense: '',
+          category: '',
+          bannerUrl: '',
+        });
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert(error.response?.data?.message || 'Server error');
+    }
+
   };
 
   return (
-    <div className="max-w-xl mx-auto mt-10 p-6 bg-white shadow-lg rounded-lg">
-      <h2 className="text-2xl font-bold mb-6 text-center">Become a Seller</h2>
+    <div className="max-w-xl mx-auto mt-10 p-6 bg-slate-200 shadow-lg rounded-lg font-poppins">
+      <h2 className="text-3xl text-primary font-bold font-red-rose mb-6 text-center">Become a Seller</h2>
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Email */}
         <div>

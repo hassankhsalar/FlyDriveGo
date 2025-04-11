@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import useProducts from "../../../Hooks/useProducts";
 import Select from "react-select";
 import ProductCard from "./ProductCard";
+import useAuth from "../../../Hooks/useAuth";
 
 const Eproduct = () => {
+  const {user}= useAuth();
   const [filters, setFilters] = useState({
     tags: [],
     search: "",
@@ -53,7 +55,7 @@ const Eproduct = () => {
     <div className="my-[60px] md:my-[120px]">
       <div className="mb-20">
         <h2 className="text-xxl md:text-4xl xl:text-4xl font-red-rose  text-primary font-bold text-center">
-          Gear Up for Your Next Adventure! {products.length}
+          Gear Up for Your Next Adventure!
         </h2>
       </div>
       {/* filter */}
@@ -99,11 +101,12 @@ const Eproduct = () => {
       </div>
       {/* Products */}
       <div className="my-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-[repeat(auto-fit,minmax(340px,1fr))] gap-6 items-stretch">
           {products.map((product) => (
             <ProductCard
               key={product._id}
               product={product}
+              user={user}
             ></ProductCard>
           ))}
         </div>

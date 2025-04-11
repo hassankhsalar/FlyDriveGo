@@ -3,6 +3,7 @@ import logo from "/FlyDriveGo.png";
 
 // react icons
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
+import { FaShoppingCart } from "react-icons/fa";
 import { FaTasks } from "react-icons/fa";
 import { TbLogout2, TbUsersGroup } from "react-icons/tb";
 import { CiMenuFries } from "react-icons/ci";
@@ -19,6 +20,7 @@ import { IoSettingsOutline } from "react-icons/io5";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
+import useCart from "../../Hooks/useCart";
 
 const Navbar = () => {
   const [accountMenuOpen, setAccountMenuOpen] = useState(false);
@@ -27,6 +29,8 @@ const Navbar = () => {
   const [isMegaMenuCollapse, setIsMegaMenuCollapse] = useState(false);
   const [megaMenuSubItemsOpen, setMegaMenuSubItemsOpen] = useState("");
   const { user, logOut } = useAuth();
+  const  [cart]= useCart();
+
 
   return (
     <nav className="flex items-center justify-between relative font-red-rose pt-2 w-11/12 mx-auto">
@@ -242,7 +246,7 @@ const Navbar = () => {
 
         <li className="flex items-center dark:text-[#4e585f] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer">
           <AiOutlineFire className="text-[1.1rem] group-hover:text-[#3B9DF8] dark:text-[#4e585f] text-gray-600" />
-          Visa
+          <Link to='/visa-assistance'>Visa</Link>
         </li>
         <li className="flex items-center dark:text-[#4e585f] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer">
           <BiShoppingBag className="text-[1.1rem] group-hover:text-[#3B9DF8] dark:text-[#4e585f] text-gray-600" />
@@ -251,6 +255,15 @@ const Navbar = () => {
         <li className="flex items-center dark:text-[#4e585f] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer">
           <BiSupport className="text-[1.1rem] group-hover:text-[#3B9DF8] dark:text-[#4e585f] text-gray-600" />
           <Link to="/about">About</Link>
+
+        </li>
+        <li>
+          <Link to="/mycart">
+            <button className="btn">
+              <FaShoppingCart></FaShoppingCart> <div className="badge badge-sm badge-secondary">+{cart.length}</div>
+            </button>
+          </Link>
+
         </li>
       </ul>
 
@@ -279,11 +292,13 @@ const Navbar = () => {
           onClick={() => setAccountMenuOpen(!accountMenuOpen)}
         >
           <div className="relative">
+
             <img
               src={user?.photoURL}
               alt="avatar"
               className="w-[50px] h-[50px] rounded-full object-cover"
             />
+
 
             <div className="p-[2px] bg-white absolute top-[0px] right-0 rounded-full">
               <div className="w-[12px] h-[12px] rounded-full bg-green-400 "></div>
@@ -311,7 +326,10 @@ const Navbar = () => {
             </p>
             <p className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] dark:text-[#abc2d3] dark:hover:bg-slate-900/50 text-gray-600 hover:bg-gray-50">
               <FiUser />
+
               <Link to="/dashboard">Dashboard</Link>
+
+  
             </p>
 
             <div className="mt-3 border-t dark:border-slate-700 border-gray-200 pt-[5px]">
