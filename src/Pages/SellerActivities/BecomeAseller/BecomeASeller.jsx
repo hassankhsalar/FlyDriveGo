@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import useAxiosPublic from '../../../Hooks/useAxiosPublic';
 
@@ -13,7 +14,7 @@ const BecomeASeller = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       [name]: value,
     }));
@@ -21,6 +22,19 @@ const BecomeASeller = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+
+    // You can send formData to your backend here
+    console.log("Seller Form Submitted:", formData);
+
+    // Reset form
+    setFormData({
+      email: "",
+      storeName: "",
+      tradeLicense: "",
+      category: "",
+      bannerUrl: "",
+    });
 
     try {
       const res = await axiosPublic.post('/becomeseller', formData);
@@ -38,6 +52,7 @@ const BecomeASeller = () => {
       console.error('Error:', error);
       alert(error.response?.data?.message || 'Server error');
     }
+
   };
 
   return (
@@ -50,9 +65,10 @@ const BecomeASeller = () => {
           <input
             type="email"
             name="email"
-            value={formData.email}
+            value={user?.email}
             onChange={handleChange}
             required
+            readOnly
             className="w-full p-2 border rounded-md"
             placeholder="example@email.com"
           />

@@ -35,7 +35,11 @@ import CarDetails from "../Pages/Transportation/ByCar/CarDetails";
 import Privacy from "../Pages/Privacy/Privacy";
 import Contact from "../Pages/Contact/Contact";
 import BecomeASeller from "../Pages/SellerActivities/BecomeAseller/BecomeASeller";
+
+import DashboardWelcome from "../Pages/Dashboard/DashboardWelcome";
+
 import MyCart from "../Pages/Eshop/MyCart/MyCart";
+
 
 export const router = createBrowserRouter([
   {
@@ -209,6 +213,10 @@ export const router = createBrowserRouter([
     path: "/dashboard",
     element: <DashboardLayout />,
     children: [
+      {
+        path: "/dashboard",
+        element: <DashboardWelcome />,
+      },
       {
         path: "add-products",
         element: <AddProducts />,
