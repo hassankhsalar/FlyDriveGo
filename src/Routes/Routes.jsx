@@ -25,6 +25,15 @@ import VisaStatus from "../Pages/VisaAssistance/VisaStatus";
 import EshopHome from "../Pages/Eshop/EshopHome/EshopHome";
 import DashboardLayout from "../Layout/DashboardLayout";
 import DashboardCharts from "../Pages/Dashboard/AdminDashboard/DashboardCharts";
+import ByBus from "../Pages/Transportation/ByBus/ByBus";
+import ByAir from "../Pages/Transportation/ByAir/ByAir";
+import SeatPlan from "../Pages/Transportation/ByBus/SeatPlan";
+import PassengerDetails from "../Pages/Transportation/ByBus/PassengerDetails";
+import Terms from "../Pages/Terms/Terms";
+import ByCar from "../Pages/Transportation/ByCar/ByCar";
+import CarDetails from "../Pages/Transportation/ByCar/CarDetails";
+import Privacy from "../Pages/Privacy/Privacy";
+import Contact from "../Pages/Contact/Contact";
 
 
 export const router = createBrowserRouter([
@@ -42,8 +51,46 @@ export const router = createBrowserRouter([
         element: <About />,
       },
       {
+        path: "/contact",
+        element: <Contact />,
+      },
+      {
+        path: "/terms",
+        element: <Terms />,
+      },
+      {
+        path: "/privacy",
+        element: <Privacy />
+      },
+      {
         path: "/transportation",
         element: <Transportation />,
+        children: [
+          {
+            path: "by-road",
+            element: <ByBus />,
+          },
+          {
+            path: "seat-plan/:busId",
+            element: <SeatPlan />,
+          },
+          {
+            path: "by-car",
+            element: <ByCar />,
+          },
+          {
+            path: "car-details/:carId",
+            element: <CarDetails />,
+          },
+          {
+            path: "by-air",
+            element: <ByAir />,
+          },
+          {
+            path: "passenger-details",
+            element: <PassengerDetails />,
+          }
+        ]
       },
       {
         path: "/tour-pack",

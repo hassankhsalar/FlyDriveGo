@@ -1,6 +1,5 @@
 import { useState, useEffect, useMemo } from 'react';
 import { useForm, Controller } from 'react-hook-form';
-import { motion } from 'framer-motion';
 import { Briefcase, MapPin, DollarSign, FileText, Plus, X, ArrowLeft } from 'lucide-react';
 import { TextField, Select, MenuItem, InputLabel, FormControl, FormHelperText } from '@mui/material';
 import { useParams, useNavigate } from 'react-router-dom';
@@ -40,7 +39,7 @@ const EditJobForm = () => {
                 setLoading(true);
                 const response = await axiosPublic.get(`/jobs/${jobId}`);
                 const job = response.data;
-                
+
                 if (job) {
                     // Set form values
                     setValue('title', job.title);
@@ -49,12 +48,12 @@ const EditJobForm = () => {
                     setValue('type', job.type);
                     setValue('salary', job.salary);
                     setValue('description', job.description);
-                    
+
                     // Set requirements and benefits
                     if (Array.isArray(job.requirements)) {
                         setRequirements(job.requirements);
                     }
-                    
+
                     if (Array.isArray(job.benefits)) {
                         setBenefits(job.benefits);
                     }
@@ -77,18 +76,18 @@ const EditJobForm = () => {
         // Filter out empty entries
         const filteredRequirements = requirements.filter(r => r.trim() !== '');
         const filteredBenefits = benefits.filter(b => b.trim() !== '');
-        
+
         if (filteredRequirements.length === 0 || filteredBenefits.length === 0) {
             toast.error('Please add at least one requirement and benefit');
             return;
         }
-        
+
         const jobData = {
             ...data,
             requirements: filteredRequirements,
             benefits: filteredBenefits
         };
-    
+
         try {
             setIsSubmitting(true);
             await axiosPublic.patch(`/jobs/${jobId}`, jobData);
@@ -143,25 +142,21 @@ const EditJobForm = () => {
     }
 
     return (
-        <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="min-h-screen bg-SmokeWhite p-8"
+        <div
+            className="min-h-screen bg-SmokeWhite p-8 opacity-0 animate-fadeIn"
         >
             <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-8">
                 <div className="flex items-center justify-between mb-8">
                     <h1 className="text-3xl font-red-rose font-bold text-CharcoleDark">
                         Edit Job
                     </h1>
-                    <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
+                    <button
                         onClick={() => navigate('/careers/edit-job')}
-                        className="flex items-center gap-2 text-CharcoleDark/70 hover:text-CharcoleDark font-red-rose"
+                        className="flex items-center gap-2 text-CharcoleDark/70 hover:text-CharcoleDark transition-colors duration-300 hover:scale-105 active:scale-95 transform font-red-rose"
                     >
                         <ArrowLeft className="w-5 h-5" />
                         Back to Jobs
-                    </motion.button>
+                    </button>
                 </div>
 
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
@@ -301,34 +296,22 @@ const EditJobForm = () => {
                     />
 
                     {/* Submit Button */}
-                    <motion.button
-                        whileHover={{ scale: 1.02 }}
-                        whileTap={{ scale: 0.98 }}
+                    <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full bg-primary text-white font-poppins font-semibold px-8 py-3 rounded-lg hover:bg-primary/90 transition-all disabled:opacity-70 disabled:cursor-not-allowed"
+                        className="w-full bg-primary text-white font-poppins font-semibold px-8 py-3 rounded-lg hover:bg-primary/90 transition-all duration-300 hover:scale-102 active:scale-98 transform disabled:opacity-70 disabled:cursor-not-allowed"
                     >
                         {isSubmitting ? (
-                            <motion.div
-                                className="flex items-center justify-center"
-                                animate={{
-                                    rotate: 360,
-                                }}
-                                transition={{
-                                    duration: 1,
-                                    repeat: Infinity,
-                                    ease: "linear"
-                                }}
-                            >
-                                <div className="w-6 h-6 border-4 border-white/30 border-t-white rounded-full" />
-                            </motion.div>
+                            <div className="flex items-center justify-center">
+                                <div className="w-6 h-6 border-4 border-white/30 border-t-white rounded-full animate-spin" />
+                            </div>
                         ) : (
                             'Update Job'
                         )}
-                    </motion.button>
+                    </button>
                 </form>
             </div>
-        </motion.div>
+        </div>
     );
 };
 
@@ -352,7 +335,7 @@ const DynamicFieldList = ({ label, icon, items, onAdd, onChange, onRemove }) => 
             <button
                 type="button"
                 onClick={onAdd}
-                className="flex items-center gap-1 text-primary font-poppins hover:bg-primary/10 px-3 py-1 rounded-lg"
+                className="flex items-center gap-1 text-primary font-poppins hover:bg-primary/10 transition-colors duration-300 px-3 py-1 rounded-lg"
             >
                 <Plus className="w-4 h-4" />
                 Add {label.slice(0, -1)}
@@ -360,7 +343,7 @@ const DynamicFieldList = ({ label, icon, items, onAdd, onChange, onRemove }) => 
         </div>
 
         {items.map((item, index) => (
-            <div key={index} className="flex gap-2 items-center">
+            <div key={index} className="flex gap-2 items-center animate-fadeSlideUp">
                 <TextField
                     fullWidth
                     value={item}
@@ -370,7 +353,7 @@ const DynamicFieldList = ({ label, icon, items, onAdd, onChange, onRemove }) => 
                     <button
                         type="button"
                         onClick={() => onRemove(index)}
-                        className="text-red-500 hover:text-red-700"
+                        className="text-red-500 hover:text-red-700 transition-colors duration-300"
                     >
                         <X className="w-5 h-5" />
                     </button>

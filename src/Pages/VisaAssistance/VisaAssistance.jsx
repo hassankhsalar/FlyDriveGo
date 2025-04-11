@@ -1,6 +1,5 @@
 import { useState, useEffect, useMemo, useRef } from 'react';
 import { useForm, Controller } from 'react-hook-form';
-import { motion } from 'framer-motion';
 import {
   CreditCard,
   MapPin,
@@ -249,7 +248,7 @@ const VisaAssistance = () => {
             url: result.url,
             public_id: result.public_id
           }));
-        
+
         // Update the state with document URLs
         setDocumentUrls(docUrls);
 
@@ -706,10 +705,8 @@ const VisaAssistance = () => {
   };
 
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      className="min-h-screen bg-SmokeWhite p-8"
+    <div
+      className="min-h-screen bg-SmokeWhite p-8 opacity-0 animate-fadeIn"
     >
       <div className="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl p-8">
         <h1 className="text-3xl font-red-rose font-bold text-CharcoleDark mb-2">
@@ -728,10 +725,8 @@ const VisaAssistance = () => {
         </Stepper>
 
         {activeStep === steps.length ? (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center py-10"
+          <div
+            className="text-center py-10 opacity-0 translate-y-5 animate-slideUp"
           >
             {submitSuccess ? (
               <>
@@ -770,7 +765,7 @@ const VisaAssistance = () => {
                 </Button>
               </>
             )}
-          </motion.div>
+          </div>
         ) : (
           <form onSubmit={handleSubmit(onSubmit)}>
             {getStepContent(activeStep)}
@@ -812,7 +807,7 @@ const VisaAssistance = () => {
           </form>
         )}
       </div>
-    </motion.div>
+    </div>
   );
 };
 

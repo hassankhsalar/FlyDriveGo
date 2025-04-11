@@ -24,7 +24,6 @@ const JobDetails = () => {
   const axiosPublic = useAxiosPublic();
 
   useEffect(() => {
-    // Getting the specific job directly from the database via API
     axiosPublic.get(`/jobs/${jobId}`)
       .then((response) => {
         if (response.data) {
