@@ -241,7 +241,7 @@ const Navbar = () => {
 
         <li className="flex items-center dark:text-[#4e585f] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer">
           <AiOutlineFire className="text-[1.1rem] group-hover:text-[#3B9DF8] dark:text-[#4e585f] text-gray-600" />
-          Visa
+          <Link to='/visa-assistance'>Visa</Link>
         </li>
         <li className="flex items-center dark:text-[#4e585f] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer">
           <BiShoppingBag className="text-[1.1rem] group-hover:text-[#3B9DF8] dark:text-[#4e585f] text-gray-600" />
