@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
-import { Hourglass, User, MapPin, CheckCircle, XCircle, ThumbsUp } from "lucide-react";
+import { Hourglass, User, MapPin, CheckCircle, XCircle, ThumbsUp, Utensils } from "lucide-react";
 
 const TourDetails = () => {
     const { title } = useParams();
@@ -50,7 +50,7 @@ const TourDetails = () => {
             {/* Sticky Tabs */}
             <div className="sticky top-0 bg-white shadow-md z-10">
                 <ul className="flex flex-wrap justify-center gap-1 sm:gap-2 md:space-x-4 lg:space-x-6 bg-white border-b border-gray-200 py-2 sm:py-3">
-                    {["information", "tourPlan", "location", "gallery", "reviews"].map((tab) => (
+                    {["information", "tourPlan", "location", "gallery", "food", "reviews"].map((tab) => (
                         <li
                             key={tab}
                             className={`px-2 sm:px-3 md:px-4 lg:px-6 py-1 sm:py-2 text-xs sm:text-sm md:text-base lg:text-lg font-semibold cursor-pointer transition-all duration-300 ${activeTab === tab
@@ -310,6 +310,103 @@ const TourDetails = () => {
                         </div>
                     </div>
                 )}
+                {/* Food Tab */}
+                {activeTab === "food" && tour.food && (
+                    <div className="max-w-4xl mx-auto p-3 sm:p-4 md:p-6">
+                        <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#4EDAE4] mb-4 sm:mb-6">
+                            Culinary Experience
+                        </h2>
+
+                        {/* Food Description */}
+                        <div className="bg-white p-4 sm:p-5 md:p-6 rounded-lg shadow-md mb-6 sm:mb-8">
+                            <div className="flex items-center gap-2 sm:gap-3 mb-3 sm:mb-4">
+                                <Utensils className="text-[#4EDAE4] w-5 h-5 sm:w-6 sm:h-6" />
+                                <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800">About the Food</h3>
+                            </div>
+                            <p className="text-gray-600 text-sm sm:text-base leading-relaxed">
+                                {tour.food.description}
+                            </p>
+                        </div>
+
+                        {/* Meal Schedule */}
+                        <div className="bg-white p-4 sm:p-5 md:p-6 rounded-lg shadow-md">
+                            <h3 className="text-lg sm:text-xl md:text-2xl font-semibold text-gray-800 mb-4 sm:mb-6">
+                                Meal Schedule & Options
+                            </h3>
+
+                            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
+                                {/* Breakfast */}
+                                <div className="border border-gray-200 rounded-lg p-3 sm:p-4 hover:shadow-md transition-shadow">
+                                    <h4 className="font-bold text-[#4EDAE4] text-base sm:text-lg mb-2 sm:mb-3">Breakfast</h4>
+                                    <p className="text-gray-600 text-sm sm:text-base mb-2 sm:mb-3">
+                                        <span className="font-medium">Time:</span> {tour.food.meal_schedule.breakfast.time}
+                                    </p>
+                                    <div>
+                                        <p className="font-medium text-sm sm:text-base mb-1 sm:mb-2">Options:</p>
+                                        <ul className="space-y-1 sm:space-y-2">
+                                            {tour.food.meal_schedule.breakfast.options.map((option, index) => (
+                                                <li key={index} className="flex items-center gap-2 text-xs sm:text-sm">
+                                                    <span className="w-2 h-2 rounded-full bg-[#4EDAE4]"></span>
+                                                    {option}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                {/* Lunch */}
+                                <div className="border border-gray-200 rounded-lg p-3 sm:p-4 hover:shadow-md transition-shadow">
+                                    <h4 className="font-bold text-[#4EDAE4] text-base sm:text-lg mb-2 sm:mb-3">Lunch</h4>
+                                    <p className="text-gray-600 text-sm sm:text-base mb-2 sm:mb-3">
+                                        <span className="font-medium">Time:</span> {tour.food.meal_schedule.lunch.time}
+                                    </p>
+                                    <div>
+                                        <p className="font-medium text-sm sm:text-base mb-1 sm:mb-2">Options:</p>
+                                        <ul className="space-y-1 sm:space-y-2">
+                                            {tour.food.meal_schedule.lunch.options.map((option, index) => (
+                                                <li key={index} className="flex items-center gap-2 text-xs sm:text-sm">
+                                                    <span className="w-2 h-2 rounded-full bg-[#4EDAE4]"></span>
+                                                    {option}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                {/* Dinner */}
+                                <div className="border border-gray-200 rounded-lg p-3 sm:p-4 hover:shadow-md transition-shadow">
+                                    <h4 className="font-bold text-[#4EDAE4] text-base sm:text-lg mb-2 sm:mb-3">Dinner</h4>
+                                    <p className="text-gray-600 text-sm sm:text-base mb-2 sm:mb-3">
+                                        <span className="font-medium">Time:</span> {tour.food.meal_schedule.dinner.time}
+                                    </p>
+                                    <div>
+                                        <p className="font-medium text-sm sm:text-base mb-1 sm:mb-2">Options:</p>
+                                        <ul className="space-y-1 sm:space-y-2">
+                                            {tour.food.meal_schedule.dinner.options.map((option, index) => (
+                                                <li key={index} className="flex items-center gap-2 text-xs sm:text-sm">
+                                                    <span className="w-2 h-2 rounded-full bg-[#4EDAE4]"></span>
+                                                    {option}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {/* Dietary Notes */}
+                            <div className="mt-6 sm:mt-8 bg-blue-50 p-3 sm:p-4 md:p-5 rounded-lg border border-blue-100">
+                                <h4 className="font-semibold text-blue-800 text-sm sm:text-base mb-2 sm:mb-3">
+                                    Dietary Notes
+                                </h4>
+                                <p className="text-blue-700 text-xs sm:text-sm">
+                                    Please inform us in advance about any specific dietary requirements or allergies.
+                                    We'll do our best to accommodate your needs while ensuring you experience authentic local cuisine.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                )}
+
 
                 {/* Reviews Tab */}
                 {activeTab === "reviews" && (
@@ -415,6 +512,8 @@ const TourDetails = () => {
                         )}
                     </div>
                 )}
+
+
             </div>
 
             {/* Booking Section */}

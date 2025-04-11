@@ -14,12 +14,12 @@ import airarabia  from "../../assets/airwaysLogo/airarabia.webp";
 
 const TrustedPartners = () => {
   return (
-    <div className="bg-secondary h-60 w-full">
+    <div className="bg-secondary h-96 md:h-80 xl:h-60 w-full">
       <div className="flex flex-col items-center pt-2 pb-3">
         <h1 className="text-xl font-semibold">Our Trusted</h1>
         <p className="font-red-rose text-lg">Transport partners</p>
       </div>
-      <div className="grid grid-cols-6 gap-2 w-8/12 mx-auto text-xs font-bold font-red-rose">
+      <div className="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-6 gap-2 w-8/12 mx-auto text-xs font-bold font-red-rose">
         <div className="flex items-center gap-1 bg-white rounded-lg p-1">
           <img src={BimanBangladesh} alt="" className="w-8" />
           <p>Biman Bangla Airlines</p>

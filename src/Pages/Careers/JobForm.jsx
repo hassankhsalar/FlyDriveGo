@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { motion } from 'framer-motion';
 import { User, Mail, Phone, FileText, CheckCircle, ArrowLeft } from 'lucide-react';
 import Loader from '../../components/ui/Loader';
 import useAxiosPublic from '../../Hooks/useAxiosPublic';
@@ -63,7 +62,6 @@ const JobForm = () => {
 
         setIsSubmitting(true);
 
-        // Prepare application data
         const applicationData = {
             ...formData,
             jobId: parseInt(jobId),
@@ -84,37 +82,26 @@ const JobForm = () => {
         }
     };
 
-    const inputVariants = {
-        hidden: { opacity: 0, y: 20 },
-        visible: { opacity: 1, y: 0 },
-        hover: { scale: 1.02 },
-        focus: { scale: 1.03 }
-    };
-
     return (
-        <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className="min-h-screen bg-gradient-to-b from-SmokeWhite to-background"
+        <div
+            className="min-h-screen bg-gradient-to-b from-SmokeWhite to-background opacity-0 animate-fadeIn"
         >
             <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
                 {loading ? (
                     <Loader />
                 ) : (
                     <>
-                        <motion.button
+                        <button
                             onClick={() => navigate(-1)}
-                            whileHover={{ x: -5 }}
-                            className="mb-8 flex items-center gap-2 text-primary font-poppins font-semibold"
+                            className="mb-8 flex items-center gap-2 text-primary font-poppins font-semibold hover:-translate-x-2 transition-transform duration-300"
                         >
                             <ArrowLeft className="w-5 h-5" />
                             Back to Job Posting
-                        </motion.button>
+                        </button>
 
-                        <motion.form
+                        <form
                             onSubmit={handleSubmit}
-                            className="bg-background p-8 rounded-2xl shadow-xl border border-SmokeWhite"
+                            className="bg-background p-8 rounded-2xl shadow-xl border border-SmokeWhite animate-fadeSlideUp"
                         >
                             <h1 className="text-3xl font-red-rose font-bold text-CharcoleDark mb-8 text-center">
                                 Apply for: {job?.title || `Position #${jobId}`}
@@ -122,13 +109,8 @@ const JobForm = () => {
 
                             <div className="space-y-6">
                                 {/* Personal Info Grid */}
-                                <motion.div
-                                    className="grid md:grid-cols-2 gap-6"
-                                    initial="hidden"
-                                    animate="visible"
-                                    variants={{ visible: { transition: { staggerChildren: 0.1 } } }}
-                                >
-                                    <motion.div variants={inputVariants}>
+                                <div className="grid md:grid-cols-2 gap-6">
+                                    <div className="animate-fadeSlideUp [animation-delay:100ms]">
                                         <label className="block font-poppins text-CharcoleDark/80 mb-2 font-bold">
                                             Full Name
                                         </label>
@@ -139,13 +121,13 @@ const JobForm = () => {
                                                 name="fullName"
                                                 onChange={handleChange}
                                                 placeholder='Full Name'
-                                                className="font-poppins w-full pl-12 pr-4 py-3 bg-SmokeWhite rounded-lg border border-SmokeWhite focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                                                className="font-poppins w-full pl-12 pr-4 py-3 bg-SmokeWhite rounded-lg border border-SmokeWhite focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all hover:scale-102 focus:scale-103 transform"
                                             />
                                         </div>
                                         {errors.fullName && <p className="text-red-500 text-sm mt-1">{errors.fullName}</p>}
-                                    </motion.div>
+                                    </div>
 
-                                    <motion.div variants={inputVariants}>
+                                    <div className="animate-fadeSlideUp [animation-delay:200ms]">
                                         <label className="block font-poppins text-CharcoleDark/80 mb-2 font-bold">
                                             Email Address
                                         </label>
@@ -156,13 +138,13 @@ const JobForm = () => {
                                                 name="email"
                                                 onChange={handleChange}
                                                 placeholder='Email Address'
-                                                className="font-poppins w-full pl-12 pr-4 py-3 bg-SmokeWhite rounded-lg border border-SmokeWhite focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                                                className="font-poppins w-full pl-12 pr-4 py-3 bg-SmokeWhite rounded-lg border border-SmokeWhite focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all hover:scale-102 focus:scale-103 transform"
                                             />
                                         </div>
                                         {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
-                                    </motion.div>
+                                    </div>
 
-                                    <motion.div variants={inputVariants}>
+                                    <div className="animate-fadeSlideUp [animation-delay:300ms]">
                                         <label className="block font-poppins text-CharcoleDark/80 mb-2 font-bold">
                                             Phone Number
                                         </label>
@@ -173,13 +155,13 @@ const JobForm = () => {
                                                 name="phone"
                                                 onChange={handleChange}
                                                 placeholder='Phone Number'
-                                                className="font-poppins w-full pl-12 pr-4 py-3 bg-SmokeWhite rounded-lg border border-SmokeWhite focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                                                className="font-poppins w-full pl-12 pr-4 py-3 bg-SmokeWhite rounded-lg border border-SmokeWhite focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all hover:scale-102 focus:scale-103 transform"
                                             />
                                         </div>
                                         {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone}</p>}
-                                    </motion.div>
+                                    </div>
 
-                                    <motion.div variants={inputVariants}>
+                                    <div className="animate-fadeSlideUp [animation-delay:400ms]">
                                         <label className="block font-poppins text-CharcoleDark/80 mb-2 font-bold">
                                             Upload Resume (PDF)
                                         </label>
@@ -194,14 +176,11 @@ const JobForm = () => {
                                             />
                                         </div>
                                         {errors.resume && <p className="text-red-500 text-sm mt-1">{errors.resume}</p>}
-                                    </motion.div>
-                                </motion.div>
+                                    </div>
+                                </div>
 
                                 {/* Cover Letter */}
-                                <motion.div
-                                    initial={{ opacity: 0, y: 20 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                >
+                                <div className="animate-fadeSlideUp [animation-delay:500ms]">
                                     <label className="block font-poppins text-CharcoleDark/80 mb-2 font-bold">
                                         Cover Letter
                                     </label>
@@ -209,24 +188,20 @@ const JobForm = () => {
                                         name="coverLetter"
                                         onChange={handleChange}
                                         rows="5"
-                                        className="font-poppins w-full px-4 py-3 bg-SmokeWhite rounded-lg border border-SmokeWhite focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                                        className="font-poppins w-full px-4 py-3 bg-SmokeWhite rounded-lg border border-SmokeWhite focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all hover:scale-102 focus:scale-103 transform"
                                     />
                                     {errors.coverLetter && <p className="text-red-500 text-sm mt-1 font-poppins">{errors.coverLetter}</p>}
-                                </motion.div>
+                                </div>
 
                                 {/* Submit Button */}
-                                <motion.button
+                                <button
                                     type="submit"
                                     disabled={isSubmitting}
-                                    whileHover={{ scale: 1.02 }}
-                                    whileTap={{ scale: 0.98 }}
-                                    className="w-full bg-primary text-white font-poppins font-semibold px-8 py-4 rounded-xl hover:bg-primary/90 transition-all flex items-center justify-center gap-3"
+                                    className="w-full bg-primary text-white font-poppins font-semibold px-8 py-4 rounded-xl hover:bg-primary/90 transition-all hover:scale-102 active:scale-98 transform flex items-center justify-center gap-3 animate-fadeIn [animation-delay:600ms]"
                                 >
                                     {isSubmitting ? (
-                                        <motion.div
-                                            className="w-6 h-6 border-4 border-white/30 border-t-white rounded-full"
-                                            animate={{ rotate: 360 }}
-                                            transition={{ repeat: Infinity, duration: 1 }}
+                                        <div
+                                            className="w-6 h-6 border-4 border-white/30 border-t-white rounded-full animate-spin"
                                         />
                                     ) : (
                                         <>
@@ -234,13 +209,13 @@ const JobForm = () => {
                                             Submit Application
                                         </>
                                     )}
-                                </motion.button>
+                                </button>
                             </div>
-                        </motion.form>
+                        </form>
                     </>
                 )}
             </div>
-        </motion.div>
+        </div>
     );
 };
 

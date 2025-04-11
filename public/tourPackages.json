@@ -1,131 +1,151 @@
 [
   {
-  "title": "Discover Bali: 5-Day Luxury Escape",
- "overview": "Indulge in Bali’s tropical paradise with private beachfront stays at Bali Sunset Resort, cultural immersion at Uluwatu Temple’s cliffside Kecak fire dance, and adrenaline-fueled snorkeling at Nusa Penida’s Manta Point. Wander through UNESCO-listed Tegalalang Rice Terraces, discover artisan villages in Ubud, and unwind with sunset cocktails at Seminyak’s infinity pools. Includes VIP airport transfers, 4-star sea-view suites, and a gourmet Balinese feast under the stars. Perfect for couples and adventurers seeking luxury amid jungles, waterfalls, and sacred temples.",
-  "destination": {
-    "country": "Indonesia",
-    "city": "Bali",
-    "map": "https://maps.google.com/?q=Bali"
-  },
-"country_history": "Indonesia, an archipelago of over 17,000 islands, has a rich history shaped by diverse cultures, trade, and colonization. Known for its ancient Hindu and Buddhist kingdoms, such as Srivijaya and Majapahit, Indonesia later became a major hub for spice trade, attracting European powers like the Dutch, who colonized the region for over 300 years. Indonesia declared independence in 1945 and is now the world's largest island country, celebrated for its cultural diversity, natural beauty, and vibrant traditions.",
-  "duration": "5 Days, 4 Nights",
-  "available_dates": [
-    "2025-04-10",
-    "2025-05-15",
-    "2025-06-20"
-  ],
-  "price": {
-    "currency": "USD",
-    "per_person": 899,
-    "group_discount": {
-      "min_people": 4,
-      "discount_percent": 10
+    "title": "Discover Bali: 5-Day Luxury Escape",
+    "overview": "Indulge in Bali’s tropical paradise with private beachfront stays at Bali Sunset Resort, cultural immersion at Uluwatu Temple’s cliffside Kecak fire dance, and adrenaline-fueled snorkeling at Nusa Penida’s Manta Point. Wander through UNESCO-listed Tegalalang Rice Terraces, discover artisan villages in Ubud, and unwind with sunset cocktails at Seminyak’s infinity pools. Includes VIP airport transfers, 4-star sea-view suites, and a gourmet Balinese feast under the stars. Perfect for couples and adventurers seeking luxury amid jungles, waterfalls, and sacred temples.",
+    "destination": {
+      "country": "Indonesia",
+      "city": "Bali",
+      "map": "https://maps.google.com/?q=Bali"
+    },
+    "food": {
+  "description": "Bali offers a vibrant fusion of flavors inspired by its rich Hindu heritage and tropical setting. Whether you're savoring Halal-friendly seafood, plant-based Balinese dishes, or traditional meat specialties, this journey caters to all dietary preferences with scenic mealtime experiences.",
+  "meal_schedule": {
+    "breakfast": {
+      "time": "7:30 AM – 9:30 AM",
+      "options": ["Halal", "Vegan", "Non-Vegan"]
+    },
+    "lunch": {
+      "time": "12:30 PM – 2:00 PM",
+      "options": ["Halal", "Vegan", "Non-Vegan"]
+    },
+    "dinner": {
+      "time": "7:00 PM – 9:00 PM",
+      "options": ["Halal", "Vegan", "Non-Vegan"]
     }
-  },
-  "banner_img": "https://i.ibb.co/mCcVFWGJ/bali.jpg",
-  "IMG1":"https://i.ibb.co.com/RpgMWDP0/d3.jpg",
-  "IMG2": "https://i.ibb.co.com/gZV2x98R/asia-Indonesia-bali2.jpg",
-  "IMG3": "https://i.ibb.co.com/zVRL93kJ/Bali-itinerary-Seminyak.jpg",
-  "IMG4": "https://i.ibb.co.com/whf7mg6q/583ueyw12nyi0fm5fj8o9u4nzj0v-Candle-Light-Dinner-1.jpg",
-  "IMG5": "https://i.ibb.co.com/Kp2G5qq5/snndbd82tn4803rsygi37fw4xq5c-couple-cave-900x450.jpg",
-  "IMG6": "https://i.ibb.co.com/F42czMx4/Bali-itinerary-Seminyak.jpg",
-  "itinerary": [
-    {
-      "day": 1,
-      "title": "Arrival & Welcome Dinner",
-      "description": "Your adventure begins with a warm welcome as you arrive at Ngurah Rai International Airport. Our team will greet you with a traditional Balinese flower garland and transfer you to your luxurious hotel in Seminyak. After settling into your Deluxe Sea View room, unwind with a refreshing tropical drink by the infinity pool. In the evening, enjoy a cultural welcome dinner at a beachside restaurant, featuring authentic Balinese cuisine like *Babi Guling* (suckling pig) and fresh seafood, accompanied by live traditional music under the stars."
+  }
+},
+    "country_history": "Indonesia, an archipelago of over 17,000 islands, has a rich history shaped by diverse cultures, trade, and colonization. Known for its ancient Hindu and Buddhist kingdoms, such as Srivijaya and Majapahit, Indonesia later became a major hub for spice trade, attracting European powers like the Dutch, who colonized the region for over 300 years. Indonesia declared independence in 1945 and is now the world's largest island country, celebrated for its cultural diversity, natural beauty, and vibrant traditions.",
+    "duration": "5 Days, 4 Nights",
+    "available_dates": [
+      "2025-04-10",
+      "2025-05-15",
+      "2025-06-20"
+    ],
+    "price": {
+      "currency": "USD",
+      "per_person": 899,
+      "group_discount": {
+        "min_people": 4,
+        "discount_percent": 10
+      }
     },
-    {
-      "day": 2,
-      "title": "Temple Tour & Waterfalls",
-      "description": "Start your day with a hearty breakfast before heading out to explore Bali’s spiritual side. Visit the iconic Uluwatu Temple, perched dramatically on a cliff overlooking the Indian Ocean, where you’ll witness stunning panoramic views and learn about its history from your expert guide. Next, journey to Tegenungan Waterfall, a hidden gem surrounded by lush greenery—perfect for a refreshing dip or a photo session. Cap off the day with a mesmerizing *Kecak* dance performance at sunset, a traditional Balinese fire dance that tells the epic tale of Ramayana."
+    "banner_img": "https://i.ibb.co/mCcVFWGJ/bali.jpg",
+    "IMG1":"https://i.ibb.co.com/RpgMWDP0/d3.jpg",
+    "IMG2": "https://i.ibb.co.com/gZV2x98R/asia-Indonesia-bali2.jpg",
+    "IMG3": "https://i.ibb.co.com/zVRL93kJ/Bali-itinerary-Seminyak.jpg",
+    "IMG4": "https://i.ibb.co.com/whf7mg6q/583ueyw12nyi0fm5fj8o9u4nzj0v-Candle-Light-Dinner-1.jpg",
+    "IMG5": "https://i.ibb.co.com/Kp2G5qq5/snndbd82tn4803rsygi37fw4xq5c-couple-cave-900x450.jpg",
+    "IMG6": "https://i.ibb.co.com/F42czMx4/Bali-itinerary-Seminyak.jpg",
+     
+  
+    "itinerary": [
+      {
+        "day": 1,
+        "title": "Arrival & Welcome Dinner",
+        "description": "Your adventure begins with a warm welcome as you arrive at Ngurah Rai International Airport. Our team will greet you with a traditional Balinese flower garland and transfer you to your luxurious hotel in Seminyak. After settling into your Deluxe Sea View room, unwind with a refreshing tropical drink by the infinity pool. In the evening, enjoy a cultural welcome dinner at a beachside restaurant, featuring authentic Balinese cuisine like *Babi Guling* (suckling pig) and fresh seafood, accompanied by live traditional music under the stars."
+      },
+      {
+        "day": 2,
+        "title": "Temple Tour & Waterfalls",
+        "description": "Start your day with a hearty breakfast before heading out to explore Bali’s spiritual side. Visit the iconic Uluwatu Temple, perched dramatically on a cliff overlooking the Indian Ocean, where you’ll witness stunning panoramic views and learn about its history from your expert guide. Next, journey to Tegenungan Waterfall, a hidden gem surrounded by lush greenery—perfect for a refreshing dip or a photo session. Cap off the day with a mesmerizing *Kecak* dance performance at sunset, a traditional Balinese fire dance that tells the epic tale of Ramayana."
+      },
+      {
+        "day": 3,
+        "title": "Rice Fields & Ubud Art Village",
+        "description": "Today, immerse yourself in Bali’s natural beauty and artistic heritage. After breakfast, travel to the UNESCO-listed Tegalalang Rice Terraces, where you’ll stroll through vibrant green paddies and learn about traditional rice farming techniques. Enjoy a local lunch at a family-run warung with views of the terraces. Then, explore Ubud’s art villages—Celuk for silver jewelry, Mas for wood carvings, and Ubud for paintings—where you can watch artisans at work and pick up unique souvenirs. Return to your hotel for a relaxing evening by the beach."
+      },
+      {
+        "day": 4,
+        "title": "Nusa Penida Snorkeling Adventure",
+        "description": "Embark on an unforgettable day trip to Nusa Penida, a pristine island off Bali’s coast. After an early breakfast, take a speedboat to this tropical paradise and dive into the crystal-clear waters for a snorkeling adventure. Swim alongside colorful coral reefs, tropical fish, and maybe even manta rays at Manta Point. Enjoy a beachside picnic lunch prepared by your guide, then visit Kelingking Beach for its breathtaking cliff views. Return to Bali in the late afternoon, with time to relax at the hotel spa before dinner."
+      },
+      {
+        "day": 5,
+        "title": "Departure & Farewell",
+        "description": "Savor your final morning in Bali with a leisurely breakfast overlooking the ocean. Take some time to explore Seminyak’s trendy boutiques or enjoy a last dip in the pool. Our team will assist with your checkout and provide a private transfer back to the airport, ensuring a smooth departure. As you leave, take with you memories of Bali’s beauty, culture, and luxury—perfect inspiration for your next adventure!"
+      }
+    ],
+    "inclusions": [
+      "4-star hotel accommodation",
+      "Daily breakfast & 3 dinners",
+      "Airport transfers",
+      "Guided sightseeing tours",
+      "Entrance fees to attractions"
+    ],
+    "exclusions": [
+      "Flights to/from Bali",
+      "Personal expenses",
+      "Visa fees"
+    ],
+    "accommodation": {
+      "hotel_name": "Bali Sunset Resort",
+      "rating": 4.5,
+      "room_type": "Deluxe Sea View",
+      "photos": [
+        "https://i.ibb.co.com/s9PWMnHM/Bali-Hotels-Beach-Pool-View-To-Kuta-Beach.jpg",
+        "https://i.ibb.co.com/HD4jNC9Y/493750151.jpg",
+        "https://i.ibb.co.com/KpT4DVfd/image-asset.jpg",
+        "https://i.ibb.co.com/9kCphQH0/images-3.jpg",
+        "https://i.ibb.co.com/W4WG2t6y/images-16.jpg",
+        "https://i.ibb.co.com/0jFVhw7J/467489869.jpg"
+      ]
     },
-    {
-      "day": 3,
-      "title": "Rice Fields & Ubud Art Village",
-      "description": "Today, immerse yourself in Bali’s natural beauty and artistic heritage. After breakfast, travel to the UNESCO-listed Tegalalang Rice Terraces, where you’ll stroll through vibrant green paddies and learn about traditional rice farming techniques. Enjoy a local lunch at a family-run warung with views of the terraces. Then, explore Ubud’s art villages—Celuk for silver jewelry, Mas for wood carvings, and Ubud for paintings—where you can watch artisans at work and pick up unique souvenirs. Return to your hotel for a relaxing evening by the beach."
-    },
-    {
-      "day": 4,
-      "title": "Nusa Penida Snorkeling Adventure",
-      "description": "Embark on an unforgettable day trip to Nusa Penida, a pristine island off Bali’s coast. After an early breakfast, take a speedboat to this tropical paradise and dive into the crystal-clear waters for a snorkeling adventure. Swim alongside colorful coral reefs, tropical fish, and maybe even manta rays at Manta Point. Enjoy a beachside picnic lunch prepared by your guide, then visit Kelingking Beach for its breathtaking cliff views. Return to Bali in the late afternoon, with time to relax at the hotel spa before dinner."
-    },
-    {
-      "day": 5,
-      "title": "Departure & Farewell",
-      "description": "Savor your final morning in Bali with a leisurely breakfast overlooking the ocean. Take some time to explore Seminyak’s trendy boutiques or enjoy a last dip in the pool. Our team will assist with your checkout and provide a private transfer back to the airport, ensuring a smooth departure. As you leave, take with you memories of Bali’s beauty, culture, and luxury—perfect inspiration for your next adventure!"
-    }
-  ],
-  "inclusions": [
-    "4-star hotel accommodation",
-    "Daily breakfast & 3 dinners",
-    "Airport transfers",
-    "Guided sightseeing tours",
-    "Entrance fees to attractions"
-  ],
-  "exclusions": [
-    "Flights to/from Bali",
-    "Personal expenses",
-    "Visa fees"
-  ],
-  "accommodation": {
-    "hotel_name": "Bali Sunset Resort",
-    "rating": 4.5,
-    "room_type": "Deluxe Sea View",
-    "photos": [
-      "https://i.ibb.co.com/s9PWMnHM/Bali-Hotels-Beach-Pool-View-To-Kuta-Beach.jpg",
-      "https://i.ibb.co.com/HD4jNC9Y/493750151.jpg",
-      "https://i.ibb.co.com/KpT4DVfd/image-asset.jpg",
-      "https://i.ibb.co.com/9kCphQH0/images-3.jpg",
-      "https://i.ibb.co.com/W4WG2t6y/images-16.jpg",
-      "https://i.ibb.co.com/0jFVhw7J/467489869.jpg"
+    "reviews": [
+      {
+        "id": 1,
+        "user": {
+          "name": "Emma Wilson",
+          "location": "Vancouver, Canada",
+          "avatar": "https://i.ibb.co.com/Y75TTn5p/man-working-laptop-from-office-1108340-892.jpg",
+          "traveler_type": "Couple"
+        },
+        "rating": 5,
+        "title": "Magical cherry blossom experience!",
+        "review_text": "The cherry blossoms were breathtaking, and the cultural activities were so immersive. The tea ceremony was a highlight!",
+        "date": "2024-04-01",
+        "verified_booking": true,
+        "photos": [
+          "/reviews/tokyo-1.jpg"
+        ],
+        "helpful_count": 18,
+        "response": {
+          "text": "Thank you, Emma! We're so glad you enjoyed the cherry blossoms.",
+          "date": "2024-04-03"
+        }
+      },
+      {
+        "id": 2,
+        "user": {
+          "name": "James Taylor",
+          "location": "Auckland, New Zealand",
+          "avatar": "https://i.ibb.co.com/Y75TTn5p/man-working-laptop-from-office-1108340-892.jpg",
+          "traveler_type": "Solo Traveler"
+        },
+        "rating": 4,
+        "title": "Great tour, but busy",
+        "review_text": "The tour was fantastic, but Tokyo was very crowded during cherry blossom season. Still, an amazing experience!",
+        "date": "2024-04-10",
+        "verified_booking": true,
+        "photos": [],
+        "helpful_count": 9,
+        "response": {
+          "text": "Thank you for your feedback, James! We'll work on managing the crowds better.",
+          "date": "2024-04-12"
+        }
+      }
     ]
   },
-  "reviews": [
-    {
-      "id": 1,
-      "user": {
-        "name": "Emma Wilson",
-        "location": "Vancouver, Canada",
-        "avatar": "https://i.ibb.co.com/Y75TTn5p/man-working-laptop-from-office-1108340-892.jpg",
-        "traveler_type": "Couple"
-      },
-      "rating": 5,
-      "title": "Magical cherry blossom experience!",
-      "review_text": "The cherry blossoms were breathtaking, and the cultural activities were so immersive. The tea ceremony was a highlight!",
-      "date": "2024-04-01",
-      "verified_booking": true,
-      "photos": [
-        "/reviews/tokyo-1.jpg"
-      ],
-      "helpful_count": 18,
-      "response": {
-        "text": "Thank you, Emma! We're so glad you enjoyed the cherry blossoms.",
-        "date": "2024-04-03"
-      }
-    },
-    {
-      "id": 2,
-      "user": {
-        "name": "James Taylor",
-        "location": "Auckland, New Zealand",
-        "avatar": "https://i.ibb.co.com/Y75TTn5p/man-working-laptop-from-office-1108340-892.jpg",
-        "traveler_type": "Solo Traveler"
-      },
-      "rating": 4,
-      "title": "Great tour, but busy",
-      "review_text": "The tour was fantastic, but Tokyo was very crowded during cherry blossom season. Still, an amazing experience!",
-      "date": "2024-04-10",
-      "verified_booking": true,
-      "photos": [],
-      "helpful_count": 9,
-      "response": {
-        "text": "Thank you for your feedback, James! We'll work on managing the crowds better.",
-        "date": "2024-04-12"
-      }
-    }
-  ]
-},
+  
 {
   "title": "Swiss Alps Adventure: 7-Day Expedition",
   "overview": "Embark on a Swiss Alpine adventure, conquering the iconic Matterhorn on skis, riding the Glacier Express to Jungfraujoch’s \"Top of Europe,\" and unwinding in a 5-star chalet with breathtaking panoramic views. Trek across the shimmering Gorner Glacier, savor authentic fondue dinners in Zermatt’s charming car-free village, and explore the medieval beauty of Chillon Castle on the shores of Lake Geneva. This luxury package includes private guided hikes, champagne toasts at 3,883 meters, and cozy stays in a mountain lodge with fireplace suites. Perfect for thrill-seekers and nature enthusiasts craving the grandeur of the Swiss Alps and the precision of Swiss hospitality.",
@@ -134,6 +154,28 @@
     "city": "Zermatt",
     "map": "https://maps.google.com/?q=Zermatt"
   },
+  "food": {
+  "description": "Experience the rich culinary traditions of the Swiss Alps with gourmet meals featuring local specialties. Enjoy hearty mountain breakfasts, traditional Swiss lunches, and elegant fondue dinners with premium cheeses from local dairy farms. Our meals highlight seasonal alpine ingredients and cater to all dietary needs with vegetarian, vegan, and gluten-free options available.",
+  "meal_schedule": {
+    "breakfast": {
+      "time": "7:00 AM – 9:00 AM",
+      "options": ["Swiss-style buffet", "Vegetarian", "Gluten-free"]
+    },
+    "lunch": {
+      "time": "12:00 PM – 2:00 PM",
+      "options": ["Mountain picnic", "Restaurant dining", "Vegan"]
+    },
+    "dinner": {
+      "time": "7:00 PM – 9:00 PM",
+      "options": ["Fondue night", "Raclette feast", "Gourmet Swiss cuisine"]
+    }
+  },
+  "dining_experiences": [
+    "Sunset champagne toast at Matterhorn Glacier Paradise",
+    "Traditional alpine hut lunch during hikes",
+    "Gourmet fondue dinner with Matterhorn views"
+  ]
+},
   "country_history": "Switzerland, known for its neutrality and stunning Alpine landscapes, has a history of independence dating back to 1291 when the Swiss Confederation was formed. The country has maintained its neutrality through major European conflicts, including both World Wars. Renowned for its political stability, banking sector, and precision engineering, Switzerland is also celebrated for its cultural diversity, with four official languages: German, French, Italian, and Romansh. Its picturesque mountains, lakes, and cities like Zurich and Geneva make it a global symbol of natural beauty and prosperity.",
   "duration": "7 Days, 6 Nights",
   "available_dates": [
@@ -149,6 +191,8 @@
       "discount_percent": 12
     }
   },
+  
+
   "banner_img": "https://i.ibb.co.com/ZpGrRDVg/istockphoto-584784714-612x612-1.jpg",
   "IMG1":"https://i.ibb.co.com/CsmsDX2G/images-1.jpg",
   "IMG2": "https://i.ibb.co.com/Jwx0VwYz/images-3.jpg",
@@ -268,6 +312,28 @@
     "city": "Dubai",
     "map": "https://maps.google.com/?q=Dubai"
   },
+  "food": {
+  "description": "Indulge in Dubai's exquisite culinary fusion of traditional Emirati flavors and international cuisine. From lavish hotel breakfasts with Arabian coffee to sunset BBQs in the desert, our dining experiences blend luxury with authentic local tastes. Enjoy halal-certified meals throughout your journey, with options available for vegetarian, vegan, and gluten-free diets.",
+  "meal_schedule": {
+    "breakfast": {
+      "time": "7:00 AM – 10:00 AM",
+      "options": ["International buffet", "Arabic breakfast", "Vegetarian"]
+    },
+    "lunch": {
+      "time": "12:30 PM – 3:00 PM",
+      "options": ["Restaurant dining", "Poolside light meals", "Vegan"]
+    },
+    "dinner": {
+      "time": "7:30 PM – 10:30 PM",
+      "options": ["Desert BBQ feast", "Gourmet hotel dining", "Traditional Emirati"]
+    }
+  },
+  "dining_experiences": [
+    "Sunset desert BBQ with live entertainment",
+    "Private yacht dinner cruise",
+    "Traditional Arabic coffee and dates welcome"
+  ]
+},
   "country_history": "The United Arab Emirates (UAE), formed in 1971, is a federation of seven emirates, including Dubai and Abu Dhabi. Historically a region of small fishing and pearl-diving villages, the UAE transformed into a global hub of trade, tourism, and innovation following the discovery of oil in the 20th century. Dubai, in particular, has become synonymous with luxury, boasting iconic landmarks like the Burj Khalifa and Palm Jumeirah. The UAE blends modern architecture with deep-rooted traditions, making it a unique destination in the Middle East.",
   "duration": "4 Days, 3 Nights",
   "available_dates": [
@@ -388,6 +454,28 @@
     "city": "Tokyo",
     "map": "https://maps.google.com/?q=Tokyo"
   },
+  "food": {
+  "description": "Savor the delicate flavors of Japan during cherry blossom season with authentic kaiseki meals, fresh sushi, and seasonal sakura-themed treats. Our culinary journey highlights traditional Japanese dining etiquette and the art of presentation, with special attention to spring ingredients. Vegetarian, vegan, and halal options are available upon request.",
+  "meal_schedule": {
+    "breakfast": {
+      "time": "7:00 AM – 9:30 AM",
+      "options": ["Japanese traditional", "Western buffet", "Vegetarian"]
+    },
+    "lunch": {
+      "time": "12:00 PM – 2:30 PM",
+      "options": ["Bento box", "Sushi workshop", "Ramen specialty"]
+    },
+    "dinner": {
+      "time": "6:30 PM – 9:30 PM",
+      "options": ["Kaiseki dinner", "Izakaya experience", "Teppanyaki"]
+    }
+  },
+  "dining_experiences": [
+    "Sakura-themed afternoon tea with cherry blossom sweets",
+    "Sushi-making class with a Michelin-trained chef",
+    "Traditional tea ceremony with wagashi (Japanese confections)"
+  ]
+},
   "country_history": "Japan, an island nation in East Asia, has a history spanning thousands of years, from its ancient Jomon period to the rise of samurai culture and the modernization of the Meiji Restoration. Known for its unique blend of tradition and innovation, Japan has preserved its cultural heritage, including tea ceremonies, kimono, and cherry blossom festivals, while becoming a global leader in technology and industry. Tokyo, its capital, is a bustling metropolis that reflects Japan’s dynamic past and future, offering a mix of historic temples and futuristic skyscrapers.",
   "duration": "5 Days, 4 Nights",
   "available_dates": [
@@ -512,6 +600,28 @@
     "country": "Greece",
     "city": "Santorini",
     "map": "https://maps.google.com/?q=Santorini"
+  },
+  "food": {
+  "description": "Indulge in Santorini's world-renowned gastronomy, where volcanic soil produces unique flavors. Enjoy sunset seafood dinners, traditional Greek meze platters, and private vineyard tastings. Our culinary experiences highlight fresh local ingredients like cherry tomatoes, fava beans, and white eggplant, paired with exceptional Assyrtiko wines. Vegetarian, vegan and gluten-free options are available.",
+  "meal_schedule": {
+    "breakfast": {
+      "time": "8:00 AM – 10:30 AM",
+      "options": ["Greek yogurt with honey", "Mediterranean buffet", "Fresh fruit & pastries"]
+    },
+    "lunch": {
+      "time": "1:00 PM – 3:00 PM",
+      "options": ["Seaside taverna dining", "Picnic with caldera views", "Light salads & sandwiches"]
+    },
+    "dinner": {
+      "time": "7:30 PM – 10:00 PM",
+      "options": ["Candlelit cliffside dining", "Private chef experience", "Traditional Greek feast"]
+    }
+  },
+  "dining_experiences": [
+    "Sunset seafood dinner in an Oia cave restaurant",
+    "Private wine pairing dinner at a cliffside vineyard",
+    "Greek cooking class featuring Santorini specialties"
+  ]
   },
   "country_history": "Greece, the cradle of Western civilization, has a history spanning over 3,000 years, from the ancient Minoan and Mycenaean civilizations to the Golden Age of Athens and the Hellenistic period. Known for its contributions to philosophy, democracy, and the arts, Greece is also famous for its mythology and archaeological sites like the Acropolis and Delphi. Santorini, part of the Cyclades islands, is renowned for its stunning sunsets, whitewashed buildings, and volcanic landscapes, offering a glimpse into Greece’s ancient and modern allure.",
   "duration": "5 Days, 4 Nights",
@@ -639,6 +749,29 @@
       "city": "New York",
       "map": "https://maps.google.com/?q=New+York"
     },
+    "food": {
+  "description": "Experience the culinary capital of the world where every meal is a passport to global flavors. Savor NYC’s diverse food scene with everything from iconic street food to high-end gourmet experiences. Indulge in New York-style bagels and lox for breakfast, food truck tacos in SoHo for lunch, and Michelin-starred tasting menus for dinner. Options span Italian trattorias in Little Italy, dim sum in Chinatown, and plant-based delicacies in Williamsburg. Kosher, halal, vegan, vegetarian, and gluten-free meals are available.",
+  "meal_schedule": {
+    "breakfast": {
+      "time": "7:00 AM – 10:00 AM",
+      "options": ["Bagels with cream cheese & smoked salmon", "Continental buffet", "Fresh fruit & artisan pastries"]
+    },
+    "lunch": {
+      "time": "12:30 PM – 2:30 PM",
+      "options": ["Gourmet food truck fare", "Central Park picnic", "Trendy café bites"]
+    },
+    "dinner": {
+      "time": "7:00 PM – 10:00 PM",
+      "options": ["Michelin-starred dining", "Brooklyn rooftop BBQ", "Italian feast in Little Italy"]
+    }
+  },
+  "dining_experiences": [
+    "Private dinner with a skyline view at a Manhattan rooftop restaurant",
+    "Food tour through Chinatown and Little Italy",
+    "Interactive cooking class with a celebrity chef"
+  ]
+}
+,
     "country_history": "The United States of America, founded in 1776, is a nation built on ideals of freedom and democracy. New York City, its largest metropolis, has been a gateway for immigrants and a center of culture, finance, and innovation. From its early days as a Dutch colony to its rise as a global powerhouse, NYC has shaped American history. Iconic landmarks like the Statue of Liberty, Central Park, and Times Square reflect its diverse heritage and dynamic spirit, making it a symbol of opportunity and ambition.",
     "duration": "6 Days, 5 Nights",
     "available_dates": [
@@ -786,6 +919,28 @@
         "discount_percent": 12
       }
     },
+    "food": {
+      "description": "Peruvian cuisine is a celebration of ancient ingredients and culinary innovation. On this journey, you’ll enjoy hearty Andean meals prepared by local chefs—perfectly balanced for high-altitude trekking. From coca tea mornings to gourmet dinners in Sacred Valley lodges, every dish is infused with cultural richness. Savor ceviche fresh from the Pacific coast, quinoa soups, grilled trout from Urubamba, and the famous lomo saltado. Vegetarian and gluten-free options are always available, and meals are thoughtfully prepared to fuel your adventure.",
+      "meal_schedule": {
+        "breakfast": {
+          "time": "6:30 AM – 8:00 AM",
+          "options": ["Coca tea & fresh fruit", "Andean pancakes", "Scrambled eggs with quinoa toast"]
+        },
+        "lunch": {
+          "time": "12:00 PM – 1:30 PM",
+          "options": ["Boxed lunch during treks", "Traditional pachamanca (earth oven meal)", "Lentil stew with native potatoes"]
+        },
+        "dinner": {
+          "time": "6:30 PM – 8:30 PM",
+          "options": ["Lomo saltado with rice", "Grilled trout with Andean herbs", "Vegetarian tamales"]
+        }
+      },
+      "dining_experiences": [
+        "Dinner under the stars at a remote Inca campsite",
+        "Cooking demonstration by a Sacred Valley lodge chef",
+        "Market-to-table meal prepared with local Quechua ingredients"
+      ]
+    },
     "banner_img": "https://i.ibb.co.com/LzDL278Q/2700-2048.webp",
     "IMG1":"https://i.ibb.co.com/kVb7sbJD/istockphoto-588223086-612x612.jpg",
     "IMG2": "https://i.ibb.co.com/f3M5Y8c/A8560-The-7-wonders-of-the-World-how-theyre-built-Image-6.webp",
@@ -907,7 +1062,6 @@
       "city": "Sydney",
       "map": "https://maps.google.com/?q=Sydney"
     },
-    "country_history": "Australia, originally inhabited by Aboriginal peoples for over 65,000 years, was later colonized by the British in 1788. The country has evolved into a modern, multicultural nation known for its stunning natural landscapes, from the Great Barrier Reef to the Outback. Its unique wildlife, vibrant cities, and indigenous heritage make it a fascinating travel destination.",
     "duration": "7 Days, 6 Nights",
     "available_dates": [
       "2025-09-01",
@@ -921,6 +1075,28 @@
         "min_people": 4,
         "discount_percent": 10
       }
+    },
+    "food": {
+      "description": "Australian cuisine is a vibrant fusion of fresh coastal seafood, multicultural influences, and native bush ingredients. This journey showcases Sydney's cosmopolitan dining scene and tropical Queensland flavors. Enjoy breakfasts with harbor views, seafood platters featuring Moreton Bay bugs, and authentic Aussie barbecue. Taste indigenous ingredients like lemon myrtle, wattleseed, and finger limes, with expert pairing of Australian wines and craft beers. Dietary requirements are catered for with advance notice.",
+      "meal_schedule": {
+        "breakfast": {
+          "time": "7:00 AM – 9:00 AM",
+          "options": ["Aussie big brekkie with eggs & avocado", "Vegemite toast with tropical fruit", "Pancakes with macadamia butter"]
+        },
+        "lunch": {
+          "time": "12:00 PM – 2:00 PM",
+          "options": ["Fish and chips by Bondi Beach", "Gourmet picnic in Blue Mountains", "Reef-side seafood buffet on cruise"]
+        },
+        "dinner": {
+          "time": "6:30 PM – 9:00 PM",
+          "options": ["Barramundi with bush spices", "Grass-fed beef steak", "Vegetarian pumpkin and wattleseed risotto"]
+        }
+      },
+      "dining_experiences": [
+        "Sunset seafood platter at Sydney Harbour",
+        "Bush tucker tasting with Aboriginal guide",
+        "Great Barrier Reef lunch on catamaran deck"
+      ]
     },
     "banner_img": "https://i.ibb.co.com/NzTYhjx/istockphoto-1472330375-612x612.jpg",
     "IMG1":"https://i.ibb.co.com/B5Fxf3bD/great-barrier-reef-xl.jpg",
@@ -1033,5 +1209,5 @@
         }
       }
     ]
-  }
+}
 ]

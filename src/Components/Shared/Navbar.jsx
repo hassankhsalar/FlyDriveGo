@@ -246,7 +246,7 @@ const Navbar = () => {
 
         <li className="flex items-center dark:text-[#4e585f] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer">
           <AiOutlineFire className="text-[1.1rem] group-hover:text-[#3B9DF8] dark:text-[#4e585f] text-gray-600" />
-          Visa
+          <Link to='/visa-assistance'>Visa</Link>
         </li>
         <li className="flex items-center dark:text-[#4e585f] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer">
           <BiShoppingBag className="text-[1.1rem] group-hover:text-[#3B9DF8] dark:text-[#4e585f] text-gray-600" />
@@ -290,11 +290,13 @@ const Navbar = () => {
           onClick={() => setAccountMenuOpen(!accountMenuOpen)}
         >
           <div className="relative">
+
             <img
               src={user?.photoURL}
               alt="avatar"
               className="w-[50px] h-[50px] rounded-full object-cover"
             />
+
 
             <div className="p-[2px] bg-white absolute top-[0px] right-0 rounded-full">
               <div className="w-[12px] h-[12px] rounded-full bg-green-400 "></div>
