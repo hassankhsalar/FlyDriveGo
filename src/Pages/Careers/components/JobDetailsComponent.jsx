@@ -17,7 +17,6 @@ const JobDetailsComponent = ({ jobId }) => {
             qualifications: "Bachelor's degree in Business or related field. 5+ years of experience.",
             benefits: "Competitive salary, stock options, flexible hours."
         },
-        // Add more job details as needed
     };
 
     const job = jobDetails[jobId];
