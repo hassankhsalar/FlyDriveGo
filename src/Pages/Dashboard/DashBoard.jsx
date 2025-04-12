@@ -22,7 +22,7 @@ const DashBoard = () => {
             <li><Link to='/dashboard/adminDashboard'>Admin Dashboard</Link></li>
             <li><Link to='/dashboard/add-products'>Add Products</Link></li>
             <li><Link to='/dashboard/addTourPackage'>Add Tour Packages</Link></li>
-            <li><Link to='/dashboard/'></Link></li>
+            <li><Link to='/seller-productlist/:email'>seller Productlist</Link></li>
             <li><Link to='/dashboard/'></Link></li>
           </ul>
 
