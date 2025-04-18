@@ -18,6 +18,9 @@ import JobForm from "../Pages/Careers/JobForm";
 import Confirmation from "../Pages/Careers/Confirmation";
 import AddTourPackage from "../Pages/TourPackages/AddTourPackages";
 import EshopHome from "../Pages/Eshop/EshopHome/EshopHome";
+import MyProfile from "../Pages/Profile/MyProfile";
+import UpdateProfile from "../Pages/Profile/UpdateProfile";
+
 
 export const router = createBrowserRouter([
   {
@@ -32,6 +35,16 @@ export const router = createBrowserRouter([
       {
         path: "/about",
         element: <About />,
+      },
+      {
+        path: "/my-profile/:email",
+        element: <MyProfile />
+
+      },
+      {
+        path: "/update-profile",
+        element: <UpdateProfile />
+
       },
       {
         path: "/transportation",
@@ -122,6 +135,7 @@ export const router = createBrowserRouter([
       },
     ],
   },
+
   {
     path: "/login",
     element: <Login />,
