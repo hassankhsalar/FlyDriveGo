@@ -86,12 +86,7 @@ const MyCart = () => {
                       >
                         Remove
                       </button>
-                      <button
-                        onClick={() => handleDelete(item._id)}
-                        className="btn btn-error"
-                      >
-                        Update
-                      </button>
+                      
                     </th>
                   </tr>
                 ))}
