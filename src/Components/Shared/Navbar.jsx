@@ -63,7 +63,7 @@ const Navbar = () => {
               isProductHover
                 ? "translate-y-0 opacity-100 z-30"
                 : "translate-y-[20px] opacity-0 z-[-1]"
-            } bg-white rounded-md w-full absolute top-[40px] dark:bg-slate-800 left-0 p-[30px] transition-all duration-300 boxShadow flex flex-wrap gap-[30px]`}
+            } bg-white rounded-md w-[400px] absolute top-[40px] dark:bg-slate-800 left-0 p-[30px] transition-all duration-300 boxShadow flex flex-wrap gap-[30px]`}
           >
             <div className="grid grid-cols-2 gap-[30px]">
               <div className="flex flex-col gap-[20px]">
@@ -125,7 +125,7 @@ const Navbar = () => {
                       Career
                     </h1>
                     <p className="text-[0.9rem] dark:text-slate-400 text-gray-400 font-[300]">
-                      Lorem ipsum dolor sit amet, consect adipiscing elit
+                      Check for openings
                     </p>
 
                     <button className="text-[#8B5CF6] mt-2 flex items-center gap-[4px] text-[0.9rem]">
@@ -135,111 +135,9 @@ const Navbar = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col gap-[20px]">
-                <h3 className="text-[1.2rem] dark:text-[#abc2d3] text-gray-500 font-[500]">
-                  Ecosystem
-                </h3>
-
-                <div className="flex float-start gap-[10px]">
-                  <BsBuildings className="text-[1.4rem] dark:text-[#abc2d3] text-gray-600" />
-
-                  <div>
-                    <h1 className="text-[1rem] dark:text-[#abc2d3] text-gray-600 font-[500]">
-                      Directory
-                    </h1>
-                    <p className="text-[0.9rem] dark:text-slate-400 text-gray-400 font-[300]">
-                      Lorem ipsum dolor sit amet, consect adipiscing elit
-                    </p>
-                  </div>
-                </div>
-                <div className="flex float-start gap-[10px]">
-                  <BsCalendar2Date className="text-[1.4rem] dark:text-[#abc2d3] text-gray-600" />
-
-                  <div>
-                    <h1 className="text-[1rem] dark:text-[#abc2d3] text-gray-600 font-[500] ">
-                      Bookings
-                    </h1>
-                    <p className="text-[0.9rem] dark:text-slate-400 text-gray-400 font-[300]">
-                      Lorem ipsum dolor sit amet, consect adipiscing elit
-                    </p>
-                  </div>
-                </div>
-                <div className="flex float-start gap-[10px]">
-                  <TbUsersGroup className="text-[1.4rem] dark:text-[#abc2d3] text-gray-600" />
-
-                  <div>
-                    <h1 className="text-[1rem] dark:text-[#abc2d3] text-gray-600 font-[500]">
-                      User feedback
-                    </h1>
-                    <p className="text-[0.9rem] dark:text-slate-400 text-gray-400 font-[300]">
-                      Lorem ipsum dolor sit amet, consect adipiscing elit
-                    </p>
-                  </div>
-                </div>
-                <div className="flex float-start gap-[10px]">
-                  <FaTasks className="text-[1.4rem] dark:text-[#abc2d3] text-gray-600" />
-
-                  <div>
-                    <h1 className="text-[1rem] dark:text-[#abc2d3] text-gray-600 font-[500]">
-                      Task Manager
-                    </h1>
-                    <p className="text-[0.9rem] dark:text-slate-400 text-gray-400 font-[300]">
-                      Lorem ipsum dolor sit amet, consect adipiscing elit
-                    </p>
-                  </div>
-                </div>
-              </div>
+              
             </div>
 
-            <div className="flex flex-col gap-[20px] dark:bg-slate-900 bg-gray-50 rounded-md p-[20px] w-full">
-              <div className="flex float-start gap-[10px] group">
-                <img
-                  src="https://i.ibb.co/VTqw5rY/img-container.png"
-                  alt="image"
-                  className="w-[100px]"
-                />
-
-                <div>
-                  <div className="mb-2 flex items-center gap-[5px]">
-                    <h1 className="text-[1rem] dark:text-[#abc2d3] text-gray-600 font-[500]">
-                      Check the new app
-                    </h1>
-                    <p className="py-[3px] px-[8px] text-[0.6rem] text-gray-500 border dark:border-slate-700 dark:text-[#abc2d3] border-gray-300 rounded-full text-center">
-                      Featured
-                    </p>
-                  </div>
-                  <p className="text-[0.9rem] dark:text-slate-400 text-gray-400 font-[300]">
-                    Lorem ipsum dolor sit amet, consect adipiscing elit
-                  </p>
-
-                  <button className="text-[#FF5E5E] mt-2 flex items-center gap-[4px] text-[0.9rem]">
-                    Call to action
-                    <MdOutlineArrowRightAlt className="text-[1.4rem] group-hover:ml-[5px] transition-all duration-300" />
-                  </button>
-                </div>
-              </div>
-              <div className="flex float-start gap-[10px] group">
-                <img
-                  src="https://i.ibb.co/V2b5xnK/img-container-1.png"
-                  alt="image"
-                  className="w-[100px]"
-                />
-
-                <div>
-                  <h1 className="text-[1rem] dark:text-[#abc2d3] text-gray-600 font-[500]">
-                    Check our newsletter
-                  </h1>
-                  <p className="text-[0.9rem] dark:text-slate-400 text-gray-400 font-[300]">
-                    Lorem ipsum dolor sit amet, consect adipiscing elit
-                  </p>
-
-                  <button className="text-[#FF5E5E] mt-2 flex items-center gap-[4px] text-[0.9rem]">
-                    Call to action
-                    <MdOutlineArrowRightAlt className="text-[1.4rem] group-hover:ml-[5px] transition-all duration-300" />
-                  </button>
-                </div>
-              </div>
-            </div>
           </div>
         </li>
 
