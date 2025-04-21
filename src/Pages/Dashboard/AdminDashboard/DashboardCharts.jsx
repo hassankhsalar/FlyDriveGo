@@ -2,11 +2,10 @@ import AreaChart1 from "./AreaChart1";
 import BarChartComponent from "./BarChart";
 import LineChartComponent from "./LineChart";
 
-
 const DashboardCharts = () => {
   return (
-    <div>
-      <section className="p-4 my-6 md:p-8  bg-gray-100 text-gray-100 dark:text-gray-800">
+    <div className="overflow-hidden">
+      <section className="p-4 md:p-8  bg-gray-100 text-gray-100 dark:text-gray-800">
         <div className="container grid grid-cols-1 gap-6 m-4 mx-auto md:m-0 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
           <div className="flex overflow-hidden rounded-lg dark:bg-gray-400 bg-gray-300 text-gray-800">
             <div className="flex items-center justify-center px-4 bg-violet-400 dark:bg-violet-600 text-gray-800 dark:text-gray-100">
@@ -114,7 +113,7 @@ const DashboardCharts = () => {
         </div>
       </section>
 
-      <section className="grid grid-cols-1 xl:grid-cols-2 gap-2">
+      <section className="grid grid-cols-1 xl:grid-cols-2 gap-2 p-4 mb-10">
         <div className="w-auto h-52 md:h-96">
           <AreaChart1></AreaChart1>
         </div>

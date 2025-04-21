@@ -29,8 +29,8 @@ const Navbar = () => {
   const [isMegaMenuCollapse, setIsMegaMenuCollapse] = useState(false);
   const [megaMenuSubItemsOpen, setMegaMenuSubItemsOpen] = useState("");
   const { user, logOut } = useAuth();
-  console.log(user);
   const  [cart]= useCart();
+
 
   return (
     <nav className="flex items-center justify-between relative font-red-rose pt-2 w-11/12 mx-auto">
@@ -255,6 +255,7 @@ const Navbar = () => {
         <li className="flex items-center dark:text-[#4e585f] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer">
           <BiSupport className="text-[1.1rem] group-hover:text-[#3B9DF8] dark:text-[#4e585f] text-gray-600" />
           <Link to="/about">About</Link>
+
         </li>
         <li>
           <Link to="/mycart">
@@ -262,6 +263,7 @@ const Navbar = () => {
               <FaShoppingCart></FaShoppingCart> <div className="badge badge-sm badge-secondary">+{cart.length}</div>
             </button>
           </Link>
+
         </li>
       </ul>
 
@@ -324,7 +326,10 @@ const Navbar = () => {
             </p>
             <p className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] dark:text-[#abc2d3] dark:hover:bg-slate-900/50 text-gray-600 hover:bg-gray-50">
               <FiUser />
-              <Link to="/dashboard/adminDashboard">Dashboard</Link>
+
+              <Link to="/dashboard">Dashboard</Link>
+
+  
             </p>
 
             <div className="mt-3 border-t dark:border-slate-700 border-gray-200 pt-[5px]">

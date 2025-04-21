@@ -5,20 +5,20 @@ import DashBoard from "../Pages/Dashboard/DashBoard";
 
 const DashboardLayout = () => {
   return (
-    <div>
+    <div className="h-screen">
       <div>
         <Navbar></Navbar>
       </div>
-      <div className="flex">
-        <div className="w-40 md:w-64 pt-6 mt-6 bg-slate-300 min-h-screen">
-          <DashBoard></DashBoard>
+      <div className="flex bg-slate-300 ">
+        {/* Sidebar */}
+        <div className="w-40 md:w-64 h-screen ">
+          <DashBoard />
         </div>
-        <div className="w-full">
-          <Outlet></Outlet>
+
+        {/* Main Content */}
+        <div className="flex-1 overflow-y-auto bg-white">
+          <Outlet />
         </div>
-      </div>
-      <div>
-        
       </div>
     </div>
   );
