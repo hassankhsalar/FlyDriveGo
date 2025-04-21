@@ -9,16 +9,7 @@ const EshopHome = () => {
   return (
     <section className="mx-0 md:mx-20">
       <div>
-        <EshopHeroSection></EshopHeroSection>
-      </div>
-      <div>
-        <TrustedPartners></TrustedPartners>
-      </div>
-      <div>
         <Eproduct></Eproduct>
-      </div>
-      <div>
-        <PopularEvents2></PopularEvents2>
       </div>
       <div>
         <CTA></CTA>
