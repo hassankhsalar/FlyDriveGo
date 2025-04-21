@@ -26,7 +26,7 @@ const totalPrice = location.state?.totalPrice || 0;
         return
     }
     const  card = elements.getElement(CardElement)
-    if(card = null){
+    if(card === null){
         return
     }
 
