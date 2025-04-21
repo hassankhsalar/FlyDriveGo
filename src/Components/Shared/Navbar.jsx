@@ -29,8 +29,7 @@ const Navbar = () => {
   const [isMegaMenuCollapse, setIsMegaMenuCollapse] = useState(false);
   const [megaMenuSubItemsOpen, setMegaMenuSubItemsOpen] = useState("");
   const { user, logOut } = useAuth();
-  const  [cart]= useCart();
-
+  const [cart] = useCart();
 
   return (
     <nav className="flex items-center justify-between relative font-red-rose pt-2 w-11/12 mx-auto">
@@ -64,9 +63,9 @@ const Navbar = () => {
               isProductHover
                 ? "translate-y-0 opacity-100 z-30"
                 : "translate-y-[20px] opacity-0 z-[-1]"
-            } bg-white rounded-md w-full absolute top-[40px] dark:bg-slate-800 left-0 p-[30px] transition-all duration-300 boxShadow flex flex-wrap gap-[30px]`}
+            } bg-white rounded-md w-[300px] absolute top-[55px] dark:bg-slate-800 xl:left-96 2xl:left-[600px] p-[30px] transition-all duration-300 boxShadow flex flex-wrap gap-[30px]`}
           >
-            <div className="grid grid-cols-2 gap-[30px]">
+            <div className="grid grid-cols-1 gap-[30px]">
               <div className="flex flex-col gap-[20px]">
                 <h3 className="text-[1.2rem] dark:text-[#abc2d3] text-gray-500 font-[500]">
                   More Products
@@ -126,7 +125,7 @@ const Navbar = () => {
                       Career
                     </h1>
                     <p className="text-[0.9rem] dark:text-slate-400 text-gray-400 font-[300]">
-                      Lorem ipsum dolor sit amet, consect adipiscing elit
+                      Check for openings
                     </p>
 
                     <button className="text-[#8B5CF6] mt-2 flex items-center gap-[4px] text-[0.9rem]">
@@ -136,117 +135,15 @@ const Navbar = () => {
                   </div>
                 </div>
               </div>
-              <div className="flex flex-col gap-[20px]">
-                <h3 className="text-[1.2rem] dark:text-[#abc2d3] text-gray-500 font-[500]">
-                  Ecosystem
-                </h3>
-
-                <div className="flex float-start gap-[10px]">
-                  <BsBuildings className="text-[1.4rem] dark:text-[#abc2d3] text-gray-600" />
-
-                  <div>
-                    <h1 className="text-[1rem] dark:text-[#abc2d3] text-gray-600 font-[500]">
-                      Directory
-                    </h1>
-                    <p className="text-[0.9rem] dark:text-slate-400 text-gray-400 font-[300]">
-                      Lorem ipsum dolor sit amet, consect adipiscing elit
-                    </p>
-                  </div>
-                </div>
-                <div className="flex float-start gap-[10px]">
-                  <BsCalendar2Date className="text-[1.4rem] dark:text-[#abc2d3] text-gray-600" />
-
-                  <div>
-                    <h1 className="text-[1rem] dark:text-[#abc2d3] text-gray-600 font-[500] ">
-                      Bookings
-                    </h1>
-                    <p className="text-[0.9rem] dark:text-slate-400 text-gray-400 font-[300]">
-                      Lorem ipsum dolor sit amet, consect adipiscing elit
-                    </p>
-                  </div>
-                </div>
-                <div className="flex float-start gap-[10px]">
-                  <TbUsersGroup className="text-[1.4rem] dark:text-[#abc2d3] text-gray-600" />
-
-                  <div>
-                    <h1 className="text-[1rem] dark:text-[#abc2d3] text-gray-600 font-[500]">
-                      User feedback
-                    </h1>
-                    <p className="text-[0.9rem] dark:text-slate-400 text-gray-400 font-[300]">
-                      Lorem ipsum dolor sit amet, consect adipiscing elit
-                    </p>
-                  </div>
-                </div>
-                <div className="flex float-start gap-[10px]">
-                  <FaTasks className="text-[1.4rem] dark:text-[#abc2d3] text-gray-600" />
-
-                  <div>
-                    <h1 className="text-[1rem] dark:text-[#abc2d3] text-gray-600 font-[500]">
-                      Task Manager
-                    </h1>
-                    <p className="text-[0.9rem] dark:text-slate-400 text-gray-400 font-[300]">
-                      Lorem ipsum dolor sit amet, consect adipiscing elit
-                    </p>
-                  </div>
-                </div>
-              </div>
+              
             </div>
 
-            <div className="flex flex-col gap-[20px] dark:bg-slate-900 bg-gray-50 rounded-md p-[20px] w-full">
-              <div className="flex float-start gap-[10px] group">
-                <img
-                  src="https://i.ibb.co/VTqw5rY/img-container.png"
-                  alt="image"
-                  className="w-[100px]"
-                />
-
-                <div>
-                  <div className="mb-2 flex items-center gap-[5px]">
-                    <h1 className="text-[1rem] dark:text-[#abc2d3] text-gray-600 font-[500]">
-                      Check the new app
-                    </h1>
-                    <p className="py-[3px] px-[8px] text-[0.6rem] text-gray-500 border dark:border-slate-700 dark:text-[#abc2d3] border-gray-300 rounded-full text-center">
-                      Featured
-                    </p>
-                  </div>
-                  <p className="text-[0.9rem] dark:text-slate-400 text-gray-400 font-[300]">
-                    Lorem ipsum dolor sit amet, consect adipiscing elit
-                  </p>
-
-                  <button className="text-[#FF5E5E] mt-2 flex items-center gap-[4px] text-[0.9rem]">
-                    Call to action
-                    <MdOutlineArrowRightAlt className="text-[1.4rem] group-hover:ml-[5px] transition-all duration-300" />
-                  </button>
-                </div>
-              </div>
-              <div className="flex float-start gap-[10px] group">
-                <img
-                  src="https://i.ibb.co/V2b5xnK/img-container-1.png"
-                  alt="image"
-                  className="w-[100px]"
-                />
-
-                <div>
-                  <h1 className="text-[1rem] dark:text-[#abc2d3] text-gray-600 font-[500]">
-                    Check our newsletter
-                  </h1>
-                  <p className="text-[0.9rem] dark:text-slate-400 text-gray-400 font-[300]">
-                    Lorem ipsum dolor sit amet, consect adipiscing elit
-                  </p>
-
-                  <button className="text-[#FF5E5E] mt-2 flex items-center gap-[4px] text-[0.9rem]">
-                    Call to action
-                    <MdOutlineArrowRightAlt className="text-[1.4rem] group-hover:ml-[5px] transition-all duration-300" />
-                  </button>
-                </div>
-              </div>
-            </div>
           </div>
         </li>
 
         <li className="flex items-center dark:text-[#4e585f] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer">
           <AiOutlineFire className="text-[1.1rem] group-hover:text-[#3B9DF8] dark:text-[#4e585f] text-gray-600" />
-          <Link to='/visa-assistance'>Visa</Link>
+          <Link to="/visa-assistance">Visa</Link>
         </li>
         <li className="flex items-center dark:text-[#4e585f] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer">
           <BiShoppingBag className="text-[1.1rem] group-hover:text-[#3B9DF8] dark:text-[#4e585f] text-gray-600" />
@@ -255,15 +152,16 @@ const Navbar = () => {
         <li className="flex items-center dark:text-[#4e585f] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer">
           <BiSupport className="text-[1.1rem] group-hover:text-[#3B9DF8] dark:text-[#4e585f] text-gray-600" />
           <Link to="/about">About</Link>
-
         </li>
         <li>
           <Link to="/mycart">
             <button className="btn">
-              <FaShoppingCart></FaShoppingCart> <div className="badge badge-sm badge-secondary">+{cart.length}</div>
+              <FaShoppingCart></FaShoppingCart>{" "}
+              <div className="badge badge-sm badge-secondary">
+                +{cart.length}
+              </div>
             </button>
           </Link>
-
         </li>
       </ul>
 
@@ -274,13 +172,13 @@ const Navbar = () => {
         ) : (
           <>
             <Link
-              className="flex items-center dark:text-[#abc2d3] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer"
+              className="flex items-center dark:text-[#4e585f] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer"
               to="/login"
             >
               Login
             </Link>{" "}
             <Link
-              className="flex items-center dark:text-[#abc2d3] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer bg-primary text-white p-2 rounded-xl"
+              className="flex items-center dark:text-[#4e585f] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer bg-primary text-white p-2 rounded-xl"
               to="/register"
             >
               Register
@@ -292,13 +190,13 @@ const Navbar = () => {
           onClick={() => setAccountMenuOpen(!accountMenuOpen)}
         >
           <div className="relative">
-
-            <img
-              src={user?.photoURL}
-              alt="avatar"
-              className="w-[50px] h-[50px] rounded-full object-cover"
-            />
-
+            {user ? (
+              <img
+                src={user.photoURL}
+                alt="avatar"
+                className="w-[38px] h-[38px] rounded-full object-cover"
+              />
+            ) : null}
 
             <div className="p-[2px] bg-white absolute top-[0px] right-0 rounded-full">
               <div className="w-[12px] h-[12px] rounded-full bg-green-400 "></div>
@@ -328,8 +226,6 @@ const Navbar = () => {
               <FiUser />
 
               <Link to="/dashboard">Dashboard</Link>
-
-  
             </p>
 
             <div className="mt-3 border-t dark:border-slate-700 border-gray-200 pt-[5px]">

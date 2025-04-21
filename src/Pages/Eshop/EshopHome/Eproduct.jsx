@@ -53,7 +53,7 @@ const Eproduct = () => {
   ];
   return (
     <div className="my-[60px] md:my-[120px]">
-      <div className="mb-20">
+      <div className="mb-10">
         <h2 className="text-xxl md:text-4xl xl:text-4xl font-red-rose  text-primary font-bold text-center">
           Gear Up for Your Next Adventure!
         </h2>

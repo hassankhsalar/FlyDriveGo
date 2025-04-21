@@ -20,6 +20,7 @@ const ProductCard = ({ product,user }) => {
         name: product.title,
         price:  product.price,
         image: product.photo,
+        category: item.tags
       }
       axiosSecure.post('/carts', cartItem)
       .then(res =>{
