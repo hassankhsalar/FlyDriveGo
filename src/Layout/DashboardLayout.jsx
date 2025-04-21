@@ -11,7 +11,7 @@ const DashboardLayout = () => {
       </div>
       <div className="flex bg-slate-300 ">
         {/* Sidebar */}
-        <div className="w-40 md:w-64 h-screen ">
+        <div className="w-40 md:w-64 h-screen">
           <DashBoard />
         </div>
 
