@@ -115,8 +115,8 @@ export const router = createBrowserRouter([
         element: <SellerProductList />,
       },
       {
-        path: "/becomeseller",
-        element: <BecomeASeller></BecomeASeller>,
+        path: "becomeseller",
+        element: <BecomeASeller />,
       },
       //===============----------- CAREER Routes ----============
       {

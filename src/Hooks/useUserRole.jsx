@@ -16,7 +16,6 @@ const useUserRole = () => {
     queryFn: async () => {
       console.log("Fetching role for:", user.email);
       const res = await axiosPublic.get(`/users/role/${user.email}`);
-      console.log("API Response:", res.data);
       return res.data.userType;
     },
   });
