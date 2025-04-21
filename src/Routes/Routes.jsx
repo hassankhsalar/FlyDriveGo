@@ -40,6 +40,7 @@ import DashboardWelcome from "../Pages/Dashboard/DashboardWelcome";
 
 import MyCart from "../Pages/Eshop/MyCart/MyCart";
 import MakeSeller from "../Pages/Dashboard/ModeratorDashboard/makeSeller";
+import Payment from "../Pages/Payment/Payment";
 
 export const router = createBrowserRouter([
   {
@@ -177,9 +178,14 @@ export const router = createBrowserRouter([
         element: <Careers />,
       },
       {
-        path: "eshop",
+        path: "/eshop",
 
         element: <EshopHome></EshopHome>,
+      },
+      {
+        path: "/payment",
+
+        element: <Payment></Payment>,
       },
       {
         path: "myCart",
