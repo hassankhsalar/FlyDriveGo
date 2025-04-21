@@ -63,9 +63,9 @@ const Navbar = () => {
               isProductHover
                 ? "translate-y-0 opacity-100 z-30"
                 : "translate-y-[20px] opacity-0 z-[-1]"
-            } bg-white rounded-md w-[400px] absolute top-[40px] dark:bg-slate-800 left-0 p-[30px] transition-all duration-300 boxShadow flex flex-wrap gap-[30px]`}
+            } bg-white rounded-md w-[300px] absolute top-[55px] dark:bg-slate-800 xl:left-96 2xl:left-[600px] p-[30px] transition-all duration-300 boxShadow flex flex-wrap gap-[30px]`}
           >
-            <div className="grid grid-cols-2 gap-[30px]">
+            <div className="grid grid-cols-1 gap-[30px]">
               <div className="flex flex-col gap-[20px]">
                 <h3 className="text-[1.2rem] dark:text-[#abc2d3] text-gray-500 font-[500]">
                   More Products
