@@ -84,23 +84,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Newsletter Subscription (Optional) */}
-      <div className="container mx-auto mt-10 border-t border-gray-200 pt-8">
-        <div className="max-w-md mx-auto md:mx-0">
-          <h3 className="font-semibold text-gray-800 mb-3">Subscribe to our Newsletter</h3>
-          <div className="flex">
-            <input
-              type="email"
-              placeholder="Your email address"
-              className="px-4 py-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-1 focus:ring-primary w-full"
-            />
-            <button className="bg-primary text-white px-4 py-2 rounded-r-lg hover:bg-primary/90 transition-colors">
-              Subscribe
-            </button>
-          </div>
-        </div>
-      </div>
-
       <div className="container mx-auto text-center text-gray-500 text-sm mt-10 border-t pt-6">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p>©2025 FlyDriveGo. All rights reserved.</p>

@@ -85,7 +85,7 @@ const HelpCenter = () => {
             title: "Phone Support",
             description: "Speak directly with our customer service representatives",
             detail: "+880 123-456-7890",
-            availability: "24/7 Support"
+            availability: "Mon - Fri: 9AM - 6PM, Weekends: 10AM - 4PM"
         },
         {
             icon: Mail,
@@ -99,7 +99,7 @@ const HelpCenter = () => {
             title: "Live Chat",
             description: "Connect instantly with our support team",
             detail: "Available on website and mobile app",
-            availability: "9 AM - 9 PM Daily"
+            availability: "Mon - Fri: 9AM - 6PM, Weekends: 10AM - 4PM"
         }
     ];
 

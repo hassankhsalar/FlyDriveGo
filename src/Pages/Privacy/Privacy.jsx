@@ -105,8 +105,8 @@ const Privacy = () => {
                                             <button
                                                 onClick={() => scrollToSection(item.id)}
                                                 className={`w-full text-left flex items-center gap-3 px-4 py-2 rounded-lg transition-all duration-300 ${activeSection === item.id
-                                                        ? 'bg-primary/10 text-primary font-medium'
-                                                        : 'hover:bg-gray-100 text-gray-600'
+                                                    ? 'bg-primary/10 text-primary font-medium'
+                                                    : 'hover:bg-gray-100 text-gray-600'
                                                     }`}
                                             >
                                                 <span className="inline-block w-5 h-5">{item.icon}</span>
@@ -379,8 +379,8 @@ const Privacy = () => {
                                     </p>
                                     <ul className="list-disc pl-6 mt-2 space-y-2">
                                         <li>By email: privacy@flydrivego.com</li>
-                                        <li>By phone: +1 (555) 123-4567</li>
-                                        <li>By mail: FlyDriveGo Privacy Office, 123 Travel Street, San Francisco, CA 94105, USA</li>
+                                        <li>By phone: +880 123-456-7890</li>
+                                        <li>By mail: FlyDriveGo Privacy Office, 123 Airport Road, Dhaka, Bangladesh</li>
                                     </ul>
                                 </div>
                             </section>
