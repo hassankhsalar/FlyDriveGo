@@ -36,12 +36,19 @@ import Privacy from "../Pages/Privacy/Privacy";
 import Contact from "../Pages/Contact/Contact";
 import BecomeASeller from "../Pages/SellerActivities/BecomeAseller/BecomeASeller";
 import BookingConfirmation from "../Pages/Transportation/ByBus/BookingConfirmation";
+import BusPayments from "../Pages/Transportation/ByBus/BusPayments/BusPayments";
+import PaymentErrorHandler from "../Pages/Transportation/ByBus/Components/PaymentErrorHandler";
+import CarReservation from "../Pages/Transportation/ByCar/CarReservation";
 
 import DashboardWelcome from "../Pages/Dashboard/DashboardWelcome";
 
 import MyCart from "../Pages/Eshop/MyCart/MyCart";
 import MakeSeller from "../Pages/Dashboard/ModeratorDashboard/makeSeller";
 import Payment from "../Pages/Payment/Payment";
+import FAQ from "../Pages/FAQ/FAQ";
+import CookiePolicy from "../Pages/CookiePolicy/CookiePolicy";
+import HelpCenter from "../Pages/HelpCenter/HelpCenter";
+import BookingPolicy from "../Pages/BookingPolicy/BookingPolicy";
 
 export const router = createBrowserRouter([
   {
@@ -88,6 +95,10 @@ export const router = createBrowserRouter([
           {
             path: "car-details/:carId",
             element: <CarDetails />,
+          },
+          {
+            path: "car-reservation/:carId",
+            element: <CarReservation />,
           },
           {
             path: "by-air",
@@ -216,6 +227,31 @@ export const router = createBrowserRouter([
       {
         path: "/visa-status",
         element: <VisaStatus />,
+      },
+      {
+        path: "transportation/payment",
+        element: <BusPayments />,
+      },
+      {
+        path: "transportation/payment-error",
+        element: <PaymentErrorHandler />,
+      },
+      // New routes for missing pages
+      {
+        path: "faq",
+        element: <FAQ />,
+      },
+      {
+        path: "cookie-policy",
+        element: <CookiePolicy />,
+      },
+      {
+        path: "help-center",
+        element: <HelpCenter />,
+      },
+      {
+        path: "booking-policy",
+        element: <BookingPolicy />,
       },
     ],
   },
