@@ -45,6 +45,10 @@ import DashboardWelcome from "../Pages/Dashboard/DashboardWelcome";
 import MyCart from "../Pages/Eshop/MyCart/MyCart";
 import MakeSeller from "../Pages/Dashboard/ModeratorDashboard/makeSeller";
 import Payment from "../Pages/Payment/Payment";
+import FAQ from "../Pages/FAQ/FAQ";
+import CookiePolicy from "../Pages/CookiePolicy/CookiePolicy";
+import HelpCenter from "../Pages/HelpCenter/HelpCenter";
+import BookingPolicy from "../Pages/BookingPolicy/BookingPolicy";
 
 export const router = createBrowserRouter([
   {
@@ -231,6 +235,23 @@ export const router = createBrowserRouter([
       {
         path: "transportation/payment-error",
         element: <PaymentErrorHandler />,
+      },
+      // New routes for missing pages
+      {
+        path: "faq",
+        element: <FAQ />,
+      },
+      {
+        path: "cookie-policy",
+        element: <CookiePolicy />,
+      },
+      {
+        path: "help-center",
+        element: <HelpCenter />,
+      },
+      {
+        path: "booking-policy",
+        element: <BookingPolicy />,
       },
     ],
   },
