@@ -13,6 +13,7 @@ import busTwoImg from "../../assets/transportation/busTwoImg.webp";
 import FlightGallery from "./components/FlightGallery";
 import MapComponent from "../../components/Transportation/components/MapComponent";
 import { Outlet, useLocation } from "react-router-dom";
+import BusReservationCleanup from "../../components/Transportation/BusReservationCleanup";
 
 const Transportation = () => {
   const location = useLocation();
@@ -20,6 +21,9 @@ const Transportation = () => {
 
   return (
     <>
+      {/* Add the cleanup component here - it will run in the background */}
+      <BusReservationCleanup />
+
       {isExactTransportationPath ? (
         // Show full content only on the exact /transportation path
         <>

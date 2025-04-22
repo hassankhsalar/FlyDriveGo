@@ -1,20 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation, Link, useSearchParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaCheck, FaTicketAlt, FaCalendarAlt, FaMapMarkerAlt, FaClock } from 'react-icons/fa';
 import useAxiosPublic from '../../../Hooks/useAxiosPublic';
 
 const BookingConfirmation = () => {
     const location = useLocation();
+    const [searchParams] = useSearchParams();
     const axiosPublic = useAxiosPublic();
     const [booking, setBooking] = useState(null);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
         const fetchBookingDetails = async () => {
-            const { bookingId, bookingReference } = location.state || {};
+            // Get booking info from location.state OR from URL query parameters
+            const bookingId = location.state?.bookingId;
+            const bookingReference = location.state?.bookingReference || searchParams.get('reference');
 
             if (!bookingId && !bookingReference) {
+                setError("No booking reference provided");
                 setLoading(false);
                 return;
             }
@@ -24,20 +29,32 @@ const BookingConfirmation = () => {
                 if (bookingId) {
                     response = await axiosPublic.get(`/bus-bookings/${bookingId}`);
                 } else if (bookingReference) {
-                    const email = location.state.bookingDetails?.contactInfo?.email;
-                    response = await axiosPublic.get(`/bus-bookings/find?reference=${bookingReference}&email=${email}`);
+                    // Try to get by reference only first
+                    try {
+                        response = await axiosPublic.get(`/bus-bookings/find?reference=${bookingReference}`);
+                    } catch (referenceError) {
+                        // If reference-only search fails and we have email from state, try with both
+                        const email = location.state?.bookingDetails?.contactInfo?.email;
+                        if (email) {
+                            response = await axiosPublic.get(`/bus-bookings/find?reference=${bookingReference}&email=${email}`);
+                        } else {
+                            throw referenceError;
+                        }
+                    }
                 }
 
                 setBooking(response.data);
+                setError(null);
             } catch (error) {
                 console.error('Error fetching booking details:', error);
+                setError("Failed to retrieve booking information. Please check your reference number.");
             } finally {
                 setLoading(false);
             }
         };
 
         fetchBookingDetails();
-    }, [location, axiosPublic]);
+    }, [location, axiosPublic, searchParams]);
 
     if (loading) {
         return (
