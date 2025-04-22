@@ -6,7 +6,7 @@ export default {
       fontFamily: {
         "red-rose": ['"Red Rose"', "serif"],
         poppins: ["Poppins", "sans-serif"],
-        sans: ["Catamaran", "serif"],
+        sans: ["Catamaran", "sans-serif"],
       },
       colors: {
         text: "#03191c",

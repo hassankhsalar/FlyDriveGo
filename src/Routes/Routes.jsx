@@ -38,6 +38,7 @@ import BecomeASeller from "../Pages/SellerActivities/BecomeAseller/BecomeASeller
 import BookingConfirmation from "../Pages/Transportation/ByBus/BookingConfirmation";
 import BusPayments from "../Pages/Transportation/ByBus/BusPayments/BusPayments";
 import PaymentErrorHandler from "../Pages/Transportation/ByBus/Components/PaymentErrorHandler";
+import CarReservation from "../Pages/Transportation/ByCar/CarReservation";
 
 import DashboardWelcome from "../Pages/Dashboard/DashboardWelcome";
 
@@ -90,6 +91,10 @@ export const router = createBrowserRouter([
           {
             path: "car-details/:carId",
             element: <CarDetails />,
+          },
+          {
+            path: "car-reservation/:carId",
+            element: <CarReservation />,
           },
           {
             path: "by-air",
