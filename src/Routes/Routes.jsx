@@ -35,6 +35,7 @@ import CarDetails from "../Pages/Transportation/ByCar/CarDetails";
 import Privacy from "../Pages/Privacy/Privacy";
 import Contact from "../Pages/Contact/Contact";
 import BecomeASeller from "../Pages/SellerActivities/BecomeAseller/BecomeASeller";
+import BookingConfirmation from "../Pages/Transportation/ByBus/BookingConfirmation";
 
 import DashboardWelcome from "../Pages/Dashboard/DashboardWelcome";
 
@@ -95,6 +96,10 @@ export const router = createBrowserRouter([
           {
             path: "passenger-details",
             element: <PassengerDetails />,
+          },
+          {
+            path: "booking-confirmation",
+            element: <BookingConfirmation />,
           },
         ],
       },

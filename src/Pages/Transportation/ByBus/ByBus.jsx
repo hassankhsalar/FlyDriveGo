@@ -21,10 +21,12 @@ const ByBus = () => {
 
   const handleBookNow = (bus, selectedDate) => {
     // Navigate to seat plan with bus details
-    navigate(`/transportation/seat-plan/${bus.id}`, {
+    const dateStr = selectedDate ? selectedDate : "Today";
+
+    navigate(`/transportation/seat-plan/${bus.id || bus._id}`, {
       state: {
         busData: bus,
-        date: selectedDate ? selectedDate : "Today"
+        date: dateStr
       }
     });
   };
@@ -34,9 +36,14 @@ const ByBus = () => {
     const fetchData = async () => {
       setLoading(true);
       try {
+        // Build query parameters based on filters
+        const params = new URLSearchParams();
+        if (searchTerm) params.append('search', searchTerm);
+        if (activeFilter !== 'all') params.append('category', activeFilter);
+
         // Fetch both bus options and testimonials in parallel
         const [busResponse, testimonialsResponse] = await Promise.all([
-          axiosPublic.get('/transportation-bus-options'),
+          axiosPublic.get(`/buses?${params.toString()}`),
           axiosPublic.get('/transportation-bus-testimonials')
         ]);
 
@@ -52,7 +59,7 @@ const ByBus = () => {
     };
 
     fetchData();
-  }, [axiosPublic]);
+  }, [axiosPublic, activeFilter, searchTerm]);
 
   const filteredBuses = busOptions
     .filter(bus => activeFilter === 'all' || bus.category === activeFilter)
@@ -290,7 +297,7 @@ const ByBus = () => {
           {filteredBuses.length > 0 ? (
             filteredBuses.map((bus, index) => (
               <div
-                key={bus.id}
+                key={bus.id || bus._id || `bus-${index}`}
                 className={`bg-white rounded-xl shadow-md overflow-hidden transition-all duration-500 group transform translate-y-8 opacity-0 hover:-translate-y-2 hover:shadow-xl animate-fadeSlideUp`}
                 style={{ animationDelay: `${300 + index * 100}ms` }}
               >

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams, useLocation, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaArrowLeft } from 'react-icons/fa';
+import { toast } from 'react-hot-toast';
+import useAxiosPublic from '../../../Hooks/useAxiosPublic';
 
 // Import Components
 import BusHeader from './Components/BusHeader';
@@ -25,41 +27,69 @@ const SeatPlan = () => {
         premiumSeats: []
     });
     const [loading, setLoading] = useState(true);
+    const axiosPublic = useAxiosPublic();
+    const [sessionId, setSessionId] = useState('');
 
     useEffect(() => {
-        const fetchBusDetails = () => {
+        // Generate a session ID for seat reservations if not exists
+        if (!sessionId) {
+            setSessionId(`session_${Date.now()}_${Math.random().toString(36).substring(2, 9)}`);
+        }
+
+        const fetchBusDetails = async () => {
             setLoading(true);
+            try {
+                const paramBusId = busId; // Store the param value first
+                const busIdToUse = location.state?.busData?.id || paramBusId;
+                const dateStr = location.state?.date || "Today";
 
-            const busData = location.state?.busData || {
-                id: parseInt(busId) || 1,
-                name: "Premium Executive Coach",
-                route: "Dhaka to Chittagong",
-                time: "06:00 AM",
-                duration: "5h 30m",
-                price: 69,
-                image: "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80",
-                features: ["Reclining Seats", "WiFi", "AC", "Power Outlets", "Snacks"],
-                date: location.state?.date || "Today, April 9, 2025",
-                totalSeats: 40,
-                bookedSeats: [3, 4, 7, 12, 15, 18, 22, 26, 31, 33, 38],
-                premiumSeats: [1, 2, 5, 6, 9, 10],
-            };
+                // Get bus details
+                const busResponse = await axiosPublic.get(`/buses/${busIdToUse}`);
+                const busData = busResponse.data;
 
-            console.log("Bus details loaded:", busData);
-            setBusDetails(busData);
-            setSeatPrice(busData.price);
-            setLoading(false);
+                // Get seat layout
+                const seatsResponse = await axiosPublic.get(`/buses/${busIdToUse}/seats?date=${dateStr}`);
+                const seatLayout = seatsResponse.data;
+
+                // Process the data for our component
+                const formattedBusDetails = {
+                    id: busData._id || busData.id,
+                    name: busData.name,
+                    route: busData.route,
+                    time: busData.departureTime,
+                    date: dateStr,
+                    duration: busData.duration || `${Math.floor(busData.durationMinutes / 60)}h ${busData.durationMinutes % 60}m`,
+                    price: busData.price,
+                    image: busData.image,
+                    features: busData.features || [],
+                    // Map booked/premium seats
+                    bookedSeats: seatLayout.seats
+                        .filter(seat => seat.status === 'booked')
+                        .map(seat => seat.seatNumber),
+                    premiumSeats: seatLayout.seats
+                        .filter(seat => seat.type === 'premium')
+                        .map(seat => seat.seatNumber)
+                };
+
+                setBusDetails(formattedBusDetails);
+                setSeatPrice(busData.price);
+                setLoading(false);
+            } catch (error) {
+                console.error("Error fetching bus details:", error);
+                setLoading(false);
+                toast.error("Failed to load bus details. Please try again.");
+            }
         };
 
         fetchBusDetails();
 
-        // Countdown timer
+        // Timer logic for seat reservation expiry remains the same
         const countdown = setInterval(() => {
             setTimer(prevTimer => {
                 if (prevTimer <= 1) {
                     clearInterval(countdown);
                     if (selectedSeats.length > 0) {
-                        alert("Your seat reservation time has expired. Please select seats again.");
+                        toast.error("Your seat reservation time has expired. Please select seats again.");
                         setSelectedSeats([]);
                     }
                     return 600;
@@ -69,7 +99,7 @@ const SeatPlan = () => {
         }, 1000);
 
         return () => clearInterval(countdown);
-    }, [location.state, busId]);
+    }, [location.state, busId, axiosPublic, sessionId]);
 
     const handleSeatClick = (seatNumber) => {
         if (busDetails?.bookedSeats?.includes(seatNumber)) {
@@ -92,28 +122,45 @@ const SeatPlan = () => {
         return busDetails?.premiumSeats?.includes(seatNumber);
     };
 
-    const handleContinue = () => {
+    const handleContinue = async () => {
         if (selectedSeats.length === 0) {
-            alert("Please select at least one seat to continue.");
+            toast.error("Please select at least one seat to continue.");
             return;
         }
 
-        // In a real app, this would likely call an API to hold the seats
-        // and redirect to payment or passenger details
-        const bookingDetails = {
-            busId: busDetails.id,
-            busName: busDetails.name,
-            route: busDetails.route,
-            date: busDetails.date,
-            time: busDetails.time,
-            selectedSeats,
-            totalPrice: calculateTotal(),
-        };
+        try {
+            // Reserve seats temporarily
+            const response = await axiosPublic.post('/buses/reserve-seats', {
+                busId: busDetails.id,
+                date: busDetails.date,
+                seatNumbers: selectedSeats.map(String),
+                sessionId: sessionId
+            });
 
-        console.log("Booking details:", bookingDetails);
+            if (response.data.success) {
+                const bookingDetails = {
+                    busId: busDetails.id,
+                    busName: busDetails.name,
+                    route: busDetails.route,
+                    date: busDetails.date,
+                    time: busDetails.time,
+                    selectedSeats,
+                    totalPrice: calculateTotal(),
+                    sessionId: sessionId
+                };
 
-        // Navigate to passenger details or payment page
-        navigate('/transportation/passenger-details', { state: { bookingDetails } });
+                navigate('/transportation/passenger-details', {
+                    state: { bookingDetails }
+                });
+            }
+        } catch (error) {
+            console.error("Error reserving seats:", error);
+            if (error.response?.data?.unavailableSeats) {
+                toast.error(`Some seats are no longer available: ${error.response.data.unavailableSeats.join(', ')}`);
+            } else {
+                toast.error("Failed to reserve seats. Please try again.");
+            }
+        }
     };
 
     const formatTime = (timeInSeconds) => {
