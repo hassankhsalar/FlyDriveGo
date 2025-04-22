@@ -33,7 +33,7 @@ const Footer = () => {
               <li><Link to='/transportation'>Transport</Link></li>
             </ul>
           </div>
-          
+
           {/* Support */}
           <div>
             <h3 className="font-semibold text-gray-800">Support</h3>
@@ -44,7 +44,7 @@ const Footer = () => {
               <li><Link to='/help-center'>Help Center</Link></li>
             </ul>
           </div>
-          
+
           {/* Legal */}
           <div>
             <h3 className="font-semibold text-gray-800">Legal</h3>
@@ -61,15 +61,15 @@ const Footer = () => {
             <h3 className="font-semibold text-gray-800">Contact</h3>
             <ul className="text-gray-600 mt-2 space-y-2">
               <li className="flex items-center gap-2">
-                <FaMapMarkerAlt className="text-primary" /> 
+                <FaMapMarkerAlt className="text-primary" />
                 <span>Dhaka, Bangladesh</span>
               </li>
               <li className="flex items-center gap-2">
-                <FaPhoneAlt className="text-primary" /> 
+                <FaPhoneAlt className="text-primary" />
                 <span>+880 123-456-7890</span>
               </li>
               <li className="flex items-center gap-2">
-                <FaEnvelope className="text-primary" /> 
+                <FaEnvelope className="text-primary" />
                 <span>support@flydrivego.com</span>
               </li>
               <li className="flex space-x-4 text-primary mt-4">
@@ -89,9 +89,9 @@ const Footer = () => {
         <div className="max-w-md mx-auto md:mx-0">
           <h3 className="font-semibold text-gray-800 mb-3">Subscribe to our Newsletter</h3>
           <div className="flex">
-            <input 
-              type="email" 
-              placeholder="Your email address" 
+            <input
+              type="email"
+              placeholder="Your email address"
               className="px-4 py-2 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-1 focus:ring-primary w-full"
             />
             <button className="bg-primary text-white px-4 py-2 rounded-r-lg hover:bg-primary/90 transition-colors">
