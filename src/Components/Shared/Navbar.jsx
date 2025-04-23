@@ -2,352 +2,309 @@ import React, { useState } from "react";
 import logo from "/FlyDriveGo.png";
 
 // react icons
-import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-import { FaShoppingCart } from "react-icons/fa";
-import { FaTasks } from "react-icons/fa";
-import { TbLogout2, TbUsersGroup } from "react-icons/tb";
+import { FaShoppingCart, FaMapMarkerAlt, FaPlane, FaBus, FaCar } from "react-icons/fa";
+import { TbLogout2 } from "react-icons/tb";
 import { CiMenuFries } from "react-icons/ci";
-import {
-  MdLaptopMac,
-  MdOutlineArrowRightAlt,
-  MdOutlineKeyboardArrowRight,
-} from "react-icons/md";
-import { BsBuildings, BsCalendar2Date } from "react-icons/bs";
+import { MdLaptopMac } from "react-icons/md";
+import { BsCalendar2Date } from "react-icons/bs";
 import { AiOutlineFire } from "react-icons/ai";
 import { BiShoppingBag, BiSupport } from "react-icons/bi";
 import { FiUser } from "react-icons/fi";
-import { IoSettingsOutline } from "react-icons/io5";
+import { HiOutlineBriefcase } from "react-icons/hi";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import useCart from "../../Hooks/useCart";
 
 const Navbar = () => {
   const [accountMenuOpen, setAccountMenuOpen] = useState(false);
-  const [isProductHover, setIsProductHover] = useState(false);
   const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
-  const [isMegaMenuCollapse, setIsMegaMenuCollapse] = useState(false);
-  const [megaMenuSubItemsOpen, setMegaMenuSubItemsOpen] = useState("");
   const { user, logOut } = useAuth();
   const [cart] = useCart();
+  const location = useLocation();
+
+  // Helper to check if a path is active
+  const isActive = (path) => {
+    return location.pathname === path || location.pathname.startsWith(`${path}/`);
+  };
 
   return (
     <nav className="flex items-center justify-between relative font-red-rose pt-2 w-11/12 mx-auto">
-      {/* logo */}
+      {/* Logo */}
       <Link to="/">
-        <img src={logo} alt="logo" className="w-40 " />
+        <img src={logo} alt="logo" className="w-40" />
       </Link>
 
-      {/* nav links */}
+      {/* Desktop Navigation Links */}
       <ul className="items-center gap-[20px] text-[1rem] text-[#424242] md:flex hidden">
-        {/* product megamenu */}
-        <li
-          className={`${
-            isProductHover
-              ? "text-[#3B9DF8]"
-              : "dark:text-[#4e585f] text-gray-600"
-          } flex items-center gap-[5px] cursor-pointer`}
-          onMouseEnter={() => setIsProductHover(true)}
-          onMouseLeave={() => setIsProductHover(false)}
-        >
-          <MdLaptopMac className="text-[1.1rem] " />
-          Transportation
-          <IoIosArrowUp
-            className={`${
-              isProductHover ? "rotate-0" : "rotate-[-180deg]"
-            } transition-all duration-300`}
-          />
-          {/* mega menu */}
-          <div
-            className={`${
-              isProductHover
-                ? "translate-y-0 opacity-100 z-30"
-                : "translate-y-[20px] opacity-0 z-[-1]"
-            } bg-white rounded-md w-[300px] absolute top-[55px] dark:bg-slate-800 xl:left-96 2xl:left-[600px] p-[30px] transition-all duration-300 boxShadow flex flex-wrap gap-[30px]`}
+        {/* Transportation Dropdown - Using hover */}
+        <li className="group relative">
+          <Link
+            to="/transportation"
+            className={`flex items-center gap-[5px] ${isActive('/transportation') ? 'text-[#3B9DF8]' : 'dark:text-[#4e585f] text-gray-600'} hover:text-[#3B9DF8]`}
           >
-            <div className="grid grid-cols-1 gap-[30px]">
-              <div className="flex flex-col gap-[20px]">
-                <h3 className="text-[1.2rem] dark:text-[#abc2d3] text-gray-500 font-[500]">
-                  More Products
-                </h3>
+            <MdLaptopMac className="text-[1.1rem]" />
+            Transportation
+          </Link>
 
-                <div className="flex float-start gap-[10px] group">
-                  <img
-                    src="https://i.ibb.co/LQBDJGD/icon-logo-container.png"
-                    alt="image"
-                    className="w-[30px] h-[30px]"
-                  />
+          {/* Transportation Mega Menu - Show on hover */}
+          <div className="invisible group-hover:visible opacity-0 group-hover:opacity-100 absolute top-[35px] left-0 bg-white rounded-md w-[300px] p-[20px] transition-all duration-200 shadow-md z-30">
+            <div className="flex flex-col gap-[15px]">
+              <h3 className="text-[1.1rem] text-gray-600 font-[500]">
+                Transportation Options
+              </h3>
 
-                  <div>
-                    <h1 className="text-[1rem] dark:text-[#abc2d3] text-gray-600 font-[500]">
-                      <Link to="/tour-pack">Tour Packages</Link>
-                    </h1>
-                    <p className="text-[0.9rem] dark:text-slate-400 text-gray-400 font-[300]">
-                      List of exciting new tour packages!
-                    </p>
-
-                    <button className="text-[#FF5E5E] mt-2 flex items-center gap-[4px] text-[0.9rem]">
-                      <Link to="/tour-pack">Go</Link>
-                      <MdOutlineArrowRightAlt className="text-[1.4rem] group-hover:ml-[5px] transition-all duration-300" />
-                    </button>
-                  </div>
+              <Link to="/transportation/by-air" className="flex items-center gap-[10px] hover:bg-gray-50 p-2 rounded-md">
+                <FaPlane className="text-primary w-5 h-5" />
+                <div>
+                  <h1 className="text-[1rem] text-gray-700 font-[500]">By Air</h1>
+                  <p className="text-[0.9rem] text-gray-400 font-[300]">
+                    Domestic & International flights
+                  </p>
                 </div>
-                <div className="flex float-start gap-[10px] group">
-                  <img
-                    src="https://i.ibb.co/Y8cRWRj/icon-logo-container-1.png"
-                    alt="image"
-                    className="w-[30px] h-[30px]"
-                  />
+              </Link>
 
-                  <div>
-                    <h1 className="text-[1rem] dark:text-[#abc2d3] text-gray-600 font-[500]">
-                      <Link to="/transportation">Transportation</Link>
-                    </h1>
-                    <p className="text-[0.9rem] dark:text-slate-400 text-gray-400 font-[300]">
-                      Pick the transport of your choice here!
-                    </p>
-
-                    <button className="text-[#FE9239] mt-2 flex items-center gap-[4px] text-[0.9rem]">
-                      <Link to="/transportation">Go</Link>
-                      <MdOutlineArrowRightAlt className="text-[1.4rem] group-hover:ml-[5px] transition-all duration-300" />
-                    </button>
-                  </div>
+              <Link to="/transportation/by-road" className="flex items-center gap-[10px] hover:bg-gray-50 p-2 rounded-md">
+                <FaBus className="text-primary w-5 h-5" />
+                <div>
+                  <h1 className="text-[1rem] text-gray-700 font-[500]">By Bus</h1>
+                  <p className="text-[0.9rem] text-gray-400 font-[300]">
+                    Intercity & tour bus services
+                  </p>
                 </div>
-                <div className="flex float-start gap-[10px] group">
-                  <img
-                    src="https://i.ibb.co/6bGWgp6/icon-logo-container-2.png"
-                    alt="image"
-                    className="w-[30px] h-[30px]"
-                  />
+              </Link>
 
-                  <div>
-                    <h1 className="text-[1rem] text-gray-600 font-[500] dark:text-[#abc2d3]">
-                      <Link to="careers">Career</Link>
-                    </h1>
-                    <p className="text-[0.9rem] dark:text-slate-400 text-gray-400 font-[300]">
-                      Check for openings
-                    </p>
-
-                    <button className="text-[#8B5CF6] mt-2 flex items-center gap-[4px] text-[0.9rem]">
-                      <Link to="careers">Check here</Link>
-                      <MdOutlineArrowRightAlt className="text-[1.4rem] group-hover:ml-[5px] transition-all duration-300" />
-                    </button>
-                  </div>
+              <Link to="/transportation/by-car" className="flex items-center gap-[10px] hover:bg-gray-50 p-2 rounded-md">
+                <FaCar className="text-primary w-5 h-5" />
+                <div>
+                  <h1 className="text-[1rem] text-gray-700 font-[500]">By Car</h1>
+                  <p className="text-[0.9rem] text-gray-400 font-[300]">
+                    Rental cars & chauffeur service
+                  </p>
                 </div>
-              </div>
-              
+              </Link>
             </div>
-
           </div>
         </li>
 
-        <li className="flex items-center dark:text-[#4e585f] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer">
-          <AiOutlineFire className="text-[1.1rem] group-hover:text-[#3B9DF8] dark:text-[#4e585f] text-gray-600" />
+        {/* Tour Packages Dropdown - Using hover */}
+        <li className="group relative">
+          <Link
+            to="/tour-pack"
+            className={`flex items-center gap-[5px] ${isActive('/tour-pack') ? 'text-[#3B9DF8]' : 'dark:text-[#4e585f] text-gray-600'} hover:text-[#3B9DF8]`}
+          >
+            <BsCalendar2Date className="text-[1.1rem]" />
+            Tour Packages
+          </Link>
+
+          {/* Tour Packages Mega Menu - Show on hover */}
+          <div className="invisible group-hover:visible opacity-0 group-hover:opacity-100 absolute top-[35px] left-0 bg-white rounded-md w-[300px] p-[20px] transition-all duration-200 shadow-md z-30">
+            <div className="flex flex-col gap-[15px]">
+              <Link to="/tour-pack" className="flex items-center gap-[10px] hover:bg-gray-50 p-2 rounded-md">
+                <img
+                  src="https://i.ibb.co/LQBDJGD/icon-logo-container.png"
+                  alt="image"
+                  className="w-[30px] h-[30px]"
+                  referrerPolicy="no-referrer"
+                />
+                <div>
+                  <h1 className="text-[1rem] text-gray-700 font-[500]">All Tour Packages</h1>
+                  <p className="text-[0.9rem] text-gray-400">Browse all available packages</p>
+                </div>
+              </Link>
+
+              <Link to="/tour-details/Bali: Paradise Island Escape" className="flex items-center gap-[10px] hover:bg-gray-50 p-2 rounded-md">
+                <FaMapMarkerAlt className="text-orange-500 w-5 h-5" />
+                <div>
+                  <h1 className="text-[1rem] text-gray-700 font-[500]">Bali Package</h1>
+                  <p className="text-[0.9rem] text-gray-400">Paradise Island Escape</p>
+                </div>
+              </Link>
+
+              <Link to="/tour-details/Maldives: Tropical Paradise Getaway" className="flex items-center gap-[10px] hover:bg-gray-50 p-2 rounded-md">
+                <FaMapMarkerAlt className="text-blue-500 w-5 h-5" />
+                <div>
+                  <h1 className="text-[1rem] text-gray-700 font-[500]">Maldives Package</h1>
+                  <p className="text-[0.9rem] text-gray-400">Tropical Paradise Getaway</p>
+                </div>
+              </Link>
+            </div>
+          </div>
+        </li>
+
+        {/* Other Main Links */}
+        <li className={`flex items-center ${isActive('/visa-assistance') ? 'text-[#3B9DF8]' : 'text-gray-600'} hover:text-[#3B9DF8]`}>
+          <AiOutlineFire className="text-[1.1rem] mr-1" />
           <Link to="/visa-assistance">Visa</Link>
         </li>
-        <li className="flex items-center dark:text-[#4e585f] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer">
-          <BiShoppingBag className="text-[1.1rem] group-hover:text-[#3B9DF8] dark:text-[#4e585f] text-gray-600" />
-          <Link to="eshop">Shop</Link>
+
+        <li className={`flex items-center ${isActive('/eshop') ? 'text-[#3B9DF8]' : 'text-gray-600'} hover:text-[#3B9DF8]`}>
+          <BiShoppingBag className="text-[1.1rem] mr-1" />
+          <Link to="/eshop">Shop</Link>
         </li>
-        <li className="flex items-center dark:text-[#4e585f] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer">
-          <BiSupport className="text-[1.1rem] group-hover:text-[#3B9DF8] dark:text-[#4e585f] text-gray-600" />
+
+        <li className={`flex items-center ${isActive('/about') ? 'text-[#3B9DF8]' : 'text-gray-600'} hover:text-[#3B9DF8]`}>
+          <BiSupport className="text-[1.1rem] mr-1" />
           <Link to="/about">About</Link>
-        </li>
-        <li>
-          <Link to="/mycart">
-            <button className="btn">
-              <FaShoppingCart></FaShoppingCart>{" "}
-              <div className="badge badge-sm badge-secondary">
-                +{cart.length}
-              </div>
-            </button>
-          </Link>
         </li>
       </ul>
 
-      {/* user account */}
+      {/* User Account Area */}
       <div className="flex items-center gap-[15px]">
-        {user ? (
-          <></>
-        ) : (
-          <>
+        {/* Cart Icon - Moved here */}
+        <Link to="/mycart" className="relative flex items-center hover:text-[#3B9DF8]">
+          <FaShoppingCart className="text-xl" />
+          {cart.length > 0 && (
+            <span className="absolute -top-2 -right-2 bg-primary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
+              {cart.length}
+            </span>
+          )}
+        </Link>
+
+        {/* Login/Register Buttons */}
+        {!user ? (
+          <div className="flex items-center gap-3">
             <Link
-              className="flex items-center dark:text-[#4e585f] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer"
+              className="hover:text-[#3B9DF8] transition-colors"
               to="/login"
             >
               Login
-            </Link>{" "}
+            </Link>
             <Link
-              className="flex items-center dark:text-[#4e585f] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer bg-primary text-white p-2 rounded-xl"
+              className="bg-primary text-white px-3 py-2 rounded-lg hover:bg-[#3cacff] transition-colors"
               to="/register"
             >
               Register
             </Link>
-          </>
-        )}
-        <div
-          className="flex items-center gap-[10px] cursor-pointer relative"
-          onClick={() => setAccountMenuOpen(!accountMenuOpen)}
-        >
-          <div className="relative">
-            {user ? (
-              <img
-                src={user.photoURL}
-                alt="avatar"
-                className="w-[38px] h-[38px] rounded-full object-cover"
-              />
-            ) : null}
-
-            <div className="p-[2px] bg-white absolute top-[0px] right-0 rounded-full">
-              <div className="w-[12px] h-[12px] rounded-full bg-green-400 "></div>
-            </div>
           </div>
+        ) : (
+          <div className="relative group">
+            <div className="flex items-center gap-[10px] cursor-pointer">
+              <div className="relative">
+                <img
+                  src={user.photoURL || "https://i.pravatar.cc/150?img=3"}
+                  alt="avatar"
+                  className="w-[38px] h-[38px] rounded-full object-cover border border-gray-200"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="p-[2px] bg-white absolute bottom-0 right-0 rounded-full">
+                  <div className="w-[10px] h-[10px] rounded-full bg-green-400"></div>
+                </div>
+              </div>
 
-          <h1 className="text-[1rem] dark:text-[#4e585f] font-[400] text-gray-600 sm:block hidden">
-            {user?.displayName}
-          </h1>
+              <span className="text-[1rem] text-gray-600 font-[400] sm:block hidden">
+                {user?.displayName?.split(' ')[0] || 'User'}
+              </span>
+            </div>
 
-          <div
-            className={`${
-              accountMenuOpen
-                ? "translate-y-0 opacity-100 z-[1]"
-                : "translate-y-[10px] opacity-0 z-[-1]"
-            } bg-white w-max rounded-md absolute dark:bg-slate-800 top-[45px] right-0 p-[10px] flex flex-col transition-all duration-300 gap-[5px]`}
-          >
-            <p className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] dark:text-[#abc2d3] dark:hover:bg-slate-900/50 text-gray-600 hover:bg-gray-50">
-              <FiUser />
-              View Profile
-            </p>
-            <p className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] dark:text-[#abc2d3] dark:hover:bg-slate-900/50 text-gray-600 hover:bg-gray-50">
-              <IoSettingsOutline />
-              Settings
-            </p>
-            <p className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] dark:text-[#abc2d3] dark:hover:bg-slate-900/50 text-gray-600 hover:bg-gray-50">
-              <FiUser />
+            {/* User Dropdown Menu - Show on hover */}
+            <div className="invisible group-hover:visible opacity-0 group-hover:opacity-100 absolute right-0 top-[45px] bg-white w-max min-w-[200px] rounded-md p-[10px] transition-all duration-200 shadow-md z-30">
+              <div className="p-3 border-b border-gray-100">
+                <p className="text-sm font-medium">{user.displayName || 'User'}</p>
+                <p className="text-xs text-gray-500 truncate">{user.email}</p>
+              </div>
 
-              <Link to="/dashboard">Dashboard</Link>
-            </p>
+              <Link to="/dashboard" className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] text-gray-600 hover:bg-gray-50 w-full">
+                <FiUser className="w-4 h-4" />
+                Dashboard
+              </Link>
 
-            <div className="mt-3 border-t dark:border-slate-700 border-gray-200 pt-[5px]">
-              <p
+              <button
                 onClick={() => {
                   logOut()
                     .then(() => {
-                      toast.success("Log Out Successfully");
+                      toast.success("Logged Out Successfully");
                     })
                     .catch(() => {
-                      toast.error("An Error occurred While Log Out");
+                      toast.error("An Error occurred While Logging Out");
                     });
                 }}
-                className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] dark:text-red-500 dark:hover:bg-red-500/20 text-red-500 hover:bg-red-50"
+                className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] text-red-500 hover:bg-red-50 text-left w-full"
               >
-                <TbLogout2 />
+                <TbLogout2 className="w-4 h-4" />
                 Logout
-              </p>
+              </button>
             </div>
           </div>
+        )}
 
-          <IoIosArrowUp
-            className={`${
-              accountMenuOpen ? "rotate-0" : "rotate-[180deg]"
-            } transition-all duration-300 dark:text-[#abc2d3] text-gray-600 sm:block hidden`}
-          />
-        </div>
-
+        {/* Mobile Menu Button */}
         <CiMenuFries
           onClick={() => setMobileSidebarOpen(!mobileSidebarOpen)}
-          className="text-[1.8rem] dark:text-[#abc2d3] text-[#424242]c cursor-pointer md:hidden flex"
+          className="text-[1.8rem] text-[#424242] cursor-pointer md:hidden flex"
         />
       </div>
 
-      {/* mobile sidebar */}
+      {/* Mobile Sidebar Navigation */}
       <aside
-        className={` ${
-          mobileSidebarOpen
-            ? "translate-x-0 opacity-100 z-20"
-            : "translate-x-full opacity-0 z-[-1]"
-        } md:hidden bg-white p-4 text-center fixed dark:bg-slate-700 top-[55px] right-0 sm:w-[300px] w-full rounded-md transition-all duration-300`}
+        className={`${mobileSidebarOpen
+          ? "translate-x-0 opacity-100 z-20"
+          : "translate-x-full opacity-0 z-[-1]"
+          } md:hidden bg-white p-6 text-left fixed top-[55px] right-0 sm:w-[300px] w-full rounded-md transition-all duration-300 shadow-lg`}
       >
-        <ul className="items-start gap-[20px] text-[1rem] text-gray-600 flex flex-col">
-          <li
-            onClick={() => setIsMegaMenuCollapse(!isMegaMenuCollapse)}
-            className="hover:text-[#3B9DF8] group dark:text-[#abc2d3] transition-all duration-500 cursor-pointer capitalize flex items-center gap-[10px]"
-          >
-            Products
-            <IoIosArrowDown
-              className={`${
-                isMegaMenuCollapse ? "rotate-0" : "rotate-[180deg]"
-              } text-gray-600 group-hover:text-[#3B9DF8] dark:text-[#abc2d3] transition-all duration-300`}
-            />
+        <ul className="flex flex-col gap-4">
+          <h3 className="text-sm font-semibold text-gray-400 uppercase">Navigation</h3>
+
+          <li>
+            <Link to="/transportation" className="flex items-center gap-2 py-2 hover:text-primary" onClick={() => setMobileSidebarOpen(false)}>
+              <MdLaptopMac className="text-primary" /> Transportation
+            </Link>
+            <div className="ml-6 mt-1 border-l-2 border-gray-100 pl-4 flex flex-col gap-1">
+              <Link to="/transportation/by-air" className="hover:text-primary py-1" onClick={() => setMobileSidebarOpen(false)}>By Air</Link>
+              <Link to="/transportation/by-road" className="hover:text-primary py-1" onClick={() => setMobileSidebarOpen(false)}>By Bus</Link>
+              <Link to="/transportation/by-car" className="hover:text-primary py-1" onClick={() => setMobileSidebarOpen(false)}>By Car</Link>
+            </div>
           </li>
 
-          {/* product mega menu */}
-          <div
-            onClick={() => setMegaMenuSubItemsOpen("more_product")}
-            className={`${
-              isMegaMenuCollapse ? "hidden" : "block"
-            } group font-[500] ml-6`}
-          >
-            <h4 className="text-left flex dark:text-[#abc2d3] items-center gap-[5px]">
-              More Products
-              <MdOutlineKeyboardArrowRight className="text-[1.2rem]" />
-            </h4>
-
-            <ul
-              className={`${
-                megaMenuSubItemsOpen === "more_product" ? "flex" : "hidden"
-              } pl-6 mt-3 font-[400] items-start flex-col gap-[10px] text-gray-600`}
-            >
-              <li className="hover:text-[#3B9DF8] transition-all duration-500 cursor-pointer dark:text-[#abc2d3] capitalize">
-                Demo App
-              </li>
-              <li className="hover:text-[#3B9DF8] transition-all duration-500 cursor-pointer dark:text-[#abc2d3] capitalize">
-                CRM
-              </li>
-              <li className="hover:text-[#3B9DF8] transition-all duration-500 cursor-pointer dark:text-[#abc2d3] capitalize">
-                CMS
-              </li>
-            </ul>
-          </div>
-
-          <div
-            onClick={() => setMegaMenuSubItemsOpen("ecosystem")}
-            className={`${
-              isMegaMenuCollapse ? "hidden" : "block"
-            } font-[500] ml-6`}
-          >
-            <h4 className="text-left flex dark:text-[#abc2d3] items-center gap-[5px]">
-              Ecosystem
-              <MdOutlineKeyboardArrowRight className="text-[1.2rem]" />
-            </h4>
-
-            <ul
-              className={`${
-                megaMenuSubItemsOpen === "ecosystem" ? "flex" : "hidden"
-              } pl-6 mt-3 font-[400] items-start flex-col gap-[10px] text-gray-600`}
-            >
-              <li className="hover:text-[#3B9DF8] transition-all duration-500 cursor-pointer dark:text-[#abc2d3] capitalize">
-                Directory
-              </li>
-              <li className="hover:text-[#3B9DF8] transition-all duration-500 cursor-pointer dark:text-[#abc2d3] capitalize">
-                Bookings
-              </li>
-              <li className="hover:text-[#3B9DF8] transition-all duration-500 cursor-pointer dark:text-[#abc2d3] capitalize">
-                User feedback
-              </li>
-              <li className="hover:text-[#3B9DF8] transition-all duration-500 cursor-pointer dark:text-[#abc2d3] capitalize">
-                Task Manager
-              </li>
-            </ul>
-          </div>
-
-          <li className="hover:text-[#3B9DF8] dark:text-[#abc2d3] transition-all duration-500 cursor-pointer capitalize">
-            Features
+          <li>
+            <Link to="/tour-pack" className="flex items-center gap-2 py-2 hover:text-primary" onClick={() => setMobileSidebarOpen(false)}>
+              <BsCalendar2Date className="text-primary" /> Tour Packages
+            </Link>
           </li>
-          <li className="hover:text-[#3B9DF8] dark:text-[#abc2d3] transition-all duration-500 cursor-pointer capitalize">
-            Support
+
+          <li>
+            <Link to="/visa-assistance" className="flex items-center gap-2 py-2 hover:text-primary" onClick={() => setMobileSidebarOpen(false)}>
+              <AiOutlineFire className="text-primary" /> Visa Assistance
+            </Link>
+          </li>
+
+          <li>
+            <Link to="/eshop" className="flex items-center gap-2 py-2 hover:text-primary" onClick={() => setMobileSidebarOpen(false)}>
+              <BiShoppingBag className="text-primary" /> Shop
+            </Link>
+          </li>
+
+          <li>
+            <Link to="/about" className="flex items-center gap-2 py-2 hover:text-primary" onClick={() => setMobileSidebarOpen(false)}>
+              <BiSupport className="text-primary" /> About
+            </Link>
+          </li>
+
+          <li>
+            <Link to="/mycart" className="flex items-center gap-2 py-2 hover:text-primary" onClick={() => setMobileSidebarOpen(false)}>
+              <FaShoppingCart className="text-primary" /> Cart {cart.length > 0 && `(${cart.length})`}
+            </Link>
           </li>
         </ul>
+
+        {!user && (
+          <div className="mt-8 flex flex-col gap-3">
+            <Link
+              to="/login"
+              className="w-full text-center py-2 text-primary border border-primary rounded-lg hover:bg-primary/10"
+              onClick={() => setMobileSidebarOpen(false)}
+            >
+              Login
+            </Link>
+            <Link
+              to="/register"
+              className="w-full text-center py-2 text-white bg-primary rounded-lg hover:bg-primary/90"
+              onClick={() => setMobileSidebarOpen(false)}
+            >
+              Register
+            </Link>
+          </div>
+        )}
       </aside>
     </nav>
   );
