@@ -294,33 +294,6 @@ const Contact = () => {
                     </p>
                 </div>
             </div>
-
-            {/* Newsletter Section */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-                <div className="bg-white rounded-xl shadow-lg p-8 md:p-12 text-center opacity-0 animate-fadeSlideUp delay-2400">
-                    <h2 className="text-3xl font-bold text-CharcoleDark mb-4">
-                        Subscribe to Our Newsletter
-                    </h2>
-                    <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-                        Join our community and be the first to receive exclusive deals, travel inspiration, and updates on new destinations.
-                    </p>
-
-                    <form className="max-w-md mx-auto flex">
-                        <input
-                            type="email"
-                            placeholder="Your email address"
-                            className="flex-1 px-4 py-3 rounded-l-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-300"
-                            required
-                        />
-                        <button
-                            type="submit"
-                            className="bg-primary hover:bg-primary-dark text-white font-bold py-3 px-6 rounded-r-lg transition-colors duration-300"
-                        >
-                            Subscribe
-                        </button>
-                    </form>
-                </div>
-            </div>
         </div>
     );
 };

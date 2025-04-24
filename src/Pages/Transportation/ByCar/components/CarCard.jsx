@@ -101,13 +101,13 @@ const CarCard = ({ car }) => {
                         View Details
                     </Link>
                     <Link
-                        to={car.available ? `/transportation/car-reservation/${car.id}` : "#"}
+                        to={`/transportation/car-details/${car.id}`}
                         className={`px-4 py-2 rounded-lg font-medium ${car.available
                             ? 'bg-primary text-white hover:bg-primary/90'
                             : 'bg-gray-300 text-gray-500 cursor-not-allowed'
                             }`}
                     >
-                        {car.available ? 'Book Now' : 'Unavailable'}
+                        {car.available ? 'View Details' : 'Unavailable'}
                     </Link>
                 </div>
             </div>

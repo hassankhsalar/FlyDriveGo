@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 import { FaArrowLeft, FaCreditCard, FaIdCard, FaUser, FaPhone, FaEnvelope } from 'react-icons/fa';
 import { useForm } from 'react-hook-form';
 import { getAuth } from 'firebase/auth';
-import { getFirestore, collection, addDoc, serverTimestamp } from 'firebase/firestore';
 import { toast } from 'react-hot-toast';
+import useAxiosPublic from '../../../Hooks/useAxiosPublic';
 
 const PassengerDetails = () => {
     const location = useLocation();
@@ -13,6 +13,7 @@ const PassengerDetails = () => {
     const [bookingDetails, setBookingDetails] = useState(null);
     const [user, setUser] = useState(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const axiosPublic = useAxiosPublic();
 
     const { register, handleSubmit, setValue, formState: { errors } } = useForm({
         defaultValues: {
@@ -68,36 +69,24 @@ const PassengerDetails = () => {
         setIsSubmitting(true);
 
         try {
-            const db = getFirestore();
-
-            // Create booking record in Firebase
-            const bookingData = {
-                userId: user?.uid || 'guest',
-                userEmail: user?.email || data.contactInfo.email,
-                busDetails: {
-                    busId: bookingDetails.busId,
-                    busName: bookingDetails.busName,
-                    route: bookingDetails.route,
-                    date: bookingDetails.date,
-                    time: bookingDetails.time,
-                },
-                selectedSeats: bookingDetails.selectedSeats,
-                totalPrice: bookingDetails.totalPrice,
+            // Create booking in the backend API instead of Firebase
+            const response = await axiosPublic.post('/bus-bookings', {
+                busId: bookingDetails.busId,
+                date: bookingDetails.date,
+                seatNumbers: bookingDetails.selectedSeats,
+                sessionId: bookingDetails.sessionId,
                 contactInfo: data.contactInfo,
                 primaryPassenger: data.primaryPassenger,
-                status: 'pending',
-                paymentStatus: 'pending',
-                createdAt: serverTimestamp()
-            };
+                totalPrice: bookingDetails.totalPrice
+            });
 
-            const docRef = await addDoc(collection(db, "busBookings"), bookingData);
-
-            toast.success("Passenger details saved successfully!");
+            toast.success("Booking confirmed successfully!");
 
             // Navigate to payment page with booking reference
             navigate('/transportation/payment', {
                 state: {
-                    bookingId: docRef.id,
+                    bookingId: response.data.bookingId,
+                    bookingReference: response.data.bookingReference,
                     amount: bookingDetails.totalPrice,
                     bookingDetails: {
                         ...bookingDetails,
@@ -106,10 +95,13 @@ const PassengerDetails = () => {
                     }
                 }
             });
-
         } catch (error) {
-            console.error("Error saving booking:", error);
-            toast.error("There was an error processing your booking. Please try again.");
+            console.error("Error creating booking:", error);
+            if (error.response?.data?.unavailableSeats) {
+                toast.error(`Some seats are no longer available: ${error.response.data.unavailableSeats.join(', ')}`);
+            } else {
+                toast.error("There was an error processing your booking. Please try again.");
+            }
             setIsSubmitting(false);
         }
     };

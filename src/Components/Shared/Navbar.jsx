@@ -80,7 +80,7 @@ const Navbar = () => {
 
                   <div>
                     <h1 className="text-[1rem] dark:text-[#abc2d3] text-gray-600 font-[500]">
-                      Tour Packages
+                      <Link to="/tour-pack">Tour Packages</Link>
                     </h1>
                     <p className="text-[0.9rem] dark:text-slate-400 text-gray-400 font-[300]">
                       List of exciting new tour packages!
@@ -101,7 +101,7 @@ const Navbar = () => {
 
                   <div>
                     <h1 className="text-[1rem] dark:text-[#abc2d3] text-gray-600 font-[500]">
-                      Transportation
+                      <Link to="/transportation">Transportation</Link>
                     </h1>
                     <p className="text-[0.9rem] dark:text-slate-400 text-gray-400 font-[300]">
                       Pick the transport of your choice here!
@@ -122,7 +122,7 @@ const Navbar = () => {
 
                   <div>
                     <h1 className="text-[1rem] text-gray-600 font-[500] dark:text-[#abc2d3]">
-                      Career
+                      <Link to="careers">Career</Link>
                     </h1>
                     <p className="text-[0.9rem] dark:text-slate-400 text-gray-400 font-[300]">
                       Check for openings
