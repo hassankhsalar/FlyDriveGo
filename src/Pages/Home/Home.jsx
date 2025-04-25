@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import HeroSection from "./hero/components/HeroSection";
 import Chatbot from "../../components/Chatbot/Chatbot";
 import TrustedPartners from "./TrustedPartners";
@@ -10,9 +10,14 @@ import Transport from "./Transport";
 import Testimonials from "./Testimonials";
 import CTA from "./CTA";
 
+
 const Home = () => {
+  
+
+
   return (
     <section>
+      
       <div>
         <HeroSection />
       </div>

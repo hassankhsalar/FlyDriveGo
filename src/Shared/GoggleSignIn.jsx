@@ -18,6 +18,7 @@ const GoggleSignIn = () => {
         const userInfo = {
           email: res.user.email,
           name: res.user.displayName,
+          photoURL: res.user.photoURL,
           userType: "user",
         };
         axiosPublic.post("/users", userInfo).then((res) => {

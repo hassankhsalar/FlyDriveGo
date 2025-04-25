@@ -3,23 +3,26 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowRight, MapPin, Briefcase } from "lucide-react";
 import Loader from "../../../components/ui/Loader";
+import useAxiosPublic from "../../../Hooks/useAxiosPublic";
+import { toast } from "react-hot-toast";
 
 const JobList = () => {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
+  const axiosPublic = useAxiosPublic();
 
   useEffect(() => {
-    fetch("/jobs.json")
-      .then((res) => res.json())
-      .then((data) => {
-        setJobs(data);
+    axiosPublic.get("/jobs")
+      .then((response) => {
+        setJobs(response.data);
         setLoading(false);
       })
       .catch((error) => {
         console.error("Error fetching job data:", error);
+        toast.error("Failed to load job listings");
         setLoading(false);
       });
-  }, []);
+  }, [axiosPublic]);
 
   const containerVariants = {
     hidden: { opacity: 0 },

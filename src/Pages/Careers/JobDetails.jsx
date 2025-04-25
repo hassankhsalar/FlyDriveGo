@@ -12,32 +12,33 @@ import {
   ArrowRight,
 } from "lucide-react";
 import Loader from "../../components/ui/Loader";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import { toast } from "react-hot-toast";
+
 
 const JobDetails = () => {
   const { jobId } = useParams();
   const navigate = useNavigate();
   const [job, setJob] = useState(null);
   const [loading, setLoading] = useState(true);
+  const axiosPublic = useAxiosPublic();
 
   useEffect(() => {
-    fetch("/jobs.json")
-      .then((res) => res.json())
-      .then((data) => {
-        const foundJob = data.find((j) => j.id === parseInt(jobId));
-
-        if (foundJob) {
-          setJob(foundJob);
+    axiosPublic.get(`/jobs/${jobId}`)
+      .then((response) => {
+        if (response.data) {
+          setJob(response.data);
         } else {
-          // Handle job not found
-          console.error("Job not found");
+          toast.error("Job not found");
         }
         setLoading(false);
       })
       .catch((error) => {
         console.error("Error fetching job data:", error);
+        toast.error("Error loading job details");
         setLoading(false);
       });
-  }, [jobId]);
+  }, [jobId, axiosPublic]);
 
   const handleApplyNow = () => {
     navigate(`/careers/apply/${jobId}`);
