@@ -32,7 +32,7 @@ const Navbar = () => {
   const [cart] = useCart();
 
   return (
-    <nav className="flex items-center justify-between relative font-red-rose pt-2 w-11/12 mx-auto">
+    <nav className="flex items-center z-20 justify-between relative font-red-rose pt-2 w-11/12 mx-auto">
       {/* logo */}
       <Link to="/">
         <img src={logo} alt="logo" className="w-40 " />
@@ -147,7 +147,7 @@ const Navbar = () => {
         </li>
         <li className="flex items-center dark:text-[#4e585f] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer">
           <BiShoppingBag className="text-[1.1rem] group-hover:text-[#3B9DF8] dark:text-[#4e585f] text-gray-600" />
-          <Link to="eshop">Shop</Link>
+          <Link to="/eshop">Shop</Link>
         </li>
         <li className="flex items-center dark:text-[#4e585f] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer">
           <BiSupport className="text-[1.1rem] group-hover:text-[#3B9DF8] dark:text-[#4e585f] text-gray-600" />

@@ -66,7 +66,7 @@ const ProductCard = ({ product, user }) => {
         {/* Add to Cart Button */}
         <button
           onClick={() => handleAddtoCart(product)}
-          className="absolute top-2 right-2 bg-gray-200 text-gray-700 hover:bg-primary hover:text-white p-2 rounded-md transition"
+          className="absolute top-2 right-2 bg-pink-500 text-white hover:bg-primary hover:text-white p-2 rounded-md transition"
           title="Add to Cart"
         >
           <FaShoppingCart className="text-lg" />
