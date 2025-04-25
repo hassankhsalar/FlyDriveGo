@@ -1,44 +1,39 @@
 import React from "react";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import { FaShoppingCart } from "react-icons/fa";
 import useAxiosSecure from "../../../Hooks/useAxiosSecure";
 import useCart from "../../../Hooks/useCart";
 
-const ProductCard = ({ product,user }) => {
-  
+const ProductCard = ({ product, user }) => {
   const navigate = useNavigate();
-  const axiosSecure =  useAxiosSecure();
-  const [,refetch]=useCart();
+  const axiosSecure = useAxiosSecure();
+  const [, refetch] = useCart();
 
-
-  const handleAddtoCart = item =>{
-    if (user && user.email){
-      // Add to cart
-      const cartItem ={
+  const handleAddtoCart = (item) => {
+    if (user && user.email) {
+      const cartItem = {
         itemId: product._id,
         email: user.email,
         name: product.title,
-        price:  product.price,
+        price: product.price,
         image: product.photo,
-        category: item.tags
-      }
+        category: item.tags,
+      };
       axiosSecure.post('/carts', cartItem)
-      .then(res =>{
-        if(res.data.insertedId){
-          Swal.fire({
-            position: "top-end",
-            icon: "success",
-            title: `${product.title} added to your cart`,
-            showConfirmButton: false,
-            timer: 1500
-          });
-          // refecth
-          refetch();
-        }
-      })
-
-    }
-    else{
+        .then(res => {
+          if (res.data.insertedId) {
+            Swal.fire({
+              position: "top-end",
+              icon: "success",
+              title: `${product.title} added to your cart`,
+              showConfirmButton: false,
+              timer: 1500
+            });
+            refetch();
+          }
+        });
+    } else {
       Swal.fire({
         title: "You are not logged In",
         text: "LogIn to add to cart",
@@ -53,32 +48,59 @@ const ProductCard = ({ product,user }) => {
         }
       });
     }
-  }
+  };
+
+  const handleViewDetails = () => {
+    navigate(`/product/${product._id}`);
+  };
+
   return (
-    <div>
-      <div className="card h-full bg-base-100 shadow-lg rounded-[8px] border-2 flex flex-col justify-between">
-        <div className="card-body flex flex-col justify-between flex-grow">
-          <figure>
-            <img
-              className="w-full h-[200px] object-cover rounded-[6px]"
-              src={product.photo}
-              alt={product.title}
-            />
-          </figure>
-          <div className="flex flex-col gap-2 mb-4">
-            <h2 className="text-2xl font-poppins font-bold line-clamp-2">
-              {product.title}
-            </h2>
-            <p className="font-poppins font-bold text-[16px]">
-              Price: <span className="font-normal">{product.price} USD</span>
-            </p>
-          </div>
-          <div className="mt-auto">
-            <button onClick={()=>handleAddtoCart(product)} className="py-2 px-6 bg-CharcoleDark text-slate-300 rounded-3xl font-poppins btn-block text-[18px]">
-              Add to cart
-            </button>
-          </div>
+    <div className="border rounded-lg overflow-hidden bg-white shadow hover:shadow-md transition duration-300 flex flex-col">
+      {/* Image Part */}
+      <div className="relative">
+        <img
+          src={product.photo}
+          alt={product.title}
+          className="w-full h-48 object-cover bg-gray-100"
+        />
+        {/* Add to Cart Button */}
+        <button
+          onClick={() => handleAddtoCart(product)}
+          className="absolute top-2 right-2 bg-gray-200 text-gray-700 hover:bg-primary hover:text-white p-2 rounded-md transition"
+          title="Add to Cart"
+        >
+          <FaShoppingCart className="text-lg" />
+        </button>
+      </div>
+
+      {/* Content Part */}
+      <div className="p-4 flex flex-col flex-grow">
+        <p className="text-gray-400 text-sm mb-1">Top Selling Product</p>
+
+        <h3 
+          className="font-semibold text-gray-800 text-[16px] leading-snug line-clamp-2 hover:text-primary cursor-pointer"
+          onClick={handleViewDetails}
+        >
+          {product.title}
+        </h3>
+
+        {/* Pricing */}
+        <div className="flex items-center gap-2 mt-2">
+          <span className="text-primary font-bold text-lg">
+            $ {product.price}
+          </span>
+          <span className="text-gray-400 line-through text-sm">
+            $ {Math.round(product.price * 1.2)}
+          </span>
         </div>
+
+        {/* View Details Button */}
+        <button
+          onClick={handleViewDetails}
+          className="mt-auto text-primary text-sm font-semibold hover:underline transition"
+        >
+          View Details
+        </button>
       </div>
     </div>
   );
