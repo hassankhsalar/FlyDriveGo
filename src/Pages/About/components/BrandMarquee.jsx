@@ -12,7 +12,7 @@ import arabia from "../../../assets/airwaysLogo/arabia.webp";
 import indigo from "../../../assets/airwaysLogo/indigo.webp";
 import airarabia from "../../../assets/airwaysLogo/airarabia.webp";
 
-const BrandMarquee = () => {
+const BrandMarquee = ({ className }) => {
     const partners = [
         { name: "Airline Partner 1", logo: BimanBangladesh },
         { name: "Airline Partner 2", logo: USBangla },
@@ -29,7 +29,7 @@ const BrandMarquee = () => {
     ];
 
     return (
-        <div className="container mx-auto px-4 md:px-8 lg:px-16 py-20 bg-background">
+        <div className={`container mx-auto px-4 md:px-8 lg:px-16 py-20 ${className || 'bg-background'}`}>
             {/* Section Header */}
             <motion.div
                 initial={{ opacity: 0, y: 50 }}
