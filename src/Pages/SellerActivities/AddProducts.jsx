@@ -50,10 +50,10 @@ const AddProducts = () => {
     const handleAddProduct = (e) => {
         e.preventDefault();
         const productsData = {
-            productName: e.target.productName.value,
-            productImage: imageUrl,
-            productDetails: e.target.productDetails.value,
-            productPrice: Number(e.target.productPrice.value),
+            title: e.target.productName.value,
+            photo: imageUrl,
+            details: e.target.productDetails.value,
+            price: Number(e.target.productPrice.value),
             sellerName: user?.displayName,
             sellerEmail: user?.email,
             tags, 

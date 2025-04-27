@@ -65,6 +65,10 @@ export const router = createBrowserRouter([
         element: <About />,
       },
       {
+        path: "careers",
+        element: <Careers />,
+      },
+      {
         path: "/contact",
         element: <Contact />,
       },
@@ -170,10 +174,6 @@ export const router = createBrowserRouter([
         element: <ManageJobApplications />,
       },
       {
-        path: "/about",
-        element: <About></About>,
-      },
-      {
         path: "/transportation",
         element: <Transportation></Transportation>,
       },
@@ -188,10 +188,6 @@ export const router = createBrowserRouter([
       {
         path: "tour-booking",
         element: <TourBooking />,
-      },
-      {
-        path: "careers",
-        element: <Careers />,
       },
       {
         path: "/eshop",
@@ -238,19 +234,19 @@ export const router = createBrowserRouter([
       },
       // New routes for missing pages
       {
-        path: "faq",
+        path: "/faq",
         element: <FAQ />,
       },
       {
-        path: "cookie-policy",
+        path: "/cookie-policy",
         element: <CookiePolicy />,
       },
       {
-        path: "help-center",
+        path: "/help-center",
         element: <HelpCenter />,
       },
       {
-        path: "booking-policy",
+        path: "/booking-policy",
         element: <BookingPolicy />,
       },
     ],
