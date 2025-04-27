@@ -129,7 +129,11 @@ const Navbar = () => {
                     </p>
 
                     <button className="text-[#8B5CF6] mt-2 flex items-center gap-[4px] text-[0.9rem]">
+<<<<<<< HEAD
+                      <Link to='careers'>Check here</Link>
+=======
                       <Link to="careers">Check here</Link>
+>>>>>>> ce9f635daa15c094fb7eac19117ed0774c87011c
                       <MdOutlineArrowRightAlt className="text-[1.4rem] group-hover:ml-[5px] transition-all duration-300" />
                     </button>
                   </div>
@@ -214,19 +218,23 @@ const Navbar = () => {
                 : "translate-y-[10px] opacity-0 z-[-1]"
             } bg-white w-max rounded-md absolute dark:bg-slate-800 top-[45px] right-0 p-[10px] flex flex-col transition-all duration-300 gap-[5px]`}
           >
-            <p className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] dark:text-[#abc2d3] dark:hover:bg-slate-900/50 text-gray-600 hover:bg-gray-50">
+            <Link to={`/my-profile/${user?.email}`} className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] dark:text-[#abc2d3] dark:hover:bg-slate-900/50 text-gray-600 hover:bg-gray-50">
               <FiUser />
               View Profile
-            </p>
+            </Link>
             <p className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] dark:text-[#abc2d3] dark:hover:bg-slate-900/50 text-gray-600 hover:bg-gray-50">
               <IoSettingsOutline />
               Settings
             </p>
+<<<<<<< HEAD
+           
+=======
             <p className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] dark:text-[#abc2d3] dark:hover:bg-slate-900/50 text-gray-600 hover:bg-gray-50">
               <FiUser />
 
               <Link to="/dashboard">Dashboard</Link>
             </p>
+>>>>>>> ce9f635daa15c094fb7eac19117ed0774c87011c
 
             <div className="mt-3 border-t dark:border-slate-700 border-gray-200 pt-[5px]">
               <p
