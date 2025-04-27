@@ -46,288 +46,282 @@ const Navbar = () => {
   }, [scrolled]);
 
   return (
-    <nav className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled
-        ? "bg-white shadow-md py-1"
-        : "bg-white/80 backdrop-blur-sm py-2"
-      }`}>
-      <div className="flex items-center justify-between relative font-red-rose w-11/12 mx-auto">
-        {/* Logo */}
-        <Link to="/">
-          <img src={logo} alt="logo" className="w-40" />
-        </Link>
+    <nav className="flex items-center z-20 justify-between relative font-red-rose pt-2 w-11/12 mx-auto">
+      {/* logo */}
+      <Link to="/">
+        <img src={logo} alt="logo" className="w-40 " />
+      </Link>
 
-        {/* Desktop Navigation Links */}
-        <ul className="items-center gap-[20px] text-[1rem] text-[#424242] md:flex hidden">
-          {/* Transportation Dropdown - Using hover */}
-          <li className="group relative">
-            <Link
-              to="/transportation"
-              className={`flex items-center gap-[5px] ${isActive('/transportation') ? 'text-[#3B9DF8]' : 'dark:text-[#4e585f] text-gray-600'} hover:text-[#3B9DF8]`}
-            >
-              <MdLaptopMac className="text-[1.1rem]" />
-              Transportation
+      {/* Desktop Navigation Links */}
+      <ul className="items-center gap-[20px] text-[1rem] text-[#424242] md:flex hidden">
+        {/* Transportation Dropdown - Using hover */}
+        <li className="group relative">
+          <Link
+            to="/transportation"
+            className={`flex items-center gap-[5px] ${isActive('/transportation') ? 'text-[#3B9DF8]' : 'dark:text-[#4e585f] text-gray-600'} hover:text-[#3B9DF8]`}
+          >
+            <MdLaptopMac className="text-[1.1rem]" />
+            Transportation
+          </Link>
+
+          {/* Transportation Mega Menu - Show on hover */}
+          <div className="invisible group-hover:visible opacity-0 group-hover:opacity-100 absolute top-[35px] left-0 bg-white rounded-md w-[300px] p-[20px] transition-all duration-200 shadow-md z-30">
+            <div className="flex flex-col gap-[15px]">
+              <h3 className="text-[1.1rem] text-gray-600 font-[500]">
+                Transportation Options
+              </h3>
+
+              <Link to="/transportation/by-air" className="flex items-center gap-[10px] hover:bg-gray-50 p-2 rounded-md">
+                <FaPlane className="text-primary w-5 h-5" />
+                <div>
+                  <h1 className="text-[1rem] text-gray-700 font-[500]">By Air</h1>
+                  <p className="text-[0.9rem] text-gray-400 font-[300]">
+                    Domestic & International flights
+                  </p>
+                </div>
+              </Link>
+
+              <Link to="/transportation/by-road" className="flex items-center gap-[10px] hover:bg-gray-50 p-2 rounded-md">
+                <FaBus className="text-primary w-5 h-5" />
+                <div>
+                  <h1 className="text-[1rem] text-gray-700 font-[500]">By Bus</h1>
+                  <p className="text-[0.9rem] text-gray-400 font-[300]">
+                    Intercity & tour bus services
+                  </p>
+                </div>
+              </Link>
+
+              <Link to="/transportation/by-car" className="flex items-center gap-[10px] hover:bg-gray-50 p-2 rounded-md">
+                <FaCar className="text-primary w-5 h-5" />
+                <div>
+                  <h1 className="text-[1rem] text-gray-700 font-[500]">By Car</h1>
+                  <p className="text-[0.9rem] text-gray-400 font-[300]">
+                    Rental cars & chauffeur service
+                  </p>
+                </div>
+              </Link>
+            </div>
+          </div>
+        </li>
+
+        {/* Tour Packages Dropdown - Using hover */}
+        <li className="group relative">
+          <Link
+            to="/tour-pack"
+            className={`flex items-center gap-[5px] ${isActive('/tour-pack') ? 'text-[#3B9DF8]' : 'dark:text-[#4e585f] text-gray-600'} hover:text-[#3B9DF8]`}
+          >
+            <BsCalendar2Date className="text-[1.1rem]" />
+            Tour Packages
+          </Link>
+
+          {/* Tour Packages Mega Menu - Show on hover */}
+          <div className="invisible group-hover:visible opacity-0 group-hover:opacity-100 absolute top-[35px] left-0 bg-white rounded-md w-[300px] p-[20px] transition-all duration-200 shadow-md z-30">
+            <div className="flex flex-col gap-[15px]">
+              <Link to="/tour-pack" className="flex items-center gap-[10px] hover:bg-gray-50 p-2 rounded-md">
+                <img
+                  src="https://i.ibb.co/LQBDJGD/icon-logo-container.png"
+                  alt="image"
+                  className="w-[30px] h-[30px]"
+                  referrerPolicy="no-referrer"
+                />
+                <div>
+                  <h1 className="text-[1rem] text-gray-700 font-[500]">All Tour Packages</h1>
+                  <p className="text-[0.9rem] text-gray-400">Browse all available packages</p>
+                </div>
+              </Link>
+
+              <Link to="/tour-details/Bali: Paradise Island Escape" className="flex items-center gap-[10px] hover:bg-gray-50 p-2 rounded-md">
+                <FaMapMarkerAlt className="text-orange-500 w-5 h-5" />
+                <div>
+                  <h1 className="text-[1rem] text-gray-700 font-[500]">Bali Package</h1>
+                  <p className="text-[0.9rem] text-gray-400">Paradise Island Escape</p>
+                </div>
+              </Link>
+
+              <Link to="/tour-details/Maldives: Tropical Paradise Getaway" className="flex items-center gap-[10px] hover:bg-gray-50 p-2 rounded-md">
+                <FaMapMarkerAlt className="text-blue-500 w-5 h-5" />
+                <div>
+                  <h1 className="text-[1rem] text-gray-700 font-[500]">Maldives Package</h1>
+                  <p className="text-[0.9rem] text-gray-400">Tropical Paradise Getaway</p>
+                </div>
+              </Link>
+            </div>
+          </div>
+        </li>
+
+        {/* Other Main Links */}
+        <li className={`flex items-center ${isActive('/visa-assistance') ? 'text-[#3B9DF8]' : 'text-gray-600'} hover:text-[#3B9DF8]`}>
+          <AiOutlineFire className="text-[1.1rem] mr-1" />
+          <Link to="/visa-assistance">Visa</Link>
+        </li>
+
+        <li className="flex items-center dark:text-[#4e585f] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer">
+          <AiOutlineFire className="text-[1.1rem] group-hover:text-[#3B9DF8] dark:text-[#4e585f] text-gray-600" />
+          <Link to="/visa-assistance">Visa</Link>
+        </li>
+        <li className="flex items-center dark:text-[#4e585f] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer">
+          <BiShoppingBag className="text-[1.1rem] group-hover:text-[#3B9DF8] dark:text-[#4e585f] text-gray-600" />
+          <Link to="/eshop">Shop</Link>
+        </li>
+        <li className="flex items-center dark:text-[#4e585f] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer">
+          <BiSupport className="text-[1.1rem] group-hover:text-[#3B9DF8] dark:text-[#4e585f] text-gray-600" />
+          <Link to="/about">About</Link>
+        </li>
+        <li>
+          <Link to="/mycart">
+            <button className="btn">
+              <FaShoppingCart></FaShoppingCart>{" "}
+              <div className="badge badge-sm badge-secondary">
+                +{cart.length}
+              </div>
+            </button>
+          </Link>
+        </li>
+      </ul>
+      {/* Login/Register Buttons */}
+      {!user ? (
+        <div className="flex items-center gap-3">
+          <Link
+            className="hover:text-[#3B9DF8] transition-colors"
+            to="/login"
+          >
+            Login
+          </Link>
+          <Link
+            className="bg-primary text-white px-3 py-2 rounded-lg hover:bg-[#3cacff] transition-colors"
+            to="/register"
+          >
+            Register
+          </Link>
+        </div>
+      ) : (
+        <div className="relative group">
+          <div className="flex items-center gap-[10px] cursor-pointer">
+            <div className="relative">
+              <img
+                src={user.photoURL || "https://i.pravatar.cc/150?img=3"}
+                alt="avatar"
+                className="w-[38px] h-[38px] rounded-full object-cover border border-gray-200"
+                referrerPolicy="no-referrer"
+              />
+              <div className="p-[2px] bg-white absolute bottom-0 right-0 rounded-full">
+                <div className="w-[10px] h-[10px] rounded-full bg-green-400"></div>
+              </div>
+            </div>
+
+            <span className="text-[1rem] text-gray-600 font-[400] sm:block hidden">
+              {user?.displayName?.split(' ')[0] || 'User'}
+            </span>
+          </div>
+
+          {/* User Dropdown Menu - Show on hover */}
+          <div className="invisible group-hover:visible opacity-0 group-hover:opacity-100 absolute right-0 top-[45px] bg-white w-max min-w-[200px] rounded-md p-[10px] transition-all duration-200 shadow-md z-30">
+            <div className="p-3 border-b border-gray-100">
+              <p className="text-sm font-medium">{user.displayName || 'User'}</p>
+              <p className="text-xs text-gray-500 truncate">{user.email}</p>
+            </div>
+
+            <Link to="/dashboard" className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] text-gray-600 hover:bg-gray-50 w-full">
+              <FiUser className="w-4 h-4" />
+              Dashboard
             </Link>
 
-            {/* Transportation Mega Menu - Show on hover */}
-            <div className="invisible group-hover:visible opacity-0 group-hover:opacity-100 absolute top-[35px] left-0 bg-white rounded-md w-[300px] p-[20px] transition-all duration-200 shadow-md z-30">
-              <div className="flex flex-col gap-[15px]">
-                <h3 className="text-[1.1rem] text-gray-600 font-[500]">
-                  Transportation Options
-                </h3>
+            <button
+              onClick={() => {
+                logOut()
+                  .then(() => {
+                    toast.success("Logged Out Successfully");
+                  })
+                  .catch(() => {
+                    toast.error("An Error occurred While Logging Out");
+                  });
+              }}
+              className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] text-red-500 hover:bg-red-50 text-left w-full"
+            >
+              <TbLogout2 className="w-4 h-4" />
+              Logout
+            </button>
+          </div>
+        </div>
+      )}
 
-                <Link to="/transportation/by-air" className="flex items-center gap-[10px] hover:bg-gray-50 p-2 rounded-md">
-                  <FaPlane className="text-primary w-5 h-5" />
-                  <div>
-                    <h1 className="text-[1rem] text-gray-700 font-[500]">By Air</h1>
-                    <p className="text-[0.9rem] text-gray-400 font-[300]">
-                      Domestic & International flights
-                    </p>
-                  </div>
-                </Link>
+      {/* Mobile Menu Button */}
+      <CiMenuFries
+        onClick={() => setMobileSidebarOpen(!mobileSidebarOpen)}
+        className="text-[1.8rem] text-[#424242] cursor-pointer md:hidden flex"
+      />
 
-                <Link to="/transportation/by-road" className="flex items-center gap-[10px] hover:bg-gray-50 p-2 rounded-md">
-                  <FaBus className="text-primary w-5 h-5" />
-                  <div>
-                    <h1 className="text-[1rem] text-gray-700 font-[500]">By Bus</h1>
-                    <p className="text-[0.9rem] text-gray-400 font-[300]">
-                      Intercity & tour bus services
-                    </p>
-                  </div>
-                </Link>
+      {/* Mobile Sidebar Navigation */}
+      <aside
+        className={`${mobileSidebarOpen
+          ? "translate-x-0 opacity-100 z-20"
+          : "translate-x-full opacity-0 z-[-1]"
+          } md:hidden bg-white p-6 text-left fixed top-[60px] right-0 sm:w-[300px] w-full rounded-md transition-all duration-300 shadow-lg`}
+      >
+        <ul className="flex flex-col gap-4">
+          <h3 className="text-sm font-semibold text-gray-400 uppercase">Navigation</h3>
 
-                <Link to="/transportation/by-car" className="flex items-center gap-[10px] hover:bg-gray-50 p-2 rounded-md">
-                  <FaCar className="text-primary w-5 h-5" />
-                  <div>
-                    <h1 className="text-[1rem] text-gray-700 font-[500]">By Car</h1>
-                    <p className="text-[0.9rem] text-gray-400 font-[300]">
-                      Rental cars & chauffeur service
-                    </p>
-                  </div>
-                </Link>
-              </div>
+          <li>
+            <Link to="/transportation" className="flex items-center gap-2 py-2 hover:text-primary" onClick={() => setMobileSidebarOpen(false)}>
+              <MdLaptopMac className="text-primary" /> Transportation
+            </Link>
+            <div className="ml-6 mt-1 border-l-2 border-gray-100 pl-4 flex flex-col gap-1">
+              <Link to="/transportation/by-air" className="hover:text-primary py-1" onClick={() => setMobileSidebarOpen(false)}>By Air</Link>
+              <Link to="/transportation/by-road" className="hover:text-primary py-1" onClick={() => setMobileSidebarOpen(false)}>By Bus</Link>
+              <Link to="/transportation/by-car" className="hover:text-primary py-1" onClick={() => setMobileSidebarOpen(false)}>By Car</Link>
             </div>
           </li>
 
-          {/* Tour Packages Dropdown - Using hover */}
-          <li className="group relative">
-            <Link
-              to="/tour-pack"
-              className={`flex items-center gap-[5px] ${isActive('/tour-pack') ? 'text-[#3B9DF8]' : 'dark:text-[#4e585f] text-gray-600'} hover:text-[#3B9DF8]`}
-            >
-              <BsCalendar2Date className="text-[1.1rem]" />
-              Tour Packages
+          <li>
+            <Link to="/tour-pack" className="flex items-center gap-2 py-2 hover:text-primary" onClick={() => setMobileSidebarOpen(false)}>
+              <BsCalendar2Date className="text-primary" /> Tour Packages
             </Link>
-
-            {/* Tour Packages Mega Menu - Show on hover */}
-            <div className="invisible group-hover:visible opacity-0 group-hover:opacity-100 absolute top-[35px] left-0 bg-white rounded-md w-[300px] p-[20px] transition-all duration-200 shadow-md z-30">
-              <div className="flex flex-col gap-[15px]">
-                <Link to="/tour-pack" className="flex items-center gap-[10px] hover:bg-gray-50 p-2 rounded-md">
-                  <img
-                    src="https://i.ibb.co/LQBDJGD/icon-logo-container.png"
-                    alt="image"
-                    className="w-[30px] h-[30px]"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div>
-                    <h1 className="text-[1rem] text-gray-700 font-[500]">All Tour Packages</h1>
-                    <p className="text-[0.9rem] text-gray-400">Browse all available packages</p>
-                  </div>
-                </Link>
-
-                <Link to="/tour-details/Bali: Paradise Island Escape" className="flex items-center gap-[10px] hover:bg-gray-50 p-2 rounded-md">
-                  <FaMapMarkerAlt className="text-orange-500 w-5 h-5" />
-                  <div>
-                    <h1 className="text-[1rem] text-gray-700 font-[500]">Bali Package</h1>
-                    <p className="text-[0.9rem] text-gray-400">Paradise Island Escape</p>
-                  </div>
-                </Link>
-
-                <Link to="/tour-details/Maldives: Tropical Paradise Getaway" className="flex items-center gap-[10px] hover:bg-gray-50 p-2 rounded-md">
-                  <FaMapMarkerAlt className="text-blue-500 w-5 h-5" />
-                  <div>
-                    <h1 className="text-[1rem] text-gray-700 font-[500]">Maldives Package</h1>
-                    <p className="text-[0.9rem] text-gray-400">Tropical Paradise Getaway</p>
-                  </div>
-                </Link>
-              </div>
-            </div>
           </li>
 
-          {/* Other Main Links */}
-          <li className={`flex items-center ${isActive('/visa-assistance') ? 'text-[#3B9DF8]' : 'text-gray-600'} hover:text-[#3B9DF8]`}>
-            <AiOutlineFire className="text-[1.1rem] mr-1" />
-            <Link to="/visa-assistance">Visa</Link>
+          <li>
+            <Link to="/visa-assistance" className="flex items-center gap-2 py-2 hover:text-primary" onClick={() => setMobileSidebarOpen(false)}>
+              <AiOutlineFire className="text-primary" /> Visa Assistance
+            </Link>
           </li>
 
-          <li className={`flex items-center ${isActive('/eshop') ? 'text-[#3B9DF8]' : 'text-gray-600'} hover:text-[#3B9DF8]`}>
-            <BiShoppingBag className="text-[1.1rem] mr-1" />
-            <Link to="/eshop">Shop</Link>
+          <li>
+            <Link to="/eshop" className="flex items-center gap-2 py-2 hover:text-primary" onClick={() => setMobileSidebarOpen(false)}>
+              <BiShoppingBag className="text-primary" /> Shop
+            </Link>
           </li>
 
-          <li className={`flex items-center ${isActive('/about') ? 'text-[#3B9DF8]' : 'text-gray-600'} hover:text-[#3B9DF8]`}>
-            <BiSupport className="text-[1.1rem] mr-1" />
-            <Link to="/about">About</Link>
+          <li>
+            <Link to="/about" className="flex items-center gap-2 py-2 hover:text-primary" onClick={() => setMobileSidebarOpen(false)}>
+              <BiSupport className="text-primary" /> About
+            </Link>
+          </li>
+
+          <li>
+            <Link to="/mycart" className="flex items-center gap-2 py-2 hover:text-primary" onClick={() => setMobileSidebarOpen(false)}>
+              <FaShoppingCart className="text-primary" /> Cart {cart.length > 0 && `(${cart.length})`}
+            </Link>
           </li>
         </ul>
 
-        {/* User Account Area */}
-        <div className="flex items-center gap-[15px]">
-          {/* Cart Icon - Moved here */}
-          <Link to="/mycart" className="relative flex items-center hover:text-[#3B9DF8]">
-            <FaShoppingCart className="text-xl" />
-            {cart.length > 0 && (
-              <span className="absolute -top-2 -right-2 bg-primary text-white text-xs rounded-full w-5 h-5 flex items-center justify-center">
-                {cart.length}
-              </span>
-            )}
-          </Link>
-
-          {/* Login/Register Buttons */}
-          {!user ? (
-            <div className="flex items-center gap-3">
-              <Link
-                className="hover:text-[#3B9DF8] transition-colors"
-                to="/login"
-              >
-                Login
-              </Link>
-              <Link
-                className="bg-primary text-white px-3 py-2 rounded-lg hover:bg-[#3cacff] transition-colors"
-                to="/register"
-              >
-                Register
-              </Link>
-            </div>
-          ) : (
-            <div className="relative group">
-              <div className="flex items-center gap-[10px] cursor-pointer">
-                <div className="relative">
-                  <img
-                    src={user.photoURL || "https://i.pravatar.cc/150?img=3"}
-                    alt="avatar"
-                    className="w-[38px] h-[38px] rounded-full object-cover border border-gray-200"
-                    referrerPolicy="no-referrer"
-                  />
-                  <div className="p-[2px] bg-white absolute bottom-0 right-0 rounded-full">
-                    <div className="w-[10px] h-[10px] rounded-full bg-green-400"></div>
-                  </div>
-                </div>
-
-                <span className="text-[1rem] text-gray-600 font-[400] sm:block hidden">
-                  {user?.displayName?.split(' ')[0] || 'User'}
-                </span>
-              </div>
-
-              {/* User Dropdown Menu - Show on hover */}
-              <div className="invisible group-hover:visible opacity-0 group-hover:opacity-100 absolute right-0 top-[45px] bg-white w-max min-w-[200px] rounded-md p-[10px] transition-all duration-200 shadow-md z-30">
-                <div className="p-3 border-b border-gray-100">
-                  <p className="text-sm font-medium">{user.displayName || 'User'}</p>
-                  <p className="text-xs text-gray-500 truncate">{user.email}</p>
-                </div>
-
-                <Link to="/dashboard" className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] text-gray-600 hover:bg-gray-50 w-full">
-                  <FiUser className="w-4 h-4" />
-                  Dashboard
-                </Link>
-
-                <button
-                  onClick={() => {
-                    logOut()
-                      .then(() => {
-                        toast.success("Logged Out Successfully");
-                      })
-                      .catch(() => {
-                        toast.error("An Error occurred While Logging Out");
-                      });
-                  }}
-                  className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] text-red-500 hover:bg-red-50 text-left w-full"
-                >
-                  <TbLogout2 className="w-4 h-4" />
-                  Logout
-                </button>
-              </div>
-            </div>
-          )}
-
-          {/* Mobile Menu Button */}
-          <CiMenuFries
-            onClick={() => setMobileSidebarOpen(!mobileSidebarOpen)}
-            className="text-[1.8rem] text-[#424242] cursor-pointer md:hidden flex"
-          />
-        </div>
-
-        {/* Mobile Sidebar Navigation */}
-        <aside
-          className={`${mobileSidebarOpen
-            ? "translate-x-0 opacity-100 z-20"
-            : "translate-x-full opacity-0 z-[-1]"
-            } md:hidden bg-white p-6 text-left fixed top-[60px] right-0 sm:w-[300px] w-full rounded-md transition-all duration-300 shadow-lg`}
-        >
-          <ul className="flex flex-col gap-4">
-            <h3 className="text-sm font-semibold text-gray-400 uppercase">Navigation</h3>
-
-            <li>
-              <Link to="/transportation" className="flex items-center gap-2 py-2 hover:text-primary" onClick={() => setMobileSidebarOpen(false)}>
-                <MdLaptopMac className="text-primary" /> Transportation
-              </Link>
-              <div className="ml-6 mt-1 border-l-2 border-gray-100 pl-4 flex flex-col gap-1">
-                <Link to="/transportation/by-air" className="hover:text-primary py-1" onClick={() => setMobileSidebarOpen(false)}>By Air</Link>
-                <Link to="/transportation/by-road" className="hover:text-primary py-1" onClick={() => setMobileSidebarOpen(false)}>By Bus</Link>
-                <Link to="/transportation/by-car" className="hover:text-primary py-1" onClick={() => setMobileSidebarOpen(false)}>By Car</Link>
-              </div>
-            </li>
-
-            <li>
-              <Link to="/tour-pack" className="flex items-center gap-2 py-2 hover:text-primary" onClick={() => setMobileSidebarOpen(false)}>
-                <BsCalendar2Date className="text-primary" /> Tour Packages
-              </Link>
-            </li>
-
-            <li>
-              <Link to="/visa-assistance" className="flex items-center gap-2 py-2 hover:text-primary" onClick={() => setMobileSidebarOpen(false)}>
-                <AiOutlineFire className="text-primary" /> Visa Assistance
-              </Link>
-            </li>
-
-            <li>
-              <Link to="/eshop" className="flex items-center gap-2 py-2 hover:text-primary" onClick={() => setMobileSidebarOpen(false)}>
-                <BiShoppingBag className="text-primary" /> Shop
-              </Link>
-            </li>
-
-            <li>
-              <Link to="/about" className="flex items-center gap-2 py-2 hover:text-primary" onClick={() => setMobileSidebarOpen(false)}>
-                <BiSupport className="text-primary" /> About
-              </Link>
-            </li>
-
-            <li>
-              <Link to="/mycart" className="flex items-center gap-2 py-2 hover:text-primary" onClick={() => setMobileSidebarOpen(false)}>
-                <FaShoppingCart className="text-primary" /> Cart {cart.length > 0 && `(${cart.length})`}
-              </Link>
-            </li>
-          </ul>
-
-          {!user && (
-            <div className="mt-8 flex flex-col gap-3">
-              <Link
-                to="/login"
-                className="w-full text-center py-2 text-primary border border-primary rounded-lg hover:bg-primary/10"
-                onClick={() => setMobileSidebarOpen(false)}
-              >
-                Login
-              </Link>
-              <Link
-                to="/register"
-                className="w-full text-center py-2 text-white bg-primary rounded-lg hover:bg-primary/90"
-                onClick={() => setMobileSidebarOpen(false)}
-              >
-                Register
-              </Link>
-            </div>
-          )}
-        </aside>
-      </div>
+        {!user && (
+          <div className="mt-8 flex flex-col gap-3">
+            <Link
+              to="/login"
+              className="w-full text-center py-2 text-primary border border-primary rounded-lg hover:bg-primary/10"
+              onClick={() => setMobileSidebarOpen(false)}
+            >
+              Login
+            </Link>
+            <Link
+              to="/register"
+              className="w-full text-center py-2 text-white bg-primary rounded-lg hover:bg-primary/90"
+              onClick={() => setMobileSidebarOpen(false)}
+            >
+              Register
+            </Link>
+          </div>
+        )}
+      </aside>
     </nav>
   );
 };

@@ -36,6 +36,9 @@ const EshopHome = () => {
       )}
       </div>
       <div>
+        <EshopHeroSection></EshopHeroSection>
+      </div>
+      <div>
         <Eproduct></Eproduct>
       </div>
       <div>
