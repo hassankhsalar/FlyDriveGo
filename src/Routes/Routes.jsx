@@ -23,6 +23,36 @@ import AddTourPackage from "../Pages/TourPackages/AddTourPackages";
 import VisaAssistance from "../Pages/VisaAssistance/VisaAssistance";
 import VisaStatus from "../Pages/VisaAssistance/VisaStatus";
 import EshopHome from "../Pages/Eshop/EshopHome/EshopHome";
+import DashboardLayout from "../Layout/DashboardLayout";
+import DashboardCharts from "../Pages/Dashboard/AdminDashboard/DashboardCharts";
+import ByBus from "../Pages/Transportation/ByBus/ByBus";
+import ByAir from "../Pages/Transportation/ByAir/ByAir";
+import SeatPlan from "../Pages/Transportation/ByBus/SeatPlan";
+import PassengerDetails from "../Pages/Transportation/ByBus/PassengerDetails";
+import Terms from "../Pages/Terms/Terms";
+import ByCar from "../Pages/Transportation/ByCar/ByCar";
+import CarDetails from "../Pages/Transportation/ByCar/CarDetails";
+import Privacy from "../Pages/Privacy/Privacy";
+import Contact from "../Pages/Contact/Contact";
+import BecomeASeller from "../Pages/SellerActivities/BecomeAseller/BecomeASeller";
+import BookingConfirmation from "../Pages/Transportation/ByBus/BookingConfirmation";
+import BusPayments from "../Pages/Transportation/ByBus/BusPayments/BusPayments";
+import PaymentErrorHandler from "../Pages/Transportation/ByBus/Components/PaymentErrorHandler";
+import CarReservation from "../Pages/Transportation/ByCar/CarReservation";
+
+import DashboardWelcome from "../Pages/Dashboard/DashboardWelcome";
+
+import MyCart from "../Pages/Eshop/MyCart/MyCart";
+import MakeSeller from "../Pages/Dashboard/ModeratorDashboard/makeSeller";
+import Payment from "../Pages/Payment/Payment";
+import FAQ from "../Pages/FAQ/FAQ";
+import CookiePolicy from "../Pages/CookiePolicy/CookiePolicy";
+import HelpCenter from "../Pages/HelpCenter/HelpCenter";
+import BookingPolicy from "../Pages/BookingPolicy/BookingPolicy";
+
+import MyProfile from "../Pages/Profile/MyProfile";
+import UpdateProfile from "../Pages/Profile/UpdateProfile";
+
 
 export const router = createBrowserRouter([
   {
@@ -40,29 +70,29 @@ export const router = createBrowserRouter([
       },
       {
         path: "/my-profile/:email",
-        element: <MyProfile />
+        element: <MyProfile></MyProfile>
 
       },
       {
         path: "/update-profile",
-        element: <UpdateProfile />
+        element: <UpdateProfile></UpdateProfile>
 
       },
       {
-        path: "careers",
+        path: "/careers",
         element: <Careers />,
       },
       {
         path: "/contact",
-        element: <Contact />,
+        element: <Contact></Contact>,
       },
       {
         path: "/terms",
-        element: <Terms />,
+        element: <Terms></Terms>,
       },
       {
         path: "/privacy",
-        element: <Privacy />,
+        element: <Privacy></Privacy>,
       },
       {
         path: "/transportation",
