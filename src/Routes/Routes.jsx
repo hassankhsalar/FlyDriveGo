@@ -52,6 +52,7 @@ import BookingPolicy from "../Pages/BookingPolicy/BookingPolicy";
 
 import MyProfile from "../Pages/Profile/MyProfile";
 import UpdateProfile from "../Pages/Profile/UpdateProfile";
+import ProductDetails from "../Pages/Eshop/ProductDetails/ProductDetails";
 
 
 export const router = createBrowserRouter([
@@ -207,6 +208,10 @@ export const router = createBrowserRouter([
         path: "/eshop",
 
         element: <EshopHome></EshopHome>,
+      },
+      {
+        path:"/product/:id",
+        element:<ProductDetails/>
       },
       {
         path: "/payment",
