@@ -2,23 +2,29 @@ import React, { useEffect, useState } from "react";
 import HeroSection from "../Home/hero/components/HeroSection";
 import Cards from "./components/Cards";
 import { Link } from "react-router-dom";
-import Ecommerce from "./Ecommerce";
+
 
 import Testimonial from "./Testimonial";
 import TrustedPartners from "../Home/TrustedPartners";
 
+import useAxiosPublic from "./../../Hooks/useAxiosPublic";
+import Ecommerce from './../Home/Ecommerce';
+
 const TourPackages = () => {
     const [tourData, setTourData] = useState([]);
     const [loading, setLoading] = useState(true);
+    const axiosPublic =useAxiosPublic()
 
     useEffect(() => {
-        fetch("/tourPackages.json")
-            .then((res) => res.json())
-            .then((data) => {
-                setTourData(data);
+        axiosPublic.get("/tourPackage")
+            .then((res) => {
+                setTourData(res.data);
                 setLoading(false);
             })
-            .catch((error) => console.log("Error fetching data:", error));
+            .catch((error) => {
+                console.error("Error fetching data:", error);
+                setLoading(false); 
+            });
     }, []);
 
     if (loading) {
@@ -30,7 +36,7 @@ const TourPackages = () => {
     }
 
     return (
-        <div className="w-11/12 mx-auto bg-SmokeWhite font-red-rose">
+        <div className="w-11/12 mx-auto  font-red-rose">
             {/* Hero Section */}
             <div>
                 <HeroSection />
@@ -62,7 +68,7 @@ const TourPackages = () => {
             <div className="mt-16 w-full h-full md:h-[400px] bg-[url('/cta.jpg')] bg-cover bg-center bg-no-repeat flex flex-col md:flex-row justify-center items-center py-8 px-4 md:px-8 lg:px-16">
                 {/* Left Section - Heading */}
                 <div className="w-full md:w-1/2 text-center md:text-left">
-                    <h1 className="font-red-rose text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-6 md:mb-14">
+                    <h1 className="font-red-rose text-3xl  font-bold text-white mb-6 md:mb-14">
                         Ready to Explore? <br /> Book Your Next Adventure Today!
                     </h1>
                 </div>
