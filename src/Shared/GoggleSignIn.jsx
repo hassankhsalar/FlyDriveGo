@@ -35,7 +35,7 @@ const GoggleSignIn = () => {
     <div className="flex items-center justify-center pb-1">
       <button
         onClick={handleGoogleSignIn}
-        className="bg-black rounded-full p-2 text-xl"
+        className="bg-white rounded-full p-2 text-xl"
       >
         <FcGoogle color="white"></FcGoogle>
       </button>
