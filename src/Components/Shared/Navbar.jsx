@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from "react";
 import logo from "/FlyDriveGo.png";
-
 // react icons
 import { FaShoppingCart, FaMapMarkerAlt, FaPlane, FaBus, FaCar } from "react-icons/fa";
 import { TbLogout2 } from "react-icons/tb";
 import { CiMenuFries } from "react-icons/ci";
 import { MdLaptopMac } from "react-icons/md";
+import { IoSettingsOutline } from "react-icons/io5";
 import { BsCalendar2Date } from "react-icons/bs";
 import { AiOutlineFire } from "react-icons/ai";
 import { BiShoppingBag, BiSupport } from "react-icons/bi";
 import { FiUser } from "react-icons/fi";
-import { HiOutlineBriefcase } from "react-icons/hi";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
 import { Link, useLocation } from "react-router-dom";

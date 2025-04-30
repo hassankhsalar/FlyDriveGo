@@ -50,8 +50,8 @@ import CookiePolicy from "../Pages/CookiePolicy/CookiePolicy";
 import HelpCenter from "../Pages/HelpCenter/HelpCenter";
 import BookingPolicy from "../Pages/BookingPolicy/BookingPolicy";
 
-import MyProfile from "../Pages/Profile/MyProfile";
-import UpdateProfile from "../Pages/Profile/UpdateProfile";
+// import MyProfile from "../Pages/Profile/MyProfile";
+// import UpdateProfile from "../Pages/Profile/UpdateProfile";
 import ProductDetails from "../Pages/Eshop/ProductDetails/ProductDetails";
 
 
@@ -71,12 +71,12 @@ export const router = createBrowserRouter([
       },
       {
         path: "/my-profile/:email",
-        element: <MyProfile></MyProfile>
+        // element: <MyProfile></MyProfile>
 
       },
       {
         path: "/update-profile",
-        element: <UpdateProfile></UpdateProfile>
+        // element: <UpdateProfile></UpdateProfile>
 
       },
       {
