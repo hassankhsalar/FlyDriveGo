@@ -165,7 +165,7 @@ const Navbar = () => {
                 </Link>
 
                 <Link
-                  to="/tour-details/Bali: Paradise Island Escape"
+                  to="/tour-details/Discover Bali: 5-Day Luxury Escape"
                   className="flex items-center gap-[10px] hover:bg-gray-50 p-2 rounded-md"
                 >
                   <FaMapMarkerAlt className="text-orange-500 w-5 h-5" />
@@ -180,13 +180,13 @@ const Navbar = () => {
                 </Link>
 
                 <Link
-                  to="/tour-details/Maldives: Tropical Paradise Getaway"
+                  to="/tour-details/Santorini Romance: 5-Day Luxury Escape"
                   className="flex items-center gap-[10px] hover:bg-gray-50 p-2 rounded-md"
                 >
                   <FaMapMarkerAlt className="text-blue-500 w-5 h-5" />
                   <div>
                     <h1 className="text-[1rem] text-gray-700 font-[500]">
-                      Maldives Package
+                    Santorini Romance
                     </h1>
                     <p className="text-[0.9rem] text-gray-400">
                       Tropical Paradise Getaway
