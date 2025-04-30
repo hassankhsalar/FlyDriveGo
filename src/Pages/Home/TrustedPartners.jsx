@@ -1,8 +1,10 @@
 import BrandMarquee from "../About/components/BrandMarquee";
 
-const TrustedPartners = () => {
+const TrustedPartners = ({ className }) => {
   return (
-    <BrandMarquee />
+    <div >
+      <BrandMarquee className={className}/>
+    </div>
   );
 };
 
