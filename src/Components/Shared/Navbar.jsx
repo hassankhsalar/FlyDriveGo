@@ -213,12 +213,43 @@ const Navbar = () => {
               {user?.displayName?.split(' ')[0] || 'User'}
             </span>
           </div>
+          <div
+            className={`${
+              accountMenuOpen
+                ? "translate-y-0 opacity-100 z-[1]"
+                : "translate-y-[10px] opacity-0 z-[-1]"
+            } bg-white w-max rounded-md absolute dark:bg-slate-800 top-[45px] right-0 p-[10px] flex flex-col transition-all duration-300 gap-[5px]`}
+          >
+            <Link to={`/my-profile/${user?.email}`} className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] dark:text-[#abc2d3] dark:hover:bg-slate-900/50 text-gray-600 hover:bg-gray-50">
+              <FiUser />
+              View Profile
+            </Link>
+            <p className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] dark:text-[#abc2d3] dark:hover:bg-slate-900/50 text-gray-600 hover:bg-gray-50">
+              <IoSettingsOutline />
+              Settings
+            </p>
+            <p className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] dark:text-[#abc2d3] dark:hover:bg-slate-900/50 text-gray-600 hover:bg-gray-50">
+              <FiUser />
 
-          {/* User Dropdown Menu - Show on hover */}
-          <div className="invisible group-hover:visible opacity-0 group-hover:opacity-100 absolute right-0 top-[45px] bg-white w-max min-w-[200px] rounded-md p-[10px] transition-all duration-200 shadow-md z-30">
-            <div className="p-3 border-b border-gray-100">
-              <p className="text-sm font-medium">{user.displayName || 'User'}</p>
-              <p className="text-xs text-gray-500 truncate">{user.email}</p>
+              <Link to="/dashboard">Dashboard</Link>
+            </p>
+
+            <div className="mt-3 border-t dark:border-slate-700 border-gray-200 pt-[5px]">
+              <p
+                onClick={() => {
+                  logOut()
+                    .then(() => {
+                      toast.success("Log Out Successfully");
+                    })
+                    .catch(() => {
+                      toast.error("An Error occurred While Log Out");
+                    });
+                }}
+                className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] dark:text-red-500 dark:hover:bg-red-500/20 text-red-500 hover:bg-red-50"
+              >
+                <TbLogout2 />
+                Logout
+              </p>
             </div>
 
             <Link to="/dashboard" className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] text-gray-600 hover:bg-gray-50 w-full">

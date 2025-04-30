@@ -50,6 +50,11 @@ import CookiePolicy from "../Pages/CookiePolicy/CookiePolicy";
 import HelpCenter from "../Pages/HelpCenter/HelpCenter";
 import BookingPolicy from "../Pages/BookingPolicy/BookingPolicy";
 
+import MyProfile from "../Pages/Profile/MyProfile";
+import UpdateProfile from "../Pages/Profile/UpdateProfile";
+import ProductDetails from "../Pages/Eshop/ProductDetails/ProductDetails";
+
+
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -65,20 +70,30 @@ export const router = createBrowserRouter([
         element: <About />,
       },
       {
-        path: "careers",
+        path: "/my-profile/:email",
+        element: <MyProfile></MyProfile>
+
+      },
+      {
+        path: "/update-profile",
+        element: <UpdateProfile></UpdateProfile>
+
+      },
+      {
+        path: "/careers",
         element: <Careers />,
       },
       {
         path: "/contact",
-        element: <Contact />,
+        element: <Contact></Contact>,
       },
       {
         path: "/terms",
-        element: <Terms />,
+        element: <Terms></Terms>,
       },
       {
         path: "/privacy",
-        element: <Privacy />,
+        element: <Privacy></Privacy>,
       },
       {
         path: "/transportation",
@@ -193,6 +208,10 @@ export const router = createBrowserRouter([
         path: "/eshop",
 
         element: <EshopHome></EshopHome>,
+      },
+      {
+        path:"/product/:id",
+        element:<ProductDetails/>
       },
       {
         path: "/payment",
