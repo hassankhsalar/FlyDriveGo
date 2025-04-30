@@ -2,7 +2,7 @@ import React from "react";
 
 const HeroF = () => {
   return (
-    <div>
+    <div className="w-11/12 mx-auto">
       <div className="w-full bg-[#fff] rounded-md relative font-red-rose">
         {/* header */}
         <header className="flex lg:flex-row flex-col items-center gap-12 lg:gap-0 justify-between px-8 mt-10">
