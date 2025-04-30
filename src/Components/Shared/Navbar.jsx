@@ -51,132 +51,184 @@ const Navbar = () => {
         <img src={logo} alt="logo" className="w-40 " />
       </Link>
 
-      {/* Desktop Navigation Links */}
-      <ul className="items-center gap-[20px] text-[1rem] text-[#424242] md:flex hidden">
-        {/* Transportation Dropdown - Using hover */}
-        <li className="group relative">
-          <Link
-            to="/transportation"
-            className={`flex items-center gap-[5px] ${isActive('/transportation') ? 'text-[#3B9DF8]' : 'dark:text-[#4e585f] text-gray-600'} hover:text-[#3B9DF8]`}
-          >
-            <MdLaptopMac className="text-[1.1rem]" />
-            Transportation
-          </Link>
+      <div className="navbar-center">
+        {/* Desktop Navigation Links */}
+        <ul className="items-center gap-[20px] text-[1rem] text-[#424242] xl:flex hidden">
+          {/* Transportation Dropdown - Using hover */}
+          <li className="group relative">
+            <Link
+              to="/transportation"
+              className={`flex items-center gap-[5px] ${isActive("/transportation") ? "text-[#3B9DF8]" : "dark:text-[#4e585f] text-gray-600"} hover:text-[#3B9DF8]`}
+            >
+              <MdLaptopMac className="text-[1.1rem]" />
+              Transportation
+            </Link>
 
-          {/* Transportation Mega Menu - Show on hover */}
-          <div className="invisible group-hover:visible opacity-0 group-hover:opacity-100 absolute top-[35px] left-0 bg-white rounded-md w-[300px] p-[20px] transition-all duration-200 shadow-md z-30">
-            <div className="flex flex-col gap-[15px]">
-              <h3 className="text-[1.1rem] text-gray-600 font-[500]">
-                Transportation Options
-              </h3>
+            {/* Transportation Mega Menu - Show on hover */}
+            <div className="invisible group-hover:visible opacity-0 group-hover:opacity-100 absolute top-[35px] left-0 bg-white rounded-md w-[300px] p-[20px] transition-all duration-200 shadow-md z-30">
+              <div className="flex flex-col gap-[15px]">
+                <h3 className="text-[1.1rem] text-gray-600 font-[500]">
+                  Transportation Options
+                </h3>
 
-              <Link to="/transportation/by-air" className="flex items-center gap-[10px] hover:bg-gray-50 p-2 rounded-md">
-                <FaPlane className="text-primary w-5 h-5" />
-                <div>
-                  <h1 className="text-[1rem] text-gray-700 font-[500]">By Air</h1>
-                  <p className="text-[0.9rem] text-gray-400 font-[300]">
-                    Domestic & International flights
-                  </p>
-                </div>
-              </Link>
+                <Link
+                  to="/transportation/by-air"
+                  className="flex items-center gap-[10px] hover:bg-gray-50 p-2 rounded-md"
+                >
+                  <FaPlane className="text-primary w-5 h-5" />
+                  <div>
+                    <h1 className="text-[1rem] text-gray-700 font-[500]">
+                      By Air
+                    </h1>
+                    <p className="text-[0.9rem] text-gray-400 font-[300]">
+                      Domestic & International flights
+                    </p>
+                  </div>
+                </Link>
 
-              <Link to="/transportation/by-road" className="flex items-center gap-[10px] hover:bg-gray-50 p-2 rounded-md">
-                <FaBus className="text-primary w-5 h-5" />
-                <div>
-                  <h1 className="text-[1rem] text-gray-700 font-[500]">By Bus</h1>
-                  <p className="text-[0.9rem] text-gray-400 font-[300]">
-                    Intercity & tour bus services
-                  </p>
-                </div>
-              </Link>
+                <Link
+                  to="/transportation/by-road"
+                  className="flex items-center gap-[10px] hover:bg-gray-50 p-2 rounded-md"
+                >
+                  <FaBus className="text-primary w-5 h-5" />
+                  <div>
+                    <h1 className="text-[1rem] text-gray-700 font-[500]">
+                      By Bus
+                    </h1>
+                    <p className="text-[0.9rem] text-gray-400 font-[300]">
+                      Intercity & tour bus services
+                    </p>
+                  </div>
+                </Link>
 
-              <Link to="/transportation/by-car" className="flex items-center gap-[10px] hover:bg-gray-50 p-2 rounded-md">
-                <FaCar className="text-primary w-5 h-5" />
-                <div>
-                  <h1 className="text-[1rem] text-gray-700 font-[500]">By Car</h1>
-                  <p className="text-[0.9rem] text-gray-400 font-[300]">
-                    Rental cars & chauffeur service
-                  </p>
-                </div>
-              </Link>
-            </div>
-          </div>
-        </li>
-
-        {/* Tour Packages Dropdown - Using hover */}
-        <li className="group relative">
-          <Link
-            to="/tour-pack"
-            className={`flex items-center gap-[5px] ${isActive('/tour-pack') ? 'text-[#3B9DF8]' : 'dark:text-[#4e585f] text-gray-600'} hover:text-[#3B9DF8]`}
-          >
-            <BsCalendar2Date className="text-[1.1rem]" />
-            Tour Packages
-          </Link>
-
-          {/* Tour Packages Mega Menu - Show on hover */}
-          <div className="invisible group-hover:visible opacity-0 group-hover:opacity-100 absolute top-[35px] left-0 bg-white rounded-md w-[300px] p-[20px] transition-all duration-200 shadow-md z-30">
-            <div className="flex flex-col gap-[15px]">
-              <Link to="/tour-pack" className="flex items-center gap-[10px] hover:bg-gray-50 p-2 rounded-md">
-                <img
-                  src="https://i.ibb.co/LQBDJGD/icon-logo-container.png"
-                  alt="image"
-                  className="w-[30px] h-[30px]"
-                  referrerPolicy="no-referrer"
-                />
-                <div>
-                  <h1 className="text-[1rem] text-gray-700 font-[500]">All Tour Packages</h1>
-                  <p className="text-[0.9rem] text-gray-400">Browse all available packages</p>
-                </div>
-              </Link>
-
-              <Link to="/tour-details/Bali: Paradise Island Escape" className="flex items-center gap-[10px] hover:bg-gray-50 p-2 rounded-md">
-                <FaMapMarkerAlt className="text-orange-500 w-5 h-5" />
-                <div>
-                  <h1 className="text-[1rem] text-gray-700 font-[500]">Bali Package</h1>
-                  <p className="text-[0.9rem] text-gray-400">Paradise Island Escape</p>
-                </div>
-              </Link>
-
-              <Link to="/tour-details/Maldives: Tropical Paradise Getaway" className="flex items-center gap-[10px] hover:bg-gray-50 p-2 rounded-md">
-                <FaMapMarkerAlt className="text-blue-500 w-5 h-5" />
-                <div>
-                  <h1 className="text-[1rem] text-gray-700 font-[500]">Maldives Package</h1>
-                  <p className="text-[0.9rem] text-gray-400">Tropical Paradise Getaway</p>
-                </div>
-              </Link>
-            </div>
-          </div>
-        </li>
-
-        {/* Other Main Links */}
-        <li className={`flex items-center ${isActive('/visa-assistance') ? 'text-[#3B9DF8]' : 'text-gray-600'} hover:text-[#3B9DF8]`}>
-          <AiOutlineFire className="text-[1.1rem] mr-1" />
-          <Link to="/visa-assistance">Visa</Link>
-        </li>
-
-        <li className="flex items-center dark:text-[#4e585f] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer">
-          <AiOutlineFire className="text-[1.1rem] group-hover:text-[#3B9DF8] dark:text-[#4e585f] text-gray-600" />
-          <Link to="/visa-assistance">Visa</Link>
-        </li>
-        <li className="flex items-center dark:text-[#4e585f] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer">
-          <BiShoppingBag className="text-[1.1rem] group-hover:text-[#3B9DF8] dark:text-[#4e585f] text-gray-600" />
-          <Link to="/eshop">Shop</Link>
-        </li>
-        <li className="flex items-center dark:text-[#4e585f] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer">
-          <BiSupport className="text-[1.1rem] group-hover:text-[#3B9DF8] dark:text-[#4e585f] text-gray-600" />
-          <Link to="/about">About</Link>
-        </li>
-        <li>
-          <Link to="/mycart">
-            <button className="btn">
-              <FaShoppingCart></FaShoppingCart>{" "}
-              <div className="badge badge-sm badge-secondary">
-                +{cart.length}
+                <Link
+                  to="/transportation/by-car"
+                  className="flex items-center gap-[10px] hover:bg-gray-50 p-2 rounded-md"
+                >
+                  <FaCar className="text-primary w-5 h-5" />
+                  <div>
+                    <h1 className="text-[1rem] text-gray-700 font-[500]">
+                      By Car
+                    </h1>
+                    <p className="text-[0.9rem] text-gray-400 font-[300]">
+                      Rental cars & chauffeur service
+                    </p>
+                  </div>
+                </Link>
               </div>
-            </button>
-          </Link>
-        </li>
-      </ul>
+            </div>
+          </li>
+
+          {/* Tour Packages Dropdown - Using hover */}
+          <li className="group relative">
+            <Link
+              to="/tour-pack"
+              className={`flex items-center gap-[5px] ${isActive("/tour-pack") ? "text-[#3B9DF8]" : "dark:text-[#4e585f] text-gray-600"} hover:text-[#3B9DF8]`}
+            >
+              <BsCalendar2Date className="text-[1.1rem]" />
+              Tour Packages
+            </Link>
+
+            {/* Tour Packages Mega Menu - Show on hover */}
+            <div className="invisible group-hover:visible opacity-0 group-hover:opacity-100 absolute top-[35px] left-0 bg-white rounded-md w-[300px] p-[20px] transition-all duration-200 shadow-md z-30">
+              <div className="flex flex-col gap-[15px]">
+                <Link
+                  to="/tour-pack"
+                  className="flex items-center gap-[10px] hover:bg-gray-50 p-2 rounded-md"
+                >
+                  <img
+                    src="https://i.ibb.co/LQBDJGD/icon-logo-container.png"
+                    alt="image"
+                    className="w-[30px] h-[30px]"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div>
+                    <h1 className="text-[1rem] text-gray-700 font-[500]">
+                      All Tour Packages
+                    </h1>
+                    <p className="text-[0.9rem] text-gray-400">
+                      Browse all available packages
+                    </p>
+                  </div>
+                </Link>
+
+                <Link
+                  to="/tour-details/Bali: Paradise Island Escape"
+                  className="flex items-center gap-[10px] hover:bg-gray-50 p-2 rounded-md"
+                >
+                  <FaMapMarkerAlt className="text-orange-500 w-5 h-5" />
+                  <div>
+                    <h1 className="text-[1rem] text-gray-700 font-[500]">
+                      Bali Package
+                    </h1>
+                    <p className="text-[0.9rem] text-gray-400">
+                      Paradise Island Escape
+                    </p>
+                  </div>
+                </Link>
+
+                <Link
+                  to="/tour-details/Maldives: Tropical Paradise Getaway"
+                  className="flex items-center gap-[10px] hover:bg-gray-50 p-2 rounded-md"
+                >
+                  <FaMapMarkerAlt className="text-blue-500 w-5 h-5" />
+                  <div>
+                    <h1 className="text-[1rem] text-gray-700 font-[500]">
+                      Maldives Package
+                    </h1>
+                    <p className="text-[0.9rem] text-gray-400">
+                      Tropical Paradise Getaway
+                    </p>
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </li>
+
+          {/* Other Main Links */}
+          <li className="flex items-center">
+            <Link
+              to="/visa-assistance"
+              className={`flex items-center gap-[5px] ${isActive('/visa-assistance') ? 'text-[#3B9DF8]' : 'text-gray-600'} hover:text-[#3B9DF8]`}
+            >
+              <AiOutlineFire className="text-[1.1rem]" />
+              Visa
+            </Link>
+          </li>
+
+          <li className="flex items-center">
+            <Link
+              to="/eshop"
+              className={`flex items-center gap-[5px] ${isActive('/eshop') ? 'text-[#3B9DF8]' : 'text-gray-600'} hover:text-[#3B9DF8]`}
+            >
+              <BiShoppingBag className="text-[1.1rem]" />
+              Shop
+            </Link>
+          </li>
+
+          <li className="flex items-center">
+            <Link
+              to="/about"
+              className={`flex items-center gap-[5px] ${isActive('/about') ? 'text-[#3B9DF8]' : 'text-gray-600'} hover:text-[#3B9DF8]`}
+            >
+              <BiSupport className="text-[1.1rem]" />
+              About
+            </Link>
+          </li>
+
+          <li>
+            <Link to="/mycart">
+              <button className="btn">
+                <FaShoppingCart></FaShoppingCart>{" "}
+                <div className="badge badge-sm badge-secondary">
+                  +{cart.length}
+                </div>
+              </button>
+            </Link>
+          </li>
+        </ul>
+      </div>
+
       {/* Login/Register Buttons */}
       {!user ? (
         <div className="flex items-center gap-3">
@@ -195,7 +247,10 @@ const Navbar = () => {
         </div>
       ) : (
         <div className="relative group">
-          <div className="flex items-center gap-[10px] cursor-pointer">
+          <div
+            className="flex items-center gap-[10px] cursor-pointer"
+            onClick={() => setAccountMenuOpen(!accountMenuOpen)}
+          >
             <div className="relative">
               <img
                 src={user.photoURL || "https://i.pravatar.cc/150?img=3"}
@@ -212,65 +267,56 @@ const Navbar = () => {
               {user?.displayName?.split(' ')[0] || 'User'}
             </span>
           </div>
+
+          {/* Dropdown Menu */}
           <div
-            className={`${
-              accountMenuOpen
-                ? "translate-y-0 opacity-100 z-[1]"
+            className={`${accountMenuOpen
+                ? "translate-y-0 opacity-100 z-[50]"
                 : "translate-y-[10px] opacity-0 z-[-1]"
-            } bg-white w-max rounded-md absolute dark:bg-slate-800 top-[45px] right-0 p-[10px] flex flex-col transition-all duration-300 gap-[5px]`}
+              } bg-white w-max rounded-md absolute dark:bg-slate-800 top-[45px] right-0 p-[10px] flex flex-col transition-all duration-300 gap-[5px] shadow-lg`}
           >
-            <Link to={`/my-profile/${user?.email}`} className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] dark:text-[#abc2d3] dark:hover:bg-slate-900/50 text-gray-600 hover:bg-gray-50">
+            <Link
+              to={`/my-profile/${user?.email}`}
+              className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] dark:text-[#abc2d3] dark:hover:bg-slate-900/50 text-gray-600 hover:bg-gray-50"
+            >
               <FiUser />
               View Profile
             </Link>
-            <p className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] dark:text-[#abc2d3] dark:hover:bg-slate-900/50 text-gray-600 hover:bg-gray-50">
+
+            <Link
+              to="/settings"
+              className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] dark:text-[#abc2d3] dark:hover:bg-slate-900/50 text-gray-600 hover:bg-gray-50"
+            >
               <IoSettingsOutline />
               Settings
-            </p>
-            <p className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] dark:text-[#abc2d3] dark:hover:bg-slate-900/50 text-gray-600 hover:bg-gray-50">
+            </Link>
+
+            <Link
+              to="/dashboard"
+              className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] dark:text-[#abc2d3] dark:hover:bg-slate-900/50 text-gray-600 hover:bg-gray-50"
+            >
               <FiUser />
-
-              <Link to="/dashboard">Dashboard</Link>
-            </p>
-
-            <div className="mt-3 border-t dark:border-slate-700 border-gray-200 pt-[5px]">
-              <p
-                onClick={() => {
-                  logOut()
-                    .then(() => {
-                      toast.success("Log Out Successfully");
-                    })
-                    .catch(() => {
-                      toast.error("An Error occurred While Log Out");
-                    });
-                }}
-                className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] dark:text-red-500 dark:hover:bg-red-500/20 text-red-500 hover:bg-red-50"
-              >
-                <TbLogout2 />
-                Logout
-              </p>
-            </div>
-
-            <Link to="/dashboard" className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] text-gray-600 hover:bg-gray-50 w-full">
-              <FiUser className="w-4 h-4" />
               Dashboard
             </Link>
 
-            <button
-              onClick={() => {
-                logOut()
-                  .then(() => {
-                    toast.success("Logged Out Successfully");
-                  })
-                  .catch(() => {
-                    toast.error("An Error occurred While Logging Out");
-                  });
-              }}
-              className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] text-red-500 hover:bg-red-50 text-left w-full"
-            >
-              <TbLogout2 className="w-4 h-4" />
-              Logout
-            </button>
+            <div className="mt-3 border-t dark:border-slate-700 border-gray-200 pt-[5px]">
+              <button
+                onClick={() => {
+                  logOut()
+                    .then(() => {
+                      toast.success("Logged Out Successfully");
+                      setAccountMenuOpen(false);
+                    })
+                    .catch(() => {
+                      toast.error("An Error occurred While Logging Out");
+                    });
+                }}
+                className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] dark:text-red-500 dark:hover:bg-red-500/20 text-red-500 hover:bg-red-50 w-full text-left"
+              >
+                <TbLogout2 />
+                Logout
+              </button>
+            </div>
           </div>
         </div>
       )}

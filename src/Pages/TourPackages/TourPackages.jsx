@@ -41,11 +41,8 @@ const TourPackages = () => {
             <div>
                 <HeroSection />
             </div>
-            <div>
-                <TrustedPartners/>
-            </div>
             {/* Card Section */}
-            <div className="my-10">
+            <div className="mt-2 mb-10">
                 <h2 className="font-extrabold text-3xl text-center mb-10" style={{ color: '#4EDAE4' }}>
                     Upcoming Tour Events
                 </h2>

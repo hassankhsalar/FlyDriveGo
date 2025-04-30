@@ -3,25 +3,28 @@ import Slider from "react-slick";
 import { Link } from "react-router-dom";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import eshopbanner1 from '../../../assets/eshop/eshopbanner1.jpg';
+import eshopbanner2 from '../../../assets/eshop/eshopbanner2.jpg';
+import eshopbanner3 from '../../../assets/eshop/eshopbanner3.jpg';
 
 const slides = [
   {
     id: 1,
     title: "Explore the Best Outdoor Gear",
     subtitle: "Shop top-rated camping and adventure products.",
-    image: "https://images.pexels.com/photos/8212224/pexels-photo-8212224.jpeg?auto=compress&cs=tinysrgb&w=600",
+    image: `${eshopbanner1}`,
   },
   {
     id: 2,
     title: "Get Ready for Your Next Adventure",
     subtitle: "Tents, backpacks, jackets, and more – all in one place.",
-    image: "https://images.pexels.com/photos/7009599/pexels-photo-7009599.jpeg?auto=compress&cs=tinysrgb&w=600",
+    image: `${eshopbanner2}`,
   },
   {
     id: 3,
     title: "Limited Time Offers Just for You",
     subtitle: "Grab exclusive deals on premium outdoor products.",
-    image: "https://images.pexels.com/photos/7009599/pexels-photo-7009599.jpeg?auto=compress&cs=tinysrgb&w=600",
+    image: `${eshopbanner3}`,
   },
 ];
 
@@ -52,7 +55,7 @@ const EshopHeroSection = () => {
                 backgroundRepeat: "no-repeat",
               }}
             >
-              <div className="bg-black/50 w-full h-full flex flex-col items-center justify-center px-6 text-center">
+              <div className="bg-black/20 w-full h-full flex flex-col items-center justify-center px-6 text-center">
                 <h1 className="text-3xl md:text-5xl font-bold mb-4">
                   {slide.title}
                 </h1>
