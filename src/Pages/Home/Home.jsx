@@ -9,6 +9,8 @@ import Ecommerce from "./Ecommerce";
 import Transport from "./Transport";
 import Testimonials from "./Testimonials";
 import CTA from "./CTA";
+import HeroF from "./HeroF";
+import Promo from "./Promo";
 
 
 const Home = () => {
@@ -20,6 +22,10 @@ const Home = () => {
       
       <div>
         <HeroSection />
+      </div>
+
+      <div>
+        <HeroF></HeroF>
       </div>
 
       <div>
@@ -36,6 +42,10 @@ const Home = () => {
 
       <div>
         <Features></Features>
+      </div>
+
+      <div>
+        <Promo></Promo>
       </div>
 
       <div>

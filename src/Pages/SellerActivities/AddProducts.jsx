@@ -54,6 +54,7 @@ const AddProducts = () => {
             photo: imageUrl,
             details: e.target.productDetails.value,
             price: Number(e.target.productPrice.value),
+            quantity: Number(e.target.productQuantity.value),
             sellerName: user?.displayName,
             sellerEmail: user?.email,
             tags, 
@@ -122,6 +123,11 @@ const AddProducts = () => {
                     <div className="my-3">
                         <p>Product Price:</p>
                         <input name="productPrice" type="number" className="w-full h-10 rounded-sm border-2 p-2" required />
+                    </div>
+
+                    <div className="my-3">
+                        <p>Product quantity:</p>
+                        <input name="productQuantity" type="number" className="w-full h-10 rounded-sm border-2 p-2" required />
                     </div>
 
                     <div className="my-3">

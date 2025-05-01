@@ -21,7 +21,7 @@ const DashBoard = () => {
       <div className="divide-y dark:divide-gray-300 flex flex-col justify-between h-full pt-10">
         <div>
           <ul className="p-4 space-y-3 text-base font-poppins">
-            {/* {userRole === "user" && ( */}
+            {userRole === "user" && (
               <>
                 <li>
                   <Link to="/dashboard/adminDashboard">Admin Dashboard</Link>
@@ -33,13 +33,13 @@ const DashBoard = () => {
                   <Link to="/dashboard/add-products">Add Products</Link>
                 </li>
               </>
-            {/* )} */}
-            {/* {userRole === "admin" && ( */}
+            )}
+            {userRole === "admin" && (
               <li>
                 <Link to="/dashboard/adminDashboard">Admin Dashboard</Link>
               </li>
-            {/* )} */}
-            {/* {userRole === "moderator" && ( */}
+            )}
+            {userRole === "moderator" && (
               <>
                 <li>
                   <Link to="/dashboard/addTourPackage">Add Tour Packages</Link>
@@ -51,7 +51,14 @@ const DashBoard = () => {
                   <Link to="/dashboard/makeSeller">Make Seller</Link>
                 </li>
               </>
-            {/* )} */}
+            )}
+            {userRole === "seller" && (
+              <>
+                <li>
+                  <Link>Seller</Link>
+                </li>
+              </>
+            )}
           </ul>
         </div>
 
