@@ -40,6 +40,11 @@ import BusPayments from "../Pages/Transportation/ByBus/BusPayments/BusPayments";
 import PaymentErrorHandler from "../Pages/Transportation/ByBus/Components/PaymentErrorHandler";
 import CarReservation from "../Pages/Transportation/ByCar/CarReservation";
 
+// Flight booking components
+import FlightSeatPlan from "../Pages/Transportation/ByAir/FlightSeatPlan";
+import FlightPassengerDetails from "../Pages/Transportation/ByAir/FlightPassengerDetails";
+import FlightBookingConfirmation from "../Pages/Transportation/ByAir/FlightBookingConfirmation";
+
 import DashboardWelcome from "../Pages/Dashboard/DashboardWelcome";
 
 import MyCart from "../Pages/Eshop/MyCart/MyCart";
@@ -53,7 +58,8 @@ import BookingPolicy from "../Pages/BookingPolicy/BookingPolicy";
 // import MyProfile from "../Pages/Profile/MyProfile";
 // import UpdateProfile from "../Pages/Profile/UpdateProfile";
 import ProductDetails from "../Pages/Eshop/ProductDetails/ProductDetails";
-
+import FlightPayment from "../Pages/Transportation/ByAir/FlightPayment/FlightPayment";
+import FlightPaymentErrorHandler from "../Pages/Transportation/ByAir/Components/FlightPaymentErrorHandler";
 
 export const router = createBrowserRouter([
   {
@@ -122,6 +128,18 @@ export const router = createBrowserRouter([
           {
             path: "by-air",
             element: <ByAir />,
+          },
+          {
+            path: "flight-seat-plan/:flightId",
+            element: <FlightSeatPlan />,
+          },
+          {
+            path: "flight-passenger-details",
+            element: <FlightPassengerDetails />,
+          },
+          {
+            path: "flight-booking-confirmation/:bookingId",
+            element: <FlightBookingConfirmation />,
           },
           {
             path: "passenger-details",
@@ -210,8 +228,8 @@ export const router = createBrowserRouter([
         element: <EshopHome></EshopHome>,
       },
       {
-        path:"/product/:id",
-        element:<ProductDetails/>
+        path: "/product/:id",
+        element: <ProductDetails />
       },
       {
         path: "/payment",
@@ -248,8 +266,16 @@ export const router = createBrowserRouter([
         element: <BusPayments />,
       },
       {
+        path: "transportation/flight-payment",
+        element: <FlightPayment />,
+      },
+      {
         path: "transportation/payment-error",
         element: <PaymentErrorHandler />,
+      },
+      {
+        path: "transportation/flight-payment-error",
+        element: <FlightPaymentErrorHandler />,
       },
       // New routes for missing pages
       {
