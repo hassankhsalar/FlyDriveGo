@@ -3,17 +3,17 @@ import { useLocation, useNavigate, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FaArrowLeft, FaCreditCard, FaIdCard, FaUser, FaPhone, FaEnvelope } from 'react-icons/fa';
 import { useForm } from 'react-hook-form';
-import { getAuth } from 'firebase/auth';
 import { toast } from 'react-hot-toast';
 import useAxiosPublic from '../../../Hooks/useAxiosPublic';
+import useAuth from '../../../Hooks/useAuth';
 
 const PassengerDetails = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const [bookingDetails, setBookingDetails] = useState(null);
-    const [user, setUser] = useState(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const axiosPublic = useAxiosPublic();
+    const { user } = useAuth();
 
     const { register, handleSubmit, setValue, formState: { errors } } = useForm({
         defaultValues: {
@@ -31,6 +31,13 @@ const PassengerDetails = () => {
     });
 
     useEffect(() => {
+        // Check if user is authenticated
+        if (!user) {
+            toast.error("Please login to continue with your booking");
+            navigate('/login', { state: { from: location.pathname } });
+            return;
+        }
+
         // Get booking details from location state
         if (location.state?.bookingDetails) {
             // Check if any seats were selected
@@ -48,20 +55,13 @@ const PassengerDetails = () => {
             navigate('/transportation/by-road');
         }
 
-        // Check if user is logged in
-        const auth = getAuth();
-        const unsubscribe = auth.onAuthStateChanged((currentUser) => {
-            setUser(currentUser);
-            if (currentUser) {
-                // Pre-fill contact form with user data if available
-                setValue('contactInfo.name', currentUser.displayName || '');
-                setValue('contactInfo.email', currentUser.email || '');
-                setValue('primaryPassenger.name', currentUser.displayName || '');
-            }
-        });
-
-        return () => unsubscribe();
-    }, [location, navigate, setValue]);
+        // Pre-fill contact form with user data if available
+        if (user) {
+            setValue('contactInfo.name', user.displayName || '');
+            setValue('contactInfo.email', user.email || '');
+            setValue('primaryPassenger.name', user.displayName || '');
+        }
+    }, [location, navigate, setValue, user]);
 
     const onSubmit = async (data) => {
         if (!bookingDetails) return;

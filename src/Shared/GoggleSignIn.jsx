@@ -21,11 +21,12 @@ const GoggleSignIn = () => {
           photoURL: res.user.photoURL,
           userType: "user",
         };
-        axiosPublic.post("/users", userInfo).then((res) => {
-          console.log("user added successfully");
-          navigate(location?.state ? location.state : "/");
+        axiosPublic.post("/users", userInfo).then(() => {
+          // Navigate to the previous location or home if none exists
+          const from = location.state?.from || "/";
+          navigate(from);
+          toast.success("Sign In Successfully");
         });
-        toast.success("Sign In Successfully");
       })
       .catch((err) => {
         toast.error(`${err.message}`);

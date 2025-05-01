@@ -116,7 +116,9 @@ const Register = () => {
   const handleSellerChoice = useCallback(
     (becomeSeller) => {
       setShowSellerPopup(false);
-      navigate(becomeSeller ? "/becomeseller" : location?.state || "/");
+      // Navigate to the previous location or home if none exists
+      const from = location.state?.from || "/";
+      navigate(becomeSeller ? "/becomeseller" : from);
     },
     [navigate, location]
   );
@@ -205,9 +207,8 @@ const Register = () => {
           {error && <p className="text-red-400 text-sm">{error}</p>}
           <button
             type="submit"
-            className={`bg-white text-black font-bold py-2 px-4 rounded-full hover:bg-gray-300 transition duration-300 ease-in-out ${
-              isLoading ? "opacity-50 cursor-not-allowed" : ""
-            }`}
+            className={`bg-white text-black font-bold py-2 px-4 rounded-full hover:bg-gray-300 transition duration-300 ease-in-out ${isLoading ? "opacity-50 cursor-not-allowed" : ""
+              }`}
             disabled={isLoading}
           >
             {isLoading ? "Registering..." : "Register"}
