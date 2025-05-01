@@ -234,53 +234,53 @@ const ByBus = () => {
 
       {/* Featured Deal */}
       <div
-        className="mb-12 bg-gradient-to-r from-blue-500 to-primary rounded-xl overflow-hidden shadow-lg h-96 transform translate-y-8 opacity-0 animate-fadeSlideUp delay-300 transition-all duration-500 hover:scale-102 hover:shadow-xl"
+        className="mb-12 bg-gradient-to-r from-blue-500 to-primary rounded-xl overflow-hidden shadow-lg transform translate-y-8 opacity-0 animate-fadeSlideUp delay-300 transition-all duration-500 hover:shadow-xl"
       >
-        <div className="md:flex">
-          <div className="md:w-1/2 h-54 overflow-hidden">
+        <div className="flex flex-col md:flex-row">
+          <div className="h-60 md:h-auto md:w-1/2 overflow-hidden">
             <img
               src="https://images.unsplash.com/photo-1626448167527-33aec453f913?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="VIP Coach"
               className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
             />
           </div>
-          <div className="p-6 md:p-10 md:w-1/2 flex flex-col justify-center">
+          <div className="p-5 md:p-10 md:w-1/2 flex flex-col justify-center">
             <div
-              className="inline-block px-3 py-1 bg-white text-primary text-xs font-semibold rounded-full mb-4 transform -translate-x-4 opacity-0 animate-slideInRight delay-600"
+              className="inline-block px-3 py-1 bg-white text-primary text-xs font-semibold rounded-full mb-3 md:mb-4 transform -translate-x-4 opacity-0 animate-slideInRight delay-600"
             >
               FEATURED SERVICE
             </div>
             <h2
-              className="text-2xl md:text-3xl font-bold text-white mb-3 transform translate-y-4 opacity-0 animate-fadeSlideUp delay-700"
+              className="text-xl md:text-3xl font-bold text-white mb-2 md:mb-3 transform translate-y-4 opacity-0 animate-fadeSlideUp delay-700"
             >
               VIP Weekend Service
             </h2>
             <p
-              className="text-blue-100 mb-6 transform translate-y-4 opacity-0 animate-fadeSlideUp delay-800"
+              className="text-blue-100 mb-4 md:mb-6 text-sm md:text-base transform translate-y-4 opacity-0 animate-fadeSlideUp delay-800"
             >
               Premium weekend trips to popular destinations with luxury amenities, refreshments, and priority boarding.
             </p>
             <div
-              className="flex flex-wrap gap-4 mb-6 transform translate-y-4 opacity-0 animate-fadeSlideUp delay-900"
+              className="flex flex-wrap gap-2 md:gap-4 mb-4 md:mb-6 transform translate-y-4 opacity-0 animate-fadeSlideUp delay-900"
             >
               <span
-                className="inline-flex items-center bg-blue-600 bg-opacity-30 text-white px-3 py-1 rounded-full text-sm transition-all duration-300 hover:scale-110 hover:bg-opacity-50"
+                className="inline-flex items-center bg-blue-600 bg-opacity-30 text-white px-2 md:px-3 py-1 rounded-full text-xs md:text-sm transition-all duration-300 hover:scale-110 hover:bg-opacity-50"
               >
-                <FaWifi className="mr-2" /> Free WiFi
+                <FaWifi className="mr-1 md:mr-2" /> Free WiFi
               </span>
               <span
-                className="inline-flex items-center bg-blue-600 bg-opacity-30 text-white px-3 py-1 rounded-full text-sm transition-all duration-300 hover:scale-110 hover:bg-opacity-50"
+                className="inline-flex items-center bg-blue-600 bg-opacity-30 text-white px-2 md:px-3 py-1 rounded-full text-xs md:text-sm transition-all duration-300 hover:scale-110 hover:bg-opacity-50"
               >
-                <FaPlug className="mr-2" /> Power Outlets
+                <FaPlug className="mr-1 md:mr-2" /> Power Outlets
               </span>
               <span
-                className="inline-flex items-center bg-blue-600 bg-opacity-30 text-white px-3 py-1 rounded-full text-sm transition-all duration-300 hover:scale-110 hover:bg-opacity-50"
+                className="inline-flex items-center bg-blue-600 bg-opacity-30 text-white px-2 md:px-3 py-1 rounded-full text-xs md:text-sm transition-all duration-300 hover:scale-110 hover:bg-opacity-50"
               >
-                <FaSnowflake className="mr-2" /> Climate Control
+                <FaSnowflake className="mr-1 md:mr-2" /> Climate Control
               </span>
             </div>
             <button
-              className="mt-auto bg-white text-primary hover:bg-blue-50 transition-all duration-300 font-medium py-3 px-6 rounded-lg inline-flex items-center transform translate-y-4 opacity-0 animate-fadeSlideUp delay-1000 hover:scale-105 active:scale-98"
+              className="mt-auto bg-white text-primary hover:bg-blue-50 transition-all duration-300 font-medium py-2 md:py-3 px-4 md:px-6 rounded-lg inline-flex items-center transform translate-y-4 opacity-0 animate-fadeSlideUp delay-1000 hover:scale-105 active:scale-98 text-sm md:text-base"
             >
               Book Now - 25% Off
             </button>

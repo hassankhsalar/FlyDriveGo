@@ -1,17 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import {
-  FaSearch, FaMapMarkerAlt, FaRegClock, FaStar, FaWifi, FaPlug,
-  FaSnowflake, FaArrowLeft, FaFilter, FaCalendarAlt, FaAngleDown, FaCheck,
+  FaSearch, FaMapMarkerAlt, FaRegClock, FaStar, FaWifi, FaArrowLeft, FaFilter, FaAngleDown,
   FaPlane, FaTicketAlt, FaUtensils, FaBed
 } from 'react-icons/fa';
 import useAxiosPublic from '../../../Hooks/useAxiosPublic';
-import { motion } from 'framer-motion';
 
 const ByAir = () => {
   const navigate = useNavigate();
+  const location = useLocation();
   const axiosPublic = useAxiosPublic();
-  const [activeFilter, setActiveFilter] = useState('all');
+  const initialFilterState = location.state?.initialFilter || 'all';
+  const [activeFilter, setActiveFilter] = useState(initialFilterState);
   const [searchTerm, setSearchTerm] = useState('');
   const [showFilters, setShowFilters] = useState(false);
   const [selectedDate, setSelectedDate] = useState(null);
@@ -20,6 +20,13 @@ const ByAir = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [airlinesList, setAirlinesList] = useState([]);
+
+  // Apply initial filter from location state when component mounts
+  useEffect(() => {
+    if (location.state?.initialFilter) {
+      setActiveFilter(location.state.initialFilter);
+    }
+  }, [location.state]);
 
   const handleBookNow = (flight, selectedDate) => {
     // Navigate to seat plan with flight details
@@ -166,8 +173,8 @@ const ByAir = () => {
                   key={filter}
                   onClick={() => setActiveFilter(filter)}
                   className={`px-4 py-2 rounded-full transition-all duration-300 ${activeFilter === filter
-                      ? "bg-primary text-white"
-                      : "bg-gray-100 text-gray-700 hover:bg-gray-200"
+                    ? "bg-primary text-white"
+                    : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                     }`}
                 >
                   {filter.charAt(0).toUpperCase() + filter.slice(1)}
@@ -183,8 +190,8 @@ const ByAir = () => {
                 <button
                   key={day}
                   className={`px-4 py-2 flex flex-col items-center rounded-lg transition-all duration-300 transform hover:scale-105 ${selectedDate === idx
-                      ? "bg-primary text-white"
-                      : "bg-white border border-gray-200 text-gray-700 hover:border-primary hover:text-primary"
+                    ? "bg-primary text-white"
+                    : "bg-white border border-gray-200 text-gray-700 hover:border-primary hover:text-primary"
                     }`}
                   onClick={() => setSelectedDate(idx)}
                 >
@@ -265,58 +272,58 @@ const ByAir = () => {
 
       {/* Featured Deal */}
       <div
-        className="mb-12 bg-gradient-to-r from-indigo-500 to-primary rounded-xl overflow-hidden shadow-lg h-96 transform translate-y-8 opacity-0 animate-fadeSlideUp delay-300 transition-all duration-500 hover:scale-102 hover:shadow-xl"
+        className="mb-12 bg-gradient-to-r from-indigo-500 to-primary rounded-xl overflow-hidden shadow-lg transform translate-y-8 opacity-0 animate-fadeSlideUp delay-300 transition-all duration-500 hover:shadow-xl"
       >
-        <div className="md:flex">
-          <div className="md:w-1/2 h-54 overflow-hidden">
+        <div className="flex flex-col md:flex-row">
+          <div className="h-60 md:h-auto md:w-1/2 overflow-hidden">
             <img
               src="https://images.unsplash.com/photo-1518783211485-10fd3bfb2ce2?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="First Class Cabin"
               className="w-full h-full object-cover transition-transform duration-1000 hover:scale-105"
             />
           </div>
-          <div className="p-6 md:p-10 md:w-1/2 flex flex-col justify-center">
+          <div className="p-5 md:p-10 md:w-1/2 flex flex-col justify-center">
             <div
-              className="inline-block px-3 py-1 bg-white text-primary text-xs font-semibold rounded-full mb-4 transform -translate-x-4 opacity-0 animate-slideInRight delay-600"
+              className="inline-block px-3 py-1 bg-white text-primary text-xs font-semibold rounded-full mb-3 md:mb-4 transform -translate-x-4 opacity-0 animate-slideInRight delay-600"
             >
               FEATURED FLIGHT
             </div>
             <h2
-              className="text-2xl md:text-3xl font-bold text-white mb-3 transform translate-y-4 opacity-0 animate-fadeSlideUp delay-700"
+              className="text-xl md:text-3xl font-bold text-white mb-2 md:mb-3 transform translate-y-4 opacity-0 animate-fadeSlideUp delay-700"
             >
               First Class Experience
             </h2>
             <p
-              className="text-blue-100 mb-6 transform translate-y-4 opacity-0 animate-fadeSlideUp delay-800"
+              className="text-blue-100 mb-4 md:mb-6 text-sm md:text-base transform translate-y-4 opacity-0 animate-fadeSlideUp delay-800"
             >
               Indulge in luxury on our premier international routes with lie-flat beds, exclusive dining, and personalized service.
             </p>
             <div
-              className="flex flex-wrap gap-4 mb-6 transform translate-y-4 opacity-0 animate-fadeSlideUp delay-900"
+              className="flex flex-wrap gap-2 md:gap-4 mb-4 md:mb-6 transform translate-y-4 opacity-0 animate-fadeSlideUp delay-900"
             >
               <span
-                className="inline-flex items-center bg-blue-600 bg-opacity-30 text-white px-3 py-1 rounded-full text-sm transition-all duration-300 hover:scale-110 hover:bg-opacity-50"
+                className="inline-flex items-center bg-blue-600 bg-opacity-30 text-white px-2 md:px-3 py-1 rounded-full text-xs md:text-sm transition-all duration-300 hover:scale-110 hover:bg-opacity-50"
               >
-                <FaBed className="mr-2" /> Lie-flat Beds
+                <FaBed className="mr-1 md:mr-2" /> Lie-flat Beds
               </span>
               <span
-                className="inline-flex items-center bg-blue-600 bg-opacity-30 text-white px-3 py-1 rounded-full text-sm transition-all duration-300 hover:scale-110 hover:bg-opacity-50"
+                className="inline-flex items-center bg-blue-600 bg-opacity-30 text-white px-2 md:px-3 py-1 rounded-full text-xs md:text-sm transition-all duration-300 hover:scale-110 hover:bg-opacity-50"
               >
-                <FaUtensils className="mr-2" /> Premium Dining
+                <FaUtensils className="mr-1 md:mr-2" /> Premium Dining
               </span>
               <span
-                className="inline-flex items-center bg-blue-600 bg-opacity-30 text-white px-3 py-1 rounded-full text-sm transition-all duration-300 hover:scale-110 hover:bg-opacity-50"
+                className="inline-flex items-center bg-blue-600 bg-opacity-30 text-white px-2 md:px-3 py-1 rounded-full text-xs md:text-sm transition-all duration-300 hover:scale-110 hover:bg-opacity-50"
               >
-                <FaWifi className="mr-2" /> Free WiFi
+                <FaWifi className="mr-1 md:mr-2" /> Free WiFi
               </span>
               <span
-                className="inline-flex items-center bg-blue-600 bg-opacity-30 text-white px-3 py-1 rounded-full text-sm transition-all duration-300 hover:scale-110 hover:bg-opacity-50"
+                className="inline-flex items-center bg-blue-600 bg-opacity-30 text-white px-2 md:px-3 py-1 rounded-full text-xs md:text-sm transition-all duration-300 hover:scale-110 hover:bg-opacity-50"
               >
-                <FaTicketAlt className="mr-2" /> Priority Boarding
+                <FaTicketAlt className="mr-1 md:mr-2" /> Priority Boarding
               </span>
             </div>
             <button
-              className="mt-auto bg-white text-primary hover:bg-blue-50 transition-all duration-300 font-medium py-3 px-6 rounded-lg inline-flex items-center transform translate-y-4 opacity-0 animate-fadeSlideUp delay-1000 hover:scale-105 active:scale-98"
+              className="mt-auto bg-white text-primary hover:bg-blue-50 transition-all duration-300 font-medium py-2 md:py-3 px-4 md:px-6 rounded-lg inline-flex items-center transform translate-y-4 opacity-0 animate-fadeSlideUp delay-1000 hover:scale-105 active:scale-98 text-sm md:text-base"
             >
               Book First Class - 15% Off
             </button>
