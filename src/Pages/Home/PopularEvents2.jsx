@@ -3,6 +3,7 @@ import bali from '../../assets/popular-tour-packages/bali.jpg';
 import maldives from '../../assets/popular-tour-packages/maldives.jpg';
 import singapore from '../../assets/popular-tour-packages/singapore.jpg';
 import pune from '../../assets/popular-tour-packages/pune.jpg';
+import { Link } from "react-router-dom";
 
 
 const PopularEvents2 = () => {
@@ -32,7 +33,7 @@ const PopularEvents2 = () => {
                 Indonesia!</p>
                 <p className="font-poppins text-sm text-slate-600 py-3"><strong>Price:</strong> $1250 USD</p>
                 <div className="flex justify-center items-center py-4">
-                    <button className="py-1 px-6 w-9/12 bg-CharcoleDark text-slate-300 rounded-3xl font-poppins">View details</button>
+                    <button className="py-1 px-6 w-9/12 bg-CharcoleDark text-slate-300 rounded-3xl font-poppins"><Link to='/tour-pack'>View details</Link></button>
                 </div>
              </div>
         </div>
@@ -45,7 +46,7 @@ const PopularEvents2 = () => {
                 <p className="font-poppins text-sm text-slate-600 font-light py-3">Heaven on Earth!Amazing Honeymoon packages available now!</p>
                 <p className="font-poppins text-sm text-slate-600 py-3"><strong>Price:</strong> $1250 USD</p>
                 <div className="flex justify-center items-center py-4">
-                    <button className="py-1 px-6 w-9/12 bg-CharcoleDark text-slate-300 rounded-3xl font-poppins">View details</button>
+                    <button className="py-1 px-6 w-9/12 bg-CharcoleDark text-slate-300 rounded-3xl font-poppins"><Link to='/tour-pack'>View details</Link></button>
                 </div>
              </div>
         </div>
@@ -58,7 +59,7 @@ const PopularEvents2 = () => {
                 <p className="font-poppins text-sm text-slate-600 font-light py-3">The country of islands and beautiful cities.Magical singapore!</p>
                 <p className="font-poppins text-sm text-slate-600 py-3"><strong>Price:</strong> $1250 USD</p>
                 <div className="flex justify-center items-center py-4">
-                    <button className="py-1 px-6 w-9/12 bg-CharcoleDark text-slate-300 rounded-3xl font-poppins">View details</button>
+                    <button className="py-1 px-6 w-9/12 bg-CharcoleDark text-slate-300 rounded-3xl font-poppins"><Link to='/tour-pack'>View details</Link></button>
                 </div>
              </div>
         </div>
@@ -72,7 +73,7 @@ const PopularEvents2 = () => {
                 Indonesia!</p>
                 <p className="font-poppins text-sm text-slate-600 py-3"><strong>Price:</strong> $1250 USD</p>
                 <div className="flex justify-center items-center py-4">
-                    <button className="py-1 px-6 w-9/12 bg-CharcoleDark text-slate-300 rounded-3xl font-poppins">View details</button>
+                    <button className="py-1 px-6 w-9/12 bg-CharcoleDark text-slate-300 rounded-3xl font-poppins"><Link to='/tour-pack'>View details</Link></button>
                 </div>
              </div>
         </div>

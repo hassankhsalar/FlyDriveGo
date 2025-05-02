@@ -1,13 +1,16 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import toast from "react-hot-toast";
-import { AuthContext } from "../../Provider/AuthProvider";
+
 import GoggleSignIn from "../../Shared/GoggleSignIn";
 import loginImage from "../../assets/Login/login-bg.jpg";
+import FacebookSignIn from "../../Shared/FacebookSignIn";
+import { ImArrowUpLeft2 } from "react-icons/im";
+import useAuth from "../../Hooks/useAuth";
 
 const Login = () => {
-  const { userLogin } = useContext(AuthContext);
+  const { user, userLogin, resetPassword } = useAuth();
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState(null);
   const location = useLocation();
@@ -31,9 +34,26 @@ const Login = () => {
       });
   };
 
+  const handleResetPassword = () => {
+    const email = document.querySelector("input[name='email']").value;
+
+    if (!email) {
+      toast.error("Please enter your email to reset the password.");
+      return;
+    }
+    console.log(email);
+    resetPassword(email)
+      .then(() => {
+        toast.success("Password reset link sent! Check your email.");
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
+
   return (
     <div
-      className="flex items-center justify-center min-h-screen bg-cover bg-center relative"
+      className="flex items-center justify-center min-h-screen bg-cover bg-center relative font-poppins"
       style={{
         backgroundImage: `url(${loginImage})`,
         backgroundSize: "cover",
@@ -41,6 +61,11 @@ const Login = () => {
       }}
     >
       <div className="bg-white/10 backdrop-blur-lg border border-white/30 rounded-lg p-8 w-96 text-white text-center shadow-lg">
+        <Link to={"/"}>
+          <h3 className="text-white text-2xl font-bold">
+            <ImArrowUpLeft2 />
+          </h3>
+        </Link>
         <h2 className="text-2xl font-bold mb-4">Login</h2>
         <form onSubmit={handleLogin} className="flex flex-col gap-4">
           <div className="relative border-b border-gray-300">
@@ -76,27 +101,36 @@ const Login = () => {
             <label className="flex items-center gap-1">
               <input type="checkbox" className="accent-white" /> Remember me
             </label>
-            <Link
-              to="/forgot-password"
+            <button
+              type="button"
+              onClick={handleResetPassword}
               className="text-blue-300 hover:underline"
             >
               Forgot password?
-            </Link>
+            </button>
           </div>
           <button
             type="submit"
-            className="bg-gray-100 backdrop-blur-lg text-black font-bold py-2 px-4 rounded hover:bg-gray-200 transition"
+            className="bg-white text-black font-bold py-2 px-4 rounded-full 
+             hover:bg-gray-300 transition duration-300 ease-in-out"
           >
             Log In
           </button>
         </form>
+
+        <p className="my-3">Or, Sign Up Using</p>
+        <div className="flex gap-2 mx-auto items-center justify-center">
+          <GoggleSignIn />
+
+          <FacebookSignIn />
+        </div>
+
         <p className="mt-4">
-          Don't have an account?
-          <Link to="/register" className="text-blue-300 hover:underline">
+          Don't have an account ?
+          <Link to="/register" className="text-blue-300 hover:underline pl-1">
             Register
           </Link>
         </p>
-        <GoggleSignIn />
       </div>
     </div>
   );

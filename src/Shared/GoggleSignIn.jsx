@@ -1,13 +1,30 @@
-import React, { useContext } from "react";
-import { AuthContext } from "../Provider/AuthProvider";
+import React from "react";
+
 import toast from "react-hot-toast";
 import { FcGoogle } from "react-icons/fc";
+import useAuth from "../Hooks/useAuth";
+import useAxiosPublic from "../Hooks/useAxiosPublic";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const GoggleSignIn = () => {
-  const { signInWithGoggle } = useContext(AuthContext);
+  const { signInWithGoggle } = useAuth();
+  const axiosPublic = useAxiosPublic();
+  const navigate = useNavigate();
+  const location = useLocation();
+
   const handleGoogleSignIn = () => {
     signInWithGoggle()
       .then((res) => {
+        const userInfo = {
+          email: res.user.email,
+          name: res.user.displayName,
+          photoURL: res.user.photoURL,
+          userType: "user",
+        };
+        axiosPublic.post("/users", userInfo).then((res) => {
+          console.log("user added successfully");
+          navigate(location?.state ? location.state : "/");
+        });
         toast.success("Sign In Successfully");
       })
       .catch((err) => {
@@ -15,16 +32,13 @@ const GoggleSignIn = () => {
       });
   };
   return (
-    <div>
-      <div className="flex items-center justify-center pb-1">
-        <button
-          onClick={handleGoogleSignIn}
-          className="flex text-center items-center btn text-xl  rounded-lg w-full bg-white border-2  text-[#023E8A]"
-        >
-          <FcGoogle></FcGoogle>
-          Continue With Google
-        </button>
-      </div>
+    <div className="flex items-center justify-center pb-1">
+      <button
+        onClick={handleGoogleSignIn}
+        className="bg-black rounded-full p-2 text-xl"
+      >
+        <FcGoogle color="white"></FcGoogle>
+      </button>
     </div>
   );
 };

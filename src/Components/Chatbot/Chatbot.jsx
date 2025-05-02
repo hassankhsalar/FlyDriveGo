@@ -24,7 +24,8 @@ const Chatbot = () => {
     setIsLoading(true);
 
     try {
-      const botResponse = await generateAIContent(input);
+      // Optimize for travel-related content
+      const botResponse = await generateAIContent(`Travel: ${input}`);
       const botMessage = { text: botResponse, sender: 'bot' };
       setConversation(prev => [...prev, botMessage]);
     } catch (error) {
@@ -69,7 +70,7 @@ const Chatbot = () => {
   };
 
   return (
-    <div className="relative font-red-rose">
+    <div className="relative font-red-rose z-30">
       <motion.button
         variants={buttonVariants}
         animate="float"
@@ -100,7 +101,7 @@ const Chatbot = () => {
             >
               <div className="flex justify-between items-center mb-4">
                 <h2 className="text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  AI Assistant
+                  Travel Assistant
                 </h2>
                 <button
                   className="text-gray-600 hover:text-gray-900 transition-colors"
@@ -186,7 +187,7 @@ const Chatbot = () => {
                     type="text"
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
-                    placeholder="Ask me anything..."
+                    placeholder="Ask me anything ..."
                     className="flex-grow p-3 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
                   />
                   <motion.button
