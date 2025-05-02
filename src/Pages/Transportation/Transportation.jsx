@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import HeroLayout from "../Home/hero/Layout/HeroLayout";
 import SectionHeader from "./components/SectionHeader";
 import ServiceCard from "./components/ServiceCard";
@@ -14,10 +14,50 @@ import FlightGallery from "./components/FlightGallery";
 import MapComponent from "../../components/Transportation/components/MapComponent";
 import { Outlet, useLocation } from "react-router-dom";
 import BusReservationCleanup from "../../components/Transportation/BusReservationCleanup";
+import useAxiosSecure from "../../Hooks/useAxiosSecure";
 
 const Transportation = () => {
   const location = useLocation();
   const isExactTransportationPath = location.pathname === "/transportation";
+  const axiosSecure = useAxiosSecure();
+
+  // State for flight data
+  const [domesticFlights, setDomesticFlights] = useState([]);
+  const [internationalFlights, setInternationalFlights] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  // Fetch flight data when component mounts
+  useEffect(() => {
+    if (isExactTransportationPath) {
+      fetchFlightData();
+    }
+  }, [isExactTransportationPath]);
+
+  // Function to fetch flight data
+  const fetchFlightData = async () => {
+    try {
+      setLoading(true);
+      // Fetch domestic flights
+      const domesticResponse = await axiosSecure.get('/flights?type=domestic&limit=5');
+      setDomesticFlights(domesticResponse.data);
+
+      // Fetch international flights
+      const internationalResponse = await axiosSecure.get('/flights?type=international&limit=5');
+      setInternationalFlights(internationalResponse.data);
+    } catch (error) {
+      console.error('Error fetching flight data:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // Calculate the lowest price from the fetched domestic flights
+  const getLowestDomesticPrice = () => {
+    if (domesticFlights.length === 0) return "$49"; // Default price if no data
+
+    const lowestPrice = Math.min(...domesticFlights.map(flight => flight.price));
+    return `$${lowestPrice}`;
+  };
 
   return (
     <>
@@ -100,8 +140,10 @@ const Transportation = () => {
                   subtitle="Connect Nationwide"
                   times={["Morning Flights", "Afternoon", "Evening", "Red-Eye"]}
                   priceLabel="Starting from"
-                  price="$49/ticket"
+                  price={getLowestDomesticPrice()}
                   buttonText="Search Domestic Flights"
+                  type="domestic"
+                  to="/transportation/by-air"
                 />
 
                 <FlightCard
@@ -110,6 +152,8 @@ const Transportation = () => {
                   regions={["Europe", "Asia", "Americas"]}
                   description="Special offers available for long-haul flights and premium cabins."
                   buttonText="Explore International"
+                  type="international"
+                  to="/transportation/by-air"
                 />
               </div>
               <FlightGallery />

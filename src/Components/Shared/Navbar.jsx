@@ -1,27 +1,19 @@
 import React, { useState, useEffect } from "react";
 import logo from "/FlyDriveGo.png";
-
 // react icons
-import {
-  FaShoppingCart,
-  FaMapMarkerAlt,
-  FaPlane,
-  FaBus,
-  FaCar,
-} from "react-icons/fa";
+import { FaShoppingCart, FaMapMarkerAlt, FaPlane, FaBus, FaCar } from "react-icons/fa";
 import { TbLogout2 } from "react-icons/tb";
 import { CiMenuFries } from "react-icons/ci";
 import { MdLaptopMac } from "react-icons/md";
+import { IoSettingsOutline } from "react-icons/io5";
 import { BsCalendar2Date } from "react-icons/bs";
 import { AiOutlineFire } from "react-icons/ai";
 import { BiShoppingBag, BiSupport } from "react-icons/bi";
 import { FiUser } from "react-icons/fi";
-import { HiOutlineBriefcase } from "react-icons/hi";
 import useAuth from "../../Hooks/useAuth";
 import toast from "react-hot-toast";
 import { Link, useLocation } from "react-router-dom";
 import useCart from "../../Hooks/useCart";
-import { IoSettingsOutline } from "react-icons/io5";
 
 const Navbar = () => {
   const [accountMenuOpen, setAccountMenuOpen] = useState(false);
@@ -33,9 +25,7 @@ const Navbar = () => {
 
   // Helper to check if a path is active
   const isActive = (path) => {
-    return (
-      location.pathname === path || location.pathname.startsWith(`${path}/`)
-    );
+    return location.pathname === path || location.pathname.startsWith(`${path}/`);
   };
 
   // Track scroll position
@@ -47,21 +37,19 @@ const Navbar = () => {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener('scroll', handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, [scrolled]);
 
   return (
     <nav className="flex items-center z-20 justify-between relative font-red-rose pt-2 w-11/12 mx-auto">
-      <div className="navbar-start">
-        {/* logo */}
-        <Link to="/">
-          <img src={logo} alt="logo" className="w-40 " />
-        </Link>
-      </div>
+      {/* logo */}
+      <Link to="/">
+        <img src={logo} alt="logo" className="w-40 " />
+      </Link>
 
       <div className="navbar-center">
         {/* Desktop Navigation Links */}
@@ -165,7 +153,7 @@ const Navbar = () => {
                 </Link>
 
                 <Link
-                  to="/tour-details/Discover Bali: 5-Day Luxury Escape"
+                  to="/tour-details/Bali: Paradise Island Escape"
                   className="flex items-center gap-[10px] hover:bg-gray-50 p-2 rounded-md"
                 >
                   <FaMapMarkerAlt className="text-orange-500 w-5 h-5" />
@@ -180,13 +168,13 @@ const Navbar = () => {
                 </Link>
 
                 <Link
-                  to="/tour-details/Santorini Romance: 5-Day Luxury Escape"
+                  to="/tour-details/Maldives: Tropical Paradise Getaway"
                   className="flex items-center gap-[10px] hover:bg-gray-50 p-2 rounded-md"
                 >
                   <FaMapMarkerAlt className="text-blue-500 w-5 h-5" />
                   <div>
                     <h1 className="text-[1rem] text-gray-700 font-[500]">
-                    Santorini Romance
+                      Maldives Package
                     </h1>
                     <p className="text-[0.9rem] text-gray-400">
                       Tropical Paradise Getaway
@@ -198,21 +186,36 @@ const Navbar = () => {
           </li>
 
           {/* Other Main Links */}
-          <li
-            className={`flex items-center ${isActive("/visa-assistance") ? "text-[#3B9DF8]" : "text-gray-600"} hover:text-[#3B9DF8]`}
-          >
-            <AiOutlineFire className="text-[1.1rem] mr-1" />
-            <Link to="/visa-assistance">Visa</Link>
+          <li className="flex items-center">
+            <Link
+              to="/visa-assistance"
+              className={`flex items-center gap-[5px] ${isActive('/visa-assistance') ? 'text-[#3B9DF8]' : 'text-gray-600'} hover:text-[#3B9DF8]`}
+            >
+              <AiOutlineFire className="text-[1.1rem]" />
+              Visa
+            </Link>
           </li>
 
-          <li className="flex items-center dark:text-[#4e585f] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer">
-            <BiShoppingBag className="text-[1.1rem] group-hover:text-[#3B9DF8] dark:text-[#4e585f] text-gray-600" />
-            <Link to="/eshop">Shop</Link>
+          <li className="flex items-center">
+            <Link
+              to="/eshop"
+              className={`flex items-center gap-[5px] ${isActive('/eshop') ? 'text-[#3B9DF8]' : 'text-gray-600'} hover:text-[#3B9DF8]`}
+            >
+              <BiShoppingBag className="text-[1.1rem]" />
+              Shop
+            </Link>
           </li>
-          <li className="flex items-center dark:text-[#4e585f] hover:text-[#3B9DF8] group gap-[5px] cursor-pointer">
-            <BiSupport className="text-[1.1rem] group-hover:text-[#3B9DF8] dark:text-[#4e585f] text-gray-600" />
-            <Link to="/about">About</Link>
+
+          <li className="flex items-center">
+            <Link
+              to="/about"
+              className={`flex items-center gap-[5px] ${isActive('/about') ? 'text-[#3B9DF8]' : 'text-gray-600'} hover:text-[#3B9DF8]`}
+            >
+              <BiSupport className="text-[1.1rem]" />
+              About
+            </Link>
           </li>
+
           <li>
             <Link to="/mycart">
               <button className="btn">
@@ -226,182 +229,175 @@ const Navbar = () => {
         </ul>
       </div>
 
-      <div className="navbar-end">
-        {/* Login/Register Buttons */}
-        {!user ? (
-          <div className="flex items-center gap-3">
+      {/* Login/Register Buttons */}
+      {!user ? (
+        <div className="flex items-center gap-3">
+          <Link
+            className="hover:text-[#3B9DF8] transition-colors"
+            to="/login"
+          >
+            Login
+          </Link>
+          <Link
+            className="bg-primary text-white px-3 py-2 rounded-lg hover:bg-[#3cacff] transition-colors"
+            to="/register"
+          >
+            Register
+          </Link>
+        </div>
+      ) : (
+        <div className="relative group">
+          <div
+            className="flex items-center gap-[10px] cursor-pointer"
+            onClick={() => setAccountMenuOpen(!accountMenuOpen)}
+          >
+            <div className="relative">
+              <img
+                src={user.photoURL || "https://i.pravatar.cc/150?img=3"}
+                alt="avatar"
+                className="w-[38px] h-[38px] rounded-full object-cover border border-gray-200"
+                referrerPolicy="no-referrer"
+              />
+              <div className="p-[2px] bg-white absolute bottom-0 right-0 rounded-full">
+                <div className="w-[10px] h-[10px] rounded-full bg-green-400"></div>
+              </div>
+            </div>
+
+            <span className="text-[1rem] text-gray-600 font-[400] sm:block hidden">
+              {user?.displayName?.split(' ')[0] || 'User'}
+            </span>
+          </div>
+
+          {/* Dropdown Menu */}
+          <div
+            className={`${accountMenuOpen
+                ? "translate-y-0 opacity-100 z-[50]"
+                : "translate-y-[10px] opacity-0 z-[-1]"
+              } bg-white w-max rounded-md absolute dark:bg-slate-800 top-[45px] right-0 p-[10px] flex flex-col transition-all duration-300 gap-[5px] shadow-lg`}
+          >
             <Link
-              className="hover:text-[#3B9DF8] transition-colors"
+              to={`/my-profile/${user?.email}`}
+              className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] dark:text-[#abc2d3] dark:hover:bg-slate-900/50 text-gray-600 hover:bg-gray-50"
+            >
+              <FiUser />
+              View Profile
+            </Link>
+
+            <Link
+              to="/settings"
+              className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] dark:text-[#abc2d3] dark:hover:bg-slate-900/50 text-gray-600 hover:bg-gray-50"
+            >
+              <IoSettingsOutline />
+              Settings
+            </Link>
+
+            <Link
+              to="/dashboard"
+              className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] dark:text-[#abc2d3] dark:hover:bg-slate-900/50 text-gray-600 hover:bg-gray-50"
+            >
+              <FiUser />
+              Dashboard
+            </Link>
+
+            <div className="mt-3 border-t dark:border-slate-700 border-gray-200 pt-[5px]">
+              <button
+                onClick={() => {
+                  logOut()
+                    .then(() => {
+                      toast.success("Logged Out Successfully");
+                      setAccountMenuOpen(false);
+                    })
+                    .catch(() => {
+                      toast.error("An Error occurred While Logging Out");
+                    });
+                }}
+                className="flex items-center gap-[5px] rounded-md p-[8px] pr-[45px] py-[3px] text-[1rem] dark:text-red-500 dark:hover:bg-red-500/20 text-red-500 hover:bg-red-50 w-full text-left"
+              >
+                <TbLogout2 />
+                Logout
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Mobile Menu Button */}
+      <CiMenuFries
+        onClick={() => setMobileSidebarOpen(!mobileSidebarOpen)}
+        className="text-[1.8rem] text-[#424242] cursor-pointer md:hidden flex"
+      />
+
+      {/* Mobile Sidebar Navigation */}
+      <aside
+        className={`${mobileSidebarOpen
+          ? "translate-x-0 opacity-100 z-20"
+          : "translate-x-full opacity-0 z-[-1]"
+          } md:hidden bg-white p-6 text-left fixed top-[60px] right-0 sm:w-[300px] w-full rounded-md transition-all duration-300 shadow-lg`}
+      >
+        <ul className="flex flex-col gap-4">
+          <h3 className="text-sm font-semibold text-gray-400 uppercase">Navigation</h3>
+
+          <li>
+            <Link to="/transportation" className="flex items-center gap-2 py-2 hover:text-primary" onClick={() => setMobileSidebarOpen(false)}>
+              <MdLaptopMac className="text-primary" /> Transportation
+            </Link>
+            <div className="ml-6 mt-1 border-l-2 border-gray-100 pl-4 flex flex-col gap-1">
+              <Link to="/transportation/by-air" className="hover:text-primary py-1" onClick={() => setMobileSidebarOpen(false)}>By Air</Link>
+              <Link to="/transportation/by-road" className="hover:text-primary py-1" onClick={() => setMobileSidebarOpen(false)}>By Bus</Link>
+              <Link to="/transportation/by-car" className="hover:text-primary py-1" onClick={() => setMobileSidebarOpen(false)}>By Car</Link>
+            </div>
+          </li>
+
+          <li>
+            <Link to="/tour-pack" className="flex items-center gap-2 py-2 hover:text-primary" onClick={() => setMobileSidebarOpen(false)}>
+              <BsCalendar2Date className="text-primary" /> Tour Packages
+            </Link>
+          </li>
+
+          <li>
+            <Link to="/visa-assistance" className="flex items-center gap-2 py-2 hover:text-primary" onClick={() => setMobileSidebarOpen(false)}>
+              <AiOutlineFire className="text-primary" /> Visa Assistance
+            </Link>
+          </li>
+
+          <li>
+            <Link to="/eshop" className="flex items-center gap-2 py-2 hover:text-primary" onClick={() => setMobileSidebarOpen(false)}>
+              <BiShoppingBag className="text-primary" /> Shop
+            </Link>
+          </li>
+
+          <li>
+            <Link to="/about" className="flex items-center gap-2 py-2 hover:text-primary" onClick={() => setMobileSidebarOpen(false)}>
+              <BiSupport className="text-primary" /> About
+            </Link>
+          </li>
+
+          <li>
+            <Link to="/mycart" className="flex items-center gap-2 py-2 hover:text-primary" onClick={() => setMobileSidebarOpen(false)}>
+              <FaShoppingCart className="text-primary" /> Cart {cart.length > 0 && `(${cart.length})`}
+            </Link>
+          </li>
+        </ul>
+
+        {!user && (
+          <div className="mt-8 flex flex-col gap-3">
+            <Link
               to="/login"
+              className="w-full text-center py-2 text-primary border border-primary rounded-lg hover:bg-primary/10"
+              onClick={() => setMobileSidebarOpen(false)}
             >
               Login
             </Link>
             <Link
-              className="bg-primary text-white px-3 py-2 rounded-lg hover:bg-[#3cacff] transition-colors"
               to="/register"
+              className="w-full text-center py-2 text-white bg-primary rounded-lg hover:bg-primary/90"
+              onClick={() => setMobileSidebarOpen(false)}
             >
               Register
             </Link>
           </div>
-        ) : (
-          <div className="relative group">
-            <div className="flex items-center gap-[10px] cursor-pointer">
-              <div className="relative">
-                <img
-                  src={user.photoURL || "https://i.pravatar.cc/150?img=3"}
-                  alt="avatar"
-                  className="w-[38px] h-[38px] rounded-full object-cover border border-gray-200"
-                  referrerPolicy="no-referrer"
-                />
-                <div className="p-[2px] bg-white absolute bottom-0 right-0 rounded-full">
-                  <div className="w-[10px] h-[10px] rounded-full bg-green-400"></div>
-                </div>
-              </div>
-
-              <span className="text-[1rem] text-gray-600 font-[400] sm:block hidden">
-                {user?.displayName?.split(" ")[0] || "User"}
-              </span>
-              <div className=" dark:border-slate-700 border-gray-200">
-                <p
-                  onClick={() => {
-                    logOut()
-                      .then(() => {
-                        toast.success("Log Out Successfully");
-                      })
-                      .catch(() => {
-                        toast.error("An Error occurred While Log Out");
-                      });
-                  }}
-                  className="flex items-center gap-[5px] rounded-md p-[8px]  py-[3px] text-[1rem] dark:text-red-500 dark:hover:bg-red-500/20 text-red-500 hover:bg-red-50"
-                >
-                  <TbLogout2 />
-                  Logout
-                </p>
-              </div>
-            </div>
-          </div>
         )}
-
-        {/* Mobile Menu Button */}
-        <CiMenuFries
-          onClick={() => setMobileSidebarOpen(!mobileSidebarOpen)}
-          className="text-[1.8rem] text-[#424242] cursor-pointer flex ml-4"
-        />
-
-        {/* Mobile Sidebar Navigation */}
-        <aside
-          className={`${
-            mobileSidebarOpen
-              ? "translate-x-0 opacity-100 z-20"
-              : "translate-x-full opacity-0 z-[-1]"
-          }  bg-white p-6 text-left fixed top-[60px] right-0 sm:w-[300px] w-full rounded-md transition-all duration-300 shadow-lg`}
-        >
-          <ul className="flex flex-col gap-4">
-            <h3 className="text-sm font-semibold text-gray-400 uppercase">
-              Navigation
-            </h3>
-
-            <li>
-              <Link
-                to={`/my-profile/${user?.email}`}
-                className="flex items-center gap-2 py-2 hover:text-primary"
-                onClick={() => setMobileSidebarOpen(false)}
-              >
-                <BsCalendar2Date className="text-primary" /> Profile
-              </Link>
-            </li>
-            <li>
-              <Link
-                to='/dashboard'
-                className="flex items-center gap-2 py-2 hover:text-primary"
-                onClick={() => setMobileSidebarOpen(false)}
-              >
-                <BsCalendar2Date className="text-primary" /> Dashboard
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/transportation"
-                className="flex items-center gap-2 py-2 hover:text-primary"
-                onClick={() => setMobileSidebarOpen(false)}
-              >
-                <MdLaptopMac className="text-primary" /> Transportation
-              </Link>
-              
-            </li>
-
-            <li>
-              <Link
-                to="/tour-pack"
-                className="flex items-center gap-2 py-2 hover:text-primary"
-                onClick={() => setMobileSidebarOpen(false)}
-              >
-                <BsCalendar2Date className="text-primary" /> Tour Packages
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                to="/visa-assistance"
-                className="flex items-center gap-2 py-2 hover:text-primary"
-                onClick={() => setMobileSidebarOpen(false)}
-              >
-                <AiOutlineFire className="text-primary" /> Visa Assistance
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                to="/eshop"
-                className="flex items-center gap-2 py-2 hover:text-primary"
-                onClick={() => setMobileSidebarOpen(false)}
-              >
-                <BiShoppingBag className="text-primary" /> Shop
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                to="/about"
-                className="flex items-center gap-2 py-2 hover:text-primary"
-                onClick={() => setMobileSidebarOpen(false)}
-              >
-                <BiSupport className="text-primary" /> About
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                to="/mycart"
-                className="flex items-center gap-2 py-2 hover:text-primary"
-                onClick={() => setMobileSidebarOpen(false)}
-              >
-                <FaShoppingCart className="text-primary" /> Cart{" "}
-                {cart.length > 0 && `(${cart.length})`}
-              </Link>
-            </li>
-          </ul>
-
-          {!user && (
-            <div className="mt-8 flex flex-col gap-3">
-              <Link
-                to="/login"
-                className="w-full text-center py-2 text-primary border border-primary rounded-lg hover:bg-primary/10"
-                onClick={() => setMobileSidebarOpen(false)}
-              >
-                Login
-              </Link>
-              <Link
-                to="/register"
-                className="w-full text-center py-2 text-white bg-primary rounded-lg hover:bg-primary/90"
-                onClick={() => setMobileSidebarOpen(false)}
-              >
-                Register
-              </Link>
-            </div>
-          )}
-        </aside>
-      </div>
+      </aside>
     </nav>
   );
 };

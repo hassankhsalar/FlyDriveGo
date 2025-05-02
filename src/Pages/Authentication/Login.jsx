@@ -25,7 +25,9 @@ const Login = () => {
       .then(() => {
         e.target.reset();
         toast.success("Successfully Logged In");
-        navigate(location?.state ? location.state : "/");
+        // Navigate to the previous location or home if none exists
+        const from = location.state?.from || "/";
+        navigate(from);
       })
       .catch((err) => {
         setError(err.message);
