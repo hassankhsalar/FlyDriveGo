@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Swal from 'sweetalert2';
 import useAxiosSecure from "../../Hooks/useAxiosSecure";
 import useCart from "../../Hooks/useCart";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 
 const CheckoutForm = () => {
@@ -16,6 +16,8 @@ const CheckoutForm = () => {
   const location = useLocation();
   const totalPrice = location.state?.totalPrice || 0;
   const { user } = useAuth();
+  const navigate = useNavigate();
+  
 
   useEffect(() => {
     if (totalPrice > 0) {
@@ -72,7 +74,7 @@ const CheckoutForm = () => {
         productId: item._id,
       }));
 
-      // Send to server
+      // Send to server to save purchased products
       axiosSecure.post('/purchased-products', {
         email: user?.email,
         products: purchasedProducts
@@ -81,12 +83,27 @@ const CheckoutForm = () => {
           if (res.data.insertedCount > 0 || res.data.success) {
             Swal.fire({
               icon: 'success',
-              title: 'Product Saved!',
-              text: 'Your order has been stored successfully.',
+              title: 'Payment Successful!',
+              text: 'Your order has been pladced successfully.',
               timer: 2000,
               showConfirmButton: false,
             });
-            refetch(); // refresh or clear cart
+
+            // Clear the cart after saving the purchase
+            axiosSecure.delete('/clear-cart', { data: { email: user?.email } })
+              .then(response => {
+                if (response.data.success) {
+                  refetch(); // refresh or clear cart in frontend
+                }
+              })
+              .catch(err => {
+                Swal.fire({
+                  icon: 'error',
+                  title: 'Error',
+                  text: 'Failed to clear the cart.',
+                });
+              });
+              navigate('/eshop');
           }
         })
         .catch(err => {
