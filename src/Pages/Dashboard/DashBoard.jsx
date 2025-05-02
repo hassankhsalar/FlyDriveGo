@@ -44,9 +44,7 @@ const DashBoard = () => {
                 <li>
                   <Link to="/dashboard/addTourPackage">Add Tour Packages</Link>
                 </li>
-                <li>
-                  <Link to="/dashboard/add-products">Add Products</Link>
-                </li>
+
                 <li>
                   <Link to="/dashboard/makeSeller">Make Seller</Link>
                 </li>
@@ -54,6 +52,9 @@ const DashBoard = () => {
             )}
             {userRole === "seller" && (
               <>
+                <li>
+                  <Link to="/dashboard/add-products">Add Products</Link>
+                </li>
                 <li>
                   <Link>Seller</Link>
                 </li>
