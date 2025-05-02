@@ -8,10 +8,26 @@ import useCart from "../../../Hooks/useCart";
 const ProductCard = ({ product, user }) => {
   const navigate = useNavigate();
   const axiosSecure = useAxiosSecure();
-  const [, refetch] = useCart();
+  const [cart, refetch] = useCart(); // Access the current cart
 
   const handleAddtoCart = (item) => {
     if (user && user.email) {
+      // Check if the product is already in the cart
+      const alreadyInCart = cart.find(
+        (cartItem) => cartItem.itemId === product._id
+      );
+
+      if (alreadyInCart) {
+        Swal.fire({
+          position: "top-end",
+          icon: "info",
+          title: `${product.title} is already in your cart`,
+          showConfirmButton: false,
+          timer: 1500,
+        });
+        return;
+      }
+
       const cartItem = {
         itemId: product._id,
         email: user.email,
@@ -20,19 +36,19 @@ const ProductCard = ({ product, user }) => {
         image: product.photo,
         category: item.tags,
       };
-      axiosSecure.post('/carts', cartItem)
-        .then(res => {
-          if (res.data.insertedId) {
-            Swal.fire({
-              position: "top-end",
-              icon: "success",
-              title: `${product.title} added to your cart`,
-              showConfirmButton: false,
-              timer: 1500
-            });
-            refetch();
-          }
-        });
+
+      axiosSecure.post("/carts", cartItem).then((res) => {
+        if (res.data.insertedId) {
+          Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: `${product.title} added to your cart`,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          refetch();
+        }
+      });
     } else {
       Swal.fire({
         title: "You are not logged In",
@@ -41,10 +57,10 @@ const ProductCard = ({ product, user }) => {
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, Login!"
+        confirmButtonText: "Yes, Login!",
       }).then((result) => {
         if (result.isConfirmed) {
-          navigate('/login');
+          navigate("/login");
         }
       });
     }
@@ -77,7 +93,7 @@ const ProductCard = ({ product, user }) => {
       <div className="p-4 flex flex-col flex-grow">
         <p className="text-gray-400 text-sm mb-1">Top Selling Product</p>
 
-        <h3 
+        <h3
           className="font-semibold text-gray-800 text-[16px] leading-snug line-clamp-2 hover:text-primary cursor-pointer"
           onClick={handleViewDetails}
         >
