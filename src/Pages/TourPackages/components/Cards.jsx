@@ -19,7 +19,7 @@ const Cards = ({ tour }) => {
         {/* Image with overlay */}
         <div className="relative h-[60%] group-hover:h-full transition-all duration-300">
           <img
-            src={tour.banner_img }
+            src={tour.image}
             alt={`${tour.title} tour preview`}
             className="w-full h-full object-cover group-hover:opacity-60 transition-opacity duration-300"
           />

@@ -43,15 +43,11 @@ const HeroLayout = ({
             )}
             {avatars.length > 0 && (
               <div className="flex justify-center mt-2">
-                <div className="avatar-group flex -space-x-3">
+                <div className="avatar-group -space-x-6">
                   {avatars.map((src, index) => (
                     <div className="avatar" key={index}>
                       <div className="w-8 h-8 md:w-12 md:h-12">
-                        <img
-                          src={src}
-                          alt={`User Avatar ${index + 1}`}
-                          className="rounded-full"
-                        />
+                        <img src={src} alt={`User Avatar ${index + 1}`} />
                       </div>
                     </div>
                   ))}

@@ -1,5 +1,3 @@
-import { Link } from "react-router-dom";
-
 const ServiceCard = ({
   title,
   subtitle,
@@ -8,7 +6,6 @@ const ServiceCard = ({
   priceLabel,
   price,
   buttonText,
-  to,
 }) => (
   <div className="group relative bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300">
     <div className="absolute inset-0 bg-primary/5 rounded-2xl transform group-hover:scale-105 transition-transform duration-300" />
@@ -47,9 +44,9 @@ const ServiceCard = ({
         </div>
       )}
 
-      <Link to={to} className="bg-primary text-white px-6 py-3 rounded-lg font-poppins hover:bg-primary-dark transition-colors duration-300">
+      <button className="bg-primary text-white px-6 py-3 rounded-lg font-poppins hover:bg-primary-dark transition-colors duration-300">
         {buttonText} →
-      </Link>
+      </button>
     </div>
   </div>
 );
