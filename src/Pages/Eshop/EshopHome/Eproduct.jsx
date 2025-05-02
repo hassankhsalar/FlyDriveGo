@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import useProducts from "../../../Hooks/useProducts";
 import ProductCard from "./ProductCard";
 import useAuth from "../../../Hooks/useAuth";
+import SkeletonCard from "../../../Components/SkeletonCard/skeletonCard";
 
 const Eproduct = () => {
   const { user } = useAuth();
@@ -110,7 +111,10 @@ const Eproduct = () => {
               ))}
             </div>
 
-            <button onClick={resetFilters} className="btn bg-black text-white mt-4">
+            <button
+              onClick={resetFilters}
+              className="btn bg-black text-white mt-4"
+            >
               Reset Filters
             </button>
           </div>
@@ -119,9 +123,17 @@ const Eproduct = () => {
         {/* Products */}
         <div className="w-full md:w-full">
           <div className="grid grid-cols-[repeat(auto-fit,minmax(340px,1fr))] gap-6 items-stretch">
-            {products.map((product) => (
-              <ProductCard key={product._id} product={product} user={user} />
-            ))}
+            {isLoading
+              ? Array.from({ length: 6 }).map((_, i) => (
+                  <SkeletonCard key={i} />
+                ))
+              : products.map((product) => (
+                  <ProductCard
+                    key={product._id}
+                    product={product}
+                    user={user}
+                  />
+                ))}
           </div>
         </div>
       </div>
