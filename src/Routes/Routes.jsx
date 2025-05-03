@@ -46,6 +46,8 @@ import FlightPassengerDetails from "../Pages/Transportation/ByAir/FlightPassenge
 import FlightBookingConfirmation from "../Pages/Transportation/ByAir/FlightBookingConfirmation";
 
 import DashboardWelcome from "../Pages/Dashboard/DashboardWelcome";
+import BookedFlights from "../Pages/Dashboard/UserDashboard/BookedFlights";
+import BookedBuses from "../Pages/Dashboard/UserDashboard/BookedBuses";
 
 import MyCart from "../Pages/Eshop/MyCart/MyCart";
 import MakeSeller from "../Pages/Dashboard/ModeratorDashboard/makeSeller";
@@ -319,6 +321,14 @@ export const router = createBrowserRouter([
       {
         path: "makeSeller",
         element: <MakeSeller />,
+      },
+      {
+        path: "my-flights",
+        element: <BookedFlights />,
+      },
+      {
+        path: "my-buses",
+        element: <BookedBuses />,
       },
     ],
   },
