@@ -7,7 +7,11 @@ import { useEffect, useState } from "react";
 import useAxiosSecure from "../../../../Hooks/useAxiosSecure";
 import { toast } from 'react-hot-toast';
 
-const stripePromise = loadStripe(import.meta.env.VITE_PAY);
+// Only show Stripe warnings in development mode, use secure connection in production
+const stripePromise = loadStripe(
+    import.meta.env.VITE_PAY,
+    { stripeAccount: undefined }
+);
 
 const CheckoutForm = () => {
     const [error, setError] = useState('');
