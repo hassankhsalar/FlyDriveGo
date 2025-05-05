@@ -5,7 +5,7 @@ import { FaArrowLeft, FaCar, FaCalendarAlt, FaIdCard, FaUser, FaPhone, FaEnvelop
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import useAxiosPublic from '../../../Hooks/useAxiosPublic';
-import { getAuth } from 'firebase/auth';
+import useAuth from '../../../Hooks/useAuth';
 
 const CarReservation = () => {
     const { carId } = useParams();
@@ -19,9 +19,9 @@ const CarReservation = () => {
         additionalDriver: false
     });
     const [totalPrice, setTotalPrice] = useState(0);
-    const [user, setUser] = useState(null);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const axiosPublic = useAxiosPublic();
+    const { user } = useAuth();
 
     const { register, handleSubmit, setValue, formState: { errors } } = useForm({
         defaultValues: {
@@ -40,6 +40,13 @@ const CarReservation = () => {
 
     // Initialize booking details from location state or fetch if needed
     useEffect(() => {
+        // Check if user is authenticated
+        if (!user) {
+            toast.error("Please login to continue with your car reservation");
+            navigate('/login', { state: { from: location.pathname } });
+            return;
+        }
+
         if (location.state?.bookingDetails) {
             setBookingDetails(location.state.bookingDetails);
             setTotalPrice(location.state.bookingDetails.totalPrice);
@@ -49,20 +56,13 @@ const CarReservation = () => {
             navigate(`/transportation/car-details/${carId}`);
         }
 
-        // Check if user is logged in
-        const auth = getAuth();
-        const unsubscribe = auth.onAuthStateChanged((currentUser) => {
-            setUser(currentUser);
-            if (currentUser) {
-                // Pre-fill contact form with user data if available
-                setValue('contactInfo.name', currentUser.displayName || '');
-                setValue('contactInfo.email', currentUser.email || '');
-                setValue('driverInfo.name', currentUser.displayName || '');
-            }
-        });
-
-        return () => unsubscribe();
-    }, [location, navigate, carId, setValue]);
+        // Pre-fill contact form with user data if available
+        if (user) {
+            setValue('contactInfo.name', user.displayName || '');
+            setValue('contactInfo.email', user.email || '');
+            setValue('driverInfo.name', user.displayName || '');
+        }
+    }, [location, navigate, carId, setValue, user]);
 
     // Update total price when additional options change
     useEffect(() => {

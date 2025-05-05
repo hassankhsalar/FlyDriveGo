@@ -16,53 +16,60 @@ const Testimonials = () => {
       .catch((error) => console.error("Error fetching testimonials", error));
   }, []);
 
+  // Determine if we should enable loop mode based on number of slides
+  const shouldEnableLoop = testimonials.length > 3;
+
   return (
     <div className="px-6 py-10">
       <h1 className="font-red-rose text-5xl font-bold text-primary text-center mb-14">
         Customer Testimonials
       </h1>
 
-      <Swiper
-        modules={[Pagination, Navigation]}
-        spaceBetween={50}
-        slidesPerView={1}
-        pagination={{ clickable: true }}
-        navigation
-        loop={true}
-        breakpoints={{
-          640: { slidesPerView: 1 },
-          768: { slidesPerView: 1 },
-          1024: { slidesPerView: 3 },
-        }}
-      >
-        {testimonials.map((testimonial, index) => (
-          <SwiperSlide key={index}>
-            <div className="w-full md:w-[75%] bg-[#3B9DF8] text-white shadow-2xl rounded-lg p-6 relative mx-auto">
-              <FaQuoteRight className="text-[4rem] text-[#e9e9e959] absolute top-[10%] right-[10%]" />
-              
-              <div className="flex items-center gap-4 mt-4">
-                <img
-                  src={testimonial.imageURL}
-                  alt={testimonial.name}
-                  className="w-[50px] h-[50px] object-cover rounded-full"
-                />
-                <div>
-                  <h2 className="text-[1rem] font-[500]">{testimonial.name}</h2>
-                  <p className="text-[0.9rem] text-[#e9e9e9]">{testimonial.role}</p>
+      {testimonials.length > 0 ? (
+        <Swiper
+          modules={[Pagination, Navigation]}
+          spaceBetween={50}
+          slidesPerView={1}
+          pagination={{ clickable: true }}
+          navigation
+          loop={shouldEnableLoop}
+          breakpoints={{
+            640: { slidesPerView: 1 },
+            768: { slidesPerView: 1 },
+            1024: { slidesPerView: Math.min(3, testimonials.length) },
+          }}
+        >
+          {testimonials.map((testimonial, index) => (
+            <SwiperSlide key={index}>
+              <div className="w-full md:w-[75%] bg-[#3B9DF8] text-white shadow-2xl rounded-lg p-6 relative mx-auto hover:scale-110 transition-transform">
+                <FaQuoteRight className="text-[4rem] text-[#e9e9e959] absolute top-[10%] right-[10%]" />
+
+                <div className="flex items-center gap-4 mt-4">
+                  <img
+                    src={testimonial.imageURL}
+                    alt={testimonial.name}
+                    className="w-[50px] h-[50px] object-cover rounded-full"
+                  />
+                  <div>
+                    <h2 className="text-[1rem] font-[500]">{testimonial.name}</h2>
+                    <p className="text-[0.9rem] text-[#e9e9e9]">{testimonial.role}</p>
+                  </div>
                 </div>
+
+                <h2 className="text-[1.5rem] capitalize font-[500] mt-5 leading-[30px]">
+                  {testimonial.reviewTitle}
+                </h2>
+
+                <p className="text-justify text-[0.9rem] my-3 text-[#e9e9e9]">
+                  {testimonial.description}
+                </p>
               </div>
-
-              <h2 className="text-[1.5rem] capitalize font-[500] mt-5 leading-[30px]">
-                {testimonial.reviewTitle}
-              </h2>
-
-              <p className="text-justify text-[0.9rem] my-3 text-[#e9e9e9]">
-                {testimonial.description}
-              </p>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      ) : (
+        <div className="text-center text-gray-500">Loading testimonials...</div>
+      )}
     </div>
   );
 };

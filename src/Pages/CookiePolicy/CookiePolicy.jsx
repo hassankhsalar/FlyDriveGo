@@ -97,7 +97,7 @@ Address: Dhaka, Bangladesh`
                         and remember you when you visit our website.
                     </p>
                     <div className="mt-10">
-                        <p className="text-sm font-poppins text-CharcoleDark/50">Last Updated: June 1, 2024</p>
+                        <p className="text-sm font-poppins text-CharcoleDark/50">Last Updated: June 1, 2025</p>
                     </div>
                 </div>
             </section>

@@ -21,11 +21,12 @@ const GoggleSignIn = () => {
           photoURL: res.user.photoURL,
           userType: "user",
         };
-        axiosPublic.post("/users", userInfo).then((res) => {
-          console.log("user added successfully");
-          navigate(location?.state ? location.state : "/");
+        axiosPublic.post("/users", userInfo).then(() => {
+          // Navigate to the previous location or home if none exists
+          const from = location.state?.from || "/";
+          navigate(from);
+          toast.success("Sign In Successfully");
         });
-        toast.success("Sign In Successfully");
       })
       .catch((err) => {
         toast.error(`${err.message}`);
@@ -35,7 +36,7 @@ const GoggleSignIn = () => {
     <div className="flex items-center justify-center pb-1">
       <button
         onClick={handleGoogleSignIn}
-        className="bg-black rounded-full p-2 text-xl"
+        className="bg-white rounded-full p-2 text-xl"
       >
         <FcGoogle color="white"></FcGoogle>
       </button>

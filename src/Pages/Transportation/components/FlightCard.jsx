@@ -1,13 +1,28 @@
+import { Link, useNavigate } from "react-router-dom";
+
 const FlightCard = ({
-    title,
-    subtitle,
-    times = [],
-    priceLabel,
-    price,
-    regions = [],
-    description,
-    buttonText,
-  }) => (
+  title,
+  subtitle,
+  times = [],
+  priceLabel,
+  price,
+  regions = [],
+  description,
+  buttonText,
+  type,
+  to = "/transportation/by-air",
+}) => {
+  const navigate = useNavigate();
+  const handleButtonClick = () => {
+    navigate(to, {
+      state: {
+        filterType: type,
+        initialFilter: type === "domestic" ? "domestic" : "international"
+      }
+    });
+  };
+
+  return (
     <div className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col justify-between h-full">
       <div>
         <div className="border-l-4 border-primary pl-4 mb-6">
@@ -16,7 +31,7 @@ const FlightCard = ({
           </h3>
           <p className="text-primary/60 text-sm font-poppins">{subtitle}</p>
         </div>
-  
+
         {times.length > 0 ? (
           <div className="grid grid-cols-2 gap-4 mb-6">
             <div className="space-y-2">
@@ -54,11 +69,15 @@ const FlightCard = ({
           </div>
         )}
       </div>
-  
-      <button className="w-full bg-primary text-white px-6 py-3 rounded-lg font-poppins hover:bg-primary-dark transition-colors duration-300 mt-auto">
+
+      <button
+        onClick={handleButtonClick}
+        className="w-full bg-primary text-white px-6 py-3 rounded-lg font-poppins hover:bg-primary-dark transition-colors duration-300 mt-auto"
+      >
         {buttonText}
       </button>
     </div>
   );
-  
-  export default FlightCard;
+};
+
+export default FlightCard;

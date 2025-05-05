@@ -21,6 +21,12 @@ const PaymentErrorHandler = () => {
         try {
             toast.loading('Attempting to recover booking status...');
 
+            console.log('Attempting recovery with:', {
+                bookingId,
+                endpoint: `/bus-bookings/${bookingId}/payment-recovery`,
+                paymentId
+            });
+
             // Retry updating the booking payment status
             await axiosSecure.patch(`/bus-bookings/${bookingId}/payment-recovery`, {
                 paymentStatus: 'paid',
@@ -36,6 +42,8 @@ const PaymentErrorHandler = () => {
             window.location.href = `/transportation/booking-confirmation?reference=${bookingReference}`;
         } catch (err) {
             toast.dismiss();
+            console.error('Recovery attempt failed:', err);
+            console.error('Error details:', err.response?.data || err.message);
             toast.error('Recovery attempt failed. Please contact customer support.');
         }
     };

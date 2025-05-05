@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaHome } from "react-icons/fa";
 import toast from "react-hot-toast";
 
 import GoggleSignIn from "../../Shared/GoggleSignIn";
 import loginImage from "../../assets/Login/login-bg.jpg";
 import FacebookSignIn from "../../Shared/FacebookSignIn";
-import { ImArrowUpLeft2 } from "react-icons/im";
 import useAuth from "../../Hooks/useAuth";
 
 const Login = () => {
@@ -26,7 +25,9 @@ const Login = () => {
       .then(() => {
         e.target.reset();
         toast.success("Successfully Logged In");
-        navigate(location?.state ? location.state : "/");
+        // Navigate to the previous location or home if none exists
+        const from = location.state?.from || "/";
+        navigate(from);
       })
       .catch((err) => {
         setError(err.message);
@@ -63,7 +64,7 @@ const Login = () => {
       <div className="bg-white/10 backdrop-blur-lg border border-white/30 rounded-lg p-8 w-96 text-white text-center shadow-lg">
         <Link to={"/"}>
           <h3 className="text-white text-2xl font-bold">
-            <ImArrowUpLeft2 />
+            <FaHome></FaHome>
           </h3>
         </Link>
         <h2 className="text-2xl font-bold mb-4">Login</h2>

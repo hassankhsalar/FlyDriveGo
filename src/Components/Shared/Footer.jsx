@@ -74,7 +74,6 @@ const Footer = () => {
               </li>
               <li className="flex space-x-4 text-primary mt-4">
                 <FaFacebookF className="hover:text-blue-600 cursor-pointer transition-colors" />
-                <FaTwitter className="hover:text-blue-400 cursor-pointer transition-colors" />
                 <FaInstagram className="hover:text-pink-600 cursor-pointer transition-colors" />
                 <FaLinkedinIn className="hover:text-blue-700 cursor-pointer transition-colors" />
                 <FaGoogle className="hover:text-red-500 cursor-pointer transition-colors" />

@@ -1,5 +1,6 @@
 import { useState, useEffect, useMemo, useRef } from 'react';
 import { useForm, Controller } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import {
   CreditCard,
   MapPin,
@@ -10,7 +11,8 @@ import {
   HelpCircle,
   Clock,
   AlertTriangle,
-  X
+  X,
+  LogIn
 } from 'lucide-react';
 import {
   TextField,
@@ -37,6 +39,7 @@ import useAxiosPublic from '../../Hooks/useAxiosPublic';
 
 const VisaAssistance = () => {
   const { user } = useAuth();
+  const navigate = useNavigate();
   const axiosPublic = useAxiosPublic();
   const [activeStep, setActiveStep] = useState(0);
   const [countries, setCountries] = useState([]);
@@ -49,10 +52,38 @@ const VisaAssistance = () => {
   const [documentUrls, setDocumentUrls] = useState([]);
   const fileInputRef = useRef(null);
 
+  // Check for authentication and redirect if not logged in
+  useEffect(() => {
+    if (!user) {
+      toast.error("Please login to access visa application services");
+      navigate('/login', { state: { from: '/visa-assistance', message: 'Login required for visa services' } });
+    }
+  }, [user, navigate]);
+
+  // If user is not logged in, render login prompt instead of the form
   if (!user) {
-    toast.error("Please login to submit a visa application");
-    // redirect to login page
-    window.location.href = '/login';
+    return (
+      <div className="min-h-screen bg-SmokeWhite p-8 flex items-center justify-center">
+        <Paper className="p-8 max-w-md w-full text-center">
+          <LogIn size={48} className="mx-auto text-primary mb-4" />
+          <Typography variant="h5" className="font-bold mb-3 font-red-rose">
+            Login Required
+          </Typography>
+          <Typography variant="body1" className="mb-6 font-poppins">
+            Please login to access visa application services. Our visa assistance is exclusively available for registered users.
+          </Typography>
+          <Button
+            variant="contained"
+            color="primary"
+            size="large"
+            onClick={() => navigate('/login', { state: { from: '/visa-assistance' } })}
+            className="font-poppins"
+          >
+            Go to Login
+          </Button>
+        </Paper>
+      </div>
+    );
   }
 
   const { control, register, handleSubmit, watch, reset, formState: { errors, isValid } } = useForm({
